@@ -1515,3 +1515,11 @@ Entries:
       message: Fixed contra levels on syndicate cosmetics.
   id: 161
   time: '2026-03-01T21:56:59.0000000+00:00'
+- author: VoidedDevNull
+  changes:
+    - type: Add
+      message: >-
+        Station AI now has access to the Freelancer, Traffic, and ColSec radio
+        channels.
+  id: 162
+  time: '2026-03-01T21:57:17.0000000+00:00'
