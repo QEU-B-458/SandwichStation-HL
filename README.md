@@ -1,5 +1,5 @@
 <div class="header" align="center">
-<img alt="Frontier Station" height="300" src="https://github.com/fenndragon/HardLight/blob/master/Resources/Textures/_NF/Logo/logo.png?raw=true" />
+<img alt="Frontier Station" height="300" src="https://github.com/fenndragon/HardLight/blob/master/Resources/Textures/_Sandwich/Logo/logo.png?raw=true" />
 </div>
 
 ## License
