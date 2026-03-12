@@ -1685,3 +1685,15 @@ Entries:
       message: more interdyne equipment
   id: 182
   time: '2026-03-12T03:56:39.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Add
+      message: >-
+        Governor Override Collars (which allow IC editing of Quadborg laws) have
+        been added as part of the Research Director's kit.
+    - type: Fix
+      message: >-
+        Demags should no longer cause Cyborg panels to become permanently stuck
+        open and now correctly remove emagged laws.
+  id: 183
+  time: '2026-03-12T03:57:09.0000000+00:00'
