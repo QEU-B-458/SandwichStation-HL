@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Configuration;
+using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
 
@@ -12,19 +12,19 @@ public sealed partial class CCVars
     ///     Change this to have the changelog and rules "last seen" date stored separately.
     /// </summary>
     public static readonly CVarDef<string> ServerId =
-        CVarDef.Create("server.id", "Hardlight", CVar.REPLICATED | CVar.SERVER); // Frontier: new_frontier
+        CVarDef.Create("server.id", "SandwichSector", CVar.REPLICATED | CVar.SERVER); //Why is this hardcoded? will repair later...
 
     /// <summary>
     ///     Guide Entry Prototype ID to be displayed as the server rules.
     /// </summary>
     public static readonly CVarDef<string> RulesFile =
-        CVarDef.Create("server.rules_file", "FrontierRuleset", CVar.REPLICATED | CVar.SERVER); // Frontier: Rules
+        CVarDef.Create("server.rules_file", "SandwichRuleset", CVar.REPLICATED | CVar.SERVER); //Why is this hardcoded? will repair later...
 
     /// <summary>
     ///     Guide entry that is displayed by default when a guide is opened.
     /// </summary>
     public static readonly CVarDef<string> DefaultGuide =
-        CVarDef.Create("server.default_guide", "NewPlayer", CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("server.default_guide", "SandwichRuleset", CVar.REPLICATED | CVar.SERVER); //Why is this hardcoded? will repair later...
 
     /// <summary>
     ///     If greater than 0, automatically restart the server after this many minutes of uptime.
