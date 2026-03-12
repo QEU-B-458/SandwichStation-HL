@@ -7,6 +7,8 @@ job-name-intelligence = LAMBA Operator
 job-title-bounty-hunter = Bounty Hunter
 job-title-colonial-chief-architect = Colonial Chief Architect
 job-title-colonial-superintendent = Colonial Superintendent
+job-title-colonial-agent = Colonial Agent
+job-title-colonial-engineer = Colonial Engineer
 
 # Role timers
 JobForensicMantis = Mantis

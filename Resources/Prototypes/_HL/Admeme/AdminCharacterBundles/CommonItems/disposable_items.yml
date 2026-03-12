@@ -27,6 +27,17 @@
   id: StorageImplanterDisposable
   parent: [ BaseDisposableImplanter, StorageImplanter ]
 
+- type: entity
+  id: LightImplanterDisposable
+  parent: [ BaseDisposableImplanter, LightImplanter ]
+
+- type: entity
+  id: MimePowersImplanterDisposable
+  parent: [ BaseDisposableImplanter, MimePowersImplanter ]
+
+- type: entity
+  id: BibleUserImplanterDisposable
+  parent: [ BaseDisposableImplanter, BibleUserImplanter ]
 
 # other items!
 - type: entity

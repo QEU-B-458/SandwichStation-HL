@@ -34,7 +34,9 @@ using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Server.Construction.Components;
 using Content.Shared._HL.Shipyard;
 // HardLight start
+using Content.Server.Store.Components;
 using Content.Shared._Common.Consent;
+using Content.Shared.Implants.Components;
 using Content.Shared.Light.Components;
 using Content.Shared.Mind.Components;
 using Content.Shared.SprayPainter.Components;
@@ -52,6 +54,24 @@ namespace Content.Server._NF.Shipyard.Systems;
 /// </summary>
 public sealed class ShipyardGridSaveSystem : EntitySystem
 {
+    // HardLight start
+    // List of currency prototypes that should be stripped from ship saves.
+    private static readonly HashSet<string> NonPersistentShipSaveCurrencies = new(StringComparer.Ordinal)
+    {
+        "FrontierUplinkCoin",
+        "Telecrystal",
+        "Doubloon",
+    };
+
+    // Implants that should not persist when found inside implanters during ship save.
+    private static readonly HashSet<string> BlockedContainedImplantPrototypes = new(StringComparer.Ordinal)
+    {
+        "DeathRattleImplantColcomm",
+        "RadioImplantColcomm",
+        "UplinkImplant",
+    };
+    // HardLight end
+
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -249,7 +269,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         }
         catch (Exception ex)
         {
-            Logger.Error($"Ship save failed for '{shipName}' on grid {gridUid}: {ex}");
+            Logger.GetSawmill("hardlight").Error($"Ship save failed for '{shipName}' on grid {gridUid}: {ex}");
             return false;
         }
         finally
@@ -527,6 +547,12 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         // Skip if terminating
         if (_entityManager.GetComponent<MetaDataComponent>(uid).EntityLifeStage >= EntityLifeStage.Terminating)
             return false;
+        // HardLight: Remove uplink currencies
+        if (IsNonPersistentShipSaveCurrency(uid))
+            return true;
+        // HardLight: Remove used disposable implanters
+        if (IsSpentDisposableImplanter(uid))
+            return true;
         if (_secretStashQuery.HasComp(uid) || _persistOnSaveQuery.HasComp(uid))
             return false; // preserve stash root outright
         if (_gridQuery.HasComp(uid))
@@ -560,6 +586,36 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         // Only unanchored entities are eligible for deletion. If it's unanchored (loose) or unanchored-in-container, delete.
         return true;
     }
+
+    // HardLight start
+    // Checks if the entity is a currency that matches any in the NonPersistentShipSaveCurrencies list.
+    private bool IsNonPersistentShipSaveCurrency(EntityUid uid)
+    {
+        if (!TryComp<CurrencyComponent>(uid, out var currency) || currency.Price.Count == 0)
+            return false;
+
+        foreach (var currencyId in currency.Price.Keys)
+        {
+            if (NonPersistentShipSaveCurrencies.Contains(currencyId))
+                return true;
+        }
+
+        return false;
+    }
+
+    // Checks if the entity is an implanter that is marked as implant-only and has no implant currently slotted.
+    private bool IsSpentDisposableImplanter(EntityUid uid)
+    {
+        if (!TryComp<ImplanterComponent>(uid, out var implanter))
+            return false;
+
+        // Disposable implanters are marked implant-only. Once used, they have no implant in the slot.
+        if (!implanter.ImplantOnly)
+            return false;
+
+        return implanter.ImplanterSlot.ContainerSlot?.ContainedEntity is not { Valid: true };
+    }
+    // HardLight end
 
     private bool TryQueueLoose(EntityUid ent, List<EntityUid> list, HashSet<EntityUid> processed)
     {
@@ -707,7 +763,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             "IFF",
             "LinkedLifecycleGridParent",
             "AccessReader", // Door logs
-            "DeviceList",
+            // "DeviceList", Don't remove this it breaks air alarms.
             "DeviceNetwork",
             "DeviceNetworkComponent",
             "UserInterface", // Contains invalid EntityUid references
@@ -716,6 +772,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             "Mind", // Contains player state that can't be serialized and isn't relevant to ship blueprints
             "MindContainer", // Contains player state that can't be serialized and isn't relevant to ship blueprints
             "VendingMachine", // Vending machines restock on ship load, sometimes infinitely; this should prevent that behavior
+            "Forensics", // Entirely useless information that causes extreme ship file bloat
         };
 
         var fillComponentTypes = new HashSet<string>(StringComparer.Ordinal) // HardLight: Components you want permanently removed from entities go here.
@@ -743,78 +800,28 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             "SurplusBundle",
         };
 
+        // HardLight start
         // Prototype-level exclusions for obvious non-ship entities.
         // If we encounter these, we drop them entirely from the export.
         var filteredPrototypes = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase)
         {
-            // admin / ghost observers, spectators, etc.
-            "AdminObserver",
-            "AdminObserverDummy",
-            "Ghost",
-            "Forensics",
-            "DnaComponent",
-            "DNA",
-            "Store",
-            "MindContainer",
-            "GhostRole",
-            "GhostTakeoverAvailable",
-            "PayloadCase",
-            "GhostRoleMob",
-            "HumanoidAppearance",
-            "GeneralStationRecordConsole",
-            // Uplinks and bundled items
-            "BaseMercenaryUplinkRadio",
-            "MachineFlatpacker",
-            "ComputerContrabandPalletConsole",
-            "ComputerContrabandPalletConsolePirate",
-            "ComputerCriminalRecords",
-            "ComputerEmergencyShuttle",
-            "ComputerMarketConsoleNFHigh",
-            "ComputerMarketConsoleNFLow",
-            "ComputerMarketConsoleNFNormal",
-            "ComputerMedicalRecords",
-            "ComputerPalletConsoleNFHighMarket",
-            "ComputerPalletConsoleNFLowMarket",
-            "ComputerPalletConsoleNFNormalMarket",
-            "ComputerPalletConsoleNFVeryHighMarket",
-            "ComputerPalletConsoleNFVeryLowMarket",
+            // Machines & circuit boards
+            "MachineFlatpacker", // One day.
+            "CommsComputerCircuitboard",
+            "ComputerDNAScanner",
+            "ComputerExpeditionDiskPrinter",
+            "ComputerFundingAllocation",
             "ComputerPsionicsRecords",
             "ComputerRoboticsControl",
-            "ComputerShipyard",
-            "ComputerShipyardBlackMarket",
-            "ComputerShipyardExpedition",
-            "ComputerShipyardMedical",
-            "ComputerShipyardNfsd",
-            "ComputerShipyardScrap",
-            "ComputerShipyardSecurity",
-            "ComputerShipyardSr",
-            "ComputerShipyardSyndicate",
             "ComputerShuttleRecords",
-            "ComputerStationRecords",
-            "ComputerTabletopContrabandPalletConsole",
-            "ComputerTabletopContrabandPalletConsolePirate",
-            "ComputerTabletopCriminalRecords",
-            "ComputerTabletopMarketConsoleNFHigh",
-            "ComputerTabletopMarketConsoleNFLow",
-            "ComputerTabletopMarketConsoleNFNormal",
-            "ComputerTabletopMedicalRecords",
-            "ComputerTabletopPalletConsoleNFHighMarket",
-            "ComputerTabletopPalletConsoleNFLowMarket",
-            "ComputerTabletopPalletConsoleNFNormalMarket",
-            "ComputerTabletopPalletConsoleNFVeryLowMarket",
-            "ComputerTabletopShipyardBlackMarket",
-            "ComputerTabletopShipyardExpedition",
-            "ComputerTabletopShipyardNfsd",
-            "ComputerTabletopShipyardScrap",
-            "ComputerTabletopShipyardSecurity",
-            "ComputerTabletopShuttleAntag",
-            "ComputerTabletopStationRecords",
-            "ComputerWallmountStationRecords",
+            "ComputerTabletopShuttleAntag", // I'm a bit confused about this one.
+            "DnaScannerConsoleComputerCircuitboard",
+            "IDComputerCircuitboard",
+            "StationAiUploadComputer",
+            // Vending machines
             "DEBUGVendingMachineAmmoBoxes",
             "DEBUGVendingMachineMagazines",
             "DEBUGVendingMachineRangedWeapons",
-            "PsionicsRecordsComputerCircuitboard",
-            "StationAiUploadComputer",
             "VendingMachineAmmoPOI",
             "VendingMachineAstroVendPOI",
             "VendingMachineBoozePOI",
@@ -835,21 +842,46 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             "VendingMachineTankDispenserEVAPOI",
             "VendingMachineVendomatPOI",
             "VendingMachineYouToolPOI",
-            "BaseMercenaryUplinkRadio",
-            "BaseUplinkRadio",
-            "BaseUplinkRadio20TC",
-            "BaseUplinkRadio25TC",
-            "BaseUplinkRadio40TC",
-            "BaseUplinkRadio60TC",
-            "UplinkImplanter",
-            "BaseSecurityUplinkRadio",
-            "BaseSecurityUplinkRadioSheriff",
-            "BaseSecurityUplinkRadioOfficer",
-            "BaseSecurityUplinkRadioDeputy",
-            "BasePirateUplink",
-            "BasePirateUplinkRadioPirateCaptain",
-            "BasePirateUplinkPirateCrew",
         };
+
+        // Component-level exclusions for non-ship entities.
+        // If an entity has ANY of these components, drop the entity from export entirely.
+        var filteredEntityByComponentTypes = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "CommunicationsConsole",
+            "ContrabandPalletConsole",
+            "CriminalRecordsConsole",
+            "DnaSequenceInjector",
+            "DoorRemote",
+            "EmergencyShuttleConsole",
+            "GeneralStationRecordConsole",
+            "GeneticAnalyzer",
+            "Ghost",
+            "GhostRole",
+            "HumanoidAppearance",
+            "IdCard",
+            "IdCardConsole",
+            "MarketConsole",
+            "NFCargoOrderConsole",
+            "Pda",
+            "ShipyardConsole",
+            "Store",
+        };
+
+        // Exclusion exceptions: if the excluded component is present alongside its paired allow component,
+        // keep the entity.
+        var componentExclusionExceptions = new Dictionary<string, string>(StringComparer.Ordinal)
+        {
+            ["ShipyardConsole"] = "ShipyardListing",
+        };
+
+        // Track removed entities so we can prune stale container references afterward.
+        var removedEntityUids = new HashSet<string>(StringComparer.Ordinal);
+
+        // UIDs of implant entities that should be stripped from implanters on ship save.
+        // Matching is based on explicit prototype IDs.
+        var blockedContainedImplantEntityUids = CollectBlockedContainedImplantEntityUids(protoSeq);
+        // HardLight end
 
         foreach (var protoNode in protoSeq)
         {
@@ -873,6 +905,8 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 var hasProtoGroup = false;
                 var allowFillComponents = false; // HardLight
                 HashSet<string>? protoMissing = null;
+                var dropByPrototypeComponent = false; // HardLight
+                EntityPrototype? entityProto = null; // HardLight
                 if (protoMap.TryGet("proto", out ValueDataNode? protoIdNode) && protoIdNode != null)
                 {
                     hasProtoGroup = true;
@@ -881,6 +915,8 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                     if (filteredPrototypes.Contains(protoId))
                     {
                         // Remove this entity entirely
+                        if (entMap.TryGet("uid", out ValueDataNode? removedUidNode) && removedUidNode != null && !removedUidNode.IsNull) // HardLight
+                            removedEntityUids.Add(removedUidNode.Value); // HardLight
                         entitiesSeq.RemoveAt(i);
                         i--;
                         continue;
@@ -890,6 +926,21 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                     // This ensures critical entities like air alarms keep their fill components for proper functionality.
                     if (_prototypeManager.TryIndex<EntityPrototype>(protoId, out var proto))
                     {
+                        entityProto = proto;
+
+                        foreach (var componentName in filteredEntityByComponentTypes)
+                        {
+                            if (!proto.Components.ContainsKey(componentName))
+                                continue;
+
+                            if (componentExclusionExceptions.TryGetValue(componentName, out var exceptionComponent)
+                                && proto.Components.ContainsKey(exceptionComponent))
+                                continue;
+
+                            dropByPrototypeComponent = true;
+                            break;
+                        }
+
                         if (!allowFillComponents && proto.Components.ContainsKey("Door"))
                             allowFillComponents = true;
 
@@ -912,6 +963,65 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 if (!entMap.TryGet("components", out SequenceDataNode? comps) || comps == null)
                 {
                     // If there are no components left, this entity is empty and can be removed
+                    // HardLight start
+                    if (entMap.TryGet("uid", out ValueDataNode? removedUidNode) && removedUidNode != null && !removedUidNode.IsNull)
+                        removedEntityUids.Add(removedUidNode.Value);
+                    entitiesSeq.RemoveAt(i);
+                    i--;
+                    continue;
+                    // HardLight end
+                }
+
+                // HardLight start
+                // If this entity is an implanter currently containing a filtered implant entity,
+                // remove the implanter from export.
+                var isImplanter = entityProto?.Components.ContainsKey("Implanter") == true || HasComponentNode(comps, "Implanter");
+                if (isImplanter && HasBlockedContainedImplant(entMap, blockedContainedImplantEntityUids))
+                {
+                    if (entMap.TryGet("uid", out ValueDataNode? removedUidNode) && removedUidNode != null && !removedUidNode.IsNull)
+                        removedEntityUids.Add(removedUidNode.Value);
+                    entitiesSeq.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+
+                // Optional: Drop entities by component signature.
+                // If an entity has any component in filteredEntityByComponentTypes, remove the entire entity.
+                var dropByComponent = false;
+                foreach (var c in comps)
+                {
+                    if (c is not MappingDataNode cm)
+                        continue;
+
+                    if (!cm.TryGet("type", out ValueDataNode? t) || t == null)
+                        continue;
+
+                    if (!filteredEntityByComponentTypes.Contains(t.Value))
+                        continue;
+
+                    if (componentExclusionExceptions.TryGetValue(t.Value, out var exceptionComponent)
+                        && (HasComponentNode(comps, exceptionComponent)
+                            || entityProto?.Components.ContainsKey(exceptionComponent) == true))
+                        continue;
+
+                    dropByComponent = true;
+                    break;
+                }
+
+                if (dropByComponent)
+                {
+                    if (entMap.TryGet("uid", out ValueDataNode? removedUidNode) && removedUidNode != null && !removedUidNode.IsNull)
+                        removedEntityUids.Add(removedUidNode.Value);
+                    entitiesSeq.RemoveAt(i);
+                    i--;
+                    continue;
+                }
+                // HardLight end
+
+                if (dropByPrototypeComponent) // HardLight
+                {
+                    if (entMap.TryGet("uid", out ValueDataNode? removedUidNode) && removedUidNode != null && !removedUidNode.IsNull) // HardLight
+                        removedEntityUids.Add(removedUidNode.Value); // HardLight
                     entitiesSeq.RemoveAt(i);
                     i--;
                     continue;
@@ -1066,13 +1176,13 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                         {
                             foreach (var (solutionName, solutionData) in solutionsMap)
                             {
-                                Logger.Info($"Preserving solution '{solutionName}' in SolutionContainerManager");
+                                Logger.GetSawmill("hardlight").Info($"Preserving solution '{solutionName}' in SolutionContainerManager");
 
                                 if (solutionData is MappingDataNode solutionMap)
                                 {
                                     if (solutionMap.TryGetValue("contents", out var contentsNode) && contentsNode is SequenceDataNode contents)
                                     {
-                                        Logger.Info($"  Solution has {contents.Count} reagent entries");
+                                        Logger.GetSawmill("hardlight").Info($"  Solution has {contents.Count} reagent entries");
 
                                         // Verify each reagent entry maintains its structure
                                         foreach (var contentNode in contents)
@@ -1082,7 +1192,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                                                 if (reagentMap.TryGetValue("ReagentId", out var reagentIdNode) && reagentIdNode is ValueDataNode reagentId &&
                                                     reagentMap.TryGetValue("Quantity", out var quantityNode) && quantityNode is ValueDataNode quantity)
                                                 {
-                                                    Logger.Info($"    - ReagentId: {reagentId.Value}, Quantity: {quantity.Value}");
+                                                    Logger.GetSawmill("hardlight").Info($"    - ReagentId: {reagentId.Value}, Quantity: {quantity.Value}");
                                                 }
                                             }
                                         }
@@ -1124,7 +1234,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                             {
                                 // This is a ChemMaster buffer - prevent mixing
                                 solutionMap["canReact"] = new ValueDataNode("false");
-                                Logger.Info("Set ChemMaster buffer to non-reactive");
+                                Logger.GetSawmill("hardlight").Info("Set ChemMaster buffer to non-reactive");
                             }
                         }
                     }
@@ -1136,7 +1246,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                         compMap.Remove("storageSlotIds");
                         compMap.Remove("autoLabel");
 
-                        Logger.Info("Cleared ReagentDispenser storage slots for regeneration");
+                        Logger.GetSawmill("hardlight").Info("Cleared ReagentDispenser storage slots for regeneration");
                     }
                     newComps.Add(compMap);
                 }
@@ -1206,11 +1316,17 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                 else
                 {
                     // No components left; remove the entire entity
+                    if (entMap.TryGet("uid", out ValueDataNode? removedUidNode) && removedUidNode != null && !removedUidNode.IsNull) // HardLight
+                        removedEntityUids.Add(removedUidNode.Value); // HardLight
                     entitiesSeq.RemoveAt(i);
                     i--;
                 }
             }
         }
+
+        // HardLight: Remove stale references to any entities deleted above.
+        // Without this, parent storages/containers can retain dangling links.
+        PruneContainerReferencesToRemovedEntities(protoSeq, removedEntityUids); // HardLight
     }
 
     // HardLight start: Helper method to scan components for a SprayPainted component and extract the painted prototype if it exists,
@@ -1250,6 +1366,166 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         }
 
         return false;
+    }
+
+    private HashSet<string> CollectBlockedContainedImplantEntityUids(SequenceDataNode protoSeq)
+    {
+        var blockedImplantUids = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var protoNode in protoSeq)
+        {
+            if (protoNode is not MappingDataNode protoMap)
+                continue;
+
+            if (!protoMap.TryGet("entities", out SequenceDataNode? entitiesSeq) || entitiesSeq == null)
+                continue;
+
+            var protoIsBlockedImplant = false;
+            if (protoMap.TryGet("proto", out ValueDataNode? protoIdNode)
+                && protoIdNode != null
+                && !protoIdNode.IsNull)
+            {
+                protoIsBlockedImplant = BlockedContainedImplantPrototypes.Contains(protoIdNode.Value);
+            }
+
+            foreach (var entityNode in entitiesSeq)
+            {
+                if (entityNode is not MappingDataNode entMap)
+                    continue;
+
+                if (!entMap.TryGet("uid", out ValueDataNode? uidNode) || uidNode == null || uidNode.IsNull)
+                    continue;
+
+                if (protoIsBlockedImplant)
+                    blockedImplantUids.Add(uidNode.Value);
+            }
+        }
+
+        return blockedImplantUids;
+    }
+
+    private static bool HasBlockedContainedImplant(MappingDataNode entMap, HashSet<string> blockedContainedImplantEntityUids)
+    {
+        if (blockedContainedImplantEntityUids.Count == 0)
+            return false;
+
+        if (!entMap.TryGet("components", out SequenceDataNode? components) || components == null)
+            return false;
+
+        foreach (var compNode in components)
+        {
+            if (compNode is not MappingDataNode compMap)
+                continue;
+
+            if (!compMap.TryGet("type", out ValueDataNode? typeNode) || typeNode == null || typeNode.Value != "ContainerContainer")
+                continue;
+
+            if (!compMap.TryGet("containers", out MappingDataNode? containersMap) || containersMap == null)
+                continue;
+
+            if (!containersMap.TryGet("implanter_slot", out MappingDataNode? slotMap) || slotMap == null)
+                continue;
+
+            if (slotMap.TryGet("ent", out ValueDataNode? entNode) && entNode != null && !entNode.IsNull && blockedContainedImplantEntityUids.Contains(entNode.Value))
+                return true;
+
+            if (!slotMap.TryGet("ents", out SequenceDataNode? entsNode) || entsNode == null)
+                continue;
+
+            foreach (var entry in entsNode)
+            {
+                if (entry is not ValueDataNode valueNode || valueNode.IsNull)
+                    continue;
+
+                if (blockedContainedImplantEntityUids.Contains(valueNode.Value))
+                    return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static void PruneContainerReferencesToRemovedEntities(SequenceDataNode protoSeq, HashSet<string> removedEntityUids)
+    {
+        if (removedEntityUids.Count == 0)
+            return;
+
+        foreach (var protoNode in protoSeq)
+        {
+            if (protoNode is not MappingDataNode protoMap)
+                continue;
+
+            if (!protoMap.TryGet("entities", out SequenceDataNode? entitiesSeq) || entitiesSeq == null)
+                continue;
+
+            foreach (var entityNode in entitiesSeq)
+            {
+                if (entityNode is not MappingDataNode entMap)
+                    continue;
+
+                if (!entMap.TryGet("components", out SequenceDataNode? comps) || comps == null)
+                    continue;
+
+                foreach (var compNode in comps)
+                {
+                    if (compNode is not MappingDataNode compMap)
+                        continue;
+
+                    if (!compMap.TryGet("type", out ValueDataNode? typeNode) || typeNode == null)
+                        continue;
+
+                    var componentType = typeNode.Value;
+
+                    if (componentType == "ContainerContainer")
+                    {
+                        if (!compMap.TryGet("containers", out MappingDataNode? containersMap) || containersMap == null)
+                            continue;
+
+                        foreach (var (_, containerNode) in containersMap)
+                        {
+                            if (containerNode is not MappingDataNode containerMap)
+                                continue;
+
+                            if (containerMap.TryGet("ents", out SequenceDataNode? entsNode) && entsNode != null)
+                            {
+                                for (var idx = entsNode.Count - 1; idx >= 0; idx--)
+                                {
+                                    if (entsNode[idx] is not ValueDataNode entValue || entValue.IsNull)
+                                        continue;
+
+                                    if (removedEntityUids.Contains(entValue.Value))
+                                        entsNode.RemoveAt(idx);
+                                }
+                            }
+
+                            if (containerMap.TryGet("ent", out ValueDataNode? entNode) && entNode != null && !entNode.IsNull)
+                            {
+                                if (removedEntityUids.Contains(entNode.Value))
+                                    containerMap["ent"] = ValueDataNode.Null();
+                            }
+                        }
+
+                        continue;
+                    }
+
+                    // Storage component also serializes entity UID references in storedItems keys.
+                    if (componentType == "Storage" && compMap.TryGet("storedItems", out MappingDataNode? storedItemsMap) && storedItemsMap != null)
+                    {
+                        var removeKeys = new List<string>();
+                        foreach (var (itemUid, _) in storedItemsMap)
+                        {
+                            if (removedEntityUids.Contains(itemUid))
+                                removeKeys.Add(itemUid);
+                        }
+
+                        foreach (var key in removeKeys)
+                        {
+                            storedItemsMap.Remove(key);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static void ApplyPaintStyleToAppearance(MappingDataNode appearanceComp, string stylePrototype)
@@ -1370,10 +1646,10 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
                     {
                         if (solutionSystem.TryGetSolution(entity, "buffer", out var bufferEntity, out var bufferSolution))
                         {
-                            Logger.Info($"ChemMaster {entity} buffer before save: {bufferSolution.Volume}u, {bufferSolution.Contents.Count} types");
+                            Logger.GetSawmill("hardlight").Info($"ChemMaster {entity} buffer before save: {bufferSolution.Volume}u, {bufferSolution.Contents.Count} types");
                             foreach (var reagent in bufferSolution.Contents)
                             {
-                                Logger.Info($"  - {reagent.Reagent.Prototype}: {reagent.Quantity}u");
+                                Logger.GetSawmill("hardlight").Info($"  - {reagent.Reagent.Prototype}: {reagent.Quantity}u");
                             }
                         }
                     }
