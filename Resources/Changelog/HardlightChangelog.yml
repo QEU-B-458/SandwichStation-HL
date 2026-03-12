@@ -1671,3 +1671,55 @@ Entries:
       message: Fixes Station Captain spawn on Fland
   id: 180
   time: '2026-03-09T01:35:09.0000000+00:00'
+- author: fenndragon
+  changes:
+    - type: Add
+      message: Added monolith changes to blips and shuttle combat
+    - type: Fix
+      message: 'Fixed radars. '
+  id: 181
+  time: '2026-03-12T03:55:30.0000000+00:00'
+- author: Sully669
+  changes:
+    - type: Add
+      message: more interdyne equipment
+  id: 182
+  time: '2026-03-12T03:56:39.0000000+00:00'
+- author: NotLivyathan
+  changes:
+    - type: Add
+      message: >-
+        Governor Override Collars (which allow IC editing of Quadborg laws) have
+        been added as part of the Research Director's kit.
+    - type: Fix
+      message: >-
+        Demags should no longer cause Cyborg panels to become permanently stuck
+        open and now correctly remove emagged laws.
+  id: 183
+  time: '2026-03-12T03:57:09.0000000+00:00'
+- author: Nikode16
+  changes:
+    - type: Add
+      message: >-
+        Flowers that can be Chameleoned for a perfect, ever-long lasting head
+        accessory that will never wilt.
+  id: 184
+  time: '2026-03-12T04:11:20.0000000+00:00'
+- author: TrylobyteWasTaken
+  changes:
+    - type: Fix
+      message: Plant analyzers no longer brick after failing a DoAfter check.
+    - type: Fix
+      message: Air Alarms now save their device lists.
+    - type: Fix
+      message: >-
+        Plumbing devices should now load properly when a ship is loaded.  The
+        code is ugly but it works.
+  id: 185
+  time: '2026-03-12T04:11:45.0000000+00:00'
+- author: warcrazed11
+  changes:
+    - type: Tweak
+      message: Tweaked WT-550 top mags and ammo acceptance to take the mags.
+  id: 186
+  time: '2026-03-12T04:14:00.0000000+00:00'
