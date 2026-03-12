@@ -12,19 +12,19 @@ public sealed partial class CCVars
     ///     Change this to have the changelog and rules "last seen" date stored separately.
     /// </summary>
     public static readonly CVarDef<string> ServerId =
-        CVarDef.Create("server.id", "SandwichSector", CVar.REPLICATED | CVar.SERVER); //Why is this hardcoded? will repair later...
+        CVarDef.Create("server.id", "SandwichSector", CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     Guide Entry Prototype ID to be displayed as the server rules.
     /// </summary>
     public static readonly CVarDef<string> RulesFile =
-        CVarDef.Create("server.rules_file", "SandwichRuleset", CVar.REPLICATED | CVar.SERVER); //Why is this hardcoded? will repair later...
+        CVarDef.Create("server.rules_file", "DefaultRuleset", CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     Guide entry that is displayed by default when a guide is opened.
     /// </summary>
     public static readonly CVarDef<string> DefaultGuide =
-        CVarDef.Create("server.default_guide", "SandwichRuleset", CVar.REPLICATED | CVar.SERVER); //Why is this hardcoded? will repair later...
+        CVarDef.Create("server.default_guide", "DefaultRuleset", CVar.REPLICATED | CVar.SERVER);
 
     /// <summary>
     ///     If greater than 0, automatically restart the server after this many minutes of uptime.
