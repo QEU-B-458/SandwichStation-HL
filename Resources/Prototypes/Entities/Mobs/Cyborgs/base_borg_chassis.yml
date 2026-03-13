@@ -269,7 +269,6 @@
   - type: Blindable
   - type: EyeProtection
   - type: Stripping
-  - type: Vore
 
 - type: entity
   abstract: true

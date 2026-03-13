@@ -1,6 +1,4 @@
 using System.Numerics;
-using Content.Client._Common.Consent;
-using Content.Shared._Common.Consent;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -17,10 +15,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
-    [Dependency] private readonly IClientConsentManager _consentManager = default!; // Hardlight
     [Dependency] private readonly SpriteSystem _sprite = default!;
-
-    private static readonly ProtoId<ConsentTogglePrototype> GenitalMarkingsConsent = "GenitalMarkings"; // Hardlight
 
     public override void Initialize()
     {
@@ -28,8 +23,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         SubscribeLocalEvent<HumanoidAppearanceComponent, AfterAutoHandleStateEvent>(OnHandleState);
         SubscribeLocalEvent<HumanoidAppearanceComponent, AppearanceChangeEvent>(OnAppearanceChange);
-
-        _consentManager.OnServerDataLoaded += OnConsentChanged;
     }
 
     private void OnHandleState(EntityUid uid, HumanoidAppearanceComponent component, ref AfterAutoHandleStateEvent args)
@@ -70,15 +63,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         if (_appearance.TryGetData<Vector2>(uid, HumanoidVisuals.Scale, out var scale, args.Component))
         {
             _sprite.SetScale((uid, args.Sprite!), scale);
-        }
-    }
-
-    private void OnConsentChanged()
-    {
-        var humanoidQuery = EntityManager.AllEntityQueryEnumerator<HumanoidAppearanceComponent, SpriteComponent>();
-        while (humanoidQuery.MoveNext(out var owner, out var humanoid, out var sprite))
-        {
-            UpdateSprite(owner, humanoid, sprite);
         }
     }
 
@@ -338,7 +322,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             if (_markingManager.TryGetMarking(marking, out var prototype))
             {
                 // Markings are added to ClientOldMarkings because otherwise it causes issues when toggling the feature on/off.
-                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentTop, new List<Marking>{ marking });
+                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentTop, new List<Marking> { marking });
                 ApplyMarking(uid, prototype, null, false, true, humanoid, sprite); //starlight, glowing
             }
         }
@@ -348,7 +332,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             var marking = new Marking(humanoid.UndergarmentBottom, new List<Color> { new Color() }, false); //starlight, glowing
             if (_markingManager.TryGetMarking(marking, out var prototype))
             {
-                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentBottom, new List<Marking>{ marking });
+                humanoid.ClientOldMarkings.Markings.Add(MarkingCategories.UndergarmentBottom, new List<Marking> { marking });
                 ApplyMarking(uid, prototype, null, false, true, humanoid, sprite); //starlight, glowing
             }
         }
@@ -403,12 +387,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         visible &= !humanoid.HiddenMarkings.Contains(markingPrototype.ID); // FLOOF ADD
         // FLOOF ADD END
 
-        // Hardlight: genital markings consent toggle
-        if (!(_consentManager.GetConsentSettings().Toggles.TryGetValue(GenitalMarkingsConsent, out var val) && val == "on"))
-        {
-            visible &= markingPrototype.MarkingCategory != MarkingCategories.Genital;
-        }
-
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)
         {
             var markingSprite = markingPrototype.Sprites[j];
@@ -452,7 +430,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
             // FLOOF CHANGE END
 
-            if (!_sprite.LayerMapTryGet((uid, sprite), layerId, out _ , false))
+            if (!_sprite.LayerMapTryGet((uid, sprite), layerId, out _, false))
             {
                 // for layers that are supposed to be behind everything,
                 // adding 1 to the layer index makes it not be behind
@@ -493,21 +471,21 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             // }
 
             // Starlight start, # HardLight: Not really sure why it broke, but it had to be rewritten to work again, so here we are.
-                if (isGlowing)
+            if (isGlowing)
+            {
+                sprite.LayerSetShader(layerId, SpriteSystem.UnshadedId.Id);
+            }
+            else if (!string.IsNullOrWhiteSpace(markingPrototype.Shader))
+            {
+                sprite.LayerSetShader(layerId, markingPrototype.Shader);
+            }
+            else
+            {
+                if (_sprite.LayerMapTryGet((uid, sprite), layerId, out var shaderLayerIndex, false))
                 {
-                    sprite.LayerSetShader(layerId, SpriteSystem.UnshadedId.Id);
+                    sprite.LayerSetShader(shaderLayerIndex, null, null);
                 }
-                else if (!string.IsNullOrWhiteSpace(markingPrototype.Shader))
-                {
-                    sprite.LayerSetShader(layerId, markingPrototype.Shader);
-                }
-                else
-                {
-                    if (_sprite.LayerMapTryGet((uid, sprite), layerId, out var shaderLayerIndex, false))
-                    {
-                        sprite.LayerSetShader(shaderLayerIndex, null, null);
-                    }
-                }
+            }
             // Starlight end
         }
     }

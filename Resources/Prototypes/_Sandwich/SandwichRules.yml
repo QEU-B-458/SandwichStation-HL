@@ -1,5 +1,5 @@
 - type: guideEntry # Main page for the rules
-  id: DefaultRuleset
+  id: SandwichRuleset
   name: "SandwichStation Rules"
   priority: 1
   text: "/ServerInfo/_Sandwich/Guidebook/ServerRules/SandwichRules.xml"

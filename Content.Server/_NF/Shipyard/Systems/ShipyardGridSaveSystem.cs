@@ -35,7 +35,6 @@ using Content.Server.Construction.Components;
 using Content.Shared._HL.Shipyard;
 // HardLight start
 using Content.Server.Store.Components;
-using Content.Shared._Common.Consent;
 using Content.Shared.Implants.Components;
 using Content.Shared.Light.Components;
 using Content.Shared.Mind.Components;
@@ -291,20 +290,6 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             if (xform.GridUid != gridUid)
                 continue;
             toRemove.Add(uid);
-        }
-
-        var consentQuery = _entityManager.EntityQueryEnumerator<ConsentComponent, TransformComponent>();
-        while (consentQuery.MoveNext(out var uid, out var _, out var xform))
-        {
-            if (xform.GridUid != gridUid)
-                continue;
-            toRemove.Add(uid);
-        }
-
-        foreach (var uid in toRemove)
-        {
-            _entityManager.RemoveComponent<MindContainerComponent>(uid);
-            _entityManager.RemoveComponent<ConsentComponent>(uid);
         }
     }
 

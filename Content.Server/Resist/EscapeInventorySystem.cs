@@ -30,9 +30,7 @@ public sealed class EscapeInventorySystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!; // Frontier: escape actions
     [Dependency] private readonly ContestsSystem _contests = default!;
 
-    // Frontier - cancel inventory escape
     private readonly EntProtoId _escapeCancelAction = "ActionCancelEscape";
-    [Dependency] private readonly VoreSystem _vore = default!;
 
     /// <summary>
     /// You can't escape the hands of an entity this many times more massive than you.
@@ -76,13 +74,6 @@ public sealed class EscapeInventorySystem : EntitySystem
             return;
         }
 
-        // Vore - Floofstation
-        if (HasComp<VoredComponent>(uid))
-        {
-            AttemptEscape(uid, container.Owner, component, 5f);
-            return;
-        }
-
         // Uncontested
         if (HasComp<StorageComponent>(container.Owner) || HasComp<InventoryComponent>(container.Owner) || HasComp<SecretStashComponent>(container.Owner))
             AttemptEscape(uid, container.Owner, component);
@@ -105,10 +96,6 @@ public sealed class EscapeInventorySystem : EntitySystem
 
         _popupSystem.PopupEntity(Loc.GetString("escape-inventory-component-start-resisting"), user, user);
         _popupSystem.PopupEntity(Loc.GetString("escape-inventory-component-start-resisting-target"), container, container);
-
-        // Frontier - escape cancel action
-        if (component.EscapeCancelAction is not { Valid: true })
-            _actions.AddAction(user, ref component.EscapeCancelAction, _escapeCancelAction);
     }
 
     private void OnEscape(EntityUid uid, CanEscapeInventoryComponent component, EscapeInventoryEvent args)
