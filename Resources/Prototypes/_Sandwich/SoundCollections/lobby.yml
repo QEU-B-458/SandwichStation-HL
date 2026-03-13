@@ -34,7 +34,25 @@
     - /Audio/_Sandwich/Lobby/backstab.ogg
     # End Lobby Songs
 
-# Sandwich - Xmas songs, uncomment to enable
-#    - /Audio/_Sandwich/Lobby/xmas/all_i_want_for_christmas.ogg
-#    - /Audio/_Sandwich/Lobby/xmas/jingle_bells.ogg
-# End Xmas
+    # Sandwich - Xmas songs, uncomment to enable
+    #- /Audio/_Sandwich/Lobby/xmas/all_i_want_for_christmas.ogg
+    #- /Audio/_Sandwich/Lobby/xmas/jingle_bells.ogg
+    # End Xmas
+
+    # SS14 "Vanilla" songs (Wizden)
+    - /Audio/Lobby/thunderdome.ogg
+    - /Audio/Lobby/absconditus.ogg
+    - /Audio/Lobby/space_asshole.ogg
+    - /Audio/Lobby/the_wizard.ogg
+    - /Audio/Lobby/endless_space.ogg
+    - /Audio/Lobby/singuloose.ogg
+    - /Audio/Lobby/comet_haley.ogg
+    - /Audio/Lobby/title2.ogg
+    - /Audio/Lobby/title3.ogg
+    - /Audio/Lobby/mod.flip-flap.ogg
+    - /Audio/Lobby/Spac_Stac.ogg
+    - /Audio/Lobby/pwmur.ogg
+    - /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg
+    - /Audio/Lobby/every_light_is_blinking_at_once.ogg
+    - /Audio/Lobby/atomicamnesiammx.ogg
+    # End SS14 "Vanilla" Songs
