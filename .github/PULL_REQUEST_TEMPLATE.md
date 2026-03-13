@@ -19,7 +19,7 @@ Small fixes/refactors are exempt. Media may be used in SS14 progress reports wit
 - [ ] I have read and am following the [Pull Request and Changelog Guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
 - [ ] I have added media to this PR or it does not require an ingame showcase.
 - Either:
-- [ ] I have given credit the right people in the right [attributions.yml (example)](https://github.com/SandwichStation/SandwichStation/blob/master/Resources/Audio/_ShibaStation/Lobby/attributions.yml) file
+- [ ] I have given credit the right people in the right [attributions.yml (example)](https://github.com/SandwichStation/SandwichStation-HL/blob/master/Resources/Audio/_ShibaStation/Lobby/attributions.yml) file
 - [ ] I own the rights to the added content
 <!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
 
