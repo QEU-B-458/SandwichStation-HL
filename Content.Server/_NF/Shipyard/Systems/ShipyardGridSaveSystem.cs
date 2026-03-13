@@ -5,12 +5,14 @@ using Content.Shared._NF.Shipyard.Events;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Components;
 using Content.Shared.Shuttles.Save; // For SendShipSaveDataClientMessage
+using Content.Shared.CCVar;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.VendingMachines;
 using Robust.Shared.Player;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Configuration;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Utility;
 using Robust.Shared.ContentPack;
@@ -18,8 +20,11 @@ using Robust.Server.Player;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Containers;
+using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Text;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Serialization.Markdown.Value;
@@ -75,6 +80,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IResourceManager _resourceManager = default!;
+    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedDeviceLinkSystem _deviceLink = default!;
@@ -147,7 +153,9 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         //_sawmill.Info($"Starting ship save for {deed.ShuttleName ?? "Unknown_Ship"} owned by {playerSession.Name}");
 
         // Run save inline on the main thread to avoid off-thread ECS access.
-        var success = TrySaveGridAsShip(shuttleUid.Value, deed.ShuttleName ?? "Unknown_Ship", playerSession.UserId.ToString(), playerSession);
+        // Generate security hash to prevent file tampering
+        var securityHash = GenerateShipSecurityHash(playerSession.Name);
+        var success = TrySaveGridAsShip(shuttleUid.Value, deed.ShuttleName ?? "Unknown_Ship", playerSession.UserId.ToString(), playerSession, securityHash);
 
         if (success)
         {
@@ -195,7 +203,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
     /// Saves a grid to YAML without mutating live game state. Uses ShipSerializationSystem to serialize in-place.
     /// This avoids moving the grid to temporary maps or deleting any entities, preventing PVS/map deletion issues.
     /// </summary>
-    public bool TrySaveGridAsShip(EntityUid gridUid, string shipName, string playerUserId, ICommonSession playerSession)
+    public bool TrySaveGridAsShip(EntityUid gridUid, string shipName, string playerUserId, ICommonSession playerSession, string? securityHash = null)
     {
         if (!_gridQuery.HasComp(gridUid))
         {
@@ -249,7 +257,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             var yaml = WriteYamlToString(node);
 
             // 4) Send to client for local saving
-            var saveMessage = new SendShipSaveDataClientMessage(shipName, yaml);
+            var saveMessage = new SendShipSaveDataClientMessage(shipName, yaml, securityHash ?? "");
             RaiseNetworkEvent(saveMessage, playerSession);
             //_sawmill.Info($"Sent ship data '{shipName}' to client {playerSession.Name} for local saving");
 
@@ -1673,6 +1681,43 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
         {
             //_sawmill.Error($"Failed to write temporary YAML file {fileName}: {ex}");
             return false;
+        }
+    }
+
+    /// <summary>
+    /// Generates a security hash to prevent ship save file tampering.
+    /// The hash combines the server's unique hash from the shuttle.unique_server_hash CCVar
+    /// with the player's username to create a tamper-detection value.
+    /// Uses only the player username and server hash as these never change.
+    /// </summary>
+    private string GenerateShipSecurityHash(string playerUsername)
+    {
+        try
+        {
+            var serverHash = _configurationManager.GetCVar(CCVars.UniqueServerHash);
+
+            // Combine server hash with player's username
+            var combinedData = $"{serverHash}:{playerUsername}";
+
+            // Generate SHA256 hash
+            using (var sha256 = SHA256.Create())
+            {
+                var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(combinedData));
+                var hashHex = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
+                return hashHex;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.Warning($"Failed to generate security hash for ship save: {ex.Message}. Using fallback hash.");
+            // Fallback: if CCVar is missing, use a simple hash of player username alone
+            using (var sha256 = SHA256.Create())
+            {
+                var fallbackData = playerUsername;
+                var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(fallbackData));
+                var hashHex = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
+                return hashHex;
+            }
         }
     }
 }

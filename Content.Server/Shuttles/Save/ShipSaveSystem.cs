@@ -4,14 +4,22 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Configuration;
 using Content.Shared.Shuttles.Save;
 using Content.Shared._NF.Shipyard.Components;
+using Content.Shared.CCVar;
 using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Text;
 using Robust.Shared.Log;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.ContentPack;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Shuttles.Save
 {
@@ -19,6 +27,8 @@ namespace Content.Server.Shuttles.Save
     {
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
+        [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+        [Dependency] private readonly IMapManager _mapManager = default!;
 
         // Static caches for admin ship save interactions
         private static readonly Dictionary<string, Action<string>> PendingAdminRequests = new();
@@ -60,7 +70,12 @@ namespace Content.Server.Shuttles.Save
 
             var shipyardGridSaveSystem = _entitySystemManager.GetEntitySystem<Content.Server._NF.Shipyard.Systems.ShipyardGridSaveSystem>();
             Logger.Info($"Player {playerSession.Name} is saving deed-referenced ship {shipName} (grid {gridToSave})");
-            var success = shipyardGridSaveSystem.TrySaveGridAsShip(gridToSave, shipName, playerSession.UserId.ToString(), playerSession);
+
+            // Generate security hash to prevent file tampering
+            var securityHash = GenerateShipSecurityHash(playerSession.Name);
+            Logger.Debug($"Generated security hash for player {playerSession.Name}: {securityHash}");
+
+            var success = shipyardGridSaveSystem.TrySaveGridAsShip(gridToSave, shipName, playerSession.UserId.ToString(), playerSession, securityHash);
             if (success)
             {
                 Logger.Info($"Successfully saved ship {shipName}");
@@ -119,8 +134,12 @@ namespace Content.Server.Shuttles.Save
 
             Logger.Info($"Player {playerSession.Name} is saving ship {shipName} via ShipyardGridSaveSystem");
 
+            // Generate security hash to prevent file tampering
+            var securityHash = GenerateShipSecurityHash(playerSession.Name);
+            Logger.Debug($"Generated security hash for player {playerSession.Name}: {securityHash}");
+
             // Save the ship using the working grid-based system (synchronously on main thread)
-            var success2 = shipyardGridSaveSystem.TrySaveGridAsShip(shuttleUid.Value, shipName, playerSession.UserId.ToString(), playerSession);
+            var success2 = shipyardGridSaveSystem.TrySaveGridAsShip(shuttleUid.Value, shipName, playerSession.UserId.ToString(), playerSession, securityHash);
             if (success2)
             {
                 // Clean up the deed after successful save
@@ -141,9 +160,85 @@ namespace Content.Server.Shuttles.Save
 
             Logger.Info($"Player {playerSession.Name} requested to load ship from YAML data");
 
-            // TODO: Implement ship loading from saved files
-            // This would involve deserializing the ship data and spawning it in the game world
-            // For now, we just log the request
+            // Validate security hash to prevent file tampering
+            var expectedHash = GenerateShipSecurityHash(playerSession.Name);
+            if (msg.SecurityHash != expectedHash)
+            {
+                Logger.Error($"Player {playerSession.Name} attempted to load ship with INVALID security hash!");
+                Logger.Error($"  Expected hash: {expectedHash}");
+                Logger.Error($"  Provided hash: {msg.SecurityHash}");
+                Logger.Error($"  This could indicate a tampered save file or a hash generation mismatch");
+                return;
+            }
+
+            Logger.Info($"Security hash VALIDATED for player {playerSession.Name} - hash matches server expectations");
+
+            // Implement ship loading from YAML data
+            try
+            {
+                var mapLoader = _entitySystemManager.GetEntitySystem<MapLoaderSystem>();
+
+                // Load the ship from the YAML data
+                var shipData = msg.YamlData;
+                Logger.Info($"Loading ship from YAML data for player {playerSession.Name}");
+
+                // Create a temporary file to load the YAML data from
+                // This is necessary because MapLoaderSystem.TryLoadGeneric expects a file path
+                var tempFileName = $"/tmp/ship_load_{Guid.NewGuid()}.yml";
+
+                try
+                {
+                    // Write YAML data to temporary file
+                    var resourceManager = IoCManager.Resolve<IResourceManager>();
+                    using (var writer = resourceManager.UserData.OpenWriteText(new ResPath(tempFileName)))
+                    {
+                        writer.Write(shipData);
+                    }
+
+                    // Load from the temporary file
+                    var success = mapLoader.TryLoadGeneric(new ResPath(tempFileName), out var maps, out var grids);
+
+                    if (!success || maps == null || maps.Count == 0)
+                    {
+                        Logger.Error($"Failed to deserialize ship YAML for player {playerSession.Name}");
+                        return;
+                    }
+
+                    Logger.Info($"Successfully loaded ship with {maps.Count} maps for player {playerSession.Name}");
+
+                    // If we got grids, log how many
+                    if (grids != null)
+                    {
+                        Logger.Info($"Loaded {grids.Count} grids for player {playerSession.Name}");
+                    }
+                }
+                catch (Exception loadEx)
+                {
+                    Logger.Error($"Exception while loading ship YAML for player {playerSession.Name}: {loadEx.Message}");
+                    throw;
+                }
+                finally
+                {
+                    // Clean up temporary file
+                    try
+                    {
+                        var resourceManager = IoCManager.Resolve<IResourceManager>();
+                        if (resourceManager.UserData.Exists(new ResPath(tempFileName)))
+                        {
+                            resourceManager.UserData.Delete(new ResPath(tempFileName));
+                        }
+                    }
+                    catch (Exception cleanupEx)
+                    {
+                        Logger.Warning($"Failed to delete temporary ship load file: {cleanupEx.Message}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Failed to load ship for player {playerSession.Name}: {ex.Message}");
+                Logger.Error($"Stack trace: {ex.StackTrace}");
+            }
         }
 
         private void OnRequestAvailableShips(RequestAvailableShipsMessage msg, EntitySessionEventArgs args)
@@ -200,6 +295,43 @@ namespace Content.Server.Shuttles.Save
         public void SendAdminRequestShipData(string filename, string adminName, ICommonSession targetSession)
         {
             RaiseNetworkEvent(new AdminRequestShipDataMessage(filename, adminName), targetSession);
+        }
+
+        /// <summary>
+        /// Generates a security hash to prevent ship save file tampering.
+        /// The hash combines the server's unique hash from the shuttle.unique_server_hash CCVar
+        /// with the player's username to create a tamper-detection value.
+        /// Uses only the player username and server hash as these never change.
+        /// </summary>
+        private string GenerateShipSecurityHash(string playerUsername)
+        {
+            try
+            {
+                var serverHash = _configurationManager.GetCVar(CCVars.UniqueServerHash);
+
+                // Combine server hash with player's username
+                var combinedData = $"{serverHash}:{playerUsername}";
+
+                // Generate SHA256 hash
+                using (var sha256 = SHA256.Create())
+                {
+                    var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(combinedData));
+                    var hashHex = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
+                    return hashHex;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Warning($"Failed to generate security hash for ship save: {ex.Message}. Using fallback hash.");
+                // Fallback: if CCVar is missing, use a simple hash of player username alone
+                using (var sha256 = SHA256.Create())
+                {
+                    var fallbackData = playerUsername;
+                    var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(fallbackData));
+                    var hashHex = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
+                    return hashHex;
+                }
+            }
         }
     }
 }

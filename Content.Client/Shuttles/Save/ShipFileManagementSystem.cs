@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Robust.Shared.Log;
 using Robust.Shared.ContentPack;
+using YamlDotNet.RepresentationModel;
+using YamlDotNet.Core;
+using System.IO;
 // Alias not needed; type is available via using Content.Shared.Shuttles.Save
 
 namespace Content.Client.Shuttles.Save
@@ -90,8 +93,11 @@ namespace Content.Client.Shuttles.Save
 
             try
             {
+                // Embed the security hash into the YAML file using proper YAML parsing
+                var yamlWithHash = EmbedSecurityHashInYaml(message.ShipData, message.SecurityHash);
+
                 using var writer = _resourceManager.UserData.OpenWriteText(new(fileName));
-                writer.Write(message.ShipData);
+                writer.Write(yamlWithHash);
                 Logger.Info($"Saved ship {message.ShipName} to user data: {fileName}");
             }
             catch (Exception ex)
@@ -111,6 +117,61 @@ namespace Content.Client.Shuttles.Save
 
             // Trigger UI update
             ShipsUpdated?.Invoke();
+        }
+
+        /// <summary>
+        /// Embeds the security hash into the YAML metadata section using proper YAML parsing.
+        /// Adds a "securityHash" field to the meta section at the top of the YAML file.
+        /// This replaces the fragile string-splitting approach to handle line endings and structure correctly.
+        /// </summary>
+        private string EmbedSecurityHashInYaml(string yamlData, string securityHash)
+        {
+            if (string.IsNullOrEmpty(securityHash))
+            {
+                // If no hash provided, return data as-is
+                return yamlData;
+            }
+
+            try
+            {
+                // Parse YAML properly using YamlDotNet
+                var stream = new YamlStream();
+                using var reader = new StringReader(yamlData);
+                stream.Load(reader);
+
+                // Access the root document
+                if (stream.Documents.Count == 0)
+                {
+                    Logger.Warning("YAML document is empty, returning original data");
+                    return yamlData;
+                }
+
+                var document = stream.Documents[0];
+                if (document.RootNode is YamlMappingNode root)
+                {
+                    // Ensure 'meta' exists
+                    if (!root.Children.ContainsKey("meta"))
+                    {
+                        root.Add("meta", new YamlMappingNode());
+                    }
+
+                    var metaNode = (YamlMappingNode)root["meta"];
+
+                    // Add securityHash
+                    metaNode.Add("securityHash", new YamlScalarNode(securityHash));
+                }
+
+                // Serialize back to string
+                using var writer = new StringWriter();
+                stream.Save(new YamlMappingFix(new Emitter(writer)), false);
+                return writer.ToString();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Failed to embed security hash via YAML parsing: {ex.Message}. Falling back to original data.");
+                // Fallback: return original data if parsing fails to prevent data loss
+                return yamlData;
+            }
         }
 
         private void HandleAvailableShipsMessage(SendAvailableShipsMessage message)
@@ -199,7 +260,9 @@ namespace Content.Client.Shuttles.Save
             var yamlData = await GetShipYamlData(filePath);
             if (yamlData != null)
             {
-                RaiseNetworkEvent(new RequestLoadShipMessage(yamlData));
+                // Extract the security hash from the YAML data
+                var securityHash = ExtractSecurityHashFromYaml(yamlData);
+                RaiseNetworkEvent(new RequestLoadShipMessage(yamlData, securityHash));
 
                 // Extract ship name for the event (extract filename without path and extension)
                 var shipName = ExtractFileNameWithoutExtension(filePath);
@@ -207,6 +270,7 @@ namespace Content.Client.Shuttles.Save
             }
             await Task.CompletedTask;
         }
+
 
         public async Task<string?> GetShipYamlData(string filePath)
         {
