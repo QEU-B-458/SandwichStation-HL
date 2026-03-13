@@ -77,7 +77,7 @@
         alwaysFaceTarget: true
         inRangeMaxSpeed: 4
         avoidProjectiles: true
-        range: 750
+        range: 500
         rangeTolerance: 150
         targetKey: TargetCoordinates
     - !type:HTNPrimitiveTask
