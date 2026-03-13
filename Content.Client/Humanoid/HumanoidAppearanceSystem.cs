@@ -1,6 +1,4 @@
 using System.Numerics;
-using Content.Client._Common.Consent;
-using Content.Shared._Common.Consent;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -17,10 +15,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
-    [Dependency] private readonly IClientConsentManager _consentManager = default!; // Hardlight
     [Dependency] private readonly SpriteSystem _sprite = default!;
-
-    private static readonly ProtoId<ConsentTogglePrototype> GenitalMarkingsConsent = "GenitalMarkings"; // Hardlight
 
     public override void Initialize()
     {
@@ -28,8 +23,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         SubscribeLocalEvent<HumanoidAppearanceComponent, AfterAutoHandleStateEvent>(OnHandleState);
         SubscribeLocalEvent<HumanoidAppearanceComponent, AppearanceChangeEvent>(OnAppearanceChange);
-
-        _consentManager.OnServerDataLoaded += OnConsentChanged;
     }
 
     private void OnHandleState(EntityUid uid, HumanoidAppearanceComponent component, ref AfterAutoHandleStateEvent args)
@@ -402,114 +395,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         visible &= !humanoid.HiddenMarkings.Contains(markingPrototype.ID); // FLOOF ADD
         // FLOOF ADD END
-
-        // Hardlight: genital markings consent toggle
-        if (!(_consentManager.GetConsentSettings().Toggles.TryGetValue(GenitalMarkingsConsent, out var val) && val == "on"))
-        {
-            visible &= markingPrototype.MarkingCategory != MarkingCategories.Genital;
-        }
-
-        for (var j = 0; j < markingPrototype.Sprites.Count; j++)
-        {
-            var markingSprite = markingPrototype.Sprites[j];
-
-            if (markingSprite is not SpriteSpecifier.Rsi rsi)
-            {
-                continue;
-            }
-
-            // FLOOF CHANGE START
-            var layerSlot = markingPrototype.BodyPart;
-            // first, try to see if there are any custom layers for this marking
-            if (markingPrototype.Layering != null)
-            {
-                var name = rsi.RsiState;
-                if (markingPrototype.Layering.TryGetValue(name, out var layerName))
-                {
-                    layerSlot = Enum.Parse<HumanoidVisualLayers>(layerName);
-                }
-            }
-            // update the layerDict
-            // if it doesnt have this, add it at 0, otherwise increment it
-            if (layerDict.TryGetValue(layerSlot.ToString(), out var layerIndex))
-            {
-                layerDict[layerSlot.ToString()] = layerIndex + 1;
-            }
-            else
-            {
-                layerDict.Add(layerSlot.ToString(), 0);
-            }
-
-            if (!sprite.LayerMapTryGet(layerSlot, out var targetLayer))
-            {
-                continue;
-            }
-
-            visible &= !IsHidden(humanoid, markingPrototype.BodyPart);
-            visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
-               && setting.AllowsMarkings;
-
-            var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
-            // FLOOF CHANGE END
-
-            if (!_sprite.LayerMapTryGet((uid, sprite), layerId, out _ , false))
-            {
-                // for layers that are supposed to be behind everything,
-                // adding 1 to the layer index makes it not be behind
-                // everything. fun! FLOOF ADD =3
-                // var targLayerAdj = targetLayer == 0 ? 0 + j : targetLayer + j + 1;
-                var targLayerAdj = targetLayer + layerDict[layerSlot.ToString()] + 1;
-                var layer = _sprite.AddLayer((uid, sprite), markingSprite, targLayerAdj);
-                _sprite.LayerMapSet((uid, sprite), layerId, layer);
-                _sprite.LayerSetSprite((uid, sprite), layerId, rsi);
-            }
-            // impstation edit begin - check if there's a shader defined in the markingPrototype's shader datafield, and if there is...
-            if (!string.IsNullOrWhiteSpace(markingPrototype.Shader))
-            {
-                sprite.LayerSetShader(layerId, markingPrototype.Shader);
-            }
-            // impstation edit end
-            _sprite.LayerSetVisible((uid, sprite), layerId, visible);
-
-            if (!visible || setting == null) // this is kinda implied
-            {
-                continue;
-            }
-
-            // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
-            // and we need to check the index is correct.
-            // So if that happens just default to white?
-            // FLOOF ADD =3
-            _sprite.LayerSetColor((uid, sprite), layerId, colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
-
-            // FLOOF CHANGE
-            // if (colors != null && j < colors.Count)
-            // {
-            //     sprite.LayerSetColor(layerId, colors[j]);
-            // }
-            // else
-            // {
-            //     sprite.LayerSetColor(layerId, Color.White);
-            // }
-
-            // Starlight start, # HardLight: Not really sure why it broke, but it had to be rewritten to work again, so here we are.
-                if (isGlowing)
-                {
-                    sprite.LayerSetShader(layerId, SpriteSystem.UnshadedId.Id);
-                }
-                else if (!string.IsNullOrWhiteSpace(markingPrototype.Shader))
-                {
-                    sprite.LayerSetShader(layerId, markingPrototype.Shader);
-                }
-                else
-                {
-                    if (_sprite.LayerMapTryGet((uid, sprite), layerId, out var shaderLayerIndex, false))
-                    {
-                        sprite.LayerSetShader(shaderLayerIndex, null, null);
-                    }
-                }
-            // Starlight end
-        }
     }
 
     public override void SetSkinColor(EntityUid uid, Color skinColor, bool sync = true, bool verify = true, HumanoidAppearanceComponent? humanoid = null)

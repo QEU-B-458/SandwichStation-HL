@@ -44,10 +44,6 @@ namespace Content.Server.Medical
         /// </summary>
         public void Vomit(EntityUid uid, float thirstAdded = -40f, float hungerAdded = -40f)
         {
-            // Floofstation - Vore
-            if (TryComp<VoreComponent>(uid, out var vore))
-                _containerSystem.EmptyContainer(vore.Stomach);
-
             // Main requirement: You have a stomach
             var stomachList = _body.GetBodyOrganEntityComps<StomachComponent>(uid);
             if (stomachList.Count == 0)

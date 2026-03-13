@@ -398,9 +398,7 @@ public sealed class SuitSensorSystem : EntitySystem
         // check if sensor is enabled and worn by user
         // Frontier: sensors work off grids
         if (sensor.Mode == SuitSensorMode.SensorOff
-            || sensor.User == null
-            || !HasComp<MobStateComponent>(sensor.User) // vored? hide from pesky medics
-            || HasComp<VoredComponent>(sensor.User)) // || transform.GridUid == null
+            || sensor.User == null)
             return null;
         // End Frontier
 
