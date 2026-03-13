@@ -220,8 +220,6 @@
   - type: Emoting
   - type: BodyEmotes
     soundsId: GeneralBodyEmotes
-  - type: SexEmotes
-    soundsId: LewdSounds
   - type: Grammar
     attributes:
       proper: true
@@ -237,7 +235,6 @@
     - AnomalyHost
   - type: Targeting # Shitmed Change
   - type: SurgeryTarget # Shitmed Change
-  - type: ModifyMarkings # Hardlight
   - type: ExaminableCharacter # WWDP
   - type: PseudoItem # Hardlight change, technically cribbed from Den
     shape:
