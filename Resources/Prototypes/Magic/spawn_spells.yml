@@ -40,10 +40,10 @@
 - type: entity
   id: ActionSpawnCumSpell
   name: Summon Fluids
-  description: This spell summons a vast body of fluids.
+  description: This spell summons a vast body of glue.
   components:
   - type: WorldTargetAction
-    useDelay: 35
+    useDelay: 120
     range: 4
     itemIconStyle: BigAction
     icon:
@@ -398,10 +398,10 @@
       drink:
         maxVol: 1
         reagents:
-        - ReagentId: Cum
+        - ReagentId: SpaceGlue
           Quantity: 501
   - type: TimedDespawn
-    lifetime: 0
+    lifetime: 60
 
 - type: entity
   id: WizardBucketC

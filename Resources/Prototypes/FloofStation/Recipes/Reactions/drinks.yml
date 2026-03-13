@@ -61,7 +61,7 @@
       amount: 1
     BlueCuracao:
       amount: 1
-    Cum:
+    SpaceGlue:
       amount: 1
   products:
     BandE: 3
@@ -69,7 +69,7 @@
 - type: reaction
   id: NikkosCumLust
   reactants:
-    Cum:
+    SpaceGlue:
       amount: 4
     Pomelustine:
       amount: 3
@@ -177,7 +177,7 @@
   reactants:
     Blood:
       amount: 2
-    Cum:
+    SpaceGlue:
       amount: 1
     Pomelustine:
       amount: 2
@@ -203,7 +203,7 @@
   reactants:
     Cream:
       amount: 1
-    Cum:
+    SpaceGlue:
       amount: 1
     RootBeer:
       amount: 1
@@ -239,7 +239,7 @@
   reactants:
     CapsaicinOil:
       amount: 1
-    Cum:
+    SpaceGlue:
       amount: 1
     JuiceOrange:
       amount: 1
@@ -349,7 +349,7 @@
 - type: reaction
   id: KoboldKorkscrew
   reactants:
-    Cum:
+    SpaceGlue:
       amount: 1
     JuiceOrange:
       amount: 1
@@ -411,7 +411,7 @@
 - type: reaction
   id: CreamBar
   reactants:
-    Cum:
+    SpaceGlue:
       amount: 1
     HotCocoa:
       amount: 1
@@ -461,7 +461,7 @@
 - type: reaction
   id: OrgasmOnTheBeach
   reactants:
-    Cum:
+    SpaceGlue:
       amount: 1
     JuiceOrange:
       amount: 2
@@ -541,7 +541,7 @@
   reactants:
     Cream:
       amount: 1
-    Cum:
+    SpaceGlue:
       amount: 1
     IceCream:
       amount: 1
@@ -595,7 +595,7 @@
   reactants:
     Ale:
       amount: 2
-    Cum:
+    SpaceGlue:
       amount: 1
   products:
     SemenBomb: 3
@@ -603,7 +603,7 @@
 - type: reaction
   id: SemenHemorrhage
   reactants:
-    Cum:
+    SpaceGlue:
       amount: 1
     Grenadine:
       amount: 1
@@ -617,7 +617,7 @@
   reactants:
     Coffee:
       amount: 1
-    Cum:
+    SpaceGlue:
       amount: 1
     SodaWater:
       amount: 1
@@ -640,7 +640,7 @@
 - type: reaction
   id: Snowball
   reactants:
-    Cum:
+    SpaceGlue:
       amount: 1
     Ice:
       amount: 2
@@ -652,7 +652,7 @@
 - type: reaction
   id: SpecialSundae
   reactants:
-    Cum:
+    SpaceGlue:
       amount: 1
     IceCream:
       amount: 1
@@ -714,7 +714,7 @@
 - type: reaction
   id: WatermelonGinJizz
   reactants:
-    Cum:
+    SpaceGlue:
       amount: 1
     JuiceWatermelon:
       amount: 2
@@ -730,7 +730,7 @@
   reactants:
     Beer:
       amount: 1
-    Cum:
+    SpaceGlue:
       amount: 1
     Water:
       amount: 1

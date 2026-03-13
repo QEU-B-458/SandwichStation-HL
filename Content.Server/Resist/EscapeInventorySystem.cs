@@ -13,7 +13,6 @@ using Content.Server.Carrying; // Frontier
 using Content.Shared.Actions; // Frontier
 using Robust.Shared.Prototypes; // Frontier
 using Content.Shared.Movement.Systems; // Frontier
-using Content.Server.FloofStation;
 using Content.Shared.Contests;
 using Content.Shared.FloofStation; // Floofstation
 

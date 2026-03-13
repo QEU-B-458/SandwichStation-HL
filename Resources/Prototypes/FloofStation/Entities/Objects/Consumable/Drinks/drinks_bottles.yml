@@ -26,7 +26,7 @@
     solutions:
       drink:
         reagents:
-        - ReagentId: Cum
+        - ReagentId: SpaceGlue
           Quantity: 100
   - type: Label
     currentLabel: bottle'o'cum
