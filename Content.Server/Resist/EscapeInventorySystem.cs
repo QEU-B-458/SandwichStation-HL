@@ -30,6 +30,8 @@ public sealed class EscapeInventorySystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actions = default!; // Frontier: escape actions
     [Dependency] private readonly ContestsSystem _contests = default!;
 
+    private readonly EntProtoId _escapeCancelAction = "ActionCancelEscape";
+
     /// <summary>
     /// You can't escape the hands of an entity this many times more massive than you.
     /// </summary>
