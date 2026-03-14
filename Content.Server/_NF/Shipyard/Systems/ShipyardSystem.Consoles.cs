@@ -492,7 +492,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             // Fallback: write to a temp file and then load via purchase-from-file
             if (!loaded)
             {
-                loaded = TryPurchaseShuttleFromYamlData(uid, args.YamlData, out shuttleUidOut);
+                loaded = TryPurchaseShuttleFromYamlData(uid, args.YamlData, out shuttleUidOut, player);
             }
         }
         catch (Exception ex)
