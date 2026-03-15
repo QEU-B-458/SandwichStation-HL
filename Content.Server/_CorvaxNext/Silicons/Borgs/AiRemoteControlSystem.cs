@@ -12,13 +12,19 @@ using Content.Shared._CorvaxNext.Silicons.Borgs;
 using Content.Shared._CorvaxNext.Silicons.Borgs.Components;
 using Content.Shared.Actions;
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Damage;
 using Content.Shared.Mind;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Standing;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.StationAi;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
+using Content.Shared.Body.Part;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 
@@ -31,6 +37,9 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
     [Dependency] private readonly SharedStationAiSystem _stationAiSystem = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
 
     public override void Initialize()
@@ -44,21 +53,33 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
         SubscribeLocalEvent<StationAiHeldComponent, AiRemoteControllerComponent.RemoteDeviceActionMessage>(OnUiRemoteAction);
         SubscribeLocalEvent<StationAiHeldComponent, ToggleRemoteDevicesScreenEvent>(OnToggleRemoteDevicesScreen);
 
-        // When BORIS module is inserted/removed from a borg, add/remove AiRemoteControllerComponent
         SubscribeLocalEvent<AiRemoteBrainComponent, EntGotInsertedIntoContainerMessage>(OnBrainInserted);
         SubscribeLocalEvent<AiRemoteBrainComponent, EntGotRemovedFromContainerMessage>(OnBrainRemoved);
     }
 
     private void OnBrainInserted(EntityUid uid, AiRemoteBrainComponent component, EntGotInsertedIntoContainerMessage args)
     {
-        if (HasComp<BorgChassisComponent>(args.Container.Owner))
-            EnsureComp<AiRemoteControllerComponent>(args.Container.Owner);
+        var target = GetRemoteTarget(args.Container.Owner);
+        if (target != null)
+            EnsureComp<AiRemoteControllerComponent>(target.Value);
     }
 
     private void OnBrainRemoved(EntityUid uid, AiRemoteBrainComponent component, EntGotRemovedFromContainerMessage args)
     {
-        if (HasComp<BorgChassisComponent>(args.Container.Owner))
-            RemComp<AiRemoteControllerComponent>(args.Container.Owner);
+        var target = GetRemoteTarget(args.Container.Owner);
+        if (target != null)
+            RemComp<AiRemoteControllerComponent>(target.Value);
+    }
+
+    private EntityUid? GetRemoteTarget(EntityUid containerOwner)
+    {
+        if (HasComp<BorgChassisComponent>(containerOwner))
+            return containerOwner;
+
+        if (TryComp<BodyPartComponent>(containerOwner, out var bodyPart) && bodyPart.Body != null)
+            return bodyPart.Body.Value;
+
+        return null;
     }
 
     private void OnMapInit(Entity<AiRemoteControllerComponent> entity, ref MapInitEvent args)
@@ -138,6 +159,20 @@ public sealed class AiRemoteControlSystem : SharedAiRemoteControlSystem
         _mind.ControlMob(ai, entity);
         aiRemoteComp.AiHolder = ai;
         aiRemoteComp.LinkedMind = mindId;
+
+        if (TryComp<MobStateComponent>(entity, out var mobState) && _mobState.IsDead(entity, mobState))
+        {
+            if (_mobThreshold.TryGetThresholdForState(entity, MobState.Critical, out var critThreshold)
+                && TryComp<DamageableComponent>(entity, out var damageable)
+                && damageable.TotalDamage < critThreshold)
+            {
+                _mobState.ChangeMobState(entity, MobState.Alive, mobState);
+            }
+            else
+                return;
+        }
+
+        _standing.Stand(entity, force: true);
 
         stationAiHeldComp.CurrentConnectedEntity = entity;
 

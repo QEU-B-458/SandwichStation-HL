@@ -15,6 +15,9 @@
     - type: Examiner
     - type: AiRemoteBrain
     - type: BorgBrain
+    - type: Organ
+      slotId: brain
+    - type: Brain
     - type: Actions
     - type: Tag
       tags:
