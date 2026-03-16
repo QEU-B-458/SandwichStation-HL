@@ -36,26 +36,27 @@
   # priority: 10
   # text: "/ServerInfo/Guidebook/ServerRules/RoleTypes.xml"
 
-- type: guideEntry
-  id: DefaultRuleset
-  name: guide-entry-rules-core
-  ruleEntry: true
-  priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC0.xml"
-  children:
-  - RuleC1
-  - RuleC2
-  - RuleC3
-  - RuleC4
-  - RuleC5
-  - RuleC6
-  - RuleC7
-  - RuleC8
-  - RuleC9
-  - RuleC10
-  - RuleC11
-  - RuleC12
-  - RuleC13
+#- type: guideEntry # Sandwich: Disabled "DefaultRuleset" original, we dont need these
+  #id: DefaultRuleset
+  #name: guide-entry-rules-core
+  #ruleEntry: false
+  #priority: 10
+  #text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC0.xml" # Sandwich: Commented out original.
+  #children:
+  #- RuleC1
+  #- RuleC2
+  #- RuleC3
+  #- RuleC4
+  #- RuleC5
+  #- RuleC6
+  #- RuleC7
+  #- RuleC8
+  #- RuleC9
+  #- RuleC10
+  #- RuleC11
+  #- RuleC12
+  #- RuleC13
+
 # - type: guideEntry
   # id: RuleC1
   # name: guide-entry-rules-c1
