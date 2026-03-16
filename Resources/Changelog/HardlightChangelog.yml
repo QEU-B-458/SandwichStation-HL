@@ -1723,3 +1723,49 @@ Entries:
       message: Tweaked WT-550 top mags and ammo acceptance to take the mags.
   id: 186
   time: '2026-03-12T04:14:00.0000000+00:00'
+- author: Nikode16
+  changes:
+    - type: Add
+      message: Added the C.C.S Herzyn to Sec and ColSec Shipyards
+  id: 187
+  time: '2026-03-14T00:55:57.0000000+00:00'
+- author: IrkallaEpsilon
+  changes:
+    - type: Fix
+      message: 5.56 mm mags now are again at their regular 30 round capacity.
+    - type: Fix
+      message: 5.7x28mm toploader mag capacity reduced to 26 as initially intended.
+  id: 188
+  time: '2026-03-14T00:56:16.0000000+00:00'
+- author: Generic-Eagle
+  changes:
+    - type: Add
+      message: Added a new maints hallway to Eaglerock, among other changes.
+  id: 189
+  time: '2026-03-14T00:57:57.0000000+00:00'
+- author: TrylobyteWasTaken
+  changes:
+    - type: Tweak
+      message: >-
+        Shuttle speed is now capped at 50m/s instead of 75, owing to Hardlight
+        having a smaller 'play area' than Frontier or Monolith.
+    - type: Fix
+      message: Weapons fired while moving will now obey physics.
+    - type: Fix
+      message: >-
+        Mining Pulser projectile speed has been increased so you can't shoot
+        yourself with them.
+  id: 190
+  time: '2026-03-15T18:56:45.0000000+00:00'
+- author: Sully669
+  changes:
+    - type: Fix
+      message: Fixed interactions showing target/origin as their uid
+  id: 191
+  time: '2026-03-15T18:57:20.0000000+00:00'
+- author: Sully669
+  changes:
+    - type: Fix
+      message: fixed broken access for genetics and journalism
+  id: 192
+  time: '2026-03-15T18:57:41.0000000+00:00'
