@@ -1,18 +1,39 @@
-- type: guideEntry # Main page for the rules
-  id: SandwichRuleset
+- type: guideEntry
+  id: DefaultRuleset # DefaultRuleset = Default rules for non-setup servers
   name: "SandwichStation Rules"
-  priority: 1
+  ruleEntry: false # We dont need duplicate rules for the ones setting up the server correctly...
+  priority: -50 # Rules always come first!
   text: "/ServerInfo/_Sandwich/Guidebook/ServerRules/SandwichRules.xml"
   children:
   - SandwichCoreRules
   - SandwichRoleplayRules
   - SandwichJobExpectations
-  #- SandwichSiliconRules # Currently unsure why it duplicates entries, so disabled for now
+  - SOP
+  - SandwichSiliconRules
+
+- type: guideEntry # Main page for the rules
+  id: SandwichRuleset # Our ruleset as it should be setup with CCVar's
+  name: "SandwichStation Rules"
+  ruleEntry: true
+  priority: -50 # Rules always come first!
+  text: "/ServerInfo/_Sandwich/Guidebook/ServerRules/SandwichRules.xml"
+  children:
+  - SandwichCoreRules
+  - SandwichRoleplayRules
+  - SandwichJobExpectations
+  - SandwichSiliconRules
+
+- type: guideEntry
+  id: SandwichRuleChangelog
+  name: "Rules Changelog"
+  ruleEntry: true
+  priority: 1
+  text: "/ServerInfo/_Sandwich/Guidebook/ServerRules/SandwichRuleChangelog.xml"
 
 - type: guideEntry
   id: SandwichCoreRules
   name: "Core Rules"
-  priority: 1
+  priority: 2
   text: "/ServerInfo/_Sandwich/Guidebook/ServerRules/CoreRules/SandwichRuleCAll.xml"
   children:
   - SandwichRuleUA0
@@ -131,7 +152,7 @@
 - type: guideEntry # Roleplay rules
   id: SandwichRoleplayRules
   name: "Roleplay Rules"
-  priority: 2
+  priority: 3
   text: "/ServerInfo/_Sandwich/Guidebook/ServerRules/RoleplayRules/SandwichRuleRAll.xml"
   children:
   - SandwichRuleR1
@@ -257,7 +278,7 @@
 - type: guideEntry # Job expectations
   id: SandwichJobExpectations
   name: "Job Expectations"
-  priority: 3
+  priority: 4
   text: "/ServerInfo/_Sandwich/Guidebook/ServerRules/JobExpectations/_JobExMain.xml"
   children:
   - SandwichJobExCommandBSO

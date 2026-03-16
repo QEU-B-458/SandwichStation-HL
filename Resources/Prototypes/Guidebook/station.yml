@@ -24,8 +24,9 @@
 - type: guideEntry
   id: SOP
   name: Standard Operating Procedures
+  ruleEntry: false # Sandwich: We dont need these to showup as their own thing
   text: "/ServerInfo/_HL/Guidebook/SoP/SoP.xml"
-  priority: 1 # Frontier
+  #priority: 1 # Sandwich: We dont need these at the top
   children:
   - AlertLevels
 
