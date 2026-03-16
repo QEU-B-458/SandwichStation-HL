@@ -170,6 +170,24 @@
   name: Church of the Shattered Stars
   color: "#8A0303" # crimson
   
+- type: company
+  id: MARR
+  form: Protagonist
+  name: Dusk Enclave
+  color: "#ff930a" # Orange
+  
+- type: company
+  id: GOLD
+  form: Protagonist
+  name: Golden Flotilla
+  color: "#EDA500" # Gold
+  
+- type: company
+  id: UNSA
+  form: Protagonist
+  name: United Nation Sectors of America
+  color: "#89CFF0" # Light Blue
+  
 # ====Rogue / Antag. Companies====
 - type: company
   id: TheViperGroup
@@ -193,6 +211,12 @@
   - Traildog
 
 - type: company
+  id: SIN
+  form: Antagonist
+  name: Solaris Intelligence Network
+  color: "#b80b0b" # bright blood red
+
+- type: company
   id: USSP
   form: Antagonist
   name: Union of Soviet Socialist Planets
@@ -211,6 +235,7 @@
   form: Antagonist
   name: Animal Rights Consortium
   color: "#65BEDB" # sky blue
+  disabled: true # Locked per lore.
 
 - type: company
   id: Gorlex
