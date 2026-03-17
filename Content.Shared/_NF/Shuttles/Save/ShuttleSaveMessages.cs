@@ -21,11 +21,13 @@ namespace Content.Shared.Shuttles.Save
     {
         public string ShipName { get; }
         public string ShipData { get; }
+        public string SecurityHash { get; }
 
-        public SendShipSaveDataClientMessage(string shipName, string shipData)
+        public SendShipSaveDataClientMessage(string shipName, string shipData, string securityHash)
         {
             ShipName = shipName;
             ShipData = shipData;
+            SecurityHash = securityHash;
         }
     }
 
@@ -33,10 +35,12 @@ namespace Content.Shared.Shuttles.Save
     public sealed class RequestLoadShipMessage : EntityEventArgs
     {
         public string YamlData { get; }
+        public string SecurityHash { get; }
 
-        public RequestLoadShipMessage(string yamlData)
+        public RequestLoadShipMessage(string yamlData, string securityHash)
         {
             YamlData = yamlData;
+            SecurityHash = securityHash;
         }
     }
 

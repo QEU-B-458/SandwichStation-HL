@@ -2,7 +2,7 @@ using Content.Server.Shuttles.Systems;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Station.Components;
 using Content.Server.Cargo.Systems;
-using Robust.Shared.Timing; // For IGameTiming
+using Robust.Shared.Timing;
 using Content.Server.Station.Systems;
 using Content.Shared._NF.Shipyard.Components;
 using Content.Shared._NF.Shipyard;
@@ -20,13 +20,17 @@ using Robust.Shared.Containers;
 using Content.Server._NF.Station.Components;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Utility;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
+using Content.Shared.CCVar;
+using Content.Server.Chat.Managers;
 using Robust.Shared.ContentPack;
-using Content.Shared.Shuttles.Components; // For IFFComponent
+using Content.Shared.Shuttles.Components;
 using Content.Shared.Timing;
-using Content.Server.Gravity;
 using Robust.Shared.Physics;
 using Robust.Shared.Map.Components;
-using Robust.Shared.Physics.Components; // For GravitySystem
+using Robust.Shared.Physics.Components;
 
 namespace Content.Server._NF.Shipyard.Systems;
 
@@ -47,7 +51,8 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     [Dependency] private readonly SharedContainerSystem _container = default!; // For safe container removal before deletion
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly IGameTiming _timing = default!; // For cooldown timing
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
 
     private EntityQuery<TransformComponent> _transformQuery;
 
@@ -178,7 +183,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         var price = _pricing.AppraiseGrid(grid, null);
         var targetGrid = consoleXform.GridUid.Value;
 
-        //_sawmill.Info($"Shuttle {shuttlePath} was purchased at {ToPrettyString(consoleUid)} for {price:f2}");
+        _sawmill.Info($"Shuttle {shuttlePath} was purchased at {ToPrettyString(consoleUid)} for {price:f2}");
 
         // Ensure required components for docking and identification
         EntityManager.EnsureComponent<Robust.Shared.Physics.Components.PhysicsComponent>(grid);
@@ -227,7 +232,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
         var targetGrid = consoleXform.GridUid.Value;
 
-        //_sawmill.Info($"Shuttle loaded from file {shuttlePath} at {ToPrettyString(consoleUid)}");
+        _sawmill.Debug($"Shuttle loaded from file {shuttlePath} at {ToPrettyString(consoleUid)}");
 
         // Ensure required components for docking and identification
         EnsureComp<PhysicsComponent>(grid);
@@ -279,7 +284,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
         if (!_mapLoader.TryLoadGrid(ShipyardMap.Value, shuttlePath, out var grid, offset: new Vector2(500f + _shuttleIndex, 1f)))
         {
-            //_sawmill.Error($"Unable to spawn shuttle {shuttlePath}");
+            _sawmill.Error($"Unable to spawn shuttle {shuttlePath}");
             return false;
         }
 
@@ -292,13 +297,20 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     /// <summary>
     /// Writes YAML data to a temporary file and loads it using the exact same method as purchasing a shuttle from a file.
     /// Ensures identical setup/docking logic.
+    /// Validates the security hash before proceeding with deserialization.
     /// </summary>
-    private bool TryPurchaseShuttleFromYamlData(EntityUid consoleUid, string yamlData, [NotNullWhen(true)] out EntityUid? shuttleEntityUid)
+    private bool TryPurchaseShuttleFromYamlData(EntityUid consoleUid, string yamlData, [NotNullWhen(true)] out EntityUid? shuttleEntityUid, EntityUid? playerUid = null)
     {
         shuttleEntityUid = null;
         ResPath tempPath = default;
         try
         {
+            if (!ValidateShipHash(yamlData, playerUid))
+            {
+                _sawmill.Error("[SECURITY] Ship load REJECTED: Hash validation failed in TryPurchaseShuttleFromYamlData");
+                return false;
+            }
+
             // Create a temp path under UserData/ShipyardTemp
             var fileName = $"shipyard_load_{DateTime.UtcNow:yyyyMMdd_HHmmss_fff}_{Guid.NewGuid():N}.yml";
             var dir = new ResPath("/") / "UserData" / "ShipyardTemp";
@@ -319,7 +331,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
         catch (Exception ex)
         {
-            //_sawmill.Error($"Failed to purchase shuttle from YAML data: {ex.Message}");
+            _sawmill.Error($"[SECURITY] Exception in TryPurchaseShuttleFromYamlData: {ex.Message}");
             return false;
         }
         finally
@@ -425,9 +437,6 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
                 }
             }
         }
-
-        /* if (removed > 0)
-            _sawmill.Info($"[ShipLoad] Purged {removed} deserialized JointComponent(s) on grid {gridUid}"); */
     }
 
     /// <summary>
@@ -478,7 +487,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
         if (!isDocked)
         {
-            //_sawmill.Warning($"shuttle is not docked to the console's grid");
+            _sawmill.Warning($"shuttle is not docked to the console's grid");
             result.Error = ShipyardSaleError.Undocked;
             return result;
         }
@@ -489,7 +498,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         var charName = FoundOrganics(shuttleUid, mobQuery, xformQuery);
         if (charName is not null)
         {
-            //_sawmill.Warning($"organics on board");
+            _sawmill.Warning($"organics on board");
             result.Error = ShipyardSaleError.OrganicsAboard;
             result.OrganicName = charName;
             return result;
@@ -502,7 +511,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
         bill = (int)_pricing.AppraiseGrid(shuttleUid, LacksPreserveOnSaleComp);
         QueueDel(shuttleUid);
-        //_sawmill.Info($"Sold shuttle {shuttleUid} for {bill}");
+        _sawmill.Info($"Sold shuttle {shuttleUid} for {bill}");
 
         // Update all record UI (skip records, no new records)
         _shuttleRecordsSystem.RefreshStateForAll(true);
@@ -529,7 +538,9 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
     }
 
-    // checks if something has the ShipyardPreserveOnSaleComponent and if it does, adds it to the list
+    /// <summary>
+    /// Recursively finds entities with ShipyardSellConditionComponent that should be preserved during sale.
+    /// </summary>
     private void FindEntitiesToPreserve(EntityUid entity, ref List<EntityUid> output)
     {
         if (TryComp<ShipyardSellConditionComponent>(entity, out var comp) && comp.PreserveOnSale == true)
@@ -549,7 +560,9 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
     }
 
-    // returns false if it has ShipyardPreserveOnSaleComponent, true otherwise
+    /// <summary>
+    /// Returns true if the entity lacks the ShipyardSellConditionComponent or it's not marked for preservation.
+    /// </summary>
     private bool LacksPreserveOnSaleComp(EntityUid uid)
     {
         return !TryComp<ShipyardSellConditionComponent>(uid, out var comp) || comp.PreserveOnSale == false;
@@ -576,12 +589,11 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         _map.SetPaused(ShipyardMap.Value, false);
     }
 
-    // <summary>
-    // Tries to rename a shuttle deed and update the respective components.
-    // Returns true if successful.
-    //
-    // Null name parts are promptly ignored.
-    // </summary>
+    /// <summary>
+    /// Tries to rename a shuttle deed and update the respective components.
+    /// Returns true if successful.
+    /// Null name parts are promptly ignored.
+    /// </summary>
     public bool TryRenameShuttle(EntityUid uid, ShuttleDeedComponent? shuttleDeed, string? newName, string? newSuffix)
     {
         if (!Resolve(uid, ref shuttleDeed))
@@ -666,8 +678,128 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
         catch (Exception ex)
         {
-            _sawmill.Warning($"Failed to extract ship name from YAML: {ex}");
+            _sawmill.Error($"Failed to extract ship name from YAML: {ex}");
         }
         return null;
+    }
+
+    /// <summary>
+    /// Validates the security hash embedded in the ship YAML data.
+    /// CRITICAL SECURITY: This must be called BEFORE any deserialization occurs.
+    /// </summary>
+    /// <param name="yamlData">The YAML data to validate</param>
+    /// <param name="playerUid">Optional: The player attempting the load, for admin notifications</param>
+    /// <returns>True if hash is valid, false otherwise (including if hash is missing)</returns>
+    private bool ValidateShipHash(string yamlData, EntityUid? playerUid = null)
+    {
+        try
+        {
+            // 1. Extract the hash embedded in the YAML string
+            var extractedHash = ExtractHashFromYaml(yamlData);
+
+            // 2. Check if hash is missing (file was never properly saved or is from old version)
+            if (string.IsNullOrWhiteSpace(extractedHash))
+            {
+                _sawmill.Error($"[SECURITY] Ship load REJECTED: No security hash found in YAML. This file may have been tampered with or is from an unsupported version.");
+                NotifyAdminsOfSecurityEvent("No hash", playerUid);
+                return false;
+            }
+
+            // 3. Recalculate hash to detect content tampering
+            var serverSecret = _configManager.GetCVar(CCVars.UniqueServerHash);
+            var cleanData = RemoveHashFieldFromYaml(yamlData);
+
+            _sawmill.Debug($"[SECURITY] Clean YAML length: {cleanData.Length} bytes (original: {yamlData.Length} bytes)");
+            _sawmill.Debug($"[SECURITY] Bytes removed: {yamlData.Length - cleanData.Length}");
+
+            using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(serverSecret));
+            var recalculatedHash = BitConverter.ToString(
+                hmac.ComputeHash(Encoding.UTF8.GetBytes(cleanData))
+            ).Replace("-", "").ToLowerInvariant();
+
+            _sawmill.Debug($"[SECURITY] Extracted hash from file: {extractedHash}");
+            _sawmill.Debug($"[SECURITY] Recalculated hash:         {recalculatedHash}");
+            _sawmill.Debug($"[SECURITY] Hashes match: {extractedHash.Equals(recalculatedHash, StringComparison.OrdinalIgnoreCase)}");
+
+            // 4. The CRITICAL check: extracted hash must match recalculated hash
+            // If they don't match, the file has been tampered with
+            if (!extractedHash.Equals(recalculatedHash, StringComparison.OrdinalIgnoreCase))
+            {
+                _sawmill.Error($"[SECURITY] Ship load REJECTED: File has been tampered with or corrupted!");
+                _sawmill.Debug($"[SECURITY]   Expected hash (from server calculation): {recalculatedHash}");
+                _sawmill.Debug($"[SECURITY]   Found hash (in file): {extractedHash}");
+                NotifyAdminsOfSecurityEvent("Hash mismatch", playerUid);
+                return false;
+            }
+
+            _sawmill.Debug($"[SECURITY] ✓ Ship hash VALIDATED - proceeding with load");
+            return true;
+        }
+        catch (Exception ex)
+        {
+            _sawmill.Error($"[SECURITY] Exception during hash validation: {ex.Message}");
+            NotifyAdminsOfSecurityEvent("Exception during validation", playerUid);
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Extracts the security hash from the YAML string.
+    /// </summary>
+    private string ExtractHashFromYaml(string yamlData)
+    {
+        var match = Regex.Match(yamlData, @"securityHash:\s*""?([a-fA-F0-9]+)""?", RegexOptions.IgnoreCase);
+        return match.Success ? match.Groups[1].Value.ToLowerInvariant() : string.Empty;
+    }
+
+    /// <summary>
+    /// Removes the securityHash field from the YAML string to allow recalculation.
+    /// Handles all newline styles: Windows (\r\n), Unix (\n), and Mac (\r)
+    /// </summary>
+    private string RemoveHashFieldFromYaml(string yamlData)
+    {
+        // This regex explicitly handles:
+        // - Optional leading whitespace (^\s*)
+        // - The securityHash key and value
+        // - Any trailing whitespace
+        // - All newline styles: \r\n (Windows), \n (Unix), \r (old Mac)
+        return Regex.Replace(yamlData, 
+            @"^[ \t]*securityHash:[ \t]*[a-fA-F0-9]+[ \t]*(?:\r\n|\r|\n)?", 
+            "", 
+            RegexOptions.Multiline | RegexOptions.IgnoreCase);
+    }
+
+    /// <summary>
+    /// Notifies admins of a security event (modified ship load attempt).
+    /// Sends a simple, user-friendly message to all active admins.
+    /// </summary>
+    private void NotifyAdminsOfSecurityEvent(string detailedMessage, EntityUid? playerUid)
+    {
+        try
+        {
+            string playerName = "Unknown";
+            if (playerUid.HasValue && playerUid.Value.IsValid())
+            {
+                playerName = ToPrettyString(playerUid.Value);
+            }
+
+            string adminMessage;
+
+            // Differentiate between ships from other servers (no hash) vs actual tampering (hash mismatch)
+            if (detailedMessage == "No hash")
+            {
+                adminMessage = $"{playerName} is trying to import a ship not from this server";
+            }
+            else
+            {
+                adminMessage = $"{playerName} is trying to cheat by loading a modified ship";
+            }
+
+            _chatManager.SendAdminAlert(adminMessage);
+        }
+        catch (Exception ex)
+        {
+            _sawmill.Fatal($"Failed to notify admins of security event: {ex.Message}");
+        }
     }
 }

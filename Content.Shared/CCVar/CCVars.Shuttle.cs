@@ -195,6 +195,12 @@ public sealed partial class CCVars
     public static readonly CVarDef<float> GridImpulseMultiplier =
         CVarDef.Create("shuttle.grid_impulse_multiplier", 0.01f, CVar.SERVERONLY);
 
+    /// <summary>
+    ///     To prevent cheating the server will embed this hash into the player's saved shuttle/ship's file.
+    /// </summary>
+    public static readonly CVarDef<string> UniqueServerHash =
+        CVarDef.Create("shuttle.unique_server_hash", "U2FuZHdpY2hTZWN0b3I=", CVar.SERVERONLY);
+
     #region Orphaned Grid Cleanup
 
     /// <summary>
