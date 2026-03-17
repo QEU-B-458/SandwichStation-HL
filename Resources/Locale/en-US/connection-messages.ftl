@@ -1,4 +1,4 @@
-﻿cmd-whitelistadd-desc = Adds the player with the given username to the server whitelist.
+cmd-whitelistadd-desc = Adds the player with the given username to the server whitelist.
 cmd-whitelistadd-help = Usage: whitelistadd <username or User ID>
 cmd-whitelistadd-existing = {$username} is already on the whitelist!
 cmd-whitelistadd-added = {$username} added to the whitelist
@@ -58,8 +58,8 @@ baby-jail-account-reason-overall = Your overall playtime on the server must be y
 
 generic-misconfigured = The server is misconfigured and is not accepting players. Please contact the server owner and try again later.
 
-ipintel-server-ratelimited = This server uses a security system with external verification, which has reached its maximum verification limit. Please contact the administration team of the server for assistance and try again later.
-ipintel-unknown = This server uses a security system with external verification, but it encountered an error. Please contact the administration team of the server for assistance and try again later.
-ipintel-suspicious = You seem to be connecting through a datacenter or VPN. For administrative reasons we do not allow VPN connections to play. Please contact the administration team of the server for assistance if you believe this is false.
+ipintel-server-ratelimited = Sorry, there has been a flood of new players within the last minutes. To prevent mass-raids please try again later! (or join our discord: discord.gg/Z6JvtKw6tp)
+ipintel-unknown = This server uses a security system with extra verification, but it encountered an error. please join our discord! (discord.gg/Z6JvtKw6tp)
+ipintel-suspicious = You have been flagged for a suspicious connection. If you feel like this is  error, please join our discord (discord.gg/Z6JvtKw6tp)
 
 hwid-required = Your client has refused to send a hardware id. Please contact the administration team for further assistance.

@@ -1,18 +1,21 @@
-- type: guideEntry
-  id: HardlightShipyard
-  name: "Hardlight Shipyards"
-  text: "/ServerInfo/_HL/Guidebook/Shipyard.xml"
-  priority: 7
-  children:
-  - ShipyardBottle
-  - ShipyardVerdure
+# Sandwich: We dont need extra clutter
 
-- type: guideEntry
-  id: ShipyardBottle
-  name: "JDB Bottle"
-  text: "/ServerInfo/_HL/Guidebook/Shipyard/Bottle.xml"
-
-- type: guideEntry
-  id: ShipyardVerdure
-  name: "JDB Verdure"
-  text: "/ServerInfo/_HL/Guidebook/Shipyard/Verdure.xml"
+#- type: guideEntry
+#  id: HardlightShipyard
+#  name: "Hardlight Shipyards"
+#  text: "/ServerInfo/_HL/Guidebook/Shipyard.xml"
+#  priority: 7
+#  ruleEntry: false 
+#  children:
+#  - ShipyardBottle
+#  - ShipyardVerdure
+#
+#- type: guideEntry
+#  id: ShipyardBottle
+#  name: "JDB Bottle"
+#  text: "/ServerInfo/_HL/Guidebook/Shipyard/Bottle.xml"
+#
+#- type: guideEntry
+#  id: ShipyardVerdure
+#  name: "JDB Verdure"
+#  text: "/ServerInfo/_HL/Guidebook/Shipyard/Verdure.xml"
