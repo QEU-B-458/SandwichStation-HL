@@ -26,7 +26,7 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,19,9
+    - 0,0,9,4 #Sandwich: Limit size from 0,0,19,9
     blacklist:
       tags:
       - Admin
@@ -39,11 +39,12 @@
       - Cash
       - Headset
       - DnaSequenceInjector
+      - Contraband # SandwichStation: Contraband is blacklisted!
   - type: Construction
     graph: LockerWallBluespace
     node: done
   - type: HLPersistOnShipSave
-  - type: ShipyardSellCondition # Frontier: Teleport to shipyard console on sale
+  - type: ShipyardSellCondition
     preserveOnSale: true
 
 - type: entity
