@@ -113,7 +113,9 @@ public sealed class ShipyardConsoleBoundUserInterface : BoundUserInterface
         // Load ship YAML data and send via console-specific message
         try
         {
-            var yamlData = await _shipFileManagementSystem.GetShipYamlData(filePath);
+            // Always read from disk so any post-save modifications are seen by the server's
+            // hash validator instead of using the cached hash.
+            var yamlData = await _shipFileManagementSystem.GetShipYamlDataFromDisk(filePath);
             if (yamlData != null)
             {
                 // Send the load message through the console's BoundUserInterface system

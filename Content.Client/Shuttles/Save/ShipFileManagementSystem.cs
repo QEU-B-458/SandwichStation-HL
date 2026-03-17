@@ -242,6 +242,27 @@ namespace Content.Client.Shuttles.Save
             return yamlData;
         }
 
+        /// <summary>
+        /// Reads ship YAML data directly from the uploaded file, bypassing the in-memory cache.
+        /// Any mid-round changes are detected by server-side hash validation instead of using the cached hash.
+        /// </summary>
+        public async Task<string?> GetShipYamlDataFromDisk(string filePath)
+        {
+            try
+            {
+                using var reader = _resourceManager.UserData.OpenText(new(filePath));
+                var content = reader.ReadToEnd();
+                CachedShipData[filePath] = content;
+                return content;
+            }
+            catch (Exception ex)
+            {
+                _sawmill.Error($"Failed to read ship file from disk {filePath}: {ex.Message}");
+                return null;
+            }
+            await Task.CompletedTask;
+        }
+
         private void LoadExistingShips()
         {
             try

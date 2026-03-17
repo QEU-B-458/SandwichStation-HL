@@ -126,97 +126,16 @@ namespace Content.Server.Shuttles.Save
         private void OnRequestLoadShip(RequestLoadShipMessage msg, EntitySessionEventArgs args)
         {
             var playerSession = args.SenderSession;
-            if (playerSession == null) 
+            if (playerSession == null)
             {
                 _sawmill.Error("OnRequestLoadShip called but playerSession is null!");
                 return;
             }
 
-            _sawmill.Info($"Player {playerSession.Name} requested to load ship from YAML data");
-            _sawmill.Info($"[SECURITY] VALIDATION TRIGGERED - YAML data received, starting hash validation...");
-
-            // 1. Extract the hash embedded in the YAML string
-            var extractedHash = ExtractHashFromYaml(msg.YamlData);
-            _sawmill.Debug($"[SECURITY] Extracted hash from file: {extractedHash}");
-            _sawmill.Debug($"[SECURITY] Hash from message: {msg.SecurityHash}");
-
-            // 2. Check if hash is missing (file was never properly saved or is from old version)
-            if (string.IsNullOrWhiteSpace(extractedHash))
-            {
-                _sawmill.Error($"[SECURITY] Ship load REJECTED for {playerSession.Name}: No security hash found in YAML. This file may have been tampered with or is from an unsupported version.");
-                return; // Abort load
-            }
-
-            // 3. Recalculate hash to detect content tampering
-            var serverSecret = _configurationManager.GetCVar(CCVars.UniqueServerHash);
-            var cleanData = RemoveHashFieldFromYaml(msg.YamlData);
-
-            _sawmill.Debug($"[SECURITY] Clean YAML length: {cleanData.Length} bytes (original: {msg.YamlData.Length} bytes)");
-            _sawmill.Debug($"[SECURITY] Bytes removed: {msg.YamlData.Length - cleanData.Length}");
-
-            using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(serverSecret));
-            var recalculatedHash = BitConverter.ToString(
-                hmac.ComputeHash(Encoding.UTF8.GetBytes(cleanData))
-            ).Replace("-", "").ToLowerInvariant();
-
-            _sawmill.Debug($"[SECURITY] Extracted hash from file: {extractedHash}");
-            _sawmill.Debug($"[SECURITY] Recalculated hash:         {recalculatedHash}");
-            _sawmill.Debug($"[SECURITY] Hashes match: {extractedHash.Equals(recalculatedHash, StringComparison.OrdinalIgnoreCase)}");
-
-            // 4. The CRITICAL check: extracted hash must match recalculated hash
-            // If they don't match, the file has been tampered with
-            if (!extractedHash.Equals(recalculatedHash, StringComparison.OrdinalIgnoreCase))
-            {
-                _sawmill.Error($"[SECURITY] Ship load REJECTED for {playerSession.Name}: File has been tampered with or corrupted!");
-                _sawmill.Error($"[SECURITY]   Expected hash (from server calculation): {recalculatedHash}");
-                _sawmill.Error($"[SECURITY]   Found hash (in file): {extractedHash}");
-                return; // Abort load
-            }
-
-            _sawmill.Info($"[SECURITY] ✓ Ship hash VALIDATED for player {playerSession.Name} - proceeding with load");
-
-            try
-            {
-                var mapLoader = _entitySystemManager.GetEntitySystem<MapLoaderSystem>();
-                var shipData = msg.YamlData;
-                var tempFileName = $"/tmp/ship_load_{Guid.NewGuid()}.yml";
-
-                try
-                {
-                    var resourceManager = IoCManager.Resolve<IResourceManager>();
-                    using (var writer = resourceManager.UserData.OpenWriteText(new ResPath(tempFileName)))
-                    {
-                        writer.Write(shipData);
-                    }
-
-                    var success = mapLoader.TryLoadGeneric(new ResPath(tempFileName), out var maps, out var grids);
-                    if (!success || maps == null || maps.Count == 0)
-                    {
-                        _sawmill.Error($"Failed to deserialize ship YAML for player {playerSession.Name}");
-                        return;
-                    }
-                    _sawmill.Info($"Successfully loaded ship with {maps.Count} maps for player {playerSession.Name}");
-                }
-                catch (Exception loadEx)
-                {
-                    _sawmill.Error($"Exception while loading ship YAML: {loadEx.Message}");
-                    throw;
-                }
-                finally
-                {
-                    try
-                    {
-                        var resourceManager = IoCManager.Resolve<IResourceManager>();
-                        if (resourceManager.UserData.Exists(new ResPath(tempFileName)))
-                            resourceManager.UserData.Delete(new ResPath(tempFileName));
-                    }
-                    catch { }
-                }
-            }
-            catch (Exception ex)
-            {
-                _sawmill.Error($"Failed to load ship: {ex.Message}");
-            }
+            // RequestLoadShipMessage is not a valid load path — ships must be loaded through
+            // the shipyard console (ShipyardConsoleLoadMessage) which enforces payment, docking,
+            // and deed assignment. Reject all attempts here.
+            _sawmill.Warning($"[SECURITY] Player {playerSession.Name} sent RequestLoadShipMessage directly. are they cheating?.");
         }
 
         private void OnRequestAvailableShips(RequestAvailableShipsMessage msg, EntitySessionEventArgs args)
@@ -277,18 +196,16 @@ namespace Content.Server.Shuttles.Save
 
         /// <summary>
         /// Removes the securityHash field from the YAML string to allow recalculation.
-        /// Handles all newline styles: Windows (\r\n), Unix (\n), and old Mac (\r)
         /// </summary>
         private string RemoveHashFieldFromYaml(string yamlData)
         {
-            // Remove the entire line containing securityHash with proper newline handling
             // This regex explicitly handles:
             // - Optional leading whitespace (^\s*)
             // - The securityHash key and value
             // - Any trailing whitespace
             // - All newline styles: \r\n (Windows), \n (Unix), \r (old Mac)
             return Regex.Replace(yamlData, 
-                @"^\s*securityHash:\s*[a-fA-F0-9]+\s*(?:\r\n|\r|\n)?", 
+                @"^[ \t]*securityHash:[ \t]*[a-fA-F0-9]+[ \t]*(?:\r\n|\r|\n)?", 
                 "", 
                 RegexOptions.Multiline | RegexOptions.IgnoreCase);
         }

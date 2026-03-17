@@ -490,30 +490,11 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         }
         name ??= $"LoadedShip_{DateTime.Now:yyyyMMdd_HHmmss}";
 
-        // Attempt to load the shuttle using the exact purchase-from-file path.
-        // If the client provided a source file path under UserData, use it; otherwise, write YAML to a temp and load from there.
         EntityUid? shuttleUidOut = null;
         bool loaded = false;
         try
         {
-            if (!string.IsNullOrWhiteSpace(args.SourceFilePath))
-            {
-                // Normalize to a ResPath under /UserData
-                var norm = args.SourceFilePath!.Replace('\\', '/');
-                if (!norm.StartsWith("/"))
-                    norm = "/" + norm;
-                if (!norm.StartsWith("/UserData", StringComparison.OrdinalIgnoreCase))
-                    norm = "/UserData/" + norm.TrimStart('/');
-
-                var resPath = new ResPath(norm);
-                loaded = TryPurchaseShuttleFromFile(uid, resPath, out shuttleUidOut);
-            }
-
-            // Fallback: write to a temp file and then load via purchase-from-file
-            if (!loaded)
-            {
-                loaded = TryPurchaseShuttleFromYamlData(uid, args.YamlData, out shuttleUidOut, player);
-            }
+            loaded = TryPurchaseShuttleFromYamlData(uid, args.YamlData, out shuttleUidOut, player);
         }
         catch (Exception ex)
         {

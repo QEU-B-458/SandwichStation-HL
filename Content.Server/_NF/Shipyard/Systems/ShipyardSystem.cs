@@ -754,18 +754,17 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
 
     /// <summary>
     /// Removes the securityHash field from the YAML string to allow recalculation.
-    /// Handles all newline styles: Windows (\r\n), Unix (\n), and old Mac (\r)
+    /// Handles all newline styles: Windows (\r\n), Unix (\n), and Mac (\r)
     /// </summary>
     private string RemoveHashFieldFromYaml(string yamlData)
     {
-        // Remove the entire line containing securityHash with proper newline handling
         // This regex explicitly handles:
         // - Optional leading whitespace (^\s*)
         // - The securityHash key and value
         // - Any trailing whitespace
         // - All newline styles: \r\n (Windows), \n (Unix), \r (old Mac)
         return Regex.Replace(yamlData, 
-            @"^\s*securityHash:\s*[a-fA-F0-9]+\s*(?:\r\n|\r|\n)?", 
+            @"^[ \t]*securityHash:[ \t]*[a-fA-F0-9]+[ \t]*(?:\r\n|\r|\n)?", 
             "", 
             RegexOptions.Multiline | RegexOptions.IgnoreCase);
     }
