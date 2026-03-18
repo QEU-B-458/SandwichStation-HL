@@ -52,6 +52,48 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var width = component.Width <= 0.005f ? 1.0f : component.Width;
         var height = component.Height <= 0.005f ? 1.0f : component.Height;
         _sprite.SetScale((uid, sprite), new Vector2(width, height));
+
+        // Sub-Pixel Gap Fix (Very cheap fix, moves body parts towards torso)
+        // This is not great, hopefully someone smarter with more sanity will fix the render code at some point :P
+        var pushUpOffset = new System.Numerics.Vector2(0f, 0.004f);   // Move slighty up
+        var pushDownOffset = new System.Numerics.Vector2(0f, -0.004f); // Moves slighty down
+
+        // 1. Parts that are pushed UP (+Y) (hands, legs, feet + clothing)
+        HumanoidVisualLayers[] pushUpEnums = {
+            HumanoidVisualLayers.LHand, HumanoidVisualLayers.RHand,
+            HumanoidVisualLayers.LLeg,  HumanoidVisualLayers.RLeg,
+            HumanoidVisualLayers.LFoot, HumanoidVisualLayers.RFoot
+        };
+        string[] pushUpStrings = { "gloves", "shoes" };
+
+        foreach (var layerEnum in pushUpEnums)
+        {
+            if (_sprite.LayerMapTryGet((uid, sprite), layerEnum, out var layerIndex, false))
+                _sprite.LayerSetOffset((uid, sprite), layerIndex, pushUpOffset);
+        }
+        foreach (var layerString in pushUpStrings)
+        {
+            if (_sprite.LayerMapTryGet((uid, sprite), layerString, out var layerIndex, false))
+                _sprite.LayerSetOffset((uid, sprite), layerIndex, pushUpOffset);
+        }
+
+        // 2. Parts that are pushed DOWN (-Y) (head, snout + headgear)
+        HumanoidVisualLayers[] pushDownEnums = {
+            HumanoidVisualLayers.Head, HumanoidVisualLayers.Snout
+        };
+        string[] pushDownStrings = { "head", "mask", "ears", "eyes" };
+
+        foreach (var layerEnum in pushDownEnums)
+        {
+            if (_sprite.LayerMapTryGet((uid, sprite), layerEnum, out var layerIndex, false))
+                _sprite.LayerSetOffset((uid, sprite), layerIndex, pushDownOffset);
+        }
+        foreach (var layerString in pushDownStrings)
+        {
+            if (_sprite.LayerMapTryGet((uid, sprite), layerString, out var layerIndex, false))
+                _sprite.LayerSetOffset((uid, sprite), layerIndex, pushDownOffset);
+        }
+        // ---------------------------------------------------------------------
     }
 
     private void OnAppearanceChange(EntityUid uid, HumanoidAppearanceComponent comp, ref AppearanceChangeEvent args)
