@@ -201,6 +201,12 @@ public sealed partial class CCVars
     public static readonly CVarDef<string> UniqueServerHash =
         CVarDef.Create("shuttle.unique_server_hash", "U2FuZHdpY2hTZWN0b3I=", CVar.SERVERONLY);
 
+    /// <summary>
+    ///     Maximum charge applied when loading a ship through a shipyard console.
+    /// </summary>
+    public static readonly CVarDef<int> ShipyardLoadMaxTransactionPrice =
+        CVarDef.Create("shuttle.shipyard_load_max_transaction_price", 50000, CVar.SERVERONLY);
+
     #region Orphaned Grid Cleanup
 
     /// <summary>

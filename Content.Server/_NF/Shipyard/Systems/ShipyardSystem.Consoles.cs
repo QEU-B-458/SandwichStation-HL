@@ -59,6 +59,7 @@ using Robust.Server.Player;
 using Robust.Shared.Log;
 using Content.Shared.Shuttles.Components;
 using Content.Shared._HL.Shipyard;
+using Content.Shared.CCVar;
 
 // Suppress naming style rule for the _NF namespace prefix (project convention)
 #pragma warning disable IDE1006
@@ -520,7 +521,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
         // Calculate appraisal cost for the loaded ship (charge 10% of appraisal)
         var fullAppraisal = _pricing.AppraiseGrid(shuttleUid, null);
         var appraisalCost = (int) MathF.Round((float) fullAppraisal * 0.1f);
-        appraisalCost = int.Clamp(appraisalCost, 0, 50_000);
+        appraisalCost = int.Clamp(appraisalCost, 0, _configManager.GetCVar(CCVars.ShipyardLoadMaxTransactionPrice));
 
         // Check if player has a bank account and session to charge them
         if (!_player.TryGetSessionByEntity(player, out var playerSession))
