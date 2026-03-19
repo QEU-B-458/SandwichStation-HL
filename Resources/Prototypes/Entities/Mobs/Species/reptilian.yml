@@ -85,10 +85,10 @@
             sprite: _White/Mobs/Species/displacement.rsi
             state: jumpsuit-female
       outerClothing:
-          sizeMaps:
-            32:
-              sprite: _White/Mobs/Species/displacement.rsi
-              state: jumpsuit-female
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit-female
       shoes:
         sizeMaps:
           32:
@@ -123,10 +123,10 @@
             sprite: _White/Mobs/Species/displacement.rsi
             state: jumpsuit
       outerClothing:
-          sizeMaps:
-            32:
-              sprite: _White/Mobs/Species/displacement.rsi
-              state: jumpsuit
+        sizeMaps:
+          32:
+            sprite: _White/Mobs/Species/displacement.rsi
+            state: jumpsuit
       shoes:
         sizeMaps:
           32:
