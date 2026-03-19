@@ -12,6 +12,22 @@ namespace Content.Client.Humanoid;
 
 public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 {
+    private static readonly HumanoidVisualLayers[] PushUpLayers =
+    {
+        HumanoidVisualLayers.LHand, HumanoidVisualLayers.RHand,
+        HumanoidVisualLayers.LLeg, HumanoidVisualLayers.RLeg,
+        HumanoidVisualLayers.LFoot, HumanoidVisualLayers.RFoot
+    };
+
+    private static readonly string[] PushUpLayerNames = { "gloves", "shoes" };
+
+    private static readonly HumanoidVisualLayers[] PushDownLayers =
+    {
+        HumanoidVisualLayers.Head, HumanoidVisualLayers.Snout
+    };
+
+    private static readonly string[] PushDownLayerNames = { "head", "mask", "ears", "eyes" };
+
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
@@ -59,36 +75,24 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var pushDownOffset = new System.Numerics.Vector2(0f, -0.004f); // Move slightly down
 
         // 1. Parts that are pushed UP (+Y) (hands, legs, feet + clothing)
-        HumanoidVisualLayers[] pushUpEnums = {
-            HumanoidVisualLayers.LHand, HumanoidVisualLayers.RHand,
-            HumanoidVisualLayers.LLeg,  HumanoidVisualLayers.RLeg,
-            HumanoidVisualLayers.LFoot, HumanoidVisualLayers.RFoot
-        };
-        string[] pushUpStrings = { "gloves", "shoes" };
-
-        foreach (var layerEnum in pushUpEnums)
+        foreach (var layerEnum in PushUpLayers)
         {
             if (_sprite.LayerMapTryGet((uid, sprite), layerEnum, out var layerIndex, false))
                 _sprite.LayerSetOffset((uid, sprite), layerIndex, pushUpOffset);
         }
-        foreach (var layerString in pushUpStrings)
+        foreach (var layerString in PushUpLayerNames)
         {
             if (_sprite.LayerMapTryGet((uid, sprite), layerString, out var layerIndex, false))
                 _sprite.LayerSetOffset((uid, sprite), layerIndex, pushUpOffset);
         }
 
         // 2. Parts that are pushed DOWN (-Y) (head, snout + headgear)
-        HumanoidVisualLayers[] pushDownEnums = {
-            HumanoidVisualLayers.Head, HumanoidVisualLayers.Snout
-        };
-        string[] pushDownStrings = { "head", "mask", "ears", "eyes" };
-
-        foreach (var layerEnum in pushDownEnums)
+        foreach (var layerEnum in PushDownLayers)
         {
             if (_sprite.LayerMapTryGet((uid, sprite), layerEnum, out var layerIndex, false))
                 _sprite.LayerSetOffset((uid, sprite), layerIndex, pushDownOffset);
         }
-        foreach (var layerString in pushDownStrings)
+        foreach (var layerString in PushDownLayerNames)
         {
             if (_sprite.LayerMapTryGet((uid, sprite), layerString, out var layerIndex, false))
                 _sprite.LayerSetOffset((uid, sprite), layerIndex, pushDownOffset);
