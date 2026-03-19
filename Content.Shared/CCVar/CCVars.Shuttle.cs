@@ -197,9 +197,22 @@ public sealed partial class CCVars
 
     /// <summary>
     ///     To prevent cheating the server will embed this hash into the player's saved shuttle/ship's file.
+    ///     CHANGE THIS OR THIS SYSTEM IS PRACTICALLY USELESS!
     /// </summary>
     public static readonly CVarDef<string> UniqueServerHash =
         CVarDef.Create("shuttle.unique_server_hash", "U2FuZHdpY2hTZWN0b3I=", CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Master toggle for verifying the embedded ship security hash when loading ships.
+    /// </summary>
+    public static readonly CVarDef<bool> UniqueServerHashValidationEnabled =
+        CVarDef.Create("shuttle.unique_server_hash_validation_enabled", true, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Maximum charge applied when loading a ship through a shipyard console.
+    /// </summary>
+    public static readonly CVarDef<int> ShipyardLoadMaxTransactionPrice =
+        CVarDef.Create("shuttle.shipyard_load_max_transaction_price", 50000, CVar.SERVERONLY);
 
     #region Orphaned Grid Cleanup
 
