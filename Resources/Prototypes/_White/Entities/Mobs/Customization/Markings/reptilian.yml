@@ -19,9 +19,9 @@
   - sprite: _White/Mobs/Customization/reptilian_parts.rsi
     state: cobra_hood_with_ears_overlay
 
-# SHOUT
+# SNOUT
 - type: marking
-  id: LizardShoutEasternDragon
+  id: LizardSnoutEasternDragon
   bodyPart: Snout
   markingCategory: Snout
   speciesRestriction: [Reptilian]

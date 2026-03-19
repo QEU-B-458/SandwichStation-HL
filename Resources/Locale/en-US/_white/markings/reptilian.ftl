@@ -5,9 +5,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # SNOUT
-marking-LizardShoutEasternDragon= Lizard, eastern dragon
-marking-LizardShoutEasternDragon-eastern_dragon = Outer
-marking-LizardShoutEasternDragon-eastern_dragon_overlay = Inner
+marking-LizardSnoutEasternDragon= Lizard, eastern dragon
+marking-LizardSnoutEasternDragon-eastern_dragon = Outer
+marking-LizardSnoutEasternDragon-eastern_dragon_overlay = Inner
 
 marking-LizardShoutEasternDragonUsiki= Lizard, eastern dragon (Mustache)
 marking-LizardShoutEasternDragonUsiki-eastern_dragon = Outer
