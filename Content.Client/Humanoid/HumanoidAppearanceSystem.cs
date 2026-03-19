@@ -55,8 +55,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         // Sub-Pixel Gap Fix (Very cheap fix, moves body parts towards torso)
         // This is not great, hopefully someone smarter with more sanity will fix the render code at some point :P
-        var pushUpOffset = new System.Numerics.Vector2(0f, 0.004f);   // Move slighty up
-        var pushDownOffset = new System.Numerics.Vector2(0f, -0.004f); // Moves slighty down
+        var pushUpOffset = new System.Numerics.Vector2(0f, 0.004f);   // Move slightly up
+        var pushDownOffset = new System.Numerics.Vector2(0f, -0.004f); // Move slightly down
 
         // 1. Parts that are pushed UP (+Y) (hands, legs, feet + clothing)
         HumanoidVisualLayers[] pushUpEnums = {
