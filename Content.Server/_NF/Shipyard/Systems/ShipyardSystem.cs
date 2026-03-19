@@ -694,6 +694,12 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     {
         try
         {
+            if (!_configManager.GetCVar(CCVars.UniqueServerHashValidationEnabled))
+            {
+                _sawmill.Warning("[SECURITY] Ship hash verification is disabled by CVar; allowing ship load without hash validation.");
+                return true;
+            }
+
             // 1. Extract the hash embedded in the YAML string
             var extractedHash = ExtractHashFromYaml(yamlData);
 
