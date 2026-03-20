@@ -534,7 +534,13 @@
   - JackBoots
 
 ## Medical
-ContractorJumpsuit
+- type: loadoutGroup
+  id: MedicalJumpsuit
+  name: loadout-group-contractor-jumpsuit
+  loadouts:
+  - MedicalClothingJumpsuitThong
+  subgroups:
+  - ContractorJumpsuit
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerGloves
