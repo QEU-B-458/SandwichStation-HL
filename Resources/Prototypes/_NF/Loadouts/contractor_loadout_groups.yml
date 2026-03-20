@@ -116,8 +116,6 @@
   - ContractorClothingSkirtUniformRandomBra
   - ContractorClothingSkirtUniformRandomShorts
   - ContractorClothingSkirtUniformRandomShirt
-  - ContractorClothingUniformBeeThong # HL - Add lingerie to generic loadouts
-  - ContractorClothingUniformCoderThong # HL - Add lingerie to generic loadouts
   - ContractorClothingUniformJumpsuitMonasticRobeDark
   - ContractorClothingUniformJumpsuitMonasticRobeLight
   - ContractorClothingUniformJumpsuitChaplainPilgrimVest
@@ -161,7 +159,6 @@
   - ContractorClothingUniformJumpsuitTshirtJeansPeach
   - ContractorClothingUniformJumpsuitCaptain
   - ContractorClothingUniformJumpskirtCaptain
-  - ContractorClothingUniformCoderValidThong # HL - Add lingerie to generic loadouts
   - ContractorClothingUniformJumpsuitCapFormal
   - ContractorClothingUniformJumpskirtCapFormalDress
   - ContractorClothingUniformJumpsuitMilitaryCaptain

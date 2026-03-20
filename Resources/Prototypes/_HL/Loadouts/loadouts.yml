@@ -1,33 +1,6 @@
 
 # Uniform
 
-- type: loadout
-  id: ContractorClothingUniformBeeThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformBeeThong
-
-- type: loadout
-  id: ContractorClothingUniformCoderThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformCoderThong
-
-- type: loadout
-  id: ContractorClothingUniformCoderValidThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT2
-  price: 1000
-  equipment:
-    jumpsuit: ClothingUniformCoderValidThong
-
 # Eyes
 
 - type: loadout

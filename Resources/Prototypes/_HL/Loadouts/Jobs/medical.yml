@@ -1,42 +1,6 @@
 
 # Uniform
 
-- type: loadout
-  id: MedicalClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformMedicThong
-
-- type: loadout
-  id: ChiefMedicalOfficerClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformCMOThong
-
-- type: loadout
-  id: ChemistClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformChemistsThong
-
-- type: loadout
-  id: ParamedicClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformParaMedicThong
-
 # Eyes
 
 - type: loadout

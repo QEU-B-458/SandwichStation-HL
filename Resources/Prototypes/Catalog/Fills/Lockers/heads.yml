@@ -166,6 +166,7 @@
     #    - id: RCD # Frontier
     #    - id: RCDAmmo # Frontier
     - id: RubberStampCE
+    - id: BaseHandheldStationMapPowerCe
     - id: ShipyardRCD # Frontier
     - id: ShipyardRCDAmmo # Frontier
     - id: trayScanner # Frontier

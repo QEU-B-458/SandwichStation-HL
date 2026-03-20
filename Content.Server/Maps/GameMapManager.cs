@@ -172,6 +172,19 @@ public sealed class GameMapManager : IGameMapManager
 
     public void SelectMapByConfigRules()
     {
+#if DEBUG
+        // This block doesn't exist in Release-Mode
+        // It allows developers to explicitly set the map in debug mode via the config.
+        var configMapId = _configurationManager.GetCVar(CCVars.GameMap);
+        if (!string.IsNullOrWhiteSpace(configMapId) && TryLookupMap(configMapId, out var configMap))
+        {
+            _log.Info($"selecting map '{configMapId}' based on explicit configuration (DEBUG ONLY).");
+            _selectedMap = configMap;
+            return;
+        }
+#endif
+
+        // Standard-Process for Live-Server (Release)
         if (_mapRotationEnabled)
         {
             _log.Info("selecting the next map from the rotation queue");

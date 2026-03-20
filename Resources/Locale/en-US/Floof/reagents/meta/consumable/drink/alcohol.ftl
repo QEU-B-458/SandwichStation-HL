@@ -81,9 +81,6 @@ reagent-desc-heartbreakmountain = A mix of incredible carbonation, designed to m
 reagent-name-holyvice = holy vice
 reagent-desc-holyvice = Despite seeming somewhat contrary, the ingredients of this cocktail mix nicely.
 
-reagent-name-hornystallion = horny stallion
-reagent-desc-hornystallion = A drink with a strong effect on anyone stupid enough to take it. Either served as a shot or a full glass, for those who are more risky.
-
 reagent-name-koboldkooler = kobold kooler
 reagent-desc-koboldkooler = A cool, soothing drink for the cold-blooded amongst the crew.
 

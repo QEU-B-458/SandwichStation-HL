@@ -72,17 +72,6 @@
 # Civilian
 
 - type: loadoutGroup
-  id: ServiceJumpsuit
-  name: loadout-group-contractor-jumpsuit
-  loadouts:
-  - ServiceClothingJumpsuit
-  - ServiceClothingJumpsuitThong
-  subgroups:
-  - ContractorJumpsuit
-  fallbacks:
-  - ServiceClothingJumpsuit
-
-- type: loadoutGroup
   id: ServiceGloves
   name: loadout-group-contractor-gloves
   minLimit: 0
@@ -283,14 +272,6 @@
 # Cargo
 
 - type: loadoutGroup
-  id: CargoJumpsuit
-  name: loadout-group-contractor-jumpsuit
-  loadouts:
-  - CargoClothingJumpsuitThong
-  subgroups:
-  - ContractorJumpsuit
-
-- type: loadoutGroup
   id: CargoGloves
   name: loadout-group-contractor-gloves
   minLimit: 0
@@ -367,14 +348,6 @@
 ## Engineering
 
 - type: loadoutGroup
-  id: EngineeringJumpsuit
-  name: loadout-group-contractor-jumpsuit
-  loadouts:
-  - EngineeringClothingJumpsuitThong
-  subgroups:
-  - ContractorJumpsuit
-
-- type: loadoutGroup
   id: EngineeringGloves
   name: loadout-group-contractor-gloves
   minLimit: 0
@@ -426,14 +399,6 @@
   - ClothingShoesBootsWork
 
 ## Science
-
-- type: loadoutGroup
-  id: ScienceJumpsuit
-  name: loadout-group-contractor-jumpsuit
-  loadouts:
-  - ScienceClothingJumpsuitThong
-  subgroups:
-  - ContractorJumpsuit
 
 - type: loadoutGroup
   id: ScienceGloves
@@ -569,14 +534,7 @@
   - JackBoots
 
 ## Medical
-
-- type: loadoutGroup
-  id: MedicalJumpsuit
-  name: loadout-group-contractor-jumpsuit
-  loadouts:
-  - MedicalClothingJumpsuitThong
-  subgroups:
-  - ContractorJumpsuit
+ContractorJumpsuit
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerGloves

@@ -50963,15 +50963,6 @@ entities:
       parent: 7443
     - type: Physics
       canCollide: False
-- proto: ClothingUniformMantisEpiThong
-  entities:
-  - uid: 627
-    components:
-    - type: Transform
-      parent: 618
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingUniformSkirtMantis
   entities:
   - uid: 628

@@ -394,22 +394,6 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkHornyStallionGlass
-  suffix: horny stallion
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: HornyStallion
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/hornystallion.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
   id: DrinkKoboldKoolerGlass
   suffix: kobold kooler
   components:
