@@ -21,7 +21,7 @@ When we pull content from other forks, we organize their content to repo-specifi
 Content under these subdirectories originate from their respective forks and may contain modifications. These modifications are denoted by comments around the modified lines.
 
 #### Notice Regarding Pre-Commit Attribution:
-Code and assets added before commit ec2bea56356a4145723cb9dd59da389e2086010b originate from our upstream `HardLight`. Any attribution errors in this codebase are unintentional.</br>
+Code and assets added before commit `ec2bea56356a4145723cb9dd59da389e2086010b` originate from our upstream `HardLight`. Any attribution errors in this codebase are unintentional.</br>
 We are actively checking PR's to rectify any missing credits and ensure all original authors are properly acknowledged.</br>
 <b>If you discover your work is improperly credited or missing attribution, please contact us</b>.
 
