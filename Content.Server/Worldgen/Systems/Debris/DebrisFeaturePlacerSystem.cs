@@ -12,6 +12,8 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Server._NF.Worldgen.Components.Debris; // Frontier
 using Content.Server._NF.Shuttles.Components;
+using Content.Shared._NF.CCVar;
+using Robust.Shared.Configuration;
 
 namespace Content.Server.Worldgen.Systems.Debris;
 
@@ -26,6 +28,7 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -176,6 +179,11 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
         var safetyBounds = Box2.UnitCentered.Enlarged(component.SafetyZoneRadius);
         var failures = 0; // Avoid severe log spam.
         var spawned = 0; // Track number of spawned debris
+        var maxDebrisCount = component.MaxDebrisCount;
+        var cvarMaxDebrisCount = _cfg.GetCVar(NFCCVars.WorldgenMaxDebrisCount);
+        if (cvarMaxDebrisCount >= 0)
+            maxDebrisCount = cvarMaxDebrisCount;
+
         foreach (var point in points)
         {
             if (component.OwnedDebris.TryGetValue(point, out var existing))
@@ -186,7 +194,7 @@ public sealed class DebrisFeaturePlacerSystem : BaseWorldSystem
             }
 
             // Check if we've reached the maximum debris count
-            if (component.MaxDebrisCount.HasValue && spawned >= component.MaxDebrisCount.Value)
+            if (maxDebrisCount.HasValue && spawned >= maxDebrisCount.Value)
                 break;
 
             var pointDensity = _noiseIndex.Evaluate(uid, densityChannel, WorldGen.WorldToChunkCoords(point));

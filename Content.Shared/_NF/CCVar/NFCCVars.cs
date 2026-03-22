@@ -60,6 +60,12 @@ public sealed class NFCCVars
      *  World Gen
      */
     /// <summary>
+    /// The maximum number of debris (including asteroid debris) that can spawn per worldgen chunk.
+    /// </summary>
+    public static readonly CVarDef<int> WorldgenMaxDebrisCount =
+        CVarDef.Create("nf14.worldgen.max_debris_count", 3, CVar.SERVERONLY);
+
+    /// <summary>
     /// The number of Trade Stations to spawn in every round
     /// </summary>
     public static readonly CVarDef<int> MarketStations =
