@@ -1,6 +1,6 @@
-Content contributed to this repository after commit 2fca06eaba205ae6fe3aceb8ae2a0594f0effee0 is licensed under the GNU Affero General Public License version 3.0, unless otherwise stated (note Attributions below). See `LICENSE-AGPLv3.txt`.
-Content contributed to this repository before commit 2fca06eaba205ae6fe3aceb8ae2a0594f0effee0 is licensed under the MIT license, unless otherwise stated. See `LICENSE-MIT.txt`.
-Content added to this repository prior to commit ec2bea56356a4145723cb9dd59da389e2086010b was sourced from upstream projects and was not subject to this project's attribution review process. Missing or incomplete credit for third-party contributions may exist within this scope.
+Content contributed to this repository after commit `2fca06eaba205ae6fe3aceb8ae2a0594f0effee0` is licensed under the GNU Affero General Public License version 3.0, unless otherwise stated (note Attributions below). See `LICENSE-AGPLv3.txt`.
+Content contributed to this repository before commit `2fca06eaba205ae6fe3aceb8ae2a0594f0effee0` is licensed under the MIT license, unless otherwise stated. See `LICENSE-MIT.txt`.
+Content added to this repository prior to commit `ec2bea56356a4145723cb9dd59da389e2086010b` was sourced from upstream projects and was not subject to this project's attribution review process. Missing or incomplete credit for third-party contributions may exist within this scope.
 
 If you discover your work is improperly credited or missing attribution, please contact us!
 
