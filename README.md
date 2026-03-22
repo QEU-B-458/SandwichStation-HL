@@ -1,10 +1,4 @@
 <p align="center"> <img alt="SandwichStation_Logo" src="https://github.com/SandwichStation/SandwichStation-HL/blob/master/Resources/Textures/_Sandwich/Logo/logo.png?raw=true" /></p>
-<table>
-  <tr>
-    <th>Server uptime:</th>
-    <td><a target="_blank" href="https://status.b3ckdoor.com/status/sandwichstation"><img src="https://status.b3ckdoor.com/api/badge/25/uptime?labelPrefix=Gameserver+" alt="" /></a></td>
-  </tr>
-</table>
 
 _SandwichStation_ originally was a fork of _ShibaStation_<sup>†</sup> since then we have worked hard on introducing features that our community loves.
 
