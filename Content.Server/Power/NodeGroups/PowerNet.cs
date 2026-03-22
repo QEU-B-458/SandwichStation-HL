@@ -40,10 +40,10 @@ namespace Content.Server.Power.NodeGroups
             if (EntMan == null)
                 return EntityUid.Invalid;
 
-            var q = EntMan.EntityQueryEnumerator<TComp>();
-            while (q.MoveNext(out var uid, out var c))
+            var query = EntMan.AllEntityQueryEnumerator<TComp>();
+            while (query.MoveNext(out var uid, out var current))
             {
-                if (ReferenceEquals(c, comp))
+                if (ReferenceEquals(current, comp))
                     return uid;
             }
 
