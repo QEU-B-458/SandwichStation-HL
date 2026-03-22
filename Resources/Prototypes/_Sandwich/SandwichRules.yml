@@ -10,6 +10,7 @@
   - SandwichJobExpectations
   - SOP
   - SandwichSiliconRules
+  - SandwichShipRules
 
 - type: guideEntry # Main page for the rules
   id: SandwichRuleset # Our ruleset as it should be setup with CCVar's
@@ -23,6 +24,7 @@
   - SandwichJobExpectations
   - SOP
   - SandwichSiliconRules
+  - SandwichShipRules
 
 - type: guideEntry
   id: SandwichRuleChangelog
