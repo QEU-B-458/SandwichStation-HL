@@ -121,7 +121,7 @@ public sealed class NFCCVars
     ///     CHANGE THIS OR THIS SYSTEM IS PRACTICALLY USELESS!
     /// </summary>
     public static readonly CVarDef<string> UniqueServerHash =
-        CVarDef.Create("nf14.unique_server_hash", "U2FuZHdpY2hTZWN0b3I=", CVar.SERVERONLY);
+        CVarDef.Create("nf14.unique_server_hash", "I-HAVE-NOT-CHANGED-THIS", CVar.SERVERONLY);
 
     /// <summary>
     ///     Master toggle for verifying the embedded ship security hash when loading ships.
