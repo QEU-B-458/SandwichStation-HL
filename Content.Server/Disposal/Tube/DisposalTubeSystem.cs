@@ -1,9 +1,11 @@
 using System.Linq;
 using System.Text;
+using Content.Server._NF.Disposal.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Construction.Completions;
 using Content.Server.Disposal.Unit;
 using Content.Server.Popups;
+using Content.Server.Shuttles.Components;
 using Content.Shared.Destructible;
 using Content.Shared.Disposal.Components;
 using Content.Shared.Disposal.Tube;
@@ -363,6 +365,16 @@ namespace Content.Server.Disposal.Tube
                 }
 
                 return entity;
+            }
+
+            // Cross-grid disposal via docking
+            if (HasComp<DockableDisposalComponent>(target)
+                && TryComp(target, out DockingComponent? docking)
+                && docking.DockedWith != null
+                && TryComp(docking.DockedWith, out DisposalTubeComponent? dockedTube)
+                && dockedTube.Connected)
+            {
+                return docking.DockedWith;
             }
 
             return null;

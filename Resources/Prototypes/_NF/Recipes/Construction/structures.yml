@@ -57,3 +57,17 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  id: AirlockShuttleUtility
+  name: utility dock
+  description: A docking airlock that transfers HV power, atmos piping, and disposal between docked grids.
+  graph: AirlockShuttleUtility
+  startNode: start
+  targetNode: airlock
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
