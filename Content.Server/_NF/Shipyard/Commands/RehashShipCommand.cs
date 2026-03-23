@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Content.Server.Administration;
 using Content.Shared.Administration;
-using Content.Shared.CCVar;
+using Content.Shared._NF.CCVar;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.ContentPack;
@@ -120,7 +120,7 @@ public sealed class RehashShipCommand : IConsoleCommand
             return FileResult.Failed;
         }
 
-        var serverSecret = _cfg.GetCVar(CCVars.UniqueServerHash);
+        var serverSecret = _cfg.GetCVar(NFCCVars.UniqueServerHash);
 
         // 2. Strip any existing hash so we hash only the real content
         var cleanYaml = RemoveHashField(yaml);

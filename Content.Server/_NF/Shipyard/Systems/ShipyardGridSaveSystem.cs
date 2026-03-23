@@ -5,7 +5,7 @@ using Content.Shared._NF.Shipyard.Events;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Components;
 using Content.Shared.Shuttles.Save; // For SendShipSaveDataClientMessage
-using Content.Shared.CCVar;
+using Content.Shared._NF.CCVar;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -265,7 +265,7 @@ public sealed class ShipyardGridSaveSystem : EntitySystem
             var cleanYamlString = WriteYamlToString(node);
 
             // 7. Calculate HMAC-SHA256 from clean YAML
-            var serverSecret = _configurationManager.GetCVar(CCVars.UniqueServerHash);
+            var serverSecret = _configurationManager.GetCVar(NFCCVars.UniqueServerHash);
             using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(serverSecret));
             var hashBytes = hmac.ComputeHash(Encoding.UTF8.GetBytes(cleanYamlString));
             var calculatedHash = BitConverter.ToString(hashBytes).Replace("-", "").ToLowerInvariant();
