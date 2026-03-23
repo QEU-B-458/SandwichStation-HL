@@ -5,6 +5,7 @@ using Content.Shared._NF.Shipyard.Events;
 using Content.Shared.DeviceLinking;
 using Content.Shared.DeviceLinking.Components;
 using Content.Shared.Shuttles.Save; // For SendShipSaveDataClientMessage
+using Content.Shared.CCVar;
 using Content.Shared._NF.CCVar;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.Power.Components;
