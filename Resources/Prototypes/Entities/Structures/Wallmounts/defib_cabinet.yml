@@ -30,6 +30,7 @@
         whitelist:
           components:
           - Defibrillator
+  - type: HLSavedVesselPrototype
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Metallic

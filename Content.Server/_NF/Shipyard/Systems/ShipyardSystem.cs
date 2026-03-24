@@ -694,7 +694,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
     {
         try
         {
-            if (!_configManager.GetCVar(CCVars.UniqueServerHashValidationEnabled))
+            if (!_configManager.GetCVar(NFCCVars.UniqueServerHashValidationEnabled))
             {
                 _sawmill.Warning("[SECURITY] Ship hash verification is disabled by CVar; allowing ship load without hash validation.");
                 return true;
@@ -712,7 +712,7 @@ public sealed partial class ShipyardSystem : SharedShipyardSystem
             }
 
             // 3. Recalculate hash to detect content tampering
-            var serverSecret = _configManager.GetCVar(CCVars.UniqueServerHash);
+            var serverSecret = _configManager.GetCVar(NFCCVars.UniqueServerHash);
             var cleanData = RemoveHashFieldFromYaml(yamlData);
 
             _sawmill.Debug($"[SECURITY] Clean YAML length: {cleanData.Length} bytes (original: {yamlData.Length} bytes)");
