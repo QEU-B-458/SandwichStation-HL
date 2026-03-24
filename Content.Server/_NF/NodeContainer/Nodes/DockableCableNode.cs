@@ -1,23 +1,22 @@
+using Content.Server.Power.Nodes;
 using Content.Server.Shuttles.Components;
 using Content.Shared.NodeContainer;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server.NodeContainer.Nodes;
 
-
-[DataDefinition, Virtual]
-public partial class DockablePipeNode : PipeNode
+[DataDefinition]
+public sealed partial class DockableCableNode : CableNode
 {
-
     public override IEnumerable<Node> GetReachableNodes(TransformComponent xform,
         EntityQuery<NodeContainerComponent> nodeQuery,
         EntityQuery<TransformComponent> xformQuery,
         MapGridComponent? grid,
         IEntityManager entMan)
     {
-        foreach (var pipe in base.GetReachableNodes(xform, nodeQuery, xformQuery, grid, entMan))
+        foreach (var node in base.GetReachableNodes(xform, nodeQuery, xformQuery, grid, entMan))
         {
-            yield return pipe;
+            yield return node;
         }
 
         if (!xform.Anchored || grid == null)
@@ -29,8 +28,8 @@ public partial class DockablePipeNode : PipeNode
         {
             foreach (var node in otherNode.Nodes.Values)
             {
-                if (node is DockablePipeNode pipe && pipe.CurrentPipeLayer == CurrentPipeLayer)
-                    yield return pipe;
+                if (node is DockableCableNode cable)
+                    yield return cable;
             }
         }
     }

@@ -1,0 +1,58 @@
+- type: entity
+  parent: AirlockShuttleAssembly
+  id: AirlockShuttleUtilityAssembly
+  name: utility dock assembly
+  suffix: Docking, Utility
+  description: An incomplete utility dock. Transfers HV power, atmos piping, and disposal between docked grids.
+  components:
+  - type: Construction
+    graph: AirlockShuttleUtility
+    node: assembly
+
+- type: entity
+  parent: AirlockShuttle
+  id: AirlockShuttleUtility
+  name: utility dock
+  suffix: Docking, Power/Pipe/Disposal
+  description: A docking airlock that transfers HV power, atmos piping, and disposal between docked grids.
+  components:
+  - type: Construction
+    graph: AirlockShuttleUtility
+    node: airlock
+  # Cross-grid power and pipe nodes
+  - type: NodeContainer
+    nodes:
+      cable:
+        !type:DockableCableNode
+        nodeGroupID: HVPower
+      pipe0:
+        !type:DockablePipeNode
+        nodeGroupID: Pipe
+        pipeDirection: Fourway
+        pipeLayer: 0
+      pipe1:
+        !type:DockablePipeNode
+        nodeGroupID: Pipe
+        pipeDirection: Fourway
+        pipeLayer: 1
+      pipe2:
+        !type:DockablePipeNode
+        nodeGroupID: Pipe
+        pipeDirection: Fourway
+        pipeLayer: 2
+  - type: DockablePipe
+    dockNodeNames:
+    - pipe0
+    - pipe1
+    - pipe2
+  - type: DockablePower
+    dockNodeName: cable
+  # Cross-grid disposal
+  - type: DisposalTube
+    containerId: DisposalTransit
+  - type: DisposalTransit
+  - type: DockableDisposal
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
+      DisposalTransit: !type:Container

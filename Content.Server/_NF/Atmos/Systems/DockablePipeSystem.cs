@@ -24,26 +24,42 @@ public sealed class DockablePipeSystem : EntitySystem
 
     private void OnDock(Entity<DockablePipeComponent> ent, ref DockEvent args)
     {
-        // Reflood node?
-        if (string.IsNullOrEmpty(ent.Comp.DockNodeName) ||
-            !TryComp(ent, out NodeContainerComponent? nodeContainer) ||
-            !_nodeContainer.TryGetNode(nodeContainer, ent.Comp.DockNodeName, out DockablePipeNode? dockablePipe))
+        if (!TryComp(ent, out NodeContainerComponent? nodeContainer))
             return;
 
-        _nodeGroup.QueueReflood(dockablePipe);
+        var nodeNames = GetAllNodeNames(ent.Comp);
+        foreach (var name in nodeNames)
+        {
+            if (_nodeContainer.TryGetNode(nodeContainer, name, out DockablePipeNode? dockablePipe))
+                _nodeGroup.QueueReflood(dockablePipe);
+        }
+
         _appearance.SetData(ent, DockablePipeVisuals.Docked, true);
     }
 
     private void OnUndock(Entity<DockablePipeComponent> ent, ref UndockEvent args)
     {
-        // Clean up node?
-        if (string.IsNullOrEmpty(ent.Comp.DockNodeName) ||
-            !TryComp(ent, out NodeContainerComponent? nodeContainer) ||
-            !_nodeContainer.TryGetNode(nodeContainer, ent.Comp.DockNodeName, out DockablePipeNode? dockablePipe))
+        if (!TryComp(ent, out NodeContainerComponent? nodeContainer))
             return;
 
-        _nodeGroup.QueueNodeRemove(dockablePipe);
-        dockablePipe.Air.Clear();
+        var nodeNames = GetAllNodeNames(ent.Comp);
+        foreach (var name in nodeNames)
+        {
+            if (_nodeContainer.TryGetNode(nodeContainer, name, out DockablePipeNode? dockablePipe))
+            {
+                _nodeGroup.QueueNodeRemove(dockablePipe);
+                dockablePipe.Air.Clear();
+            }
+        }
+
         _appearance.SetData(ent, DockablePipeVisuals.Docked, false);
+    }
+
+    private List<string> GetAllNodeNames(DockablePipeComponent comp)
+    {
+        var names = new List<string>(comp.DockNodeNames);
+        if (!string.IsNullOrEmpty(comp.DockNodeName) && !names.Contains(comp.DockNodeName))
+            names.Add(comp.DockNodeName);
+        return names;
     }
 }
