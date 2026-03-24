@@ -1,12 +1,9 @@
 ﻿[game]
 # Straight in-game baby
 lobbyenabled = false
-# Frontier: special map
-map = "NFDev"
+# Dev map for faster loading & convenience
+map = "Dev"
 role_timers = false
-
-[events]
-enabled = false
 
 [ghost]
 role_time = 0.5

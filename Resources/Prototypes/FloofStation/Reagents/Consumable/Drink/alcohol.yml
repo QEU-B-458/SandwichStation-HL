@@ -578,29 +578,6 @@
         amount: 0.075
 
 - type: reagent
-  id: HornyStallion
-  name: reagent-name-hornystallion
-  parent: BaseAlcohol
-  desc: reagent-desc-hornystallion
-  physicalDesc: reagent-physical-desc-strong-smelling
-  flavor: hornystallion
-  color: "#6b4247"
-  metamorphicSprite:
-    sprite: _Floof/Objects/Consumable/Drinks/hornystallion.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 5
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Libidozenithizine
-        amount: 0.25
-
-- type: reagent
   id: KoboldKooler
   name: reagent-name-koboldkooler
   parent: BaseAlcohol

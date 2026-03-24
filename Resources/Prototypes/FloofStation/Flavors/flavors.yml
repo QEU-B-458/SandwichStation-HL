@@ -141,11 +141,6 @@
   description: flavor-complex-holyvice
 
 - type: flavor
-  id: hornystallion
-  flavorType: Complex
-  description: flavor-complex-hornystallion
-
-- type: flavor
   id: koboldkooler
   flavorType: Complex
   description: flavor-complex-koboldkooler

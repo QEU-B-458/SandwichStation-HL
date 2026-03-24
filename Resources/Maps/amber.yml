@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 03/06/2026 19:51:58
-  entityCount: 23866
+  time: 03/20/2026 19:00:54
+  entityCount: 23865
 maps:
 - 1
 grids:
@@ -553,23 +553,6 @@ entities:
             20470: 18,13
             20471: 20,13
         - node:
-            color: '#00807EFF'
-            id: BotGreyscale
-          decals:
-            20833: -25,7
-            20834: -25,6
-            20840: -21,5
-            20841: -21,4
-            20842: -21,3
-            20843: -21,2
-            20844: -22,2
-        - node:
-            zIndex: 2
-            color: '#00807EFF'
-            id: BotGreyscale
-          decals:
-            21065: -23,4
-        - node:
             color: '#D381C996'
             id: BotGreyscale
           decals:
@@ -588,6 +571,23 @@ entities:
             id: BotGreyscale
           decals:
             18583: 18,0
+        - node:
+            color: '#DE3A3A94'
+            id: BotGreyscale
+          decals:
+            20833: -25,7
+            20834: -25,6
+            20840: -21,5
+            20841: -21,4
+            20842: -21,3
+            20843: -21,2
+            20844: -22,2
+        - node:
+            zIndex: 2
+            color: '#DE3A3A94'
+            id: BotGreyscale
+          decals:
+            21065: -23,4
         - node:
             color: '#FBB2FFFF'
             id: BotGreyscale
@@ -634,18 +634,6 @@ entities:
           decals:
             15900: 24,-7
         - node:
-            zIndex: 2
-            color: '#00807EFF'
-            id: BrickCornerOverlaySE
-          decals:
-            21007: -25,9
-        - node:
-            zIndex: 2
-            color: '#00807EFF'
-            id: BrickCornerOverlaySW
-          decals:
-            21010: -28,9
-        - node:
             color: '#D381C996'
             id: BrickEndOverlayE
           decals:
@@ -655,14 +643,6 @@ entities:
             id: BrickEndOverlayW
           decals:
             20963: 35,-49
-        - node:
-            zIndex: 2
-            color: '#00807EFF'
-            id: BrickLineOverlayE
-          decals:
-            21004: -25,12
-            21005: -25,11
-            21006: -25,10
         - node:
             color: '#52B4E996'
             id: BrickLineOverlayE
@@ -675,21 +655,6 @@ entities:
           decals:
             18584: 21,3
             18585: 20,3
-        - node:
-            zIndex: 2
-            color: '#00807EFF'
-            id: BrickLineOverlayS
-          decals:
-            21008: -26,9
-            21009: -27,9
-        - node:
-            zIndex: 2
-            color: '#00807EFF'
-            id: BrickLineOverlayW
-          decals:
-            21011: -28,10
-            21012: -28,11
-            21013: -28,12
         - node:
             zIndex: 1
             color: '#FFFFFFFF'
@@ -825,11 +790,6 @@ entities:
             19369: 12,26
             19370: 11,26
         - node:
-            color: '#00807EFF'
-            id: BrickTileWhiteBox
-          decals:
-            20816: -31,3
-        - node:
             zIndex: 1
             color: '#3EB38896'
             id: BrickTileWhiteBox
@@ -859,6 +819,11 @@ entities:
             17180: 15,-20
             17181: 15,-19
             17184: 14,-20
+        - node:
+            color: '#DE3A3A94'
+            id: BrickTileWhiteBox
+          decals:
+            20816: -31,3
         - node:
             zIndex: 1
             color: '#DE3A3A96'
@@ -1093,15 +1058,15 @@ entities:
           decals:
             17190: 3,-17
         - node:
-            color: '#00807EFF'
-            id: BrickTileWhiteInnerNe
-          decals:
-            20811: -29,-2
-        - node:
             color: '#334E6DC8'
             id: BrickTileWhiteInnerNe
           decals:
             11365: -24,-47
+        - node:
+            color: '#DE3A3A94'
+            id: BrickTileWhiteInnerNe
+          decals:
+            20811: -29,-2
         - node:
             color: '#EFB34196'
             id: BrickTileWhiteInnerNe
@@ -1114,16 +1079,16 @@ entities:
           decals:
             17223: 10,-17
         - node:
-            color: '#00807EFF'
-            id: BrickTileWhiteInnerNw
-          decals:
-            20810: -23,-2
-        - node:
             zIndex: 1
             color: '#334E6DC8'
             id: BrickTileWhiteInnerNw
           decals:
             15789: -39,-16
+        - node:
+            color: '#DE3A3A94'
+            id: BrickTileWhiteInnerNw
+          decals:
+            20810: -23,-2
         - node:
             color: '#EFB34196'
             id: BrickTileWhiteInnerNw
@@ -1137,7 +1102,7 @@ entities:
           decals:
             17225: 8,-17
         - node:
-            color: '#00807EFF'
+            color: '#DE3A3A94'
             id: BrickTileWhiteInnerSe
           decals:
             20813: -29,0
@@ -1149,7 +1114,7 @@ entities:
             2247: -12,-14
             2257: -14,-11
         - node:
-            color: '#00807EFF'
+            color: '#DE3A3A94'
             id: BrickTileWhiteInnerSw
           decals:
             20814: -23,0
@@ -1160,11 +1125,6 @@ entities:
             10869: -13,-21
             11044: -10,-14
             11095: -10,-11
-        - node:
-            color: '#00807EFF'
-            id: BrickTileWhiteLineE
-          decals:
-            20808: -29,-1
         - node:
             color: '#334E6DC8'
             id: BrickTileWhiteLineE
@@ -1211,6 +1171,11 @@ entities:
             14265: 29,-37
             14266: 29,-33
         - node:
+            color: '#DE3A3A94'
+            id: BrickTileWhiteLineE
+          decals:
+            20808: -29,-1
+        - node:
             color: '#DE3A3A96'
             id: BrickTileWhiteLineE
           decals:
@@ -1242,15 +1207,6 @@ entities:
             17228: 0,-15
             17229: 0,-16
         - node:
-            color: '#00807EFF'
-            id: BrickTileWhiteLineN
-          decals:
-            20799: -27,-2
-            20800: -26,-2
-            20801: -25,-2
-            20802: -24,-2
-            20812: -28,-2
-        - node:
             color: '#334E6DC8'
             id: BrickTileWhiteLineN
           decals:
@@ -1280,6 +1236,15 @@ entities:
             12172: 52,-52
             12174: 38,-53
             12175: 39,-53
+        - node:
+            color: '#DE3A3A94'
+            id: BrickTileWhiteLineN
+          decals:
+            20799: -27,-2
+            20800: -26,-2
+            20801: -25,-2
+            20802: -24,-2
+            20812: -28,-2
         - node:
             color: '#EFB34196'
             id: BrickTileWhiteLineN
@@ -1314,15 +1279,6 @@ entities:
             17221: 7,-17
             17222: 11,-17
             17224: 9,-16
-        - node:
-            color: '#00807EFF'
-            id: BrickTileWhiteLineS
-          decals:
-            20804: -25,0
-            20805: -26,0
-            20806: -27,0
-            20807: -28,0
-            20815: -24,0
         - node:
             color: '#334E6DC8'
             id: BrickTileWhiteLineS
@@ -1370,6 +1326,15 @@ entities:
             11454: 40,-38
             12164: 58,-57
         - node:
+            color: '#DE3A3A94'
+            id: BrickTileWhiteLineS
+          decals:
+            20804: -25,0
+            20805: -26,0
+            20806: -27,0
+            20807: -28,0
+            20815: -24,0
+        - node:
             color: '#EFB34196'
             id: BrickTileWhiteLineS
           decals:
@@ -1403,11 +1368,6 @@ entities:
             17205: 7,-20
             17206: 8,-20
             17207: 9,-20
-        - node:
-            color: '#00807EFF'
-            id: BrickTileWhiteLineW
-          decals:
-            20809: -23,-1
         - node:
             color: '#334E6DC8'
             id: BrickTileWhiteLineW
@@ -1459,6 +1419,11 @@ entities:
           decals:
             13775: -22,-11
             13776: -22,-12
+        - node:
+            color: '#DE3A3A94'
+            id: BrickTileWhiteLineW
+          decals:
+            20809: -23,-1
         - node:
             color: '#DE3A3A96'
             id: BrickTileWhiteLineW
@@ -1740,38 +1705,6 @@ entities:
           decals:
             16044: -34,-34
         - node:
-            color: '#00807EFF'
-            id: CheckerNWSE
-          decals:
-            20769: -20,-6
-            20770: -21,-6
-            20771: -22,-6
-            20772: -23,-6
-            20773: -23,-5
-            20774: -22,-5
-            20775: -21,-5
-            20776: -20,-5
-            20777: -20,-4
-            20778: -21,-4
-            20779: -22,-4
-            20780: -23,-4
-            20782: -18,-1
-            20783: -19,-2
-            20784: -19,-1
-            20785: -18,-2
-            20786: -20,-2
-            20787: -20,-1
-            20788: -21,-2
-            20789: -21,-1
-            20790: -22,-2
-            20791: -22,-1
-            20792: -31,-6
-            20793: -30,-6
-            20794: -29,-6
-            20795: -29,-4
-            20796: -30,-4
-            20797: -31,-4
-        - node:
             color: '#334E6DC8'
             id: CheckerNWSE
           decals:
@@ -1936,6 +1869,38 @@ entities:
             20608: 15,-24
             20609: 14,-24
         - node:
+            color: '#DE3A3A94'
+            id: CheckerNWSE
+          decals:
+            20769: -20,-6
+            20770: -21,-6
+            20771: -22,-6
+            20772: -23,-6
+            20773: -23,-5
+            20774: -22,-5
+            20775: -21,-5
+            20776: -20,-5
+            20777: -20,-4
+            20778: -21,-4
+            20779: -22,-4
+            20780: -23,-4
+            20782: -18,-1
+            20783: -19,-2
+            20784: -19,-1
+            20785: -18,-2
+            20786: -20,-2
+            20787: -20,-1
+            20788: -21,-2
+            20789: -21,-1
+            20790: -22,-2
+            20791: -22,-1
+            20792: -31,-6
+            20793: -30,-6
+            20794: -29,-6
+            20795: -29,-4
+            20796: -30,-4
+            20797: -31,-4
+        - node:
             zIndex: 1
             color: '#FFFFFF93'
             id: CheckerNWSE
@@ -2024,7 +1989,7 @@ entities:
             18351: 32,16
             18352: 31,16
         - node:
-            color: '#00807EFF'
+            color: '#DE3A3A94'
             id: DeliveryGreyscale
           decals:
             20835: -25,5
@@ -2282,14 +2247,17 @@ entities:
             20950: -9,-35
         - node:
             cleanable: True
+            zIndex: 1
+            color: '#FFFFFFFF'
+            id: Dirt
+          decals:
+            21139: -25,9
+        - node:
+            cleanable: True
             zIndex: 2
             color: '#FFFFFFFF'
             id: Dirt
           decals:
-            21017: -28,12
-            21018: -28,11
-            21032: -25,10
-            21033: -25,9
             21051: 35,-51
         - node:
             cleanable: True
@@ -5096,19 +5064,19 @@ entities:
             20959: -14,-33
         - node:
             cleanable: True
+            zIndex: 1
+            color: '#FFFFFFFF'
+            id: DirtHeavy
+          decals:
+            21133: -28,9
+            21134: -27,10
+            21140: -25,12
+        - node:
+            cleanable: True
             zIndex: 2
             color: '#FFFFFFFF'
             id: DirtHeavy
           decals:
-            21014: -26,11
-            21015: -27,10
-            21016: -27,11
-            21019: -27,9
-            21020: -28,10
-            21021: -28,9
-            21022: -28,9
-            21030: -25,10
-            21031: -26,10
             21034: 33,-50
             21035: 34,-49
             21036: 33,-48
@@ -5496,6 +5464,16 @@ entities:
             20944: -12,-32
             20945: -12,-33
             20946: -12,-34
+        - node:
+            cleanable: True
+            zIndex: 1
+            color: '#FFFFFFFF'
+            id: DirtHeavyMonotile
+          decals:
+            21135: -27,11
+            21144: -28,10
+            21145: -28,11
+            21146: -28,12
         - node:
             cleanable: True
             zIndex: 2
@@ -7052,14 +7030,18 @@ entities:
             20956: -10,-32
         - node:
             cleanable: True
+            zIndex: 1
+            color: '#FFFFFFFF'
+            id: DirtLight
+          decals:
+            21136: -27,12
+            21141: -26,12
+        - node:
+            cleanable: True
             zIndex: 2
             color: '#FFFFFFFF'
             id: DirtLight
           decals:
-            21023: -25,9
-            21024: -25,10
-            21025: -25,12
-            21026: -26,12
             21052: 33,-47
             21053: 38,-51
             21054: 39,-50
@@ -8196,13 +8178,20 @@ entities:
             20953: -8,-32
         - node:
             cleanable: True
+            zIndex: 1
+            color: '#FFFFFFFF'
+            id: DirtMedium
+          decals:
+            21137: -26,11
+            21138: -25,10
+            21142: -26,9
+            21143: -27,9
+        - node:
+            cleanable: True
             zIndex: 2
             color: '#FFFFFFFF'
             id: DirtMedium
           decals:
-            21027: -27,12
-            21028: -26,11
-            21029: -25,12
             21042: 35,-52
             21043: 35,-51
             21044: 34,-51
@@ -8402,17 +8391,6 @@ entities:
             15924: 12.970793,-8.954393
             15927: 11.821117,-10.006225
         - node:
-            color: '#00807EFF'
-            id: FullTileOverlayGreyscale
-          decals:
-            20766: -26,-13
-            20767: -29,-8
-            20768: -29,-9
-            20817: -25,13
-            20818: -26,13
-            20819: -27,13
-            20820: -28,13
-        - node:
             color: '#334E6DC8'
             id: FullTileOverlayGreyscale
           decals:
@@ -8526,6 +8504,17 @@ entities:
           decals:
             11346: -21,-54
             11347: -21,-57
+        - node:
+            color: '#DE3A3A94'
+            id: FullTileOverlayGreyscale
+          decals:
+            20766: -26,-13
+            20767: -29,-8
+            20768: -29,-9
+            20817: -25,13
+            20818: -26,13
+            20819: -27,13
+            20820: -28,13
         - node:
             color: '#DE3A3A96'
             id: FullTileOverlayGreyscale
@@ -8811,17 +8800,6 @@ entities:
             18306: -16.172466,17.015173
             18323: -11.019556,17.023188
         - node:
-            color: '#00807EFF'
-            id: HalfTileOverlayGreyscale
-          decals:
-            20826: -22,17
-            20827: -23,17
-            20828: -24,17
-            20829: -25,17
-            20830: -26,17
-            20831: -27,17
-            20832: -28,17
-        - node:
             color: '#334E6DC8'
             id: HalfTileOverlayGreyscale
           decals:
@@ -8887,22 +8865,23 @@ entities:
             9617: 34,-45
             9751: 33,-39
         - node:
+            color: '#DE3A3A94'
+            id: HalfTileOverlayGreyscale
+          decals:
+            20826: -22,17
+            20827: -23,17
+            20828: -24,17
+            20829: -25,17
+            20830: -26,17
+            20831: -27,17
+            20832: -28,17
+        - node:
             color: '#EFB34196'
             id: HalfTileOverlayGreyscale
           decals:
             10896: -10,-23
             10897: -9,-23
             10898: -8,-23
-        - node:
-            color: '#00807EFF'
-            id: HalfTileOverlayGreyscale180
-          decals:
-            20765: -26,-12
-            20821: -24,15
-            20822: -25,15
-            20823: -26,15
-            20824: -27,15
-            20825: -28,15
         - node:
             color: '#334E6DC8'
             id: HalfTileOverlayGreyscale180
@@ -8978,21 +8957,20 @@ entities:
             20703: 29,-32
             20973: 34,-52
         - node:
+            color: '#DE3A3A94'
+            id: HalfTileOverlayGreyscale180
+          decals:
+            20765: -26,-12
+            20821: -24,15
+            20822: -25,15
+            20823: -26,15
+            20824: -27,15
+            20825: -28,15
+        - node:
             color: '#FA750096'
             id: HalfTileOverlayGreyscale180
           decals:
             16227: -29,-33
-        - node:
-            color: '#00807EFF'
-            id: HalfTileOverlayGreyscale270
-          decals:
-            20868: -19,-10
-        - node:
-            zIndex: 2
-            color: '#00807EFF'
-            id: HalfTileOverlayGreyscale270
-          decals:
-            21063: -28,-10
         - node:
             color: '#334E6DC8'
             id: HalfTileOverlayGreyscale270
@@ -9058,6 +9036,23 @@ entities:
             15092: 35,-42
             15093: 35,-43
             15094: 35,-44
+        - node:
+            color: '#DE3A3A94'
+            id: HalfTileOverlayGreyscale270
+          decals:
+            20868: -19,-10
+        - node:
+            zIndex: 2
+            color: '#DE3A3A94'
+            id: HalfTileOverlayGreyscale270
+          decals:
+            21063: -28,-10
+        - node:
+            zIndex: 1
+            color: '#DE3A3A96'
+            id: HalfTileOverlayGreyscale270
+          decals:
+            21129: -27,10
         - node:
             color: '#FA750096'
             id: HalfTileOverlayGreyscale270
@@ -9140,6 +9135,12 @@ entities:
             15096: 36,-42
             15097: 36,-43
             15098: 36,-44
+        - node:
+            zIndex: 1
+            color: '#DE3A3A96'
+            id: HalfTileOverlayGreyscale90
+          decals:
+            21131: -26,11
         - node:
             color: '#FA750096'
             id: HalfTileOverlayGreyscale90
@@ -9228,30 +9229,6 @@ entities:
             id: PavementCheckerAOverlay
           decals:
             3494: 40,-14
-        - node:
-            color: '#00807EFF'
-            id: QuarterTileOverlayGreyscale
-          decals:
-            20752: -27,-3
-            20753: -27,-4
-            20754: -27,-5
-            20755: -27,-6
-            20757: -27,-8
-            20758: -27,-7
-            20759: -28,-8
-            20860: -17,-3
-            20862: -18,-4
-            20863: -17,-4
-            20864: -18,-5
-            20865: -18,-8
-            20866: -19,-8
-            20867: -19,-9
-        - node:
-            zIndex: 2
-            color: '#00807EFF'
-            id: QuarterTileOverlayGreyscale
-          decals:
-            21064: -28,-9
         - node:
             color: '#334E6DC8'
             id: QuarterTileOverlayGreyscale
@@ -9377,17 +9354,40 @@ entities:
             9731: 21,-28
             9749: 34,-39
         - node:
+            color: '#DE3A3A94'
+            id: QuarterTileOverlayGreyscale
+          decals:
+            20752: -27,-3
+            20753: -27,-4
+            20754: -27,-5
+            20755: -27,-6
+            20757: -27,-8
+            20758: -27,-7
+            20759: -28,-8
+            20860: -17,-3
+            20862: -18,-4
+            20863: -17,-4
+            20864: -18,-5
+            20865: -18,-8
+            20866: -19,-8
+            20867: -19,-9
+        - node:
+            zIndex: 2
+            color: '#DE3A3A94'
+            id: QuarterTileOverlayGreyscale
+          decals:
+            21064: -28,-9
+        - node:
             color: '#DE3A3A96'
             id: QuarterTileOverlayGreyscale
           decals:
             10864: -18,-7
         - node:
-            color: '#00807EFF'
-            id: QuarterTileOverlayGreyscale180
+            zIndex: 1
+            color: '#DE3A3A96'
+            id: QuarterTileOverlayGreyscale
           decals:
-            20762: -25,-12
-            20763: -24,-12
-            20764: -23,-12
+            21132: -25,11
         - node:
             zIndex: 1
             color: '#334E6DC8'
@@ -9508,6 +9508,13 @@ entities:
             9757: 34,-41
             9758: 33,-41
         - node:
+            color: '#DE3A3A94'
+            id: QuarterTileOverlayGreyscale180
+          decals:
+            20762: -25,-12
+            20763: -24,-12
+            20764: -23,-12
+        - node:
             color: '#DE3A3A96'
             id: QuarterTileOverlayGreyscale180
           decals:
@@ -9521,6 +9528,7 @@ entities:
             14969: 33,2
             14970: 33,1
             14971: 33,5
+            21127: -28,10
         - node:
             color: '#FA750096'
             id: QuarterTileOverlayGreyscale180
@@ -9528,25 +9536,6 @@ entities:
             16228: -28,-33
             16229: -27,-33
             16230: -26,-33
-        - node:
-            color: '#00807EFF'
-            id: QuarterTileOverlayGreyscale270
-          decals:
-            20760: -28,-12
-            20761: -27,-12
-            20855: -17,6
-            20856: -17,5
-            20857: -17,3
-            20858: -17,2
-            20859: -17,0
-            20869: -19,-11
-            20870: -19,-12
-        - node:
-            zIndex: 2
-            color: '#00807EFF'
-            id: QuarterTileOverlayGreyscale270
-          decals:
-            21062: -28,-11
         - node:
             color: '#334E6DC8'
             id: QuarterTileOverlayGreyscale270
@@ -9698,6 +9687,25 @@ entities:
             12382: 33,-33
             12383: 34,-33
         - node:
+            color: '#DE3A3A94'
+            id: QuarterTileOverlayGreyscale270
+          decals:
+            20760: -28,-12
+            20761: -27,-12
+            20855: -17,6
+            20856: -17,5
+            20857: -17,3
+            20858: -17,2
+            20859: -17,0
+            20869: -19,-11
+            20870: -19,-12
+        - node:
+            zIndex: 2
+            color: '#DE3A3A94'
+            id: QuarterTileOverlayGreyscale270
+          decals:
+            21062: -28,-11
+        - node:
             color: '#DE3A3A96'
             id: QuarterTileOverlayGreyscale270
           decals:
@@ -9735,18 +9743,6 @@ entities:
             16112: -32,-33
             16117: -39,-34
             16118: -40,-34
-        - node:
-            color: '#00807EFF'
-            id: QuarterTileOverlayGreyscale90
-          decals:
-            20744: -23,-8
-            20745: -24,-8
-            20746: -25,-8
-            20747: -25,-7
-            20748: -25,-6
-            20749: -25,-5
-            20750: -25,-4
-            20751: -25,-3
         - node:
             color: '#52B4E996'
             id: QuarterTileOverlayGreyscale90
@@ -9833,6 +9829,18 @@ entities:
             9696: 38,-32
             9729: 19,-28
             9750: 33,-38
+        - node:
+            color: '#DE3A3A94'
+            id: QuarterTileOverlayGreyscale90
+          decals:
+            20744: -23,-8
+            20745: -24,-8
+            20746: -25,-8
+            20747: -25,-7
+            20748: -25,-6
+            20749: -25,-5
+            20750: -25,-4
+            20751: -25,-3
         - node:
             color: '#EFB34196'
             id: QuarterTileOverlayGreyscale90
@@ -10052,6 +10060,12 @@ entities:
             20968: 32,-47
             20971: 33,-52
         - node:
+            zIndex: 1
+            color: '#DE3A3A96'
+            id: ThreeQuarterTileOverlayGreyscale270
+          decals:
+            21128: -27,11
+        - node:
             color: '#52B4E996'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
@@ -10071,6 +10085,12 @@ entities:
           decals:
             11243: 27,-27
             11251: 30,-25
+        - node:
+            zIndex: 1
+            color: '#DE3A3A96'
+            id: ThreeQuarterTileOverlayGreyscale90
+          decals:
+            21130: -26,10
         - node:
             cleanable: True
             zIndex: 5
@@ -11800,77 +11820,65 @@ entities:
           decals:
             15118: 19.952984,-53.45079
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo1
           decals:
-            20992: -28,11
+            21115: -28,11
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo10
           decals:
-            21001: -27,9
+            21117: -27,9
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo11
           decals:
-            21002: -26,9
+            21118: -26,9
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo12
           decals:
-            21003: -25,9
+            21123: -25,9
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo2
           decals:
-            20993: -27,11
+            21126: -27,11
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo3
           decals:
-            20994: -26,11
+            21125: -26,11
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo4
           decals:
-            20995: -25,11
+            21124: -25,11
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo5
           decals:
-            20996: -28,10
+            21114: -28,10
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo6
           decals:
-            20997: -27,10
+            21121: -27,10
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo7
           decals:
-            20998: -26,10
+            21119: -26,10
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo8
           decals:
-            20999: -25,10
+            21120: -25,10
         - node:
-            zIndex: 2
-            color: '#FFFFFF9F'
+            color: '#FFFFFF47'
             id: syndlogo9
           decals:
-            21000: -28,9
+            21122: -28,9
         - node:
             cleanable: True
             angle: 1.5707963267948966 rad
@@ -17641,6 +17649,11 @@ entities:
     - type: Transform
       pos: 11.5,-54.5
       parent: 2
+  - uid: 346
+    components:
+    - type: Transform
+      pos: -17.5,-1.5
+      parent: 2
   - uid: 347
     components:
     - type: Transform
@@ -17925,6 +17938,11 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 45.5,-38.5
+      parent: 2
+  - uid: 402
+    components:
+    - type: Transform
+      pos: -17.5,-0.5
       parent: 2
   - uid: 403
     components:
@@ -18722,18 +18740,6 @@ entities:
     components:
     - type: Transform
       pos: -44.5,-51.5
-      parent: 2
-- proto: AirlockNfsdGlass
-  entities:
-  - uid: 346
-    components:
-    - type: Transform
-      pos: -17.5,-0.5
-      parent: 2
-  - uid: 402
-    components:
-    - type: Transform
-      pos: -17.5,-1.5
       parent: 2
 - proto: AirlockParamedicGlassLocked
   entities:
@@ -32459,17 +32465,17 @@ entities:
   - uid: 2862
     components:
     - type: Transform
-      pos: -25.5,-59.5
+      pos: -14.5,-56.5
       parent: 2
   - uid: 2863
     components:
     - type: Transform
-      pos: -25.5,-58.5
+      pos: -14.5,-55.5
       parent: 2
   - uid: 2864
     components:
     - type: Transform
-      pos: -15.5,-59.5
+      pos: -16.5,-58.5
       parent: 2
   - uid: 2865
     components:
@@ -33314,12 +33320,12 @@ entities:
   - uid: 3033
     components:
     - type: Transform
-      pos: -15.5,-55.5
+      pos: -17.5,-58.5
       parent: 2
   - uid: 3034
     components:
     - type: Transform
-      pos: -15.5,-56.5
+      pos: -18.5,-58.5
       parent: 2
   - uid: 3035
     components:
@@ -34910,11 +34916,6 @@ entities:
     components:
     - type: Transform
       pos: 45.5,-10.5
-      parent: 2
-  - uid: 3353
-    components:
-    - type: Transform
-      pos: -19.5,-59.5
       parent: 2
   - uid: 3354
     components:

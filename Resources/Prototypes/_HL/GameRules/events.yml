@@ -1797,8 +1797,6 @@
       prob: 0.005
     - id: ReagentSlimePhilterex
       prob: 0.005
-    - id: ReagentSlimeLibidozenithizine
-      prob: 0.004
     # - id: ReagentSlimeWehjuice
       # prob: 0.0003
     - id: ReagentCognizine

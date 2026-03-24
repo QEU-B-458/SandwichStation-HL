@@ -1,11 +1,3 @@
-- type: entity
-  abstract: true
-  parent: [ClothingTopless, ClothingUniformBase]
-  id: ClothingUniformBaseThongs
-  components:
-  - type: Clothing
-    slots: [innerclothing, accessory, accessoryalt]
-
 #Command Outfits
 #
 #Captain
@@ -39,20 +31,6 @@
     sprite: _HL/Clothing/Departmental/Command/captsocks.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformCaptainThong
-  name: captain's thong
-  description: Styled for a captain, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Command/captthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Command/captthong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #General Command
 
 - type: entity
@@ -82,19 +60,6 @@
     sprite: _HL/Clothing/Departmental/Command/commandsocks.rsi
   - type: Clothing
     sprite: _HL/Clothing/Departmental/Command/commandsocks.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformCommandThong
-  name: command's thong
-  description: Styled for a commanding officer, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Command/commandthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Command/commandthong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
@@ -131,19 +96,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformEngiThong
-  name: engineering thong
-  description: Styled for a engineering, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Engineering/engithong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Engineering/engithong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #Head of Engi / Chief Engineer
 - type: entity
   parent: ClothingHandsBase
@@ -172,19 +124,6 @@
     sprite: _HL/Clothing/Departmental/Engineering/chiefengisocks.rsi
   - type: Clothing
     sprite: _HL/Clothing/Departmental/Engineering/chiefengisocks.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformChiefEngiThong
-  name: chief engineer's thong
-  description: Styled for a Logistics, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Engineering/chiefengithong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Engineering/chiefengithong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
@@ -225,19 +164,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformEpiThong
-  name: epistemics thong
-  description: Styled for a Epistemics, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Epistemics/epithong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Epistemics/epithong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #Chaplain
 - type: entity
   parent: ClothingHandsBase
@@ -266,19 +192,6 @@
     sprite: _HL/Clothing/Departmental/Epistemics/chaplainsocks.rsi
   - type: Clothing
     sprite: _HL/Clothing/Departmental/Epistemics/chaplainsocks.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformChaplainThong
-  name: chaplain thong
-  description: Oddly, styled for a Chaplain, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Epistemics/chaplainthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Epistemics/chaplainthong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
@@ -340,19 +253,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformEpiHeadThong
-  name: research director's thong
-  description: Oddly, styled for the research director, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Epistemics/directorepithong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Epistemics/directorepithong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #Psionic Mantis - ForensicMantis
 - type: entity
   parent: ClothingHandsBase
@@ -381,19 +281,6 @@
     sprite: _HL/Clothing/Departmental/Epistemics/mantisepisocks.rsi
   - type: Clothing
     sprite: _HL/Clothing/Departmental/Epistemics/mantisepisocks.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformMantisEpiThong
-  name: psionic mantis' thong
-  description: Styled for a Psionic Mantis, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Epistemics/mantisepithong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Epistemics/mantisepithong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
@@ -430,19 +317,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformLogisThong
-  name: logistics thong
-  description: Styled for a Logistics, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Logistics/logithong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Logistics/logithong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #Quartermaster/ Logistics Officer
 - type: entity
   parent: ClothingHandsBase
@@ -474,19 +348,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformLOLogisThong
-  name: logistics officer thong
-  description: Styled for a Logistics, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Logistics/qmlogithong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Logistics/qmlogithong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #Courier / MailCarrier
 - type: entity
   parent: ClothingHandsBase
@@ -515,19 +376,6 @@
     sprite: _HL/Clothing/Departmental/Logistics/mailcarriersocks.rsi
   - type: Clothing
     sprite: _HL/Clothing/Departmental/Logistics/mailcarriersocks.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformCourierThong
-  name: courier thong
-  description: Styled for a Couriers, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Logistics/mailcarrierthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Logistics/mailcarrierthong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
@@ -564,19 +412,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformMedicThong
-  name: medical thong
-  description: Styled for a Medics, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Medical/medicalthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Medical/medicalthong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #Chemist
 - type: entity
   parent: ClothingHandsBase
@@ -605,19 +440,6 @@
     sprite: _HL/Clothing/Departmental/Medical/chemistsocks.rsi
   - type: Clothing
     sprite: _HL/Clothing/Departmental/Medical/chemistsocks.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformChemistsThong
-  name: chemist thong
-  description: Styled for a Chemists, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Medical/chemistthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Medical/chemistthong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
@@ -652,19 +474,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformParaMedicThong
-  name: paramedic thong
-  description: Styled for a Paramedics, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Medical/paramedthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Medical/paramedthong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #Chief Medical Officer
 - type: entity
   parent: ClothingHandsBase
@@ -693,19 +502,6 @@
     sprite: _HL/Clothing/Departmental/Medical/cmosocks.rsi
   - type: Clothing
     sprite: _HL/Clothing/Departmental/Medical/cmosocks.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformCMOThong
-  name: chief med officer's thong
-  description: Styled for the CMO, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Medical/cmothong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Medical/cmothong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
@@ -896,19 +692,6 @@
     price: 80 # Frontier
 
 - type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformServiceThong
-  name: service thong
-  description: Styled for a Service workers, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Service/servicethong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Service/servicethong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformServiceUni
   name: universal service jumpsuit
@@ -953,19 +736,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformJanitorThong
-  name: rubber thong
-  description: Styled for a Janitorial, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Service/janitorthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Service/janitorthong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #Bartender
 - type: entity
   parent: ClothingHandsBase
@@ -994,19 +764,6 @@
     sprite: _HL/Clothing/Departmental/Service/bartendersocks.rsi
   - type: Clothing
     sprite: _HL/Clothing/Departmental/Service/bartendersocks.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformBartenderThong
-  name: bartender thong
-  description: Styled for a Bartenders, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Service/bartenderthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Service/bartenderthong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
@@ -1041,19 +798,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformMusicianThong
-  name: musician thong
-  description: Styled for a musicians, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Service/musicianthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Service/musicianthong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 #Chef
 - type: entity
   parent: ClothingHandsBase
@@ -1084,20 +828,6 @@
     sprite: _HL/Clothing/Departmental/Service/chefsocks.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformChefThong
-  name: chef thong
-  description: Styled for a Chef, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Service/chefthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Service/chefthong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
 
 #Misc Outfits
 #Colonial Command
@@ -1130,19 +860,6 @@
     sprite: _HL/Clothing/Departmental/Misc/CCsocks.rsi
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformCCThong
-  name: CC thong
-  description: Styled for a Colonial Command, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Misc/CCthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Misc/CCthong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
@@ -1179,19 +896,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformMercThong
-  name: Merc thong
-  description: Styled for a Mercenary, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Misc/mercthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Misc/mercthong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
   #Private Sec
 - type: entity
   parent: ClothingHandsBase
@@ -1225,19 +929,6 @@
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier
 
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformPrivSecThong
-  name: Private Security thong
-  description: Styled for Private Security, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Misc/privsecthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Misc/privsecthong.rsi
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
   #Pilot
 - type: entity
   parent: ClothingHandsBase
@@ -1268,18 +959,5 @@
     sprite: _HL/Clothing/Departmental/Misc/pilotsocks.rsi
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
-  - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
-    price: 80 # Frontier
-
-- type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformPilotThong
-  name: Pilot thong
-  description: Styled for Pilot, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Departmental/Misc/pilotthong.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Departmental/Misc/pilotthong.rsi
   - type: StaticPrice # Frontier: setting base price to make material arbitrage happier
     price: 80 # Frontier

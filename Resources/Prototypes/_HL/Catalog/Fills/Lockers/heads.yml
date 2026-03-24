@@ -167,6 +167,7 @@
     - id: CargoRequestEngineeringComputerCircuitboard # Frontier
     - id: RCD
     - id: RCDAmmo
+    - id: BaseHandheldStationMapPowerCe
     - id: RubberStampCE
     - id: ShipyardRCD
     - id: ShipyardRCDAmmo

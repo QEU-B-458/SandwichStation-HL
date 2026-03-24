@@ -35,24 +35,6 @@
         color: "#ae0072"
 
 - type: entity
-  id: ReagentSlimeLibidozenithizine
-  parent: ReagentSlime
-  suffix: Libidozenithizine
-  components:
-  - type: Bloodstream
-    bloodReagent: Libidozenithizine
-  - type: PointLight
-    color: "#c90084"
-   # ReagentId: Libidozenithizine
-  - type: Sprite
-    drawdepth: Mobs
-    sprite: _Floof/Mobs/Animals/elemental.rsi
-    layers:
-      - map: [ "enum.DamageStateVisualLayers.Base" ]
-        state: alive
-        color: "#c90084"
-
-- type: entity
   id: ReagentSlimeOpporozidone
   parent: ReagentSlime
   suffix: Opporozidone

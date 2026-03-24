@@ -1,15 +1,6 @@
 
 # Uniform
 
-- type: loadout
-  id: ScienceClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformEpiThong
-
 # Hands
 
 - type: loadout
