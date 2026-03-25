@@ -30,13 +30,13 @@
 
 - type: jukebox
   id: what_a_mario_world
-  name: Unknown - What a mario world
+  name: RRThiel - What a mario world
   path:
     path: /Audio/_Sandwich/Jukebox/ShibaStation/athletic_what_a_mario_world.ogg
 
 - type: jukebox
   id: boombox_5_extended
-  name: Unknown - Boombox 5 extended
+  name: ZedFox - Boombox 5 extended
   path:
     path: /Audio/_Sandwich/Jukebox/ShibaStation/boombox_5_extended.ogg
 
@@ -48,36 +48,37 @@
 
 - type: jukebox
   id: rockefellerbeat
-  name: Unknown - Rockefellerbeat
+  name: Turbo - Rockefellerbeat
   path:
     path: /Audio/_Sandwich/Jukebox/eurobeat/rockefellerbeat.ogg
 
 - type: jukebox
   id: lagoona
-  name: Unknown - Lagoona
+  name: Smileynator - Lagoona
   path:
     path: /Audio/_Sandwich/Jukebox/lagoona.ogg
 
 - type: jukebox
   id: sparkanoko
-  name: Unknown - Sparkanoko
+  name: Sir 5000 - Sparkanoko
   path:
     path: /Audio/_Sandwich/Jukebox/memes/sparkanoko.ogg
 
 - type: jukebox
   id: superkarts
-  name: Unknown - Superkarts
+  name: Davilex - Superkarts
   path:
     path: /Audio/_Sandwich/Jukebox/memes/superkarts.ogg
 
 - type: jukebox
   id: komm_susser_tod_astrophysics
-  name: Unknown - Komm susser tod
+  name: astrophysics - Komm susser tod
   path:
     path: /Audio/_Sandwich/Jukebox/retro/komm_susser_tod_astrophysics.ogg
 
 - type: jukebox
   id: touchout
-  name: Unknown - Out of Touch
+  name: astrophysics - Out of Touch
   path:
     path: /Audio/_Sandwich/Jukebox/retro/touchout.ogg
+
