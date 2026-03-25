@@ -1,5 +1,3 @@
-File: Resources\Locale\en-US\jukebox\jukebox-menu.ftl
-````````
 jukebox-menu-title = Jukebox
 jukebox-menu-selectedsong = Selected Song:
 jukebox-menu-buttonplay = Play
