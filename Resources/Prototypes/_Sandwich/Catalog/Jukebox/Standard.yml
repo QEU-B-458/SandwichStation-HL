@@ -1,0 +1,90 @@
+- type: jukebox
+  id: arcadeslayer
+  name: Kazyu the Avali - Arcade Slayer
+  path:
+    path: /Audio/_Sandwich/Jukebox/Retro_Electro/arcade_slayer.ogg
+
+- type: jukebox
+  id: theheist
+  name: Kazyu the Avali - The Heist
+  path:
+    path: /Audio/_Sandwich/Jukebox/Retro_Electro/the_heist_by_kaz.ogg
+
+- type: jukebox
+  id: creatingsandwiches
+  name: .Yuuchan - Creating Sandwiches
+  path:
+    path: /Audio/_Sandwich/Jukebox/SandwichStation/creating_sandwiches.ogg
+
+- type: jukebox
+  id: sandwichstation
+  name: .Yuuchan - SandwichStation
+  path:
+    path: /Audio/_Sandwich/Jukebox/SandwichStation/sandwichstation.ogg
+
+- type: jukebox
+  id: shibastation
+  name: .Yuuchan - ShibaStation
+  path:
+    path: /Audio/_Sandwich/Jukebox/SandwichStation/shibastation.ogg
+
+- type: jukebox
+  id: what_a_mario_world
+  name: RRThiel - What a mario world
+  path:
+    path: /Audio/_Sandwich/Jukebox/ShibaStation/athletic_what_a_mario_world.ogg
+
+- type: jukebox
+  id: boombox_5_extended
+  name: ZedFox - Boombox 5 extended
+  path:
+    path: /Audio/_Sandwich/Jukebox/ShibaStation/boombox_5_extended.ogg
+
+- type: jukebox
+  id: doge_adventure
+  name: MRWEEBL - Doge Adventure
+  path:
+    path: /Audio/_Sandwich/Jukebox/ShibaStation/doge_adventure.ogg
+
+- type: jukebox
+  id: rockefellerbeat
+  name: Turbo - Rockefellerbeat
+  path:
+    path: /Audio/_Sandwich/Jukebox/eurobeat/rockefellerbeat.ogg
+
+- type: jukebox
+  id: lagoona
+  name: Smileynator - Lagoona
+  path:
+    path: /Audio/_Sandwich/Jukebox/techno/lagoona.ogg
+
+- type: jukebox
+  id: sparkanoko
+  name: Sir 5000 - Sparkanoko
+  path:
+    path: /Audio/_Sandwich/Jukebox/memes/sparkanoko.ogg
+
+- type: jukebox
+  id: sparkanoko
+  name: Vikas Music - Shikanoko
+  path:
+    path: /Audio/_Sandwich/Jukebox/eurobeat/sparkanoko-eurobeat.ogg
+
+- type: jukebox
+  id: superkarts
+  name: Davilex - Superkarts
+  path:
+    path: /Audio/_Sandwich/Jukebox/memes/superkarts.ogg
+
+- type: jukebox
+  id: komm_susser_tod_astrophysics
+  name: astrophysics - Komm susser tod
+  path:
+    path: /Audio/_Sandwich/Jukebox/retro/komm_susser_tod_astrophysics.ogg
+
+- type: jukebox
+  id: touchout
+  name: astrophysics - Out of Touch
+  path:
+    path: /Audio/_Sandwich/Jukebox/retro/touchout.ogg
+
