@@ -56,13 +56,19 @@
   id: lagoona
   name: Smileynator - Lagoona
   path:
-    path: /Audio/_Sandwich/Jukebox/lagoona.ogg
+    path: /Audio/_Sandwich/Jukebox/techno/lagoona.ogg
 
 - type: jukebox
   id: sparkanoko
   name: Sir 5000 - Sparkanoko
   path:
     path: /Audio/_Sandwich/Jukebox/memes/sparkanoko.ogg
+
+- type: jukebox
+  id: sparkanoko
+  name: Vikas Music - Shikanoko
+  path:
+    path: /Audio/_Sandwich/Jukebox/eurobeat/sparkanoko-eurobeat.ogg
 
 - type: jukebox
   id: superkarts
