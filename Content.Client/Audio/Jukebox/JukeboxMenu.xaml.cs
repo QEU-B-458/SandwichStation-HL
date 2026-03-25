@@ -6,6 +6,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Input;
+using Robust.Shared.Maths;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using System.Linq;
@@ -42,16 +43,6 @@ public sealed partial class JukeboxMenu : FancyWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         _audioSystem = _entManager.System<AudioSystem>();
-
-        MusicList.OnItemSelected += args =>
-        {
-            var entry = MusicList[args.ItemIndex];
-
-            if (entry.Metadata is not string juke)
-                return;
-
-            OnSongSelected?.Invoke(juke);
-        };
 
         PlayButton.OnPressed += args =>
         {
@@ -97,20 +88,92 @@ public sealed partial class JukeboxMenu : FancyWindow
     }
 
     /// <summary>
-    /// Re-populates the list of jukebox prototypes available, sorted alphabetically.
+    /// Re-populates the list of jukebox prototypes grouped by category and sorted alphabetically.
     /// </summary>
     public void Populate(IEnumerable<JukeboxPrototype> jukeboxProtos)
     {
-        MusicList.Clear();
+        MusicCategories.DisposeAllChildren();
 
-        // Sort the jukeboxProtos alphabetically by Name
-        var sortedProtos = jukeboxProtos.OrderBy(proto => proto.Name);
+        var uncategorised = Loc.GetString("jukebox-menu-category-uncategorised");
+        var categories = new Dictionary<string, (string Category, List<JukeboxPrototype> Songs)>();
 
-        foreach (var entry in sortedProtos)
-
+        foreach (var proto in jukeboxProtos)
         {
-            MusicList.AddItem(entry.Name, metadata: entry.ID);
+            var category = GetSongCategory(proto, uncategorised);
+            var key = category.ToLowerInvariant();
+
+            if (!categories.TryGetValue(key, out var entry))
+            {
+                entry = (category, new List<JukeboxPrototype>());
+                categories[key] = entry;
+            }
+
+            entry.Songs.Add(proto);
+            categories[key] = entry;
         }
+
+        var orderedCategories = categories.Values
+            .OrderBy(entry => entry.Category == uncategorised ? 1 : 0)
+            .ThenBy(entry => entry.Category.ToLowerInvariant());
+
+        foreach (var category in orderedCategories)
+        {
+            var songList = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                HorizontalExpand = true,
+                Margin = new Thickness(12, 0, 0, 4)
+            };
+
+            foreach (var proto in category.Songs.OrderBy(song => song.Name.ToLowerInvariant()))
+            {
+                var button = new Button
+                {
+                    Text = GetDisplayedSongName(proto),
+                    HorizontalExpand = true
+                };
+
+                button.OnPressed += _ => OnSongSelected?.Invoke(proto.ID);
+                songList.AddChild(button);
+            }
+
+            var body = new CollapsibleBody();
+            body.AddChild(songList);
+
+            var collapsible = new Collapsible(new JukeboxCategoryHeading(category.Category), body)
+            {
+                HorizontalExpand = true,
+                BodyVisible = false
+            };
+
+            MusicCategories.AddChild(collapsible);
+        }
+    }
+
+    public static string GetDisplayedSongName(JukeboxPrototype proto)
+    {
+        if (IsJukeboxPath(proto.Path.Path.ToString()))
+            return proto.Name;
+
+        return $"INVALID: {proto.Name}";
+    }
+
+    private static bool IsJukeboxPath(string path)
+    {
+        var pathParts = path.Replace('\\', '/').Split('/', StringSplitOptions.RemoveEmptyEntries);
+        return Array.FindIndex(pathParts, part => string.Equals(part, "Jukebox", StringComparison.OrdinalIgnoreCase)) != -1;
+    }
+
+    private static string GetSongCategory(JukeboxPrototype proto, string uncategorised)
+    {
+        var path = proto.Path.Path.ToString().Replace('\\', '/');
+        var pathParts = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
+        var jukeboxIndex = Array.FindIndex(pathParts, part => string.Equals(part, "Jukebox", StringComparison.OrdinalIgnoreCase));
+
+        if (jukeboxIndex == -1 || jukeboxIndex >= pathParts.Length - 2)
+            return uncategorised;
+
+        return pathParts[jukeboxIndex + 1];
     }
 
     public void SetPlayPauseButton(bool playing, bool force = false)
@@ -198,4 +261,26 @@ public sealed partial class JukeboxMenu : FancyWindow
         RepeatButton.Pressed = state.PlaybackMode == JukeboxPlaybackMode.Repeat;
     }
     // End Frontier: Shuffle & Repeat
+}
+
+public sealed class JukeboxCategoryHeading : CollapsibleHeading
+{
+    private readonly string _title;
+
+    public JukeboxCategoryHeading(string title) : base(title)
+    {
+        _title = title;
+        ChevronVisible = false;
+        UpdateArrow(false);
+
+        OnToggled += args =>
+        {
+            UpdateArrow(args.Pressed);
+        };
+    }
+
+    private void UpdateArrow(bool expanded)
+    {
+        Title = expanded ? $"▼ {_title}" : $"▶ {_title}";
+    }
 }
