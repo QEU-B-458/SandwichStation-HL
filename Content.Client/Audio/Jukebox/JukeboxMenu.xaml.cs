@@ -95,11 +95,12 @@ public sealed partial class JukeboxMenu : FancyWindow
         MusicCategories.DisposeAllChildren();
 
         var uncategorised = Loc.GetString("jukebox-menu-category-uncategorised");
+        var spaceStation14 = Loc.GetString("jukebox-menu-category-spacestation14");
         var categories = new Dictionary<string, (string Category, List<JukeboxPrototype> Songs)>();
 
         foreach (var proto in jukeboxProtos)
         {
-            var category = GetSongCategory(proto, uncategorised);
+            var category = GetSongCategory(proto, uncategorised, spaceStation14);
             var key = category.ToLowerInvariant();
 
             if (!categories.TryGetValue(key, out var entry))
@@ -164,13 +165,19 @@ public sealed partial class JukeboxMenu : FancyWindow
         return Array.FindIndex(pathParts, part => string.Equals(part, "Jukebox", StringComparison.OrdinalIgnoreCase)) != -1;
     }
 
-    private static string GetSongCategory(JukeboxPrototype proto, string uncategorised)
+    private static string GetSongCategory(JukeboxPrototype proto, string uncategorised, string spaceStation14)
     {
         var path = proto.Path.Path.ToString().Replace('\\', '/');
         var pathParts = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
         var jukeboxIndex = Array.FindIndex(pathParts, part => string.Equals(part, "Jukebox", StringComparison.OrdinalIgnoreCase));
 
-        if (jukeboxIndex == -1 || jukeboxIndex >= pathParts.Length - 2)
+        if (jukeboxIndex == -1)
+            return uncategorised;
+
+        if (jukeboxIndex == 1)
+            return spaceStation14;
+
+        if (jukeboxIndex >= pathParts.Length - 2)
             return uncategorised;
 
         return pathParts[jukeboxIndex + 1];
