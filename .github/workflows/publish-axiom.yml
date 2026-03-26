@@ -15,68 +15,72 @@ jobs:
       contents: write
 
     steps:
-    - uses: actions/checkout@v4.2.2
-      with:
-        submodules: 'recursive'
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout Code
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: 'recursive'
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4.1.0
-      with:
-        dotnet-version: 9.0.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4.1.0
+        with:
+          dotnet-version: 9.0.x
 
-    - name: Get Engine Tag
-      run: |
-        cd RobustToolbox
-        git fetch --depth=1
+      - name: Get Engine Tag
+        run: |
+          cd RobustToolbox
+          git fetch --depth=1
 
-    - name: Install dependencies
-      run: dotnet restore
+      - name: Install dependencies
+        run: dotnet restore
 
-    - name: Build Packaging
-      run: dotnet build Content.Packaging --configuration Release --no-restore /m
+      - name: Build Packaging Tool
+        run: dotnet build Content.Packaging --configuration Release --no-restore /m
 
-    - name: Package client (windows-x64)
-      run: dotnet run --project Content.Packaging client --platform windows-x64
+      - name: Package client (windows-x64)
+        run: |
+          dotnet run --project Content.Packaging -- client --platform windows-x64
+          mkdir -p /tmp/artifacts
+          find . -name "SS14.Client_windows-x64.zip" -exec cp {} /tmp/artifacts/SS14.Client_windows-x64.zip \;
 
-    - name: List files for debugging
-      run: find . -name "*.zip"
-      
-    - name: Save client zip before server cleans release/
-      run: cp release/SS14.Client_windows-x64.zip /tmp/SS14.Client_windows-x64.zip
+      - name: Package server (linux-x64)
+        run: |
+          dotnet run --project Content.Packaging -- server --platform linux-x64
+          mkdir -p /tmp/artifacts
+          find . -name "SS14.Server_linux-x64.zip" -exec cp {} /tmp/artifacts/SS14.Server_linux-x64.zip \;
 
-    - name: Package server (linux-x64)
-      run: dotnet run --project Content.Packaging server --platform linux-x64
+      - name: Prepare Release Directory
+        run: |
+          mkdir -p release
+          cp /tmp/artifacts/SS14.Client_windows-x64.zip release/
+          cp /tmp/artifacts/SS14.Server_linux-x64.zip release/
 
-    - name: Restore client zip
-      run: cp /tmp/SS14.Client_windows-x64.zip release/SS14.Client_windows-x64.zip
+      - name: Set version
+        id: version
+        run: echo "version=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
-    - name: Set version
-      id: version
-      run: echo "version=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+      - name: Create GitHub Release and Upload Assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          gh release create "build-${VERSION}" \
+            --title "Build ${VERSION}" \
+            --notes "Automated build $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            "release/SS14.Server_linux-x64.zip" \
+            "release/SS14.Client_windows-x64.zip"
 
-    - name: Create GitHub Release and upload server zip
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        VERSION="${{ steps.version.outputs.version }}"
-        gh release create "build-${VERSION}" \
-          --title "Build ${VERSION}" \
-          --notes "Automated build $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-          "release/SS14.Server_linux-x64.zip#SS14.Server_linux-x64.zip" \
-              "release/SS14.Client_windows-x64.zip#SS14.Client_windows-x64.zip"
+      - name: Update manifest.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+          REPO: ${{ github.repository }}
+        run: python3 Tools/update_manifest_axiom.py
 
-    - name: Update manifest.json
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        VERSION: ${{ steps.version.outputs.version }}
-        REPO: ${{ github.repository }}
-      run: python3 Tools/update_manifest_axiom.py
-
-    - name: Commit updated manifest
-      run: |
-        git config user.name "GitHub Actions"
-        git config user.email "actions@github.com"
-        git add manifest.json
-        git diff --staged --quiet || git commit -m "chore: update manifest [skip ci]"
-        git push
+      - name: Commit updated manifest
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add manifest.json
+          git diff --staged --quiet || git commit -m "chore: update manifest [skip ci]"
+          git push
