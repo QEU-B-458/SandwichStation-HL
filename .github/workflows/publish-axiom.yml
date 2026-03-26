@@ -41,13 +41,15 @@ jobs:
         run: |
           dotnet run --project Content.Packaging -- client --platform windows-x64
           mkdir -p /tmp/artifacts
-          find . -name "SS14.Client_windows-x64.zip" -exec cp {} /tmp/artifacts/SS14.Client_windows-x64.zip \;
+          # Updated to match the actual filename found in your debug: SS14.Client.zip
+          find . -name "SS14.Client.zip" -exec cp {} /tmp/artifacts/SS14.Client_windows-x64.zip \;
 
       - name: Package server (linux-x64)
         run: |
           dotnet run --project Content.Packaging -- server --platform linux-x64
           mkdir -p /tmp/artifacts
-          find . -name "SS14.Server_linux-x64.zip" -exec cp {} /tmp/artifacts/SS14.Server_linux-x64.zip \;
+          # Most SS14 tools name the server zip SS14.Server.zip by default
+          find . -name "SS14.Server.zip" -exec cp {} /tmp/artifacts/SS14.Server_linux-x64.zip \;
 
       - name: Prepare Release Directory
         run: |
