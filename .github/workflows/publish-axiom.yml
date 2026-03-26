@@ -41,18 +41,20 @@ jobs:
         run: |
           dotnet run --project Content.Packaging -- client --platform windows-x64
           mkdir -p /tmp/artifacts
-          # Updated to match the actual filename found in your debug: SS14.Client.zip
-          find . -name "SS14.Client.zip" -exec cp {} /tmp/artifacts/SS14.Client_windows-x64.zip \;
+          # This finds the client zip even if the name is just SS14.Client.zip
+          find release/ -name "SS14.Client*.zip" -exec cp {} /tmp/artifacts/SS14.Client_windows-x64.zip \;
 
       - name: Package server (linux-x64)
         run: |
           dotnet run --project Content.Packaging -- server --platform linux-x64
           mkdir -p /tmp/artifacts
-          # Most SS14 tools name the server zip SS14.Server.zip by default
-          find . -name "SS14.Server.zip" -exec cp {} /tmp/artifacts/SS14.Server_linux-x64.zip \;
+          # This finds the server zip even if the name is just SS14.Server.zip
+          find release/ -name "SS14.Server*.zip" -exec cp {} /tmp/artifacts/SS14.Server_linux-x64.zip \;
 
       - name: Prepare Release Directory
         run: |
+          # Clean and recreate the local release folder for the final GH upload
+          rm -rf release
           mkdir -p release
           cp /tmp/artifacts/SS14.Client_windows-x64.zip release/
           cp /tmp/artifacts/SS14.Server_linux-x64.zip release/
