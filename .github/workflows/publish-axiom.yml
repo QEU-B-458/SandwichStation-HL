@@ -39,6 +39,9 @@ jobs:
     - name: Package client (windows-x64)
       run: dotnet run --project Content.Packaging client --platform windows-x64
 
+    - name: List files for debugging
+      run: find . -name "*.zip"
+      
     - name: Save client zip before server cleans release/
       run: cp release/SS14.Client_windows-x64.zip /tmp/SS14.Client_windows-x64.zip
 
