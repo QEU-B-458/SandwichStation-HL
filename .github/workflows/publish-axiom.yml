@@ -39,8 +39,14 @@ jobs:
     - name: Package client (windows-x64)
       run: dotnet run --project Content.Packaging client --platform windows-x64
 
+    - name: Save client zip before server cleans release/
+      run: cp release/SS14.Client_windows-x64.zip /tmp/SS14.Client_windows-x64.zip
+
     - name: Package server (linux-x64)
       run: dotnet run --project Content.Packaging server --platform linux-x64
+
+    - name: Restore client zip
+      run: cp /tmp/SS14.Client_windows-x64.zip release/SS14.Client_windows-x64.zip
 
     - name: Set version
       id: version
