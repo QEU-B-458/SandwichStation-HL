@@ -7,10 +7,8 @@ Used by the publish-axiom.yml GitHub Actions workflow.
 import hashlib
 import json
 import os
-import subprocess
-import sys
-import time
 import urllib.request
+from datetime import datetime, timezone
 
 REPO = os.environ["REPO"]  # e.g. QEU-B-458/SandwichStation-HL
 VERSION = os.environ["VERSION"]  # short git SHA
@@ -18,8 +16,10 @@ GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 
 MANIFEST_FILE = "manifest.json"
 RELEASE_TAG = f"build-{VERSION}"
-ZIP_NAME = "SS14.Server_linux-x64.zip"
-ZIP_URL = f"https://github.com/{REPO}/releases/download/{RELEASE_TAG}/{ZIP_NAME}"
+SERVER_ZIP = "SS14.Server_linux-x64.zip"
+CLIENT_ZIP = "SS14.Client_windows-x64.zip"
+SERVER_URL = f"https://github.com/{REPO}/releases/download/{RELEASE_TAG}/{SERVER_ZIP}"
+CLIENT_URL = f"https://github.com/{REPO}/releases/download/{RELEASE_TAG}/{CLIENT_ZIP}"
 
 def sha256_of_url(url: str) -> tuple[str, int]:
     """Download file and compute SHA256 + size."""
@@ -32,9 +32,13 @@ def sha256_of_url(url: str) -> tuple[str, int]:
             size += len(chunk)
     return h.hexdigest().upper(), size
 
-print(f"Computing SHA256 for {ZIP_URL} ...")
-sha256, size = sha256_of_url(ZIP_URL)
-print(f"  SHA256: {sha256}  Size: {size} bytes")
+print(f"Computing SHA256 for {SERVER_URL} ...")
+server_sha256, server_size = sha256_of_url(SERVER_URL)
+print(f"  SHA256: {server_sha256}  Size: {server_size} bytes")
+
+print(f"Computing SHA256 for {CLIENT_URL} ...")
+client_sha256, client_size = sha256_of_url(CLIENT_URL)
+print(f"  SHA256: {client_sha256}  Size: {client_size} bytes")
 
 # Load existing manifest or start fresh
 if os.path.exists(MANIFEST_FILE):
@@ -43,14 +47,17 @@ if os.path.exists(MANIFEST_FILE):
 else:
     manifest = {"builds": {}}
 
-# Add new build entry
+# Add new build entry — time must be ISO 8601 for Watchdog's DateTimeOffset deserializer
 manifest["builds"][VERSION] = {
-    "time": int(time.time()),
+    "time": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    "client": {
+        "url": CLIENT_URL,
+        "sha256": client_sha256,
+    },
     "server": {
         "linux-x64": {
-            "url": ZIP_URL,
-            "sha256": sha256,
-            "size": size,
+            "url": SERVER_URL,
+            "sha256": server_sha256,
         }
     }
 }
@@ -62,7 +69,7 @@ if len(builds) > 10:
     for old in sorted_keys[:-10]:
         del builds[old]
 
+print(f"manifest.json updated with build {VERSION}")
+
 with open(MANIFEST_FILE, "w") as f:
     json.dump(manifest, f, indent=2)
-
-print(f"manifest.json updated with build {VERSION}")
