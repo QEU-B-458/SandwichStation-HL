@@ -1,7 +1,7 @@
 {
   "builds": {
     "2f1555d7f": {
-      "time": 1774508519,
+      "time": "1774508519",
       "server": {
         "linux-x64": {
           "url": "https://github.com/QEU-B-458/SandwichStation-HL/releases/download/build-2f1555d7f/SS14.Server_linux-x64.zip",
@@ -11,7 +11,7 @@
       }
     },
     "23594b329": {
-      "time": 1774508757,
+      "time": "1774508757",
       "server": {
         "linux-x64": {
           "url": "https://github.com/QEU-B-458/SandwichStation-HL/releases/download/build-23594b329/SS14.Server_linux-x64.zip",
