@@ -41,28 +41,28 @@
           #engineering
           AtmosphericTechnician: [ 2, 2 ]
           StationEngineer: [ -1, -1 ]
-          TechnicalAssistant: [ 0, 0 ]
+          TechnicalAssistant: [ 5, 5 ]
           #medical
           Chemist: [ 0, 0 ]
           MedicalDoctor: [ 0, 0 ]
           Paramedic: [ 2, 2 ]
-          MedicalIntern: [ 2, 2 ] #intern, not counted
+          MedicalIntern: [ 0, 0 ] #intern, not counted
           Psychologist: [ 0, 0 ]
           Geneticist: [ 1, 1 ]
           #science
-          Scientist: [ 2, 2 ]
-          ResearchAssistant: [ 2, 2 ] #intern, not counted
+          Scientist: [ 0, 1 ]
+          ResearchAssistant: [ 0, 0 ] #intern, not counted
           #security
           Warden: [ 0, 0 ]
-          SecurityOfficer: [ 4, 6 ]
+          SecurityOfficer: [ 0, 4 ]
           Detective: [ 0, 0 ]
-          SecurityCadet: [ 2, 2 ] #intern, not counted
+          SecurityCadet: [ 0, 0 ] #intern, not counted
           Lawyer: [ 0, 0 ]
           #supply
-          SalvageSpecialist: [ 0, 10 ]
-          CargoTechnician: [ 1, 4 ]
+          SalvageSpecialist: [ 0, 0 ]
+          CargoTechnician: [ 0, 0 ]
           #civilian
-          Passenger: [ -1, -1 ] #infinite, not counted
+          Passenger: [ 0, 0 ] #infinite, not counted
           Clown: [ 0, 0 ]
           Mime: [ 0, 0 ]
           Musician: [ 0, 0 ]
@@ -77,7 +77,7 @@
           ServiceQuadBorg: [ 0, 0 ]
           SalvageQuadBorg: [ 0, 0 ]
           SecurityQuadBorg: [ 0, 0 ]
-          EngineeringQuadBorg: [ 0, 0 ]
+          EngineeringQuadBorg: [ 1, 1 ]
           Valet: [ 0, 0 ]
           MailCarrier: [ 0, 0 ]
           Prisoner: [ 0, 0 ]
