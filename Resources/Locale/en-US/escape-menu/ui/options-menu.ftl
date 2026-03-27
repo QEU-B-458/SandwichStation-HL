@@ -35,6 +35,7 @@ ui-options-ambience-volume = Ambience volume:
 ui-options-exped-music-volume = Expedition music volume:
 ui-options-lobby-volume = Lobby & Round-end volume:
 ui-options-interface-volume = Interface volume:
+ui-options-jukebox-volume = Jukebox volume:
 ui-options-ambience-max-sounds = Ambience simultaneous sounds:
 ui-options-lobby-music = Lobby & Round-end Music
 ui-options-restart-sounds = Round Restart Sounds

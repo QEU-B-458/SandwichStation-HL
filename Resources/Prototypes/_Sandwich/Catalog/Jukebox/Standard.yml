@@ -1,30 +1,138 @@
 - type: jukebox
-  id: arcadeslayer
-  name: Kazyu the Avali - Arcade Slayer
+  id: every_light_is_blinking_at_once
+  name: Sunbeamstress - Every Light Is Blinking At Once
   path:
-    path: /Audio/_Sandwich/Jukebox/Retro_Electro/arcade_slayer.ogg
+    path: /Audio/_Sandwich/Jukebox/every_light_is_blinking_at_onceMONO.ogg
 
 - type: jukebox
-  id: theheist
-  name: Kazyu the Avali - The Heist
+  id: hackers
+  name: Karl Casey @ White Bat Audio - Hackers
   path:
-    path: /Audio/_Sandwich/Jukebox/Retro_Electro/the_heist_by_kaz.ogg
+    path: /Audio/_Sandwich/Jukebox/hackers-MONO.ogg
+
+- type: jukebox
+  id: phoron_will_make_us_rich
+  name: Sunbeamstress - Phoron Will Make Us Rich
+  path:
+    path: /Audio/_Sandwich/Jukebox/Phoron_Will_Make_Us_RichMONO2.ogg
+
+- type: jukebox
+  id: binks_sake
+  name: Ru's Piano - Binks Sake
+  path:
+    path: /Audio/_Sandwich/Jukebox/Anime/binks-sake.ogg
+
+- type: jukebox
+  id: disco_panzer
+  name: Alan Aztec - Disco Panzer
+  path:
+    path: /Audio/_Sandwich/Jukebox/Hardbass/disco-panzer.ogg
+
+- type: jukebox
+  id: killswitch
+  name: Mekaloton - Killswitch
+  path:
+    path: /Audio/_Sandwich/Jukebox/Vocaloid/killswitch.ogg
+
+- type: jukebox
+  id: mad_world
+  name: ILYAA - Mad World
+  path:
+    path: /Audio/_Sandwich/Jukebox/EDM/mad-world.ogg
+
+- type: jukebox
+  id: nemesis_ft_kasane_teto
+  name: Mekaloton - Nemesis
+  path:
+    path: /Audio/_Sandwich/Jukebox/Vocaloid/nemesis.ogg
+
+- type: jukebox
+  id: symphony_9
+  name: Dvorak - Symphony 9
+  path:
+    path: /Audio/_Sandwich/Jukebox/Classical/symphony-9.ogg
+
+- type: jukebox
+  id: third_rail
+  name: Mekaloton - Third Rail
+  path:
+    path: /Audio/_Sandwich/Jukebox/Vocaloid/third-rail.ogg
+
+- type: jukebox
+  id: waltz_2
+  name: Dmitri Shostakovich - Waltz 2
+  path:
+    path: /Audio/_Sandwich/Jukebox/Classical/waltz-2.ogg
+
+- type: jukebox
+  id: we_got_hostiles
+  name: morch kovalski - We Got Hostiles
+  path:
+    path: /Audio/_Sandwich/Jukebox/Electro/we-got-hostiles.ogg
+
+- type: jukebox
+  id: burytheloly_eurobeat
+  name: Vikas Music - Bury the Loly
+  path:
+    path: /Audio/_Sandwich/Jukebox/Eurobeat/bury-the-loly-eurobeat.ogg
+
+- type: jukebox
+  id: pokemoneuro
+  name: Vikas Music - Pokemon Theme
+  path:
+    path: /Audio/_Sandwich/Jukebox/Eurobeat/pokemon-eurobeat.ogg
+
+- type: jukebox
+  id: rockefellerbeat
+  name: Turbo - Rockefellerbeat
+  path:
+    path: /Audio/_Sandwich/Jukebox/Eurobeat/rockefellerbeat.ogg
+
+- type: jukebox
+  id: shikanoko
+  name: Vikas Music - Shikanoko
+  path:
+    path: /Audio/_Sandwich/Jukebox/Eurobeat/sparkanoko-eurobeat.ogg
+
+- type: jukebox
+  id: sparkanoko
+  name: Sir 5000 - Sparkanoko
+  path:
+    path: /Audio/_Sandwich/Jukebox/Memes/sparkanoko.ogg
+
+- type: jukebox
+  id: superkarts
+  name: Davilex Entertainment - Superkarts
+  path:
+    path: /Audio/_Sandwich/Jukebox/Memes/superkarts.ogg
+
+- type: jukebox
+  id: komm_susser_tod_astrophysics
+  name: astrophysics - Komm susser tod
+  path:
+    path: /Audio/_Sandwich/Jukebox/Retro/komm_susser_tod_astrophysics.ogg
+
+- type: jukebox
+  id: touchout
+  name: astrophysics - Out of Touch
+  path:
+    path: /Audio/_Sandwich/Jukebox/Retro/touchout.ogg
 
 - type: jukebox
   id: creatingsandwiches
-  name: .Yuuchan - Creating Sandwiches
+  name: .yuuchan (on discord) - Creating Sandwiches
   path:
     path: /Audio/_Sandwich/Jukebox/SandwichStation/creating_sandwiches.ogg
 
 - type: jukebox
   id: sandwichstation
-  name: .Yuuchan - SandwichStation
+  name: .yuuchan (on discord) - SandwichStation
   path:
     path: /Audio/_Sandwich/Jukebox/SandwichStation/sandwichstation.ogg
 
 - type: jukebox
   id: shibastation
-  name: .Yuuchan - ShibaStation
+  name: .yuuchan (on discord) - ShibaStation
   path:
     path: /Audio/_Sandwich/Jukebox/SandwichStation/shibastation.ogg
 
@@ -47,44 +155,7 @@
     path: /Audio/_Sandwich/Jukebox/ShibaStation/doge_adventure.ogg
 
 - type: jukebox
-  id: rockefellerbeat
-  name: Turbo - Rockefellerbeat
+  id: lagoona_techno
+  name: PerZZon / Smileynator - Lagoona
   path:
-    path: /Audio/_Sandwich/Jukebox/eurobeat/rockefellerbeat.ogg
-
-- type: jukebox
-  id: lagoona
-  name: Smileynator - Lagoona
-  path:
-    path: /Audio/_Sandwich/Jukebox/techno/lagoona.ogg
-
-- type: jukebox
-  id: sparkanoko
-  name: Sir 5000 - Sparkanoko
-  path:
-    path: /Audio/_Sandwich/Jukebox/memes/sparkanoko.ogg
-
-- type: jukebox
-  id: Shikanoko
-  name: Vikas Music - Shikanoko
-  path:
-    path: /Audio/_Sandwich/Jukebox/eurobeat/sparkanoko-eurobeat.ogg
-
-- type: jukebox
-  id: superkarts
-  name: Davilex - Superkarts
-  path:
-    path: /Audio/_Sandwich/Jukebox/memes/superkarts.ogg
-
-- type: jukebox
-  id: komm_susser_tod_astrophysics
-  name: astrophysics - Komm susser tod
-  path:
-    path: /Audio/_Sandwich/Jukebox/retro/komm_susser_tod_astrophysics.ogg
-
-- type: jukebox
-  id: touchout
-  name: astrophysics - Out of Touch
-  path:
-    path: /Audio/_Sandwich/Jukebox/retro/touchout.ogg
-
+    path: /Audio/_Sandwich/Jukebox/Techno/lagoona.ogg
