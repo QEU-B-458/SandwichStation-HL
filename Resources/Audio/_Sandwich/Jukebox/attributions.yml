@@ -3,32 +3,97 @@
 #  copyright: "Artist name"
 #  source: "Artist name, youtube channel, name etc."
 
+- files: ["Anime/binks-sake.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Ru's Piano"
+  source: "https://www.youtube.com/watch?v=-xRx0xeQpGE"
+
+- files: ["Classical/symphony-9.ogg"]
+  license: "CC0"
+  copyright: "Dvorak"
+  source: "https://www.youtube.com/watch?v=89jOPAGJq-M"
+
+- files: ["Classical/waltz-2.ogg"]
+  license: "CC0"
+  copyright: "Dmitri Shostakovich"
+  source: "https://youtu.be/mmCnQDUSO4I?si=k6Lbk5N0puf-wyov"
+
+- files: ["EDM/mad-world.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "ILYAA"
+  source: "https://www.youtube.com/watch?v=DAZk1RX_7k4"
+
+- files: ["Electro/arcade_slayer.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Kazyu the Avali"
+  source: "https://www.twitch.tv/kazyu_the_avali"
+
+- files: ["Electro/the_heist_by_kaz.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Kazyu the Avali"
+  source: "https://www.twitch.tv/kazyu_the_avali"
+
+- files: ["Electro/we-got-hostiles.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "morch kovalski"
+  source: "https://www.youtube.com/watch?v=3UiKY_e3qDQ"
+
+- files: ["Eurobeat/bury-the-loly-eurobeat.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Vikas Music"
+  source: ""
+
+- files: ["Eurobeat/pokemon-eurobeat.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Vikas Music"
+  source: ""
+
+- files: ["Eurobeat/rockefellerbeat.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Turbo"
+  source: "https://www.youtube.com/watch?v=i-gA0vcBnPI"
+
+- files: ["Eurobeat/sparkanoko-eurobeat.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Vikas Music"
+  source: "https://www.youtube.com/watch?v=Mf8EruNfZ64"
+
+- files: ["Hardbass/disco-panzer.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Alan Aztec"
+  source: "https://www.youtube.com/watch?v=uRSAatLI2QY"
+
+- files: ["Memes/sparkanoko.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Sir 5000 / The Spark / Shikairo Days"
+  source: "https://www.youtube.com/watch?v=qapMTPYmOtQ"
+
+- files: ["Memes/superkarts.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Davilex Entertainment"
+  source: "https://www.youtube.com/watch?v=IHzvrt5Rkrk"
+
+- files: ["Retro/komm_susser_tod_astrophysics.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "astrophysics"
+  source: "https://www.youtube.com/watch?v=87ofklYDTNQ"
+
+- files: ["Retro/touchout.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "astrophysics"
+  source: "https://www.youtube.com/watch?v=zZdVwTjUtjg"
+
+- files: ["SandwichStation/creating_sandwiches.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: ".yuuchan (on discord)"
+  source: "https://discord.gg/Z6JvtKw6tp"
+
 - files: ["SandwichStation/sandwichstation.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: ".yuuchan (on discord)"
   source: "https://discord.gg/Z6JvtKw6tp"
 
 - files: ["SandwichStation/shibastation.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: ".yuuchan (on discord)"
-  source: "https://discord.gg/Z6JvtKw6tp"
-
-- files: ["doge_adventure.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "MRWEEBL"
-  source: "https://www.youtube.com/watch?v=sd4bqmP_460"
-
-- files: ["arcade_slayer.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "Kazyu the Avali"
-  source: "https://www.twitch.tv/kazyu_the_avali"
-
-- files: ["the_heist_by_kaz.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "Kazyu the Avali"
-  source: "https://www.twitch.tv/kazyu_the_avali"
-
-- files: ["SandwichStation/creating_sandwiches.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: ".yuuchan (on discord)"
   source: "https://discord.gg/Z6JvtKw6tp"
@@ -43,37 +108,27 @@
   copyright: "ZedFox"
   source: "https://zedfox.bandcamp.com/track/boombox-song-5-from-lethal-company-extended-version"
 
-- files: ["eurobeat/rockefellerbeat.ogg"]
+- files: ["ShibaStation/doge_adventure.ogg"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "Turbo"
-  source: "https://www.youtube.com/watch?v=i-gA0vcBnPI"
+  copyright: "MRWEEBL"
+  source: "https://www.youtube.com/watch?v=sd4bqmP_460"
 
-- files: ["lagoona.ogg"]
+- files: ["Techno/lagoona.ogg"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "PerZZon / Smileynator"
   source: "https://www.youtube.com/watch?v=OUED_BIz6bY"
 
-- files: ["memes/sparkanoko.ogg"]
+- files: ["Vocaloid/killswitch.ogg"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "Sir 5000 / The Spark / Shikairo Days"
-  source: "https://www.youtube.com/watch?v=qapMTPYmOtQ"
+  copyright: "Mekaloton"
+  source: "https://www.youtube.com/watch?v=FMlOnbD8FR8"
 
-- files: ["eurobeat/sparkanoko-eurobeat.ogg"]
+- files: ["Vocaloid/nemesis.ogg"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "Vikas Music"
-  source: "https://www.youtube.com/watch?v=Mf8EruNfZ64"
+  copyright: "Mekaloton"
+  source: "https://www.youtube.com/watch?v=2aG18-vaecA"
 
-- files: ["memes/superkarts.ogg"]
+- files: ["Vocaloid/third-rail.ogg"]
   license: "CC-BY-NC-SA-3.0"
-  copyright: "Davilex Entertainment"
-  source: "https://www.youtube.com/watch?v=IHzvrt5Rkrk"
-
-- files: ["retro/komm_susser_tod_astrophysics.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "astrophysics"
-  source: "https://www.youtube.com/watch?v=87ofklYDTNQ"
-
-- files: ["retro/touchout.ogg"]
-  license: "CC-BY-NC-SA-3.0"
-  copyright: "astrophysics"
-  source: "https://www.youtube.com/watch?v=zZdVwTjUtjg"
+  copyright: "Mekaloton"
+  source: "https://youtu.be/trlh3ToyZdY?si=0t-v_gxoLjFmzq3z"
