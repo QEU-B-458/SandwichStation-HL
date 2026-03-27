@@ -2,17 +2,17 @@
   id: Taco
   mapName: 'Taco'
   mapPath: /Maps/_Sandwich/taco.yml
-  minPlayers: 0
+  minPlayers: 15
   maxPlayers: 100
   stations:
     Taco:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: '{0}Taco Station {1}'
-        nameGenerator:
-          !type:NanotrasenNameGenerator
-          prefixCreator: '14-SWCH'
+        mapNameTemplate: '{0}Taco Station 14-SWCH'
+        #nameGenerator:
+        #  !type:NanotrasenNameGenerator
+        #  prefixCreator: '14-SWCH'
       - type: ExtraStationInformation
         iconPath: /Textures/Logo/icon/icon-256x256.png
         stationSubtext: 'hardlight-lobby-hardlight-subtext'
