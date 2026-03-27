@@ -1,4 +1,22 @@
 - type: jukebox
+  id: every_light_is_blinking_at_once
+  name: Sunbeamstress - Every Light Is Blinking At Once
+  path:
+    path: /Audio/_Sandwich/Jukebox/every_light_is_blinking_at_onceMONO.ogg
+
+- type: jukebox
+  id: hackers
+  name: Karl Casey @ White Bat Audio - Hackers
+  path:
+    path: /Audio/_Sandwich/Jukebox/hackers-MONO.ogg
+
+- type: jukebox
+  id: phoron_will_make_us_rich
+  name: Sunbeamstress - Phoron Will Make Us Rich
+  path:
+    path: /Audio/_Sandwich/Jukebox/Phoron_Will_Make_Us_RichMONO2.ogg
+
+- type: jukebox
   id: binks_sake
   name: Ru's Piano - Binks Sake
   path:

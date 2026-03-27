@@ -132,3 +132,18 @@
   license: "CC-BY-NC-SA-3.0"
   copyright: "Mekaloton"
   source: "https://youtu.be/trlh3ToyZdY?si=0t-v_gxoLjFmzq3z"
+
+- files: ["every_light_is_blinking_at_onceMONO.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "every light blinking at once by Sunbeamstress, converted to mono"
+  source: "https://soundcloud.com/sunbeamstress/every-light-is-blinking-at-once"
+
+- files: ["hackers-MONO.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "Hackers by Karl Casey @ White Bat Audio, converted to mono"
+  source: "https://www.youtube.com/watch?v=k8nHWwO1U2Q"
+
+- files: ["Phoron_Will_Make_Us_RichMONO2.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "phoron will make us rich by Sunbeamstress, converted to mono"
+  source: "https://soundcloud.com/sunbeamstress/phoron-will-make-us-rich"
