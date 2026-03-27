@@ -9,19 +9,19 @@
       stationProto: StandardNanotrasenStation
       components:
       - type: StationNameSetup
-        mapNameTemplate: '{0}Hardlight Taco Station {1}'
+        mapNameTemplate: '{0}Taco Station {1}'
         nameGenerator:
           !type:NanotrasenNameGenerator
-          prefixCreator: '14-SB'
+          prefixCreator: '14-SWCH'
       - type: ExtraStationInformation
-        iconPath: /Textures/_HL/Logo/icon/icon-256x256.png # used the biggest one, looks better when downscaling than upscaling
+        iconPath: /Textures/Logo/icon/icon-256x256.png
         stationSubtext: 'hardlight-lobby-hardlight-subtext'
         stationDescription: 'hardlight-lobby-hardlight-description'
         lobbySortOrder: 1
       - type: StationJobs
-        availableJobs: # 60 jobs total w/o latejoins & interns, 77 jobs total w/ latejoins & interns
-          #command (7)
-          StationTrafficController: [ 1, 1 ]
+        availableJobs:
+          #command
+          StationTrafficController: [ 0, 0 ]
           StationCaptain: [ 1, 1 ]
           HeadOfPersonnel: [ 1, 1 ]
           HeadOfSecurity: [ 1, 1 ]
@@ -29,60 +29,58 @@
           ChiefEngineer: [ 1, 1 ]
           ResearchDirector: [ 1, 1 ]
           Quartermaster: [ 1, 1 ]
-          #service (14)
-          Bartender: [ 2, 2 ]
-          Botanist: [ 3, 3 ]
-          Chef: [ 2, 2 ]
-          Janitor: [ 2, 2 ]
-          Chaplain: [ 1, 1 ]
-          Librarian: [ 1, 1 ]
-          ServiceWorker: [ 2, 2 ]
-          Reporter: [ 1, 1 ]
-          #engineering (5 - 7)
-          AtmosphericTechnician: [ 3, 3 ]
-          StationEngineer: [ 2, 4 ]
-          TechnicalAssistant: [ 2, 2 ] #intern, not counted
-          #medical (10 - 12)
-          Chemist: [ 2, 2 ]
-          MedicalDoctor: [ 4, 6 ]
+          #service
+          Bartender: [ 0, 0 ]
+          Botanist: [ 0, 0 ]
+          Chef: [ 0, 0 ]
+          Janitor: [ 0, 0 ]
+          Chaplain: [ 0, 0 ]
+          Librarian: [ 0, 0 ]
+          ServiceWorker: [ 0, 0 ]
+          Reporter: [ 0, 0 ]
+          #engineering
+          AtmosphericTechnician: [ 2, 2 ]
+          StationEngineer: [ -1, -1 ]
+          TechnicalAssistant: [ 0, 0 ]
+          #medical
+          Chemist: [ 0, 0 ]
+          MedicalDoctor: [ 0, 0 ]
           Paramedic: [ 2, 2 ]
           MedicalIntern: [ 2, 2 ] #intern, not counted
-          Psychologist: [ 1, 1 ]
+          Psychologist: [ 0, 0 ]
           Geneticist: [ 1, 1 ]
-          #science (4 - 6)
-          Scientist: [ 4, 6 ]
+          #science
+          Scientist: [ 2, 2 ]
           ResearchAssistant: [ 2, 2 ] #intern, not counted
-          #security (8 - 10)
-          Warden: [ 1, 1 ]
+          #security
+          Warden: [ 0, 0 ]
           SecurityOfficer: [ 4, 6 ]
-          Detective: [ 1, 1 ]
+          Detective: [ 0, 0 ]
           SecurityCadet: [ 2, 2 ] #intern, not counted
-          Lawyer: [ 2, 2 ]
-          #supply (6 - 7)
-          SalvageSpecialist: [ 3, 3 ]
-          CargoTechnician: [ 3, 4 ]
-          #civilian (3+)
+          Lawyer: [ 0, 0 ]
+          #supply
+          SalvageSpecialist: [ 0, 10 ]
+          CargoTechnician: [ 1, 4 ]
+          #civilian
           Passenger: [ -1, -1 ] #infinite, not counted
-          Clown: [ 1, 1 ]
-          Mime: [ 1, 1 ]
-          Musician: [ 1, 1 ]
-          #silicon (4)
-          StationAi: [ 1, 1 ]
-          Borg: [ 3, 3 ]
+          Clown: [ 0, 0 ]
+          Mime: [ 0, 0 ]
+          Musician: [ 0, 0 ]
+          #silicon
+          StationAi: [ 0, 0 ]
+          Borg: [ 0, 0 ]
           #frontier
           #Contractor: [ -1, -1 ]
           #Pilot: [ 5, 5 ]
-          Mercenary: [ 0, 40 ]
-          MedicalQuadBorg: [ 3, 3 ]
-          ServiceQuadBorg: [ 3, 3 ]
-          SalvageQuadBorg: [ 3, 3 ]
-          SecurityQuadBorg: [ 3, 3 ]
-          EngineeringQuadBorg: [ 3, 3 ]
-          Valet: [ 1, 1 ]
-          MailCarrier: [ 1, 1 ]
-          Prisoner: [ 3, 3 ]
-          ForensicMantis: [ 1, 1 ]
+          Mercenary: [ 0, 0 ]
+          MedicalQuadBorg: [ 0, 0 ]
+          ServiceQuadBorg: [ 0, 0 ]
+          SalvageQuadBorg: [ 0, 0 ]
+          SecurityQuadBorg: [ 0, 0 ]
+          EngineeringQuadBorg: [ 0, 0 ]
+          Valet: [ 0, 0 ]
+          MailCarrier: [ 0, 0 ]
+          Prisoner: [ 0, 0 ]
+          ForensicMantis: [ 0, 0 ]
       - type: StationDeadDrop
-        maxDeadDrops: 6 # small station
-      - type: StationDeadDropReporting
-        messageSet: Nfsd
+        maxDeadDrops: 0
