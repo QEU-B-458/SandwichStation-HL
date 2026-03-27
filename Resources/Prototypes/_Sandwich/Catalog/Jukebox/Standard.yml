@@ -88,3 +88,14 @@
   path:
     path: /Audio/_Sandwich/Jukebox/retro/touchout.ogg
 
+- type: jukebox
+  id: pokemoneuro
+  name: Vikas Music - Pokemon Theme
+  path:
+    path: /Audio/_Sandwich/Jukebox/eurobeat/pokemon-eurobeat.ogg
+
+- type: jukebox
+  id: burytheloly-eurobeat
+  name: Vikas Music - bury the loly
+  path:
+    path: /Audio/_Sandwich/Jukebox/eurobeat/bury-the-loly-eurobeat.ogg
