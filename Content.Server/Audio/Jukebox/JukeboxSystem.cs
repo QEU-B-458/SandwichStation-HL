@@ -1,11 +1,13 @@
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Audio.Jukebox;
+using Content.Shared._Sandwich.CCVar; // Sandwich: Volume slider
 using Content.Shared.Power;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration; // Sandwich: Volume slider
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using JukeboxComponent = Content.Shared.Audio.Jukebox.JukeboxComponent;
@@ -21,6 +23,7 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
     [Dependency] private readonly IRobustRandom _random = default!; // Frontier
     [Dependency] private readonly TransformSystem _transform = default!; // Frontier
     [Dependency] private readonly UserInterfaceSystem _userInterface = default!; // Frontier
+    [Dependency] private readonly IConfigurationManager _cfg = default!; // Sandwich: Volume slider
 
     public override void Initialize()
     {
@@ -85,7 +88,14 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
                 return;
             }
 
-            component.AudioStream = Audio.PlayPvs(jukeboxProto.Path, uid, AudioParams.Default.WithMaxDistance(10f))?.Entity;
+            // Sandwich: Volume slider
+            var baseVolume = _cfg.GetCVar(SandwichCCVars.JukeboxBaseVolume);
+            var audioParams = AudioParams.Default
+                .WithMaxDistance(10f)
+                .WithVolume(baseVolume + jukeboxProto.Volume);
+
+            component.AudioStream = Audio.PlayPvs(jukeboxProto.Path, uid, audioParams)?.Entity;
+            // End Sandwich
 
             // Frontier: wallmount jukebox, shuffle state
             if (TryComp<TransformComponent>(component.AudioStream, out var xform))

@@ -1,10 +1,15 @@
 using Content.Shared.Audio.Jukebox;
+using Content.Shared._Sandwich.CCVar; // Sandwich: Volume slider
 using Robust.Client.Animations;
+using Robust.Client.Audio; // Sandwich: Volume slider
 using Robust.Client.GameObjects;
+using Robust.Shared.Audio.Components; // Sandwich: Volume slider
+using Robust.Shared.Audio.Systems; // Sandwich: Volume slider
+using Robust.Shared.Configuration; // Sandwich: Volume slider
+using Robust.Shared.Maths; // Sandwich: Volume slider
 using Robust.Shared.Prototypes;
 
 namespace Content.Client.Audio.Jukebox;
-
 
 public sealed class JukeboxSystem : SharedJukeboxSystem
 {
@@ -13,10 +18,15 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;// Sandwich: Volume slider
+
+    private const float MutedVolume = -80f;// Sandwich: Volume slider
 
     public override void Initialize()
     {
         base.Initialize();
+        UpdatesOutsidePrediction = true;// Sandwich: Volume slider
+        UpdatesAfter.Add(typeof(AudioSystem));// Sandwich: Volume slider
         SubscribeLocalEvent<JukeboxComponent, AppearanceChangeEvent>(OnAppearanceChange);
         SubscribeLocalEvent<JukeboxComponent, AnimationCompletedEvent>(OnAnimationCompleted);
         SubscribeLocalEvent<JukeboxComponent, AfterAutoHandleStateEvent>(OnJukeboxAfterState);
@@ -30,6 +40,38 @@ public sealed class JukeboxSystem : SharedJukeboxSystem
         _protoManager.PrototypesReloaded -= OnProtoReload;
     }
 
+    // Sandwich: Volume slider
+    public override void FrameUpdate(float frameTime)
+    {
+        base.FrameUpdate(frameTime);
+
+        var volume = Math.Clamp(_cfg.GetCVar(SandwichCCVars.JukeboxVolume), 0f, 1f);
+        var query = AllEntityQuery<JukeboxComponent>();
+
+        while (query.MoveNext(out _, out var jukebox))
+        {
+            ApplyJukeboxVolume(jukebox.AudioStream, volume);
+        }
+    }
+
+    private static float GetVolumeOffset(float volume)
+    {
+        return volume <= 0f ? MutedVolume : SharedAudioSystem.GainToVolume(volume);
+    }
+
+    private void ApplyJukeboxVolume(EntityUid? audioUid, float volume)
+    {
+        if (!TryComp(audioUid, out AudioComponent? audio))
+            return;
+
+        var desiredVolume = audio.Params.Volume + GetVolumeOffset(volume);
+
+        if (MathHelper.CloseToPercent(audio.Volume, desiredVolume))
+            return;
+
+        audio.Volume = desiredVolume;
+    }
+    // End Sandwich
     private void OnProtoReload(PrototypesReloadedEventArgs obj)
     {
         if (!obj.WasModified<JukeboxPrototype>())

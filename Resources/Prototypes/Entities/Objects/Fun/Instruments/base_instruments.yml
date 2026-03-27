@@ -7,8 +7,9 @@
   - type: Sprite
   - type: Instrument
   - type: ActivatableUI
-    inHandsOnly: true
+    inHandsOnly: false # Sandwich: true>false, let us play them even not in our hands!
     singleUser: true
+    requireActiveHand: false # Sandwich: Also dont require them to be in the active hand
     verbText: verb-instrument-openui
     key: enum.InstrumentUiKey.Key
   - type: UserInterface

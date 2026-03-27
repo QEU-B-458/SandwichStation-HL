@@ -60,6 +60,12 @@ public sealed class NFCCVars
      *  World Gen
      */
     /// <summary>
+    /// The maximum number of debris (including asteroid debris) that can spawn per worldgen chunk.
+    /// </summary>
+    public static readonly CVarDef<int> WorldgenMaxDebrisCount =
+        CVarDef.Create("nf14.worldgen.max_debris_count", 3, CVar.SERVERONLY);
+
+    /// <summary>
     /// The number of Trade Stations to spawn in every round
     /// </summary>
     public static readonly CVarDef<int> MarketStations =
@@ -109,6 +115,25 @@ public sealed class NFCCVars
     /// </summary>
     public static readonly CVarDef<float> ShipyardSellRate =
         CVarDef.Create("shuttle.shipyard_base_sell_rate", 0.95f, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     To prevent cheating the server will embed this hash into the player's saved shuttle/ship's file.
+    ///     CHANGE THIS OR THIS SYSTEM IS PRACTICALLY USELESS!
+    /// </summary>
+    public static readonly CVarDef<string> UniqueServerHash =
+        CVarDef.Create("nf14.unique_server_hash", "I-HAVE-NOT-CHANGED-THIS", CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Master toggle for verifying the embedded ship security hash when loading ships.
+    /// </summary>
+    public static readonly CVarDef<bool> UniqueServerHashValidationEnabled =
+        CVarDef.Create("nf14.unique_server_hash_validation_enabled", true, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Maximum charge applied when loading a ship through a shipyard console.
+    /// </summary>
+    public static readonly CVarDef<int> ShipyardLoadMaxTransactionPrice =
+        CVarDef.Create("nf14.shipyard_load_max_transaction_price", 50000, CVar.SERVERONLY);
 
     /*
      * Salvage

@@ -125,7 +125,6 @@
   - CaptainJumpskirt
   - CaptainFormalSuit
   - CaptainFormalSkirt
-  - CaptainClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 
@@ -172,7 +171,6 @@
   loadouts:
   - HoPJumpsuit
   - HoPJumpskirt
-  - CommandClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 
@@ -275,7 +273,6 @@
   - BartenderJumpsuit
   - BartenderJumpskirt
   - BartenderJumpsuitPurple
-  - BartenderClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ServiceJumpsuit # HL - Add departmental NF-style loadouts
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
@@ -313,7 +310,6 @@
   loadouts:
   - ChefJumpsuit
   - ChefJumpskirt
-  - ChefClothingJumpsuitThong #HL - Add lingerie
   subgroups:
   - ServiceJumpsuit # HL - Add departmental NF-style loadouts
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
@@ -395,7 +391,6 @@
   - ChaplainJumpskirt
   - ChaplainRobesLight
   - ChaplainRobesDark
-  - ChaplainClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 
@@ -435,7 +430,6 @@
   loadouts:
   - JanitorJumpsuit
   - JanitorJumpskirt
-  - JanitorClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ServiceJumpsuit # HL - Add departmental NF-style loadouts
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
@@ -640,7 +634,6 @@
   loadouts:
   - MusicianJumpsuit
   - MusicianJumpskirt
-  - MusicianClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ServiceJumpsuit # HL - Add departmental NF-style loadouts
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
@@ -709,7 +702,6 @@
   - QuartermasterTurtleneck
   - QuartermasterTurtleneckSkirt
   - QuartermasterFormalSuit
-  - QuartermasterClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - CargoJumpsuit # HL - Add departmental NF-style loadouts
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
@@ -844,7 +836,6 @@
   - ChiefEngineerJumpskirt
   - ChiefEngineerTurtleneck
   - ChiefEngineerTurtleneckSkirt
-  - ChiefEngineerClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - EngineeringJumpsuit # HL - Add departmental NF-style loadouts
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
@@ -1163,7 +1154,6 @@
   - HeadofSecurityTurtleneckSkirt
   - HeadofSecurityFormalSuit
   - HeadofSecurityFormalSkirt
-  - HeadofSecurityClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 
@@ -1203,7 +1193,6 @@
   loadouts:
   - WardenJumpsuit
   - WardenJumpskirt
-  - SecurityClothingJumpsuitThong #HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 
@@ -1239,7 +1228,6 @@
   - SecurityJumpskirtGrey
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
-  - SecurityClothingJumpsuitThong #HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 
@@ -1313,7 +1301,6 @@
   - DetectiveJumpskirt
   - NoirJumpsuit
   - NoirJumpskirt
-  - DetectiveClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 
@@ -1333,7 +1320,6 @@
   loadouts:
   - RedJumpsuit
   - RedJumpskirt
-  - SecurityClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 
@@ -1373,7 +1359,6 @@
   - ChiefMedicalOfficerJumpskirt
   - ChiefMedicalOfficerTurtleneckJumpsuit
   - ChiefMedicalOfficerTurtleneckJumpskirt
-  - ChiefMedicalOfficerClothingJumpsuitThong # Add lingerie
   subgroups:
   - MedicalJumpsuit # HL - Add departmental NF-style loadouts
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
@@ -1509,7 +1494,6 @@
   loadouts:
   - ChemistJumpsuit
   - ChemistJumpskirt
-  - ChemistClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 
@@ -1547,7 +1531,6 @@
   loadouts:
   - ParamedicJumpsuit
   - ParamedicJumpskirt
-  - ParamedicClothingJumpsuitThong # HL - Add lingerie
   subgroups:
   - ContractorJumpsuit # HL - Add departmental NF-style loadouts
 

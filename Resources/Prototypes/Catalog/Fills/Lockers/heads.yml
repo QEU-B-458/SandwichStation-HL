@@ -165,6 +165,7 @@
     #    - id: DoorRemoteEngineering # Frontier
     #    - id: RCD # Frontier
     #    - id: RCDAmmo # Frontier
+    - id: BaseHandheldStationMapPowerCe
     - id: RubberStampCE
     - id: ShipyardRCD # Frontier
     - id: ShipyardRCDAmmo # Frontier

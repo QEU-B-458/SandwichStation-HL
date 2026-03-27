@@ -323,18 +323,6 @@
     HolyVice: 3
 
 - type: reaction
-  id: HornyStallion
-  reactants:
-    Coffee:
-      amount: 1
-    Libidozenithizine:
-      amount: 1
-    SodaWater:
-      amount: 1
-  products:
-    HornyStallion: 3
-
-- type: reaction
   id: KoboldKooler
   reactants:
     Egg:

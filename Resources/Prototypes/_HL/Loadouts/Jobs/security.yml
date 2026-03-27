@@ -1,33 +1,6 @@
 
 # Uniform
 
-- type: loadout
-  id: SecurityClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformSecurityThong
-
-- type: loadout
-  id: HeadofSecurityClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformHeadSecurityThong
-
-- type: loadout
-  id: DetectiveClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformDetectiveThong
-
 # Eyes
 
 - type: loadout

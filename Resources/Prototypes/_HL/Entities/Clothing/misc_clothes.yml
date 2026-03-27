@@ -1,15 +1,4 @@
 - type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingOverlayFungalRot
-  name: fungal rot
-  description: Styled for a captain, but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Clothing/Misc/Overlays/fungalinner.rsi
-  - type: Clothing
-    sprite: _HL/Clothing/Misc/Overlays/fungalinner.rsi
-
-- type: entity
   parent: ClothingOuterBase
   id: ClothingOverlayFungalVines
   name: fungal vines

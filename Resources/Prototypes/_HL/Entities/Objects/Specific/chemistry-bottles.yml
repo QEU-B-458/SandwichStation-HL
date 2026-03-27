@@ -56,17 +56,3 @@
         reagents:
         - ReagentId: Philterex
           Quantity: 30
-
-- type: entity
-  id: ChemistryBottleLibidozenithizine
-  suffix: Libidozenithizine
-  parent: BaseChemistryBottleFilled
-  name: libidozenithizine bottle
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Libidozenithizine
-          Quantity: 30

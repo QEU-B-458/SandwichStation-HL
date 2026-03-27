@@ -96,17 +96,6 @@
         state: equipped-NECK-quadborg
 
 - type: entity
-  parent: ClothingUniformBaseThongs
-  id: ClothingUniformNTThong
-  name: Nanotrasen thong
-  description: A Nanotrasen branded thong! but is this even considered a piece of clothing?
-  components:
-  - type: Sprite
-    sprite: _HL/Nanotrasen/nanotrasenthong.rsi
-  - type: Clothing
-    sprite: _HL/Nanotrasen/nanotrasenthong.rsi
-
-- type: entity
   parent: ClothingHandsBase
   id: ClothingHandsNTWarmers
   name: Nanotrasen arm-warmers

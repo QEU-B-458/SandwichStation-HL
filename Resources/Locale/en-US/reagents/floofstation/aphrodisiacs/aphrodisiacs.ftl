@@ -17,12 +17,4 @@ reagent-effect-aphrodisiac-normaloverdose4 = You feel the need for a nap
 reagent-effect-aphrodisiac-normaloverdose5 = Your eyes feel heavy.
 reagent-effect-aphrodisiac-normaloverdose6 = You lose your train of thought.
 
-reagent-effect-aphrodisiac-strong1 = You can't look at someone without wanting to fuck them.
-reagent-effect-aphrodisiac-strong2 = You need someone to breed with.
-reagent-effect-aphrodisiac-strong3 = Fuck them. Now.
-reagent-effect-aphrodisiac-strongoverdose1 = STRIP STRIP STRIP
-reagent-effect-aphrodisiac-strongoverdose2 = YOU NEED IT.
-reagent-effect-aphrodisiac-strongoverdose3 = FUCK THEM ALL.
-reagent-effect-aphrodisiac-strongoverdose4 = YOU HAVE TO BREED AT ALL COSTS.
-
 reagent-effect-aphrodisiac-fade = Your inhibitions begin to normalize...

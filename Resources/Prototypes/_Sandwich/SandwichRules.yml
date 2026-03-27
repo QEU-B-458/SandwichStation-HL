@@ -10,6 +10,7 @@
   - SandwichJobExpectations
   - SOP
   - SandwichSiliconRules
+  - SandwichShipRules
 
 - type: guideEntry # Main page for the rules
   id: SandwichRuleset # Our ruleset as it should be setup with CCVar's
@@ -21,7 +22,9 @@
   - SandwichCoreRules
   - SandwichRoleplayRules
   - SandwichJobExpectations
+  - SOP
   - SandwichSiliconRules
+  - SandwichShipRules
 
 - type: guideEntry
   id: SandwichRuleChangelog
@@ -50,6 +53,7 @@
   - SandwichRuleC11
   - SandwichRuleC12
   - SandwichRuleC13
+  - SandwichShipRules
 
 - type: guideEntry
   id: SandwichRuleUA0
@@ -148,6 +152,13 @@
   ruleEntry: true
   priority: 14
   text: "/ServerInfo/_Sandwich/Guidebook/ServerRules/CoreRules/SandwichRuleC13ICinOOC.xml"
+
+- type: guideEntry
+  id: SandwichShipRules
+  name: "Ship Rules"
+  ruleEntry: true
+  priority: 15
+  text: "/ServerInfo/_Sandwich/Guidebook/ServerRules/SandwichShipRules.xml"
 
 - type: guideEntry # Roleplay rules
   id: SandwichRoleplayRules

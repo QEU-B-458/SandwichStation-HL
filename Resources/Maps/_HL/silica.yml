@@ -74640,13 +74640,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformMantisEpiThong
-  entities:
-  - uid: 11006
-    components:
-    - type: Transform
-      pos: 16.687666,34.649258
-      parent: 2
 - proto: ClothingUniformSkirtMantis
   entities:
   - uid: 10883

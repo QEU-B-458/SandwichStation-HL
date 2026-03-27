@@ -27,10 +27,9 @@ public partial class DockablePipeNode : PipeNode
             && docking.DockedWith != null
             && nodeQuery.TryComp(docking.DockedWith, out var otherNode))
         {
-            // Hack: this doesn't take into account the direction of the dockable port.
             foreach (var node in otherNode.Nodes.Values)
             {
-                if (node is DockablePipeNode pipe)
+                if (node is DockablePipeNode pipe && pipe.CurrentPipeLayer == CurrentPipeLayer)
                     yield return pipe;
             }
         }

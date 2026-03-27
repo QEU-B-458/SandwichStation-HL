@@ -32,11 +32,11 @@ public sealed class GameMapManager : IGameMapManager
     [ViewVariables(VVAccess.ReadOnly)]
     private int _mapQueueDepth = 1;
 
-    private ISawmill _log = default!;
+   private ISawmill _sawmill = default!;
 
     public void Initialize()
     {
-        _log = Logger.GetSawmill("mapsel");
+        _sawmill = Logger.GetSawmill("mapsel");
 
         _configurationManager.OnValueChanged(CCVars.GameMap, value =>
         {
@@ -61,16 +61,16 @@ public sealed class GameMapManager : IGameMapManager
                 if (_resMan.UserData.Exists(mapPath))
                 {
                     _configSelectedMap = _configSelectedMap.Persistence(mapPath);
-                    _log.Info($"Using persistence map from {value}");
+                    _sawmill.Info($"Using persistence map from {value}");
                     return;
                 }
 
                 // persistence save path doesn't exist so we just use the start map
-                _log.Warning($"Using persistence start map {startMap} as {value} doesn't exist");
+                _sawmill.Warning($"Using persistence start map {startMap} as {value} doesn't exist");
                 return;
             }
 
-            _log.Error($"Unknown map prototype {value} was selected!");
+            _sawmill.Error($"Unknown map prototype {value} was selected!");
         }, true);
         _configurationManager.OnValueChanged(CCVars.GameMapRotation, value => _mapRotationEnabled = value, true);
         _configurationManager.OnValueChanged(CCVars.GameMapMemoryDepth, value =>
@@ -110,7 +110,7 @@ public sealed class GameMapManager : IGameMapManager
             {
                 if (!_prototypeManager.TryIndex<GameMapPrototype>(map, out var mapProto))
                 {
-                    _log.Error($"Couldn't index map {map} in pool {poolPrototype}");
+                    _sawmill.Error($"Couldn't index map {map} in pool {poolPrototype}");
                     continue;
                 }
 
@@ -172,14 +172,27 @@ public sealed class GameMapManager : IGameMapManager
 
     public void SelectMapByConfigRules()
     {
+#if DEBUG
+        // This block doesn't exist in Release-Mode
+        // It allows developers to explicitly set the map in debug mode via the config.
+        var configMapId = _configurationManager.GetCVar(CCVars.GameMap);
+        if (!string.IsNullOrWhiteSpace(configMapId) && TryLookupMap(configMapId, out var configMap))
+        {
+            _sawmill.Info($"selecting map '{configMapId}' based on explicit configuration (DEBUG ONLY).");
+            _selectedMap = configMap;
+            return;
+        }
+#endif
+
+        // Standard-Process for Live-Server (Release)
         if (_mapRotationEnabled)
         {
-            _log.Info("selecting the next map from the rotation queue");
+            _sawmill.Info("selecting the next map from the rotation queue");
             SelectMapFromRotationQueue(true);
         }
         else
         {
-            _log.Info("selecting a random map");
+            _sawmill.Info("selecting a random map");
             SelectMapRandom();
         }
     }
@@ -216,14 +229,14 @@ public sealed class GameMapManager : IGameMapManager
 
     private GameMapPrototype GetFirstInRotationQueue()
     {
-        _log.Info($"map queue: {string.Join(", ", _previousMaps)}");
+        _sawmill.Info($"map queue: {string.Join(", ", _previousMaps)}");
 
         var eligible = CurrentlyEligibleMaps()
             .Select(x => (proto: x, weight: GetMapRotationQueuePriority(x.ID)))
             .OrderByDescending(x => x.weight)
             .ToArray();
 
-        _log.Info($"eligible queue: {string.Join(", ", eligible.Select(x => (x.proto.ID, x.weight)))}");
+        _sawmill.Info($"eligible queue: {string.Join(", ", eligible.Select(x => (x.proto.ID, x.weight)))}");
 
         // YML "should" be configured with at least one fallback map
         Debug.Assert(eligible.Length != 0, $"couldn't select a map with {nameof(GetFirstInRotationQueue)}()! No eligible maps and no fallback maps!");

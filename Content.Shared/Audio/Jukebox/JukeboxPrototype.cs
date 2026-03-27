@@ -20,4 +20,11 @@ public sealed partial class JukeboxPrototype : IPrototype
 
     [DataField(required: true)]
     public SoundPathSpecifier Path = default!;
+
+    // Sandwich: Volume slider
+    /// <summary>
+    /// Additional dB offset for this specific track.
+    /// </summary>
+    [DataField]
+    public float Volume = 0f;
 }

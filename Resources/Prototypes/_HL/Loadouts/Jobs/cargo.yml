@@ -2,36 +2,9 @@
 # Uniform
 
 - type: loadout
-  id: CargoClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformLogisThong
-
-- type: loadout
-  id: QuartermasterClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformLOLogisThong
-
-- type: loadout
   id: SalvageSpecialistClothingJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
-
-- type: loadout
-  id: MailCarrierClothingJumpsuitThong
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT1
-  price: 500
-  equipment:
-    jumpsuit: ClothingUniformCourierThong
 
 # Hands
 
