@@ -1,0 +1,19 @@
+- type: technology
+  id: AiNetworkInfrastructure
+  name: research-technology-ai-network-infrastructure
+  icon:
+    sprite: Structures/Machines/server.rsi
+    state: server
+  discipline: Experimental
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+    - AiControllerServerMachineCircuitboard
+    - AiRelayMachineCircuitboard
+    - AiModuleCargo
+    - AiModuleSecurity
+    - AiModulePower
+    - AiModuleAtmos
+    - AiAuthModule
+    - AiBorisControlModule
+    - AiRemoteBrain

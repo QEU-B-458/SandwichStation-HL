@@ -1,0 +1,14 @@
+# Mapper spawn point for the AI Deployment Borg.
+# Place this near cryo or the AI Interface on each station map.
+- type: entity
+  id: SpawnPointAiDeploymentBorg
+  parent: SpawnPointJobBase
+  name: AI deployment borg
+  components:
+  - type: SpawnPoint
+    job_id: AiDeploymentBorg
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/chassis.rsi
+      state: peace

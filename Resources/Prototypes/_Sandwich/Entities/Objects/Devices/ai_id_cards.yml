@@ -1,0 +1,38 @@
+# Dedicated full-access ID card for station AIs
+- type: entity
+  id: AiStationIdCard
+  parent: IDCardStandard
+  name: AI station ID card
+  description: An ID card loaded with full station access for an AI system.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IdCard
+    jobTitle: job-name-station-ai
+  - type: Access
+    groups:
+    - AllAccess
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: gold
+    - state: idcentcom
+
+# ID card for the AI Deployment Borg — freelancer-level access only.
+# The chassis itself has department access for navigation; the card is just ID.
+- type: entity
+  id: AiDeploymentBorgIdCard
+  parent: IDCardStandard
+  name: AI deployment borg ID card
+  description: A freelancer ID card issued to AI deployment borgs.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IdCard
+    jobTitle: ai-deployment-borg
+  - type: Access
+    tags:
+    - Contractor
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: default
+    - state: idroboticist
