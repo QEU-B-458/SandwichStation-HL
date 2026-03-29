@@ -1,0 +1,114 @@
+- type: entity
+  id: ActionOpenAiNetwork
+  name: AI Network
+  description: View connected relays and jump to their grids.
+  components:
+  - type: InstantAction
+    checkConsciousness: false
+    checkCanInteract: false
+    priority: -7
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: borg_control
+    event: !type:ToggleAiNetworkScreenEvent
+
+# Server Panel — always available, opens the linked AI Controller Server's UI.
+- type: entity
+  id: ActionOpenAiServerPanel
+  name: Server Panel
+  description: Open the AI Controller Server interface to manage modules and authentication.
+  components:
+  - type: InstantAction
+    checkConsciousness: false
+    checkCanInteract: false
+    priority: -6
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: ai_core
+    event: !type:ToggleAiServerPanelEvent
+
+# Boris Control — granted when BorisControlModule is installed in the AI server.
+- type: entity
+  id: ActionOpenBorisControl
+  name: B.O.R.I.S. Control
+  description: View paired borgs and transfer your mind into one.
+  components:
+  - type: InstantAction
+    checkConsciousness: false
+    checkCanInteract: false
+    raiseOnUser: true
+    priority: -8
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: borg_control
+    event: !type:ToggleBorisControlEvent
+
+# Return to Core — granted when AI mind transfers into a borg.
+- type: entity
+  id: ActionBorisReturnToCore
+  name: Return to AI Core
+  description: Transfer your mind back to the AI core.
+  components:
+  - type: InstantAction
+    checkConsciousness: false
+    checkCanInteract: false
+    priority: -1
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: ai_core
+    event: !type:BorisReturnToCoreActionEvent
+
+# Toggle ID Card — deployment borg ejects/stores its ID card.
+- type: entity
+  id: ActionAiDeploymentToggleIdCard
+  name: Toggle ID Card
+  description: Eject your ID card to hand, or store it back in your internal slot.
+  components:
+  - type: InstantAction
+    checkConsciousness: false
+    checkCanInteract: false
+    raiseOnUser: true
+    priority: -2
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Misc/id_cards.rsi
+      state: default
+    event: !type:AiDeploymentToggleIdCardActionEvent
+
+# Upload to Core — granted to deployment borg when inside an AI Interface.
+- type: entity
+  id: ActionAiDeploymentUpload
+  name: Upload to AI Core
+  description: Upload your mind into the linked AI core. Your borg will go inert.
+  components:
+  - type: InstantAction
+    checkConsciousness: false
+    checkCanInteract: false
+    raiseOnUser: true
+    priority: -1
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: ai_core
+    event: !type:AiDeploymentUploadActionEvent
+
+# Return to Deployment Borg — granted to AI brain after uploading from a deployment borg.
+- type: entity
+  id: ActionAiDeploymentShunt
+  name: Return to Deployment Borg
+  description: Transfer your mind back to the deployment borg at the AI Interface.
+  components:
+  - type: InstantAction
+    checkConsciousness: false
+    checkCanInteract: false
+    raiseOnUser: true
+    priority: -9
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: borg_control
+    event: !type:AiDeploymentShuntActionEvent

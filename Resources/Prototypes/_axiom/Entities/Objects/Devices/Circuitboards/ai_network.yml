@@ -1,0 +1,25 @@
+- type: entity
+  id: AiControllerServerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: AI controller server machine board
+  description: A machine printed circuit board for an AI controller server.
+  components:
+    - type: MachineBoard
+      prototype: AiControllerServer
+      requirements:
+        Capacitor: 2
+      stackRequirements:
+        Cable: 5
+
+- type: entity
+  id: AiRelayMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: AI relay machine board
+  description: A machine printed circuit board for an AI network relay.
+  components:
+    - type: MachineBoard
+      prototype: AiRelay
+      requirements:
+        Capacitor: 1
+      stackRequirements:
+        Cable: 3

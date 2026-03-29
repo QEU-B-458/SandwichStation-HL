@@ -1,0 +1,80 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+                      Title="{Loc 'ai-server-ui-title'}"
+                      MinSize="650 400"
+                      SetSize="750 500">
+    <BoxContainer Orientation="Horizontal"
+                  HorizontalExpand="True"
+                  VerticalExpand="True">
+        <!-- Left panel: server info + linked core -->
+        <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" Margin="15 10 15 15">
+            <BoxContainer Orientation="Horizontal">
+                <Label Text="{Loc 'ai-server-ui-linked-core'}" Margin="0 0 5 0"/>
+                <Label Name="CoreStatusLabel" HorizontalExpand="True"/>
+            </BoxContainer>
+            <customControls:HSeparator Margin="0 10 0 10"/>
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+                </PanelContainer.PanelOverride>
+                <BoxContainer HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <SpriteView Name="CoreSprite" Scale="5 5"/>
+                </BoxContainer>
+            </PanelContainer>
+            <customControls:HSeparator Margin="0 10 0 10"/>
+            <BoxContainer Orientation="Horizontal">
+                <LineEdit Name="NameLineEdit" HorizontalExpand="True" PlaceHolder="{Loc 'ai-server-ui-name-placeholder'}"/>
+            </BoxContainer>
+        </BoxContainer>
+        <customControls:VSeparator/>
+        <!-- Right panel: tabbed modules + auth -->
+        <TabContainer Name="RightTabs" VerticalExpand="True" HorizontalExpand="True">
+            <!-- Modules tab -->
+            <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" Margin="10 5 10 10">
+                <PanelContainer VerticalExpand="True">
+                    <PanelContainer.PanelOverride>
+                        <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+                    </PanelContainer.PanelOverride>
+                    <BoxContainer VerticalExpand="True" Orientation="Vertical">
+                        <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
+                            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Name="ModuleContainer" RectClipContent="True"/>
+                        </ScrollContainer>
+                        <Label Name="ModuleCounter"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               StyleClasses="WindowFooterText"
+                               Margin="5"/>
+                    </BoxContainer>
+                </PanelContainer>
+            </BoxContainer>
+            <!-- Auth tab -->
+            <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" Margin="10 5 10 10">
+                <!-- No Auth Module message -->
+                <Label Name="NoAuthLabel" Text="{Loc 'ai-auth-no-module'}" Visible="True" Margin="0 0 0 5"/>
+                <!-- Auth content (hidden when no module) -->
+                <BoxContainer Name="AuthContent" Orientation="Vertical" VerticalExpand="True" Visible="False">
+                    <!-- ID Card section -->
+                    <Label Text="{Loc 'ai-auth-id-card-label'}" StyleClasses="LabelSubText" Margin="0 0 0 3"/>
+                    <PanelContainer Margin="0 0 0 10">
+                        <PanelContainer.PanelOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+                        </PanelContainer.PanelOverride>
+                        <BoxContainer Orientation="Vertical" Name="IdCardContainer" Margin="5"/>
+                    </PanelContainer>
+                    <!-- Encryption Keys section -->
+                    <Label Text="{Loc 'ai-auth-keys-label'}" StyleClasses="LabelSubText" Margin="0 0 0 3"/>
+                    <PanelContainer VerticalExpand="True">
+                        <PanelContainer.PanelOverride>
+                            <gfx:StyleBoxFlat BackgroundColor="#1B1B1E"/>
+                        </PanelContainer.PanelOverride>
+                        <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" VerticalExpand="True">
+                            <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True" Name="KeysContainer" RectClipContent="True" Margin="5"/>
+                        </ScrollContainer>
+                    </PanelContainer>
+                </BoxContainer>
+            </BoxContainer>
+        </TabContainer>
+    </BoxContainer>
+</controls:FancyWindow>

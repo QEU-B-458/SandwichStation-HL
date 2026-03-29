@@ -1,0 +1,31 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              Title="B.O.R.I.S. Control"
+              MinSize="320 250"
+              SetSize="320 250">
+    <BoxContainer Orientation="Vertical" Margin="10">
+        <!-- Pairing Code -->
+        <BoxContainer Orientation="Horizontal" Margin="0 0 0 8">
+            <Label Text="{Loc 'boris-pairing-code-label'}" Margin="0 0 5 0" />
+            <Label Name="PairingCodeLabel" StyleClasses="LabelKeyText" />
+        </BoxContainer>
+
+        <!-- Paired Borgs Header -->
+        <Label Text="{Loc 'boris-paired-borgs-label'}" Margin="0 0 0 4" StyleClasses="LabelSubText" />
+
+        <!-- Paired Borgs List -->
+        <BoxContainer Name="BorgListContainer"
+                      Orientation="Vertical"
+                      VerticalExpand="True"
+                      Margin="0 0 0 8" />
+
+        <!-- No borgs message -->
+        <Label Name="NoBorgsLabel" Text="{Loc 'boris-no-paired-borgs'}" Margin="0 0 0 8" />
+
+        <!-- Return to Core button (visible only when transferred) -->
+        <Button Name="ReturnToCoreButton"
+                Text="Return to AI Core"
+                Visible="False"
+                Margin="0 4 0 0" />
+    </BoxContainer>
+</controls:FancyWindow>
