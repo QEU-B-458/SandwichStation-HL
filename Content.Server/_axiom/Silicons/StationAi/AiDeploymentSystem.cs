@@ -1,4 +1,5 @@
 using Content.Server.Mind;
+using Robust.Shared.Prototypes;
 // using Content.Shared._NF.Bank.Components; // _NF not yet ported to ss14-rebase
 using Content.Shared._axiom.Silicons.StationAi;
 using Content.Shared._axiom.Silicons.StationAi.Components;
@@ -84,7 +85,7 @@ public sealed class AiDeploymentSystem : EntitySystem
         // EnsureComp<BankAccountComponent>(uid);
 
         // Grant the "Toggle ID Card" action.
-        _actions.AddAction(uid, ref comp.IdCardActionEntity, "ActionAiDeploymentToggleIdCard");
+        _actions.AddAction(uid, ref comp.IdCardActionEntity, new EntProtoId("ActionAiDeploymentToggleIdCard"));
         Dirty(uid, comp);
     }
 
@@ -181,7 +182,7 @@ public sealed class AiDeploymentSystem : EntitySystem
 
         // Grant "Upload to Core" action.
         EntityUid? uploadAction = null;
-        _actions.AddAction(uid, ref uploadAction, "ActionAiDeploymentUpload");
+        _actions.AddAction(uid, ref uploadAction, new EntProtoId("ActionAiDeploymentUpload"));
         comp.UploadActionEntity = uploadAction;
         Dirty(uid, comp);
     }
@@ -287,7 +288,7 @@ public sealed class AiDeploymentSystem : EntitySystem
         deployComp.SourceInterface = interfaceUid;
 
         EntityUid? shuntAction = null;
-        _actions.AddAction(brainUid, ref shuntAction, "ActionAiDeploymentShunt");
+        _actions.AddAction(brainUid, ref shuntAction, new EntProtoId("ActionAiDeploymentShunt"));
         deployComp.ShuntActionEntity = shuntAction;
         Dirty(brainUid, deployComp);
 

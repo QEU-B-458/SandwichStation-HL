@@ -28,7 +28,7 @@ public sealed class BorisControlSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly AiServerModuleSystem _aiModules = default!;
     [Dependency] private readonly SharedAccessSystem _access = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
+
 
     public override void Initialize()
     {

@@ -1,4 +1,5 @@
 using Content.Server.Mind;
+using Robust.Shared.Prototypes;
 using Content.Shared._axiom.Silicons.StationAi;
 using Content.Shared._axiom.Silicons.StationAi.Components;
 using Content.Shared.Actions;
@@ -19,7 +20,7 @@ public sealed class BorisTransferSystem : EntitySystem
 {
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
 
@@ -86,7 +87,7 @@ public sealed class BorisTransferSystem : EntitySystem
 
         // Grant "Return to Core" action on the borg.
         EntityUid? returnAction = null;
-        _actions.AddAction(borgUid, ref returnAction, "ActionBorisReturnToCore");
+        _actions.AddAction(borgUid, ref returnAction, new EntProtoId("ActionBorisReturnToCore"));
         borgTransfer.ReturnActionEntity = returnAction;
 
         // Close the Boris Control UI.
