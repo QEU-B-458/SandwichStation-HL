@@ -83,11 +83,9 @@
     baseSprintSpeed: 3.5
   # One hand — needed to hold the ID card for console interactions (HoP, shipyard).
   # Card lives in internal ItemSlot; a toggle action moves it to/from hand.
-  # ComplexInteraction + Sanitized match the quad borg pattern for console use.
   - type: Hands
     disableExplosionRecursion: true
   - type: ComplexInteraction
-  - type: Sanitized
   # ID card slot (whitelisted to IdCard only)
   - type: ItemSlots
     slots:
