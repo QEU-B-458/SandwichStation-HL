@@ -1,0 +1,106 @@
+name: Publish Station Axiom
+
+concurrency:
+  group: publish
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4.2.2
+        with:
+          submodules: 'recursive'
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4.1.0
+        with:
+          dotnet-version: 9.0.x
+
+      - name: Get Engine Tag
+        run: |
+          cd RobustToolbox
+          git fetch --depth=1
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build Packaging Tool
+        run: dotnet build Content.Packaging --configuration Release --no-restore /m
+
+      - name: Package client (windows-x64)
+        run: |
+          dotnet run --project Content.Packaging -- client --platform windows-x64
+          mkdir -p /tmp/artifacts
+          # This finds the client zip even if the name is just SS14.Client.zip
+          find release/ -name "SS14.Client*.zip" -exec cp {} /tmp/artifacts/SS14.Client_windows-x64.zip \;
+
+      - name: Package server (linux-x64)
+        run: |
+          dotnet run --project Content.Packaging -- server --platform linux-x64
+          mkdir -p /tmp/artifacts
+          # This finds the server zip even if the name is just SS14.Server.zip
+          find release/ -name "SS14.Server*.zip" -exec cp {} /tmp/artifacts/SS14.Server_linux-x64.zip \;
+
+      - name: Prepare Release Directory and Bundle ACZ
+        run: |
+          # 1. Clean and recreate the local release folder
+          rm -rf release
+          mkdir -p release
+          
+          # 2. Copy the standalone client zip for the separate download
+          cp /tmp/artifacts/SS14.Client_windows-x64.zip release/
+          
+          # 3. Create a temporary workspace to "inject" the client into the server
+          mkdir -p /tmp/server_bundle
+          unzip /tmp/artifacts/SS14.Server_linux-x64.zip -d /tmp/server_bundle/
+          
+          # 4. Copy and rename the client into the extracted server folder
+          # This is the "Magic" to "Hybrid" conversion
+          cp /tmp/artifacts/SS14.Client_windows-x64.zip /tmp/server_bundle/Content.Client.zip
+          
+          # 5. Re-zip the server with the client now inside it
+          cd /tmp/server_bundle
+          zip -r $GITHUB_WORKSPACE/release/SS14.Server_linux-x64.zip .
+          cd $GITHUB_WORKSPACE
+          
+          echo "Bundling complete: Content.Client.zip is now inside SS14.Server_linux-x64.zip"
+
+      - name: Set version
+        id: version
+        run: echo "version=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release and Upload Assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          gh release create "build-${VERSION}" \
+            --title "Build ${VERSION}" \
+            --notes "Automated build $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            "release/SS14.Server_linux-x64.zip" \
+            "release/SS14.Client_windows-x64.zip"
+
+      - name: Update manifest.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ steps.version.outputs.version }}
+          REPO: ${{ github.repository }}
+        run: python3 Tools/update_manifest_axiom.py
+
+      - name: Commit updated manifest
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add manifest.json
+          git diff --staged --quiet || git commit -m "chore: update manifest [skip ci]"
+          git push
