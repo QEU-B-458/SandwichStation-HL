@@ -3181,7 +3181,7 @@
           }
         }
       },
-      "Avalonia.Base/273.0.0": {
+      "Avalonia.Base/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
@@ -3195,15 +3195,15 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Avalonia.Base": "273.0.0",
+          "Avalonia.Base": "275.2.0",
           "Content.Shared": "1.0.0",
           "Nett": "0.15.0",
           "Pidgin": "3.5.1",
-          "Robust.Client": "273.0.0",
+          "Robust.Client": "275.2.0",
           "Robust.NetSerializer": "4.1.1",
-          "Robust.Shared": "273.0.0",
+          "Robust.Shared": "275.2.0",
           "Robust.Shared.AuthLib": "0.1.2",
-          "Robust.Shared.Maths": "273.0.0",
+          "Robust.Shared.Maths": "275.2.0",
           "SixLabors.ImageSharp": "3.1.12",
           "SpaceWizards.Lidgren.Network": "1.0.0"
         },
@@ -3218,7 +3218,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Avalonia.Base": "273.0.0",
+          "Avalonia.Base": "275.2.0",
           "Content.Client": "1.0.0",
           "Content.Server": "1.0.0",
           "Content.Shared": "1.0.0",
@@ -3226,15 +3226,15 @@
           "Microsoft.NET.Test.Sdk": "18.0.1",
           "NUnit": "4.4.0",
           "NUnit3TestAdapter": "5.2.0",
-          "Robust.Client": "273.0.0",
+          "Robust.Client": "275.2.0",
           "Robust.NetSerializer": "4.1.1",
-          "Robust.Server": "273.0.0",
-          "Robust.Server.Testing": "273.0.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
-          "Robust.Shared.Maths.Testing": "273.0.0",
-          "Robust.Shared.Testing": "273.0.0",
-          "Robust.UnitTesting": "273.0.0"
+          "Robust.Server": "275.2.0",
+          "Robust.Server.Testing": "275.2.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
+          "Robust.Shared.Maths.Testing": "275.2.0",
+          "Robust.Shared.Testing": "275.2.0",
+          "Robust.UnitTesting": "275.2.0"
         },
         "compile": {
           "bin/placeholder/Content.IntegrationTests.dll": {}
@@ -3248,9 +3248,9 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Robust.NetSerializer": "4.1.1",
-          "Robust.Packaging": "273.0.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0"
+          "Robust.Packaging": "275.2.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0"
         },
         "compile": {
           "bin/placeholder/Content.Packaging.dll": {}
@@ -3270,10 +3270,10 @@
           "Microsoft.Extensions.ObjectPool": "10.0.0",
           "NetCord": "1.0.0-alpha.388",
           "Robust.NetSerializer": "4.1.1",
-          "Robust.Packaging": "273.0.0",
-          "Robust.Server": "273.0.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
+          "Robust.Packaging": "275.2.0",
+          "Robust.Server": "275.2.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
           "SpaceWizards.Lidgren.Network": "1.0.0",
           "prometheus-net": "8.2.1"
         },
@@ -3306,8 +3306,8 @@
         "dependencies": {
           "Content.Shared.Database": "1.0.0",
           "Robust.NetSerializer": "4.1.1",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
           "SpaceWizards.Lidgren.Network": "1.0.0",
           "YamlDotNet": "16.3.0"
         },
@@ -3332,7 +3332,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Avalonia.Base": "273.0.0",
+          "Avalonia.Base": "275.2.0",
           "Content.Client": "1.0.0",
           "Content.Server": "1.0.0",
           "Content.Shared": "1.0.0",
@@ -3340,15 +3340,15 @@
           "Moq": "4.20.72",
           "NUnit": "4.4.0",
           "NUnit3TestAdapter": "5.2.0",
-          "Robust.Client": "273.0.0",
+          "Robust.Client": "275.2.0",
           "Robust.NetSerializer": "4.1.1",
-          "Robust.Server": "273.0.0",
-          "Robust.Server.Testing": "273.0.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
-          "Robust.Shared.Maths.Testing": "273.0.0",
-          "Robust.Shared.Testing": "273.0.0",
-          "Robust.UnitTesting": "273.0.0"
+          "Robust.Server": "275.2.0",
+          "Robust.Server.Testing": "275.2.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
+          "Robust.Shared.Maths.Testing": "275.2.0",
+          "Robust.Shared.Testing": "275.2.0",
+          "Robust.UnitTesting": "275.2.0"
         },
         "compile": {
           "bin/placeholder/Content.Tests.dll": {}
@@ -3357,7 +3357,7 @@
           "bin/placeholder/Content.Tests.dll": {}
         }
       },
-      "Robust.Benchmarks/273.0.0": {
+      "Robust.Benchmarks/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -3365,11 +3365,11 @@
           "JetBrains.Annotations": "2025.2.4",
           "Microsoft.CodeAnalysis.Workspaces.MSBuild": "5.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.2",
-          "Robust.Server": "273.0.0",
-          "Robust.Server.Testing": "273.0.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
-          "Robust.UnitTesting": "273.0.0",
+          "Robust.Server": "275.2.0",
+          "Robust.Server.Testing": "275.2.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
+          "Robust.UnitTesting": "275.2.0",
           "YamlDotNet": "16.3.0",
           "prometheus-net": "8.2.1"
         },
@@ -3380,11 +3380,11 @@
           "bin/placeholder/Robust.Benchmarks.dll": {}
         }
       },
-      "Robust.Client/273.0.0": {
+      "Robust.Client/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Avalonia.Base": "273.0.0",
+          "Avalonia.Base": "275.2.0",
           "DiscordRichPresence": "1.2.1.24",
           "JetBrains.Profiler.Api": "1.4.10",
           "Microsoft.CodeAnalysis.CSharp.Features": "5.0.0",
@@ -3399,9 +3399,9 @@
           "Robust.LoaderApi": "1.0.0",
           "Robust.Natives": "0.2.3",
           "Robust.NetSerializer": "4.1.1",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
-          "Robust.Shared.Scripting": "273.0.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
+          "Robust.Shared.Scripting": "275.2.0",
           "Robust.Xaml": "1.0.0",
           "SQLitePCLRaw.bundle_e_sqlite3": "3.0.2",
           "Serilog": "4.3.0",
@@ -3443,11 +3443,11 @@
           "bin/placeholder/Robust.NetSerializer.dll": {}
         }
       },
-      "Robust.Packaging/273.0.0": {
+      "Robust.Packaging/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Robust.Shared": "273.0.0",
+          "Robust.Shared": "275.2.0",
           "SixLabors.ImageSharp": "3.1.12",
           "YamlDotNet": "16.3.0"
         },
@@ -3458,7 +3458,7 @@
           "bin/placeholder/Robust.Packaging.dll": {}
         }
       },
-      "Robust.Server/273.0.0": {
+      "Robust.Server/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -3475,10 +3475,10 @@
           "Newtonsoft.Json": "13.0.4",
           "Robust.Natives.Zstd": "0.1.1-zstd1.5.7",
           "Robust.NetSerializer": "4.1.1",
-          "Robust.Packaging": "273.0.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
-          "Robust.Shared.Scripting": "273.0.0",
+          "Robust.Packaging": "275.2.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
+          "Robust.Shared.Scripting": "275.2.0",
           "SQLitePCLRaw.bundle_e_sqlite3": "3.0.2",
           "Serilog.Sinks.Loki": "4.0.0-beta3",
           "SharpZstd.Interop": "1.5.2-beta2",
@@ -3497,7 +3497,7 @@
           "bin/placeholder/Robust.Server.dll": {}
         }
       },
-      "Robust.Server.Testing/273.0.0": {
+      "Robust.Server.Testing/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -3505,11 +3505,11 @@
           "Moq": "4.20.72",
           "NUnit": "4.4.0",
           "NUnit.Analyzers": "4.11.2",
-          "Robust.Server": "273.0.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
-          "Robust.Shared.Maths.Testing": "273.0.0",
-          "Robust.Shared.Testing": "273.0.0"
+          "Robust.Server": "275.2.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
+          "Robust.Shared.Maths.Testing": "275.2.0",
+          "Robust.Shared.Testing": "275.2.0"
         },
         "compile": {
           "bin/placeholder/Robust.Server.Testing.dll": {}
@@ -3518,7 +3518,7 @@
           "bin/placeholder/Robust.Server.Testing.dll": {}
         }
       },
-      "Robust.Shared/273.0.0": {
+      "Robust.Shared/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -3530,7 +3530,7 @@
           "Pidgin": "3.5.1",
           "Robust.NetSerializer": "4.1.1",
           "Robust.Shared.AuthLib": "0.1.2",
-          "Robust.Shared.Maths": "273.0.0",
+          "Robust.Shared.Maths": "275.2.0",
           "Serilog": "4.3.0",
           "SharpZstd.Interop": "1.5.2-beta2",
           "SixLabors.ImageSharp": "3.1.12",
@@ -3550,7 +3550,7 @@
           "bin/placeholder/Robust.Shared.dll": {}
         }
       },
-      "Robust.Shared.Maths/273.0.0": {
+      "Robust.Shared.Maths/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
@@ -3560,14 +3560,14 @@
           "bin/placeholder/Robust.Shared.Maths.dll": {}
         }
       },
-      "Robust.Shared.Maths.Testing/273.0.0": {
+      "Robust.Shared.Maths.Testing/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "JetBrains.Annotations": "2025.2.4",
           "NUnit": "4.4.0",
           "NUnit.Analyzers": "4.11.2",
-          "Robust.Shared.Maths": "273.0.0"
+          "Robust.Shared.Maths": "275.2.0"
         },
         "compile": {
           "bin/placeholder/Robust.Shared.Maths.Testing.dll": {}
@@ -3576,7 +3576,7 @@
           "bin/placeholder/Robust.Shared.Maths.Testing.dll": {}
         }
       },
-      "Robust.Shared.Maths.Tests/273.0.0": {
+      "Robust.Shared.Maths.Tests/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -3586,9 +3586,9 @@
           "NUnit": "4.4.0",
           "NUnit.Analyzers": "4.11.2",
           "NUnit3TestAdapter": "5.2.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
-          "Robust.Shared.Maths.Testing": "273.0.0"
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
+          "Robust.Shared.Maths.Testing": "275.2.0"
         },
         "compile": {
           "bin/placeholder/Robust.Shared.Maths.Tests.dll": {}
@@ -3597,15 +3597,15 @@
           "bin/placeholder/Robust.Shared.Maths.Tests.dll": {}
         }
       },
-      "Robust.Shared.Scripting/273.0.0": {
+      "Robust.Shared.Scripting/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp.Features": "5.0.0",
           "Microsoft.CodeAnalysis.CSharp.Scripting": "5.0.0",
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "5.0.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
           "SpaceWizards.Lidgren.Network": "1.0.0",
           "YamlDotNet": "16.3.0"
         },
@@ -3616,14 +3616,14 @@
           "bin/placeholder/Robust.Shared.Scripting.dll": {}
         }
       },
-      "Robust.Shared.Testing/273.0.0": {
+      "Robust.Shared.Testing/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "JetBrains.Annotations": "2025.2.4",
           "NUnit": "4.4.0",
           "NUnit.Analyzers": "4.11.2",
-          "Robust.Shared": "273.0.0",
+          "Robust.Shared": "275.2.0",
           "Serilog": "4.3.0"
         },
         "compile": {
@@ -3633,7 +3633,7 @@
           "bin/placeholder/Robust.Shared.Testing.dll": {}
         }
       },
-      "Robust.UnitTesting/273.0.0": {
+      "Robust.UnitTesting/275.2.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
@@ -3644,14 +3644,14 @@
           "NUnit": "4.4.0",
           "NUnit.Analyzers": "4.11.2",
           "NUnit3TestAdapter": "5.2.0",
-          "Robust.Client": "273.0.0",
+          "Robust.Client": "275.2.0",
           "Robust.NetSerializer": "4.1.1",
-          "Robust.Server": "273.0.0",
-          "Robust.Shared": "273.0.0",
-          "Robust.Shared.Maths": "273.0.0",
-          "Robust.Shared.Maths.Testing": "273.0.0",
-          "Robust.Shared.Maths.Tests": "273.0.0",
-          "Robust.Shared.Testing": "273.0.0",
+          "Robust.Server": "275.2.0",
+          "Robust.Shared": "275.2.0",
+          "Robust.Shared.Maths": "275.2.0",
+          "Robust.Shared.Maths.Testing": "275.2.0",
+          "Robust.Shared.Maths.Tests": "275.2.0",
+          "Robust.Shared.Testing": "275.2.0",
           "Serilog": "4.3.0",
           "SpaceWizards.Lidgren.Network": "1.0.0",
           "YamlDotNet": "16.3.0"
@@ -8287,7 +8287,7 @@
         "yamldotnet.nuspec"
       ]
     },
-    "Avalonia.Base/273.0.0": {
+    "Avalonia.Base/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Avalonia.Base/Avalonia.Base.csproj",
       "msbuildProject": "../RobustToolbox/Avalonia.Base/Avalonia.Base.csproj"
@@ -8332,12 +8332,12 @@
       "path": "../Content.Tests/Content.Tests.csproj",
       "msbuildProject": "../Content.Tests/Content.Tests.csproj"
     },
-    "Robust.Benchmarks/273.0.0": {
+    "Robust.Benchmarks/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Benchmarks/Robust.Benchmarks.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Benchmarks/Robust.Benchmarks.csproj"
     },
-    "Robust.Client/273.0.0": {
+    "Robust.Client/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Client/Robust.Client.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Client/Robust.Client.csproj"
@@ -8352,52 +8352,52 @@
       "path": "../RobustToolbox/NetSerializer/NetSerializer/NetSerializer.csproj",
       "msbuildProject": "../RobustToolbox/NetSerializer/NetSerializer/NetSerializer.csproj"
     },
-    "Robust.Packaging/273.0.0": {
+    "Robust.Packaging/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Packaging/Robust.Packaging.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Packaging/Robust.Packaging.csproj"
     },
-    "Robust.Server/273.0.0": {
+    "Robust.Server/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Server/Robust.Server.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Server/Robust.Server.csproj"
     },
-    "Robust.Server.Testing/273.0.0": {
+    "Robust.Server.Testing/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Server.Testing/Robust.Server.Testing.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Server.Testing/Robust.Server.Testing.csproj"
     },
-    "Robust.Shared/273.0.0": {
+    "Robust.Shared/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Shared/Robust.Shared.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Shared/Robust.Shared.csproj"
     },
-    "Robust.Shared.Maths/273.0.0": {
+    "Robust.Shared.Maths/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Shared.Maths/Robust.Shared.Maths.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Shared.Maths/Robust.Shared.Maths.csproj"
     },
-    "Robust.Shared.Maths.Testing/273.0.0": {
+    "Robust.Shared.Maths.Testing/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Shared.Maths.Testing/Robust.Shared.Maths.Testing.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Shared.Maths.Testing/Robust.Shared.Maths.Testing.csproj"
     },
-    "Robust.Shared.Maths.Tests/273.0.0": {
+    "Robust.Shared.Maths.Tests/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Shared.Maths.Tests/Robust.Shared.Maths.Tests.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Shared.Maths.Tests/Robust.Shared.Maths.Tests.csproj"
     },
-    "Robust.Shared.Scripting/273.0.0": {
+    "Robust.Shared.Scripting/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Shared.Scripting/Robust.Shared.Scripting.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Shared.Scripting/Robust.Shared.Scripting.csproj"
     },
-    "Robust.Shared.Testing/273.0.0": {
+    "Robust.Shared.Testing/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.Shared.Testing/Robust.Shared.Testing.csproj",
       "msbuildProject": "../RobustToolbox/Robust.Shared.Testing/Robust.Shared.Testing.csproj"
     },
-    "Robust.UnitTesting/273.0.0": {
+    "Robust.UnitTesting/275.2.0": {
       "type": "project",
       "path": "../RobustToolbox/Robust.UnitTesting/Robust.UnitTesting.csproj",
       "msbuildProject": "../RobustToolbox/Robust.UnitTesting/Robust.UnitTesting.csproj"
@@ -8425,7 +8425,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "Avalonia.Base >= 273.0.0",
+      "Avalonia.Base >= 275.2.0",
       "BenchmarkDotNet >= 0.15.8",
       "Content.Client >= 1.0.0",
       "Content.IntegrationTests >= 1.0.0",
@@ -8433,16 +8433,16 @@
       "Content.Shared >= 1.0.0",
       "Content.Tests >= 1.0.0",
       "Microsoft.CodeAnalysis.CSharp >= 5.0.0",
-      "Robust.Benchmarks >= 273.0.0",
-      "Robust.Client >= 273.0.0",
+      "Robust.Benchmarks >= 275.2.0",
+      "Robust.Client >= 275.2.0",
       "Robust.NetSerializer >= 4.1.1",
-      "Robust.Server >= 273.0.0",
-      "Robust.Server.Testing >= 273.0.0",
-      "Robust.Shared >= 273.0.0",
-      "Robust.Shared.Maths >= 273.0.0",
-      "Robust.Shared.Maths.Testing >= 273.0.0",
-      "Robust.Shared.Testing >= 273.0.0",
-      "Robust.UnitTesting >= 273.0.0",
+      "Robust.Server >= 275.2.0",
+      "Robust.Server.Testing >= 275.2.0",
+      "Robust.Shared >= 275.2.0",
+      "Robust.Shared.Maths >= 275.2.0",
+      "Robust.Shared.Maths.Testing >= 275.2.0",
+      "Robust.Shared.Testing >= 275.2.0",
+      "Robust.UnitTesting >= 275.2.0",
       "SpaceWizards.Lidgren.Network >= 1.0.0",
       "System.Management >= 10.0.0"
     ]
@@ -8453,79 +8453,76 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\godot\\space-station-14\\Content.Benchmarks\\Content.Benchmarks.csproj",
+      "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.Benchmarks\\Content.Benchmarks.csproj",
       "projectName": "Content.Benchmarks",
-      "projectPath": "D:\\godot\\space-station-14\\Content.Benchmarks\\Content.Benchmarks.csproj",
+      "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Benchmarks\\Content.Benchmarks.csproj",
       "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-      "outputPath": "D:\\godot\\space-station-14\\Content.Benchmarks\\obj\\",
+      "outputPath": "D:\\godot\\SandwichStation-HL\\Content.Benchmarks\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "configFilePaths": [
-        "D:\\godot\\space-station-14\\NuGet.Config",
         "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj"
+            "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj"
             },
-            "D:\\godot\\space-station-14\\Content.IntegrationTests\\Content.IntegrationTests.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\Content.IntegrationTests\\Content.IntegrationTests.csproj"
+            "D:\\godot\\SandwichStation-HL\\Content.IntegrationTests\\Content.IntegrationTests.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\Content.IntegrationTests\\Content.IntegrationTests.csproj"
             },
-            "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj"
+            "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj"
             },
-            "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj"
+            "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj"
             },
-            "D:\\godot\\space-station-14\\Content.Tests\\Content.Tests.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\Content.Tests\\Content.Tests.csproj"
+            "D:\\godot\\SandwichStation-HL\\Content.Tests\\Content.Tests.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Tests\\Content.Tests.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
             },
-            "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
-              "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
+            "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
+              "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
             }
           }
         }

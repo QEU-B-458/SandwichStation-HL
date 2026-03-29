@@ -1,0 +1,86 @@
+- type: gameMap
+  id: Taco
+  mapName: 'Taco'
+  mapPath: /Maps/_Sandwich/taco.yml
+  minPlayers: 0
+  maxPlayers: 100
+  stations:
+    Taco:
+      stationProto: StandardNanotrasenStation
+      components:
+      - type: StationNameSetup
+        mapNameTemplate: 'Taco Station 14-SWCH'
+        #nameGenerator:
+        #  !type:NanotrasenNameGenerator
+        #  prefixCreator: '14-SWCH'
+      - type: ExtraStationInformation
+        iconPath: /Textures/Logo/icon/icon-256x256.png
+        stationSubtext: 'Start from nothing...'
+        stationDescription: 'Its gonna be tough, but fun!'
+        lobbySortOrder: 1
+      - type: StationJobs
+        availableJobs:
+          #command
+          StationTrafficController: [ 0, 0 ]
+          StationCaptain: [ 1, 1 ]
+          HeadOfPersonnel: [ 1, 1 ]
+          HeadOfSecurity: [ 1, 1 ]
+          ChiefMedicalOfficer: [ 1, 1 ]
+          ChiefEngineer: [ 1, 1 ]
+          ResearchDirector: [ 1, 1 ]
+          Quartermaster: [ 1, 1 ]
+          #service
+          Bartender: [ 0, 0 ]
+          Botanist: [ 0, 0 ]
+          Chef: [ 0, 0 ]
+          Janitor: [ 0, 0 ]
+          Chaplain: [ 0, 0 ]
+          Librarian: [ 0, 0 ]
+          ServiceWorker: [ 0, 0 ]
+          Reporter: [ 0, 0 ]
+          #engineering
+          AtmosphericTechnician: [ 2, 2 ]
+          StationEngineer: [ -1, -1 ]
+          TechnicalAssistant: [ 5, 5 ]
+          #medical
+          Chemist: [ 0, 0 ]
+          MedicalDoctor: [ 0, 0 ]
+          Paramedic: [ 2, 2 ]
+          MedicalIntern: [ 0, 0 ] #intern, not counted
+          Psychologist: [ 0, 0 ]
+          Geneticist: [ 1, 1 ]
+          #science
+          Scientist: [ 0, 1 ]
+          ResearchAssistant: [ 0, 0 ] #intern, not counted
+          #security
+          Warden: [ 0, 0 ]
+          SecurityOfficer: [ 0, 4 ]
+          Detective: [ 0, 0 ]
+          SecurityCadet: [ 0, 0 ] #intern, not counted
+          Lawyer: [ 0, 0 ]
+          #supply
+          SalvageSpecialist: [ 0, 0 ]
+          CargoTechnician: [ 0, 0 ]
+          #civilian
+          Passenger: [ 0, 0 ] #infinite, not counted
+          Clown: [ 0, 0 ]
+          Mime: [ 0, 0 ]
+          Musician: [ 0, 0 ]
+          #silicon
+          StationAi: [ 0, 0 ]
+          Borg: [ 0, 0 ]
+          #frontier
+          #Contractor: [ -1, -1 ]
+          #Pilot: [ 5, 5 ]
+          Mercenary: [ 0, 0 ]
+          MedicalQuadBorg: [ 0, 0 ]
+          ServiceQuadBorg: [ 0, 0 ]
+          SalvageQuadBorg: [ 0, 0 ]
+          SecurityQuadBorg: [ 0, 0 ]
+          EngineeringQuadBorg: [ 1, 1 ]
+          Valet: [ 0, 0 ]
+          MailCarrier: [ 0, 0 ]
+          Prisoner: [ 0, 0 ]
+          ForensicMantis: [ 0, 0 ]
+      - type: StationDeadDrop
+        maxDeadDrops: 0

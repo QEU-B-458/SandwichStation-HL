@@ -1,0 +1,21 @@
+- type: job
+  id: AiDeploymentBorg
+  name: job-name-ai-deployment-borg
+  description: job-description-ai-deployment-borg
+  playTimeTracker: JobAiDeploymentBorg
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobBorg
+    time: 18000 # 5 hrs borg experience
+  icon: JobIconBorg
+  supervisors: job-supervisors-rd
+  jobEntity: PlayerBorgAiDeployment
+  applyTraits: false
+  setPreference: true
+
+- type: playTimeTracker
+  id: JobAiDeploymentBorg
+
+- type: roleLoadout
+  id: JobAiDeploymentBorg
+  canCustomizeName: true

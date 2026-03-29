@@ -1,0 +1,152 @@
+# AI Deployment Borg — a special borg that carries the AI player to a core.
+# Intentionally useless beyond transportation. No modules, no tools.
+# Uses the "peace" borg sprite.
+- type: entity
+  id: BorgChassisAiDeployment
+  parent: BaseBorgChassisNT
+  name: AI deployment borg
+  description: A specialized transport borg designed to carry an AI personality to its core. It has no tools or combat capability — just legs and a card reader.
+  components:
+  - type: AiDeploymentBorg
+  # One hand only — same pattern as Quadborg body prototype.
+  - type: Body
+    prototype: AiDeploymentBorg
+  - type: Sprite
+    layers:
+    - state: peace
+    - state: peace_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: peace_l
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: BorgChassis
+    maxModules: 0
+    moduleWhitelist:
+      tags: []
+    hasMindState: peace_e
+    noMindState: peace_e_r
+  - type: BorgTransponder
+    sprite:
+      sprite: Mobs/Silicon/chassis.rsi
+      state: peace
+    name: AI deployment borg
+  - type: Construction
+    node: yourBorgHere
+  # Override base borg radio — deployment borg only gets Binary + Common
+  - type: EncryptionKeyHolder
+    keySlots: 0
+    preserveExistingChannels: true
+    intrinsicChannels:
+    - Binary
+    - Common
+  - type: IntrinsicRadioTransmitter
+    intrinsicChannels:
+    - Binary
+    - Common
+  - type: ActiveRadio
+    intrinsicChannels:
+    - Binary
+    - Common
+  # Override base borg access — department-level navigation access on the chassis.
+  # Excludes command, security, and head-of-department areas.
+  # The ID card is freelancer-only; this access is for door-bumping to reach the AI core.
+  - type: Access
+    enabled: true
+    groups: [] # Clear parent's AllAccess group
+    tags:
+    - Maintenance
+    - External
+    - Cryogenics
+    - Engineering
+    - Atmospherics
+    - Medical
+    - Chemistry
+    - Paramedic
+    - Research
+    - Cargo
+    - Salvage
+    - Bar
+    - Kitchen
+    - Hydroponics
+    - Service
+    - Janitor
+    - Theatre
+    - Chapel
+    - Mail
+    - Contractor
+  # Slower than normal borgs — it's a transport, not a sprinter
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+  # One hand — needed to hold the ID card for console interactions (HoP, shipyard).
+  # Card lives in internal ItemSlot; a toggle action moves it to/from hand.
+  # ComplexInteraction + Sanitized match the quad borg pattern for console use.
+  - type: Hands
+    disableExplosionRecursion: true
+  - type: ComplexInteraction
+  - type: Sanitized
+  # ID card slot (whitelisted to IdCard only)
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+      id_card_slot:
+        name: ai-deployment-borg-id-slot
+        whitelist:
+          components:
+          - IdCard
+        insertOnInteract: false
+        locked: false
+  - type: ContainerContainer
+    containers:
+      borg_brain: !type:ContainerSlot { }
+      cell_slot: !type:ContainerSlot { }
+      borg_module: !type:Container { }
+      part-container: !type:Container
+      key_slots: !type:Container
+      id_card_slot: !type:ContainerSlot { }
+  # Start with the deployment borg ID card
+  - type: ContainerFill
+    containers:
+      id_card_slot:
+      - AiDeploymentBorgIdCard
+  - type: InteractionPopup
+    interactSuccessString: petting-success-deploymentborg
+    interactFailureString: petting-failure-deploymentborg
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+    - SiliconEmotes
+    - SiliconMob
+
+# Player-ready variant with brain and battery pre-filled.
+# This is the jobEntity for the AI Deployment Borg job.
+- type: entity
+  id: PlayerBorgAiDeployment
+  parent: BorgChassisAiDeployment
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - PositronicBrain
+      id_card_slot:
+      - AiDeploymentBorgIdCard
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+      id_card_slot:
+        name: ai-deployment-borg-id-slot
+        whitelist:
+          components:
+          - IdCard
+        insertOnInteract: false
+        locked: false

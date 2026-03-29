@@ -1,0 +1,79 @@
+# Base Auth module — provides AI with access (ID card) and radio (encryption keys)
+- type: entity
+  id: AiAuthModule
+  parent: BaseAiServerModule
+  name: AI auth module
+  abstract: true
+  description: Provides an AI with access permissions via an ID card and radio channels via encryption keys.
+  components:
+  - type: AiServerModule
+    moduleId: Auth
+    moduleType: Auth
+  - type: AiAuthModule
+  - type: ItemSlots
+    slots:
+      auth_id_card:
+        name: ID Card
+        whitelist:
+          components:
+          - IdCard
+        insertSound: /Audio/Machines/terminal_insert_disc.ogg
+        ejectSound: /Audio/Machines/tray_eject.ogg
+  - type: EncryptionKeyHolder
+    keySlots: 10
+    keysUnlocked: true
+  - type: ContainerContainer
+    containers:
+      auth_id_card: !type:ContainerSlot {}
+      key_slots: !type:Container {}
+  - type: Sprite
+    sprite: Objects/Specific/Robotics/borgmodule.rsi
+    layers:
+    - state: generic
+    - state: security
+  - type: StaticPrice
+    price: 500
+
+# Station variant — pre-loaded with full-access ID + all department keys
+- type: entity
+  id: AiAuthModuleStation
+  parent: AiAuthModule
+  suffix: Station
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ItemSlots
+    slots:
+      auth_id_card:
+        name: ID Card
+        startingItem: AiStationIdCard
+        whitelist:
+          components:
+          - IdCard
+        insertSound: /Audio/Machines/terminal_insert_disc.ogg
+        ejectSound: /Audio/Machines/tray_eject.ogg
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyStationMaster
+
+# Player-built variant — pre-loaded with passenger ID + common key
+- type: entity
+  id: AiAuthModulePlayer
+  parent: AiAuthModule
+  name: AI auth module
+  description: Provides an AI with access permissions via an ID card and radio channels via encryption keys. Comes with basic passenger access.
+  components:
+  - type: ItemSlots
+    slots:
+      auth_id_card:
+        name: ID Card
+        startingItem: PassengerIDCard
+        whitelist:
+          components:
+          - IdCard
+        insertSound: /Audio/Machines/terminal_insert_disc.ogg
+        ejectSound: /Audio/Machines/tray_eject.ogg
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon

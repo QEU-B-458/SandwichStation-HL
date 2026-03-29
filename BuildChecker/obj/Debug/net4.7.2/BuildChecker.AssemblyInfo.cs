@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BuildChecker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05b6ec1862f6723ed94384a826ebd960cb8af590")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7694941390532cb9a8778afacbc9a2e1c3d07af4")]
 [assembly: System.Reflection.AssemblyProductAttribute("BuildChecker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BuildChecker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

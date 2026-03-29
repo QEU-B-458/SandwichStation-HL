@@ -1,0 +1,54 @@
+- type: soundCollection
+  id: SandwichLobbyMusic
+  files:
+    # Sandwich - Lobby Songs
+    - /Audio/_Sandwich/Lobby/arcadia.ogg
+    - /Audio/_Sandwich/Lobby/athletic_what_a_mario_world.ogg
+    - /Audio/_Sandwich/Lobby/boombox_5_extended.ogg
+    - /Audio/_Sandwich/Lobby/lagoona.ogg
+    - /Audio/_Sandwich/Lobby/rainingmen.ogg
+    - /Audio/_Sandwich/Lobby/recordspin.ogg
+    - /Audio/_Sandwich/Lobby/sandwichstation.ogg
+    - /Audio/_Sandwich/Lobby/superkarts.ogg
+    - /Audio/_Sandwich/Lobby/eurobeat/rockefellerbeat.ogg
+    - /Audio/_Sandwich/Lobby/memes/sparkanoko.ogg
+    - /Audio/_Sandwich/Lobby/miku/mikus_instant_crush.ogg
+    - /Audio/_Sandwich/Lobby/miku/mikus_little_dark_age.ogg
+    - /Audio/_Sandwich/Lobby/miku/mikus_nightcall.ogg
+    - /Audio/_Sandwich/Lobby/miku/mikus_real_hero.ogg
+    - /Audio/_Sandwich/Lobby/miku/mikus_saved_tears.ogg
+    - /Audio/_Sandwich/Lobby/miku/miku_anamanaguchi.ogg
+    - /Audio/_Sandwich/Lobby/miku/miku_confessions-of-a-rotten-girl.ogg
+    - /Audio/_Sandwich/Lobby/miku/miku_taken_on.ogg
+    - /Audio/_Sandwich/Lobby/miku/miku_wants_to_enjoy_the_silence.ogg
+    - /Audio/_Sandwich/Lobby/miku/plastic_love.ogg
+    - /Audio/_Sandwich/Lobby/retro/komm_susser_tod_astrophysics.ogg
+    - /Audio/_Sandwich/Lobby/retro/psyche_rock.ogg
+    - /Audio/_Sandwich/Lobby/retro/sweetplasma.ogg
+    - /Audio/_Sandwich/Lobby/retro/tigereye.ogg
+    - /Audio/_Sandwich/Lobby/retro/touchout.ogg
+    - /Audio/_Sandwich/Lobby/retro/treasure_trove_cove.ogg
+    # End Lobby Songs
+
+    # Sandwich - Xmas songs, uncomment to enable
+    #- /Audio/_Sandwich/Lobby/xmas/all_i_want_for_christmas.ogg
+    #- /Audio/_Sandwich/Lobby/xmas/jingle_bells.ogg
+    # End Xmas
+
+    # SS14 "Vanilla" songs (Wizden)
+    - /Audio/Lobby/thunderdome.ogg
+    - /Audio/Lobby/absconditus.ogg
+    - /Audio/Lobby/space_asshole.ogg
+    - /Audio/Lobby/the_wizard.ogg
+    - /Audio/Lobby/endless_space.ogg
+    - /Audio/Lobby/singuloose.ogg
+    - /Audio/Lobby/comet_haley.ogg
+    - /Audio/Lobby/title2.ogg
+    - /Audio/Lobby/title3.ogg
+    - /Audio/Lobby/mod.flip-flap.ogg
+    - /Audio/Lobby/Spac_Stac.ogg
+    - /Audio/Lobby/pwmur.ogg
+    - /Audio/Lobby/lasers_rip_apart_the_bulkhead.ogg
+    - /Audio/Lobby/every_light_is_blinking_at_once.ogg
+    - /Audio/Lobby/atomicamnesiammx.ogg
+    # End SS14 "Vanilla" Songs

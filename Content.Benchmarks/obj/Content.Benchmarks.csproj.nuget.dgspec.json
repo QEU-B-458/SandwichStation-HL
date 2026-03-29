@@ -1,85 +1,82 @@
 {
   "format": 1,
   "restore": {
-    "D:\\godot\\space-station-14\\Content.Benchmarks\\Content.Benchmarks.csproj": {}
+    "D:\\godot\\SandwichStation-HL\\Content.Benchmarks\\Content.Benchmarks.csproj": {}
   },
   "projects": {
-    "D:\\godot\\space-station-14\\Content.Benchmarks\\Content.Benchmarks.csproj": {
+    "D:\\godot\\SandwichStation-HL\\Content.Benchmarks\\Content.Benchmarks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\Content.Benchmarks\\Content.Benchmarks.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.Benchmarks\\Content.Benchmarks.csproj",
         "projectName": "Content.Benchmarks",
-        "projectPath": "D:\\godot\\space-station-14\\Content.Benchmarks\\Content.Benchmarks.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Benchmarks\\Content.Benchmarks.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\Content.Benchmarks\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\Content.Benchmarks\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.IntegrationTests\\Content.IntegrationTests.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.IntegrationTests\\Content.IntegrationTests.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.IntegrationTests\\Content.IntegrationTests.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.IntegrationTests\\Content.IntegrationTests.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Tests\\Content.Tests.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Tests\\Content.Tests.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Tests\\Content.Tests.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Tests\\Content.Tests.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
               }
             }
           }
@@ -487,52 +484,49 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj": {
+    "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj",
         "projectName": "Content.Client",
-        "projectPath": "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\Content.Client\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\Content.Client\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -946,73 +940,70 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\Content.IntegrationTests\\Content.IntegrationTests.csproj": {
+    "D:\\godot\\SandwichStation-HL\\Content.IntegrationTests\\Content.IntegrationTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\Content.IntegrationTests\\Content.IntegrationTests.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.IntegrationTests\\Content.IntegrationTests.csproj",
         "projectName": "Content.IntegrationTests",
-        "projectPath": "D:\\godot\\space-station-14\\Content.IntegrationTests\\Content.IntegrationTests.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\Content.IntegrationTests\\Content.IntegrationTests.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\Content.IntegrationTests\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\Content.IntegrationTests\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Tests\\Content.Tests.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Tests\\Content.Tests.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Tests\\Content.Tests.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Tests\\Content.Tests.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
               }
             }
           }
@@ -1420,43 +1411,40 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\Content.Packaging\\Content.Packaging.csproj": {
+    "D:\\godot\\SandwichStation-HL\\Content.Packaging\\Content.Packaging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\Content.Packaging\\Content.Packaging.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.Packaging\\Content.Packaging.csproj",
         "projectName": "Content.Packaging",
-        "projectPath": "D:\\godot\\space-station-14\\Content.Packaging\\Content.Packaging.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Packaging\\Content.Packaging.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\Content.Packaging\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\Content.Packaging\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -1847,34 +1835,31 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\Content.Server.Database\\Content.Server.Database.csproj": {
+    "D:\\godot\\SandwichStation-HL\\Content.Server.Database\\Content.Server.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\Content.Server.Database\\Content.Server.Database.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.Server.Database\\Content.Server.Database.csproj",
         "projectName": "Content.Server.Database",
-        "projectPath": "D:\\godot\\space-station-14\\Content.Server.Database\\Content.Server.Database.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Server.Database\\Content.Server.Database.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\Content.Server.Database\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\Content.Server.Database\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\Content.Shared.Database\\Content.Shared.Database.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Shared.Database\\Content.Shared.Database.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\Content.Shared.Database.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\Content.Shared.Database.csproj"
               }
             }
           }
@@ -2289,61 +2274,58 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj": {
+    "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj",
         "projectName": "Content.Server",
-        "projectPath": "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\Content.Server\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\Content.Server\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\Content.Packaging\\Content.Packaging.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Packaging\\Content.Packaging.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Packaging\\Content.Packaging.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Packaging\\Content.Packaging.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Server.Database\\Content.Server.Database.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Server.Database\\Content.Server.Database.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Server.Database\\Content.Server.Database.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Server.Database\\Content.Server.Database.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Shared.Database\\Content.Shared.Database.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Shared.Database\\Content.Shared.Database.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\Content.Shared.Database.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\Content.Shared.Database.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -2752,27 +2734,24 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\Content.Shared.Database\\Content.Shared.Database.csproj": {
+    "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\Content.Shared.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\Content.Shared.Database\\Content.Shared.Database.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\Content.Shared.Database.csproj",
         "projectName": "Content.Shared.Database",
-        "projectPath": "D:\\godot\\space-station-14\\Content.Shared.Database\\Content.Shared.Database.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\Content.Shared.Database.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\Content.Shared.Database\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
@@ -3166,46 +3145,43 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj": {
+    "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj",
         "projectName": "Content.Shared",
-        "projectPath": "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\Content.Shared\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\Content.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\Content.Shared.Database\\Content.Shared.Database.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Shared.Database\\Content.Shared.Database.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\Content.Shared.Database.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared.Database\\Content.Shared.Database.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -3604,70 +3580,67 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\Content.Tests\\Content.Tests.csproj": {
+    "D:\\godot\\SandwichStation-HL\\Content.Tests\\Content.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\Content.Tests\\Content.Tests.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\Content.Tests\\Content.Tests.csproj",
         "projectName": "Content.Tests",
-        "projectPath": "D:\\godot\\space-station-14\\Content.Tests\\Content.Tests.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Tests\\Content.Tests.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\Content.Tests\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\Content.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Client\\Content.Client.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Client\\Content.Client.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Server\\Content.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Server\\Content.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\Content.Shared\\Content.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\Content.Shared\\Content.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
               }
             }
           }
@@ -4080,18 +4053,17 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj",
         "projectName": "Avalonia.Base",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -4417,19 +4389,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
         "projectName": "SpaceWizards.Lidgren.Network",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -4828,18 +4799,17 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
       "version": "4.1.1",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj",
         "projectName": "Robust.NetSerializer",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -5165,19 +5135,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj",
         "projectName": "Robust.Benchmarks",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Benchmarks\\Robust.Benchmarks.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Benchmarks\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Benchmarks\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -5192,20 +5161,20 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj"
               }
             }
           }
@@ -5635,19 +5604,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj",
         "projectName": "Robust.Client",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -5662,29 +5630,29 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Avalonia.Base\\Avalonia.Base.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj"
               }
             }
           }
@@ -6220,18 +6188,17 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj": {
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj",
         "projectName": "Robust.LoaderApi",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\Robust.LoaderApi.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.LoaderApi\\Robust.LoaderApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -6560,19 +6527,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj",
         "projectName": "Robust.Packaging",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -6587,8 +6553,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -6986,19 +6952,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj",
         "projectName": "Robust.Server.Testing",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\Robust.Server.Testing.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server.Testing\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server.Testing\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -7013,20 +6978,20 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -7436,19 +7401,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj",
         "projectName": "Robust.Server",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -7463,23 +7427,23 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Packaging\\Robust.Packaging.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -7999,19 +7963,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj",
         "projectName": "Robust.Shared.Maths.Testing",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -8026,8 +7989,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               }
             }
           }
@@ -8431,19 +8394,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj",
         "projectName": "Robust.Shared.Maths.Tests",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Tests\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -8458,14 +8420,14 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -8887,19 +8849,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj",
         "projectName": "Robust.Shared.Maths",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -9303,19 +9264,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj",
         "projectName": "Robust.Shared.Scripting",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Scripting\\Robust.Shared.Scripting.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Scripting\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Scripting\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -9330,14 +9290,14 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -9759,19 +9719,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj",
         "projectName": "Robust.Shared.Testing",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -9786,8 +9745,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -10197,19 +10156,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj",
         "projectName": "Robust.Shared",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -10224,14 +10182,14 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               }
             }
           }
@@ -10733,19 +10691,18 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
-      "version": "273.0.0",
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj": {
+      "version": "275.2.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj",
         "projectName": "Robust.UnitTesting",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\Robust.UnitTesting.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.UnitTesting\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.UnitTesting\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -10760,32 +10717,32 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NetSerializer\\NetSerializer\\NetSerializer.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Client\\Robust.Client.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Server\\Robust.Server.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Testing\\Robust.Shared.Maths.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths.Tests\\Robust.Shared.Maths.Tests.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Maths\\Robust.Shared.Maths.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared.Testing\\Robust.Shared.Testing.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Shared\\Robust.Shared.csproj"
               }
             }
           }
@@ -11225,18 +11182,17 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj": {
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj",
         "projectName": "Robust.Xaml",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Xaml\\Robust.Xaml.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\Robust.Xaml\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\Robust.Xaml\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -11251,11 +11207,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj"
               },
-              "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj"
               }
             }
           }
@@ -11316,18 +11272,17 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj": {
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj",
         "projectName": "XamlX.IL.Cecil",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\XamlX.IL.Cecil.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX.IL.Cecil\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -11342,8 +11297,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj": {
-                "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj"
+              "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj": {
+                "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj"
               }
             }
           }
@@ -11394,18 +11349,17 @@
         }
       }
     },
-    "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj": {
+    "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj",
+        "projectUniqueName": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj",
         "projectName": "XamlX",
-        "projectPath": "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj",
+        "projectPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX\\XamlX.csproj",
         "packagesPath": "C:\\Users\\zquee\\.nuget\\packages\\",
-        "outputPath": "D:\\godot\\space-station-14\\RobustToolbox\\XamlX\\src\\XamlX\\obj\\",
+        "outputPath": "D:\\godot\\SandwichStation-HL\\RobustToolbox\\XamlX\\src\\XamlX\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "D:\\godot\\space-station-14\\RobustToolbox\\NuGet.Config",
-          "D:\\godot\\space-station-14\\NuGet.Config",
+          "D:\\godot\\SandwichStation-HL\\RobustToolbox\\NuGet.Config",
           "C:\\Users\\zquee\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [

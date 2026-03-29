@@ -1,0 +1,25 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+              xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+              Title="{Loc 'boris-pairing-title'}"
+              MinSize="300 180"
+              SetSize="300 180">
+    <BoxContainer Orientation="Vertical" Margin="10">
+        <!-- Unpaired state: code entry -->
+        <BoxContainer Name="UnpairedPanel" Orientation="Vertical">
+            <Label Text="{Loc 'boris-enter-code-label'}" Margin="0 0 0 5" />
+            <BoxContainer Orientation="Horizontal">
+                <LineEdit Name="CodeEntry"
+                          PlaceHolder="0000"
+                          HorizontalExpand="True"
+                          Margin="0 0 5 0" />
+                <Button Name="SubmitButton" Text="{Loc 'boris-submit-button'}" />
+            </BoxContainer>
+        </BoxContainer>
+
+        <!-- Paired state: show linked server -->
+        <BoxContainer Name="PairedPanel" Orientation="Vertical" Visible="False">
+            <Label Name="PairedLabel" Text="" Margin="0 0 0 5" />
+            <Button Name="UnpairButton" Text="{Loc 'boris-unpair-button'}" />
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>
