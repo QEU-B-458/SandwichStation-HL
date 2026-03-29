@@ -1,0 +1,10 @@
+D:\godot\space-station-14\BuildChecker\bin\Debug\net4.7.2\BuildChecker.dll
+D:\godot\space-station-14\BuildChecker\bin\Debug\net4.7.2\BuildChecker.pdb
+D:\godot\space-station-14\BuildChecker\obj\Debug\net4.7.2\BuildChecker.csproj.AssemblyReference.cache
+D:\godot\space-station-14\BuildChecker\obj\Debug\net4.7.2\BuildChecker.GeneratedMSBuildEditorConfig.editorconfig
+D:\godot\space-station-14\BuildChecker\obj\Debug\net4.7.2\BuildChecker.AssemblyInfoInputs.cache
+D:\godot\space-station-14\BuildChecker\obj\Debug\net4.7.2\BuildChecker.AssemblyInfo.cs
+D:\godot\space-station-14\BuildChecker\obj\Debug\net4.7.2\BuildChecker.csproj.CoreCompileInputs.cache
+D:\godot\space-station-14\BuildChecker\obj\Debug\net4.7.2\BuildChecker.sourcelink.json
+D:\godot\space-station-14\BuildChecker\obj\Debug\net4.7.2\BuildChecker.dll
+D:\godot\space-station-14\BuildChecker\obj\Debug\net4.7.2\BuildChecker.pdb
