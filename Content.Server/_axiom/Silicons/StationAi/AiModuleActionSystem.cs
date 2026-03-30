@@ -71,7 +71,7 @@ public sealed class AiModuleActionSystem : EntitySystem
         if (module.GrantedAction == null || module.GrantedActionEntity != null)
             return;
 
-        _actions.AddAction(brainUid, ref module.GrantedActionEntity, module.GrantedAction, moduleUid);
+        _actions.AddAction(brainUid, ref module.GrantedActionEntity, module.GrantedAction);
     }
 
     private void RevokeActionFromBrain(EntityUid brainUid, EntityUid moduleUid, AiServerModuleComponent module)

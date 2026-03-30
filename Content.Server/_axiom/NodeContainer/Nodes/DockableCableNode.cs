@@ -1,17 +1,12 @@
+using Content.Server.Power.Nodes;
 using Content.Server.Shuttles.Components;
 using Content.Shared.NodeContainer;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server.NodeContainer.Nodes;
 
-/// <summary>
-/// A cable node that also connects across docked grids.
-/// Cannot subclass CableNode (sealed), so this extends Node directly
-/// and replicates the docking cross-link logic only.
-/// The entity must also have a regular CableNode for normal power grid participation.
-/// </summary>
 [DataDefinition]
-public sealed partial class DockableCableNode : Node
+public sealed partial class DockableCableNode : CableNode
 {
     public override IEnumerable<Node> GetReachableNodes(
         Entity<TransformComponent> xform,
@@ -20,9 +15,16 @@ public sealed partial class DockableCableNode : Node
         Entity<MapGridComponent>? grid,
         IEntityManager entMan)
     {
+        // Normal cable grid connectivity on this grid.
+        foreach (var node in base.GetReachableNodes(xform, nodeQuery, xformQuery, grid, entMan))
+        {
+            yield return node;
+        }
+
         if (!xform.Comp.Anchored || grid == null)
             yield break;
 
+        // Cross-grid bridge when docked.
         if (entMan.TryGetComponent(Owner, out DockingComponent? docking)
             && docking.DockedWith != null
             && nodeQuery.TryComp(docking.DockedWith, out var otherNode))

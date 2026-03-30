@@ -1,0 +1,11 @@
+# Axiom Station AI brain — used by the AI deployment borg upload system.
+# Differs from StationAiBrain: no AllAccess (access comes from Auth module ID card),
+# and has AxiomAiComponent so SharedAxiomAiSystem applies network-based grid auth.
+- type: entity
+  id: AxiomAiBrain
+  parent: StationAiBrain
+  components:
+  - type: Access
+    groups:
+    - Silicon
+  - type: AxiomAi

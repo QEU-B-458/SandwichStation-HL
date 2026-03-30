@@ -263,8 +263,8 @@ public sealed class AiDeploymentSystem : EntitySystem
             return;
         }
 
-        // Spawn a StationAiBrain and insert it into the core's mind slot.
-        var brainUid = Spawn("StationAiBrain", Transform(coreUid).Coordinates);
+        // Spawn an AxiomAiBrain and insert it into the core's mind slot.
+        var brainUid = Spawn("AxiomAiBrain", Transform(coreUid).Coordinates);
         if (!_container.Insert(brainUid, mindSlot))
         {
             _popup.PopupEntity(Loc.GetString("ai-deployment-core-error"), uid, uid);

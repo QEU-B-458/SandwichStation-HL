@@ -2,7 +2,7 @@
 # to upload into a linked AI Core. Auto-links to an AI Controller Server on
 # the same grid.
 - type: entity
-  parent: BorgCharger
+  parent: BorgChargerXenoborg
   id: AiInterface
   name: AI interface
   description: A specialized docking station that allows an AI deployment borg to upload into a linked AI core. Step inside and interface with the core.

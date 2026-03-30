@@ -1,0 +1,35 @@
+- type: soundCollection
+  id: FelinidScreams
+  files:
+  - /Audio/_species/Felinid/Voice/cat_scream1.ogg
+  - /Audio/_species/Felinid/Voice/cat_scream2.ogg
+  - /Audio/_species/Felinid/Voice/cat_scream3.ogg
+
+- type: soundCollection
+  id: FelinidHisses
+  files:
+  - /Audio/_species/Felinid/Voice/cat_hiss1.ogg
+  - /Audio/_species/Felinid/Voice/cat_hiss2.ogg
+
+- type: soundCollection
+  id: FelinidMeows
+  files:
+  - /Audio/_species/Felinid/Voice/cat_meow1.ogg
+  - /Audio/_species/Felinid/Voice/cat_meow2.ogg
+  - /Audio/_species/Felinid/Voice/cat_meow3.ogg
+
+- type: soundCollection
+  id: FelinidMews
+  files:
+  - /Audio/_species/Felinid/Voice/cat_mew1.ogg
+  - /Audio/_species/Felinid/Voice/cat_mew2.ogg
+
+- type: soundCollection
+  id: FelinidGrowls
+  files:
+  - /Audio/_species/Felinid/Voice/cat_growl1.ogg
+
+- type: soundCollection
+  id: FelinidPurrs
+  files:
+  - /Audio/_species/Felinid/Voice/cat_purr1.ogg
