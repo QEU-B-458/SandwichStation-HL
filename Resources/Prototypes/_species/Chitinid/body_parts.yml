@@ -1,112 +1,79 @@
-# TODO: Add descriptions (many)
-# TODO BODY: Part damage
+# Chitinid external organ entities
 - type: entity
-  id: PartChitinidBase
-  parent: [BaseItem, BasePart]
-  name: "Chitinid body part"
+  parent: OrganBase
+  id: OrganChitinid
+  abstract: true
+  suffix: chitinid
+
+- type: entity
+  parent: OrganChitinid
+  id: OrganChitinidExternal
   abstract: true
   components:
   - type: Sprite
     sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Fat
-        Quantity: 3
-      - ReagentId: Blood
-        Quantity: 10
+  - type: VisualOrgan
+    data:
+      sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Chitinid
+
+# Torso
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganChitinidExternal ]
+  id: OrganChitinidTorso
+  components:
+  - type: VisualOrganMarkings
+    markingData:
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+
+# Head
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganChitinidExternal ]
+  id: OrganChitinidHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+
+# Limbs
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganChitinidExternal ]
+  id: OrganChitinidArmLeft
 
 - type: entity
-  id: TorsoChitinid
-  name: "chitinid torso"
-  parent: [PartChitinidBase, BaseTorso]
-  components:
-  - type: Sprite
-    state: "torso_m"
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Fat
-        Quantity: 10
-      - ReagentId: Blood
-        Quantity: 20
-
+  parent: [ OrganBaseArmRight, OrganChitinidExternal ]
+  id: OrganChitinidArmRight
 
 - type: entity
-  id: HeadChitinid
-  name: "chitinid head"
-  parent: [PartChitinidBase, BaseHead]
-  components:
-  - type: Sprite
-    state: "head_m"
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Fat
-        Quantity: 5
-      - ReagentId: Blood
-        Quantity: 10
+  parent: [ OrganBaseHandLeft, OrganChitinidExternal ]
+  id: OrganChitinidHandLeft
 
 - type: entity
-  id: LeftArmChitinid
-  name: "left chitinid arm"
-  parent: [PartChitinidBase, BaseLeftArm]
-  components:
-  - type: Sprite
-    state: "l_arm"
+  parent: [ OrganBaseHandRight, OrganChitinidExternal ]
+  id: OrganChitinidHandRight
 
 - type: entity
-  id: RightArmChitinid
-  name: "right chitinid arm"
-  parent: [PartChitinidBase, BaseRightArm]
-  components:
-  - type: Sprite
-    state: "r_arm"
+  parent: [ OrganBaseLegLeft, OrganChitinidExternal ]
+  id: OrganChitinidLegLeft
 
 - type: entity
-  id: LeftHandChitinid
-  name: "left chitinid hand"
-  parent: [PartChitinidBase, BaseLeftHand]
-  components:
-  - type: Sprite
-    state: "l_hand"
+  parent: [ OrganBaseLegRight, OrganChitinidExternal ]
+  id: OrganChitinidLegRight
 
 - type: entity
-  id: RightHandChitinid
-  name: "right chitinid hand"
-  parent: [PartChitinidBase, BaseRightHand]
-  components:
-  - type: Sprite
-    state: "r_hand"
+  parent: [ OrganBaseFootLeft, OrganChitinidExternal ]
+  id: OrganChitinidFootLeft
 
 - type: entity
-  id: LeftLegChitinid
-  name: "left chitinid leg"
-  parent: [PartChitinidBase, BaseLeftLeg]
-  components:
-  - type: Sprite
-    state: "l_leg"
-
-- type: entity
-  id: RightLegChitinid
-  name: "right chitinid leg"
-  parent: [PartChitinidBase, BaseRightLeg]
-  components:
-  - type: Sprite
-    state: "r_leg"
-
-- type: entity
-  id: LeftFootChitinid
-  name: "left chitinid foot"
-  parent: [PartChitinidBase, BaseLeftFoot]
-  components:
-  - type: Sprite
-    state: "l_foot"
-
-- type: entity
-  id: RightFootChitinid
-  name: "right chitinid foot"
-  parent: [PartChitinidBase, BaseRightFoot]
-  components:
-  - type: Sprite
-    state: "r_foot"
+  parent: [ OrganBaseFootRight, OrganChitinidExternal ]
+  id: OrganChitinidFootRight

@@ -1,91 +1,79 @@
-
-# Skrell body parts, using Skrell-specific sprites
+# Skrell external organ entities
 - type: entity
-  id: HeadSkrell
-  name: "Skrell head"
-  parent: [PartHuman, BaseHead]
+  parent: OrganBase
+  id: OrganSkrell
+  abstract: true
+  suffix: skrell
+
+- type: entity
+  parent: OrganSkrell
+  id: OrganSkrellExternal
+  abstract: true
   components:
   - type: Sprite
     sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "head_m"
+  - type: VisualOrgan
+    data:
+      sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Skrell
+
+# Torso
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSkrellExternal ]
+  id: OrganSkrellTorso
+  components:
+  - type: VisualOrganMarkings
+    markingData:
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+
+# Head
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganSkrellExternal ]
+  id: OrganSkrellHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+
+# Limbs
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganSkrellExternal ]
+  id: OrganSkrellArmLeft
 
 - type: entity
-  id: TorsoSkrell
-  name: "Skrell torso"
-  parent: [PartHuman, BaseTorso]
-  components:
-  - type: Sprite
-    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "torso_m"
+  parent: [ OrganBaseArmRight, OrganSkrellExternal ]
+  id: OrganSkrellArmRight
 
 - type: entity
-  id: RightArmSkrell
-  name: "right Skrell arm"
-  parent: [PartHuman, BaseRightArm]
-  components:
-  - type: Sprite
-    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "r_arm"
+  parent: [ OrganBaseHandLeft, OrganSkrellExternal ]
+  id: OrganSkrellHandLeft
 
 - type: entity
-  id: LeftArmSkrell
-  name: "left Skrell arm"
-  parent: [PartHuman, BaseLeftArm]
-  components:
-  - type: Sprite
-    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "l_arm"
+  parent: [ OrganBaseHandRight, OrganSkrellExternal ]
+  id: OrganSkrellHandRight
 
 - type: entity
-  id: RightHandSkrell
-  name: "right Skrell hand"
-  parent: [PartHuman, BaseRightHand]
-  components:
-  - type: Sprite
-    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "r_hand"
+  parent: [ OrganBaseLegLeft, OrganSkrellExternal ]
+  id: OrganSkrellLegLeft
 
 - type: entity
-  id: LeftHandSkrell
-  name: "left Skrell hand"
-  parent: [PartHuman, BaseLeftHand]
-  components:
-  - type: Sprite
-    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "l_hand"
+  parent: [ OrganBaseLegRight, OrganSkrellExternal ]
+  id: OrganSkrellLegRight
 
 - type: entity
-  id: RightLegSkrell
-  name: "right Skrell leg"
-  parent: [PartHuman, BaseRightLeg]
-  components:
-  - type: Sprite
-    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "r_leg"
+  parent: [ OrganBaseFootLeft, OrganSkrellExternal ]
+  id: OrganSkrellFootLeft
 
 - type: entity
-  id: LeftLegSkrell
-  name: "left Skrell leg"
-  parent: [PartHuman, BaseLeftLeg]
-  components:
-  - type: Sprite
-    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "l_leg"
-
-- type: entity
-  id: RightFootSkrell
-  name: "right Skrell foot"
-  parent: [PartHuman, BaseRightFoot]
-  components:
-  - type: Sprite
-    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "r_foot"
-
-- type: entity
-  id: LeftFootSkrell
-  name: "left Skrell foot"
-  parent: [PartHuman, BaseLeftFoot]
-  components:
-  - type: Sprite
-    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
-    state: "l_foot"
+  parent: [ OrganBaseFootRight, OrganSkrellExternal ]
+  id: OrganSkrellFootRight

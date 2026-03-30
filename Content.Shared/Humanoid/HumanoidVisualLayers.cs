@@ -1,4 +1,4 @@
-﻿using Content.Shared.Humanoid.Markings;
+using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Humanoid
@@ -9,6 +9,8 @@ namespace Content.Shared.Humanoid
         Special, // for the cat ears
         Tail,
         TailOverlay, // markings that go ontop of tails
+        TailBehind, // tails rendered behind the body
+        TailOversuit, // tails rendered over suits
         Hair,
         FacialHair,
         UndergarmentTop,
@@ -33,6 +35,7 @@ namespace Content.Shared.Humanoid
         StencilMask,
         Ensnare,
         Fire,
-
+        LArmExtension, // species-specific extension layer, e.g. for harpy wings
+        RArmExtension, // species-specific extension layer, e.g. for harpy wings
     }
 }

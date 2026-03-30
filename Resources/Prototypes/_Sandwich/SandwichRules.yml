@@ -1,5 +1,5 @@
 - type: guideEntry
-  id: DefaultRuleset # DefaultRuleset = Default rules for non-setup servers
+  id: SandwichDefaultRuleset # Overrides vanilla DefaultRuleset for SandwichStation servers
   name: "SandwichStation Rules"
   ruleEntry: false # We dont need duplicate rules for the ones setting up the server correctly...
   priority: -50 # Rules always come first!

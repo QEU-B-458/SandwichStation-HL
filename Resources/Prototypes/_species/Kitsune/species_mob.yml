@@ -1,10 +1,39 @@
+# Kitsune appearance entity (character editor doll + body definition)
 - type: entity
-  save: false
-  id: BaseMobKitsune
-  name: Urist McKitsune
-  abstract: true
+  parent: BaseSpeciesAppearance
+  id: AppearanceKitsune
+  name: kitsune appearance
   components:
-  - type: Physics
+  - type: InitialBody
+    organs:
+      Torso: OrganHumanTorso
+      Head: OrganHumanHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Lungs: OrganHumanLungs
+      Heart: OrganAnimalHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganAnimalLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Kitsune
+
+# Kitsune mob entity
+- type: entity
+  parent:
+  - AppearanceKitsune
+  - BaseSpeciesMobOrganic
+  id: MobKitsune
+  name: Urist McKitsune
+  components:
   - type: Fixtures
     fixtures:
       fix1:
@@ -16,47 +45,42 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Body
-    prototype: Kitsune
   - type: Damageable
     damageModifierSet: Kitsune
   - type: Speech
     speechSounds: Alto
-    allowedEmotes: ['Growl', 'Squeak', 'Yip', 'Whine', 'Yap', 'Howl'] #HL
+    allowedEmotes: ['Growl', 'Squeak', 'Yip', 'Whine', 'Yap', 'Howl']
   - type: Vocal
     sounds:
       Male: MaleKitsune
       Female: FemaleKitsune
       Unsexed: MaleKitsune
-  - type: Carriable
+  # Carriable component removed: no C# type
   - type: TypingIndicator
     proto: kitsune
   - type: InteractionPopup
-    successChance: 0.75 #HL 0.5 < 0.75
+    successChance: 0.5
     interactSuccessString: petting-success-soft-floofy-kitsune
     interactFailureString: petting-failure-generic
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/fox_squeak.ogg
   - type: Kitsune
-  - type: PsionicBonusChance
-    flatBonus: 1
   - type: LightweightDrunk
     boozeStrengthMultiplier: 3
-  - type: PseudoItem
-    storedOffset: "0,17"
-    shape:
-      - 0,0,1,4
-      - 0,2,3,4
+  # PseudoItem component removed: no C# type
       - 4,0,5,4
-
-- type: entity
-  save: false
-  parent: MobHumanDummy
-  id: MobKitsuneDummy
-  categories: [ HideSpawnMenu ]
-  name: Urist McHands
-  description: A dummy kitsune meant to be used in character setup.
-  components:
-  - type: HumanoidAppearance
-    species: Kitsune
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/hiss.ogg
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Heat: 5
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5

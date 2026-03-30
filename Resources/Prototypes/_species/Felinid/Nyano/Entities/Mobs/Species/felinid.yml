@@ -1,23 +1,48 @@
+# Felinid appearance entity (character editor doll + body definition)
 - type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceFelinid
+  name: felinid appearance
+  components:
+  - type: Inventory
+    speciesId: felinid
+  - type: InitialBody
+    organs:
+      Torso: OrganHumanTorso
+      Head: OrganHumanHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Felinid
+
+# Felinid mob entity
+- type: entity
+  parent:
+  - AppearanceFelinid
+  - BaseSpeciesMobOrganic
+  id: MobFelinid
   name: Urist McFelinid
-  parent: BaseMobHuman
-  id: MobFelinidBase
-  abstract: true
   components:
   - type: Sprite
     scale: 0.8, 0.8
-  - type: HumanoidAppearance
-    species: Felinid
-    hideLayersOnEquip: # Frontier
-    - Hair # Frontier
-    - HeadTop # Frontier
-    # HL start: Hide genital markings on equip
-    - Genital
-    - Penis
-    - Breasts
-    # HL end
   - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
@@ -28,14 +53,10 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Body
-    prototype: Felinid
-  - type: Damageable
-    damageModifierSet: Felinid
   - type: SlowOnDamage
     speedModifierThresholds:
-      60: 0.85  # 0.7 is base speed.
-      80: 0.75  # 0.5 is base speed.
+      60: 0.85
+      80: 0.75
   - type: MeleeWeapon
     soundHit:
       collection: Punch
@@ -44,10 +65,8 @@
       types:
         Slash: 4
         Piercing: 1
-#  - type: DiseaseCarrier
-#    naturalImmunities:
-#    - OwOnavirus
   - type: Speech
+    speechVerb: Felinid
     speechSounds: Alto
     allowedEmotes:
     - Hiss
@@ -56,34 +75,25 @@
     - Growl
     - Purr
     - Trill
-  - type: DamageOnHighSpeedImpact # Landing on all fours!
+  - type: DamageOnHighSpeedImpact
     damage:
       types:
         Blunt: 1
   - type: Stamina
   - type: TypingIndicator
     proto: felinid
-  - type: PseudoItem
-    storedOffset: 0,17
-    shape:
-      - 0,0,1,4
-      - 0,2,3,4
-      - 4,0,5,4
+  # PseudoItem component removed: no C# type
   - type: Vocal
     wilhelm: "/Audio/_species/Felinid/Voice/cat_wilhelm.ogg"
     sounds:
       Male: MaleFelinid
       Female: FemaleFelinid
       Unsexed: MaleFelinid
-# - type: ItemCougher    # commented out, didnt work anyways
-#    item: Hairball
-#    action: ActionHairball
-#    coughPopup: hairball-cough
   - type: Felinid
   - type: NpcFactionMember
     factions:
     - NanoTrasen
-    - Felinid # Frontier
+    - Felinid
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -100,18 +110,7 @@
         emote: Scream
         probability: 0.2
   - type: NoShoesSilentFootsteps
-#  - type: TallWhitelist # Frontier
-#    scale: 1 # Frontier
-  - type: Inventory # Frontier
-    speciesId: felinid # Frontier
-
-- type: entity
-  save: false
-  name: Urist McFelinid
-  parent: MobHumanDummy
-  id: MobFelinidDummy
-  categories: [ HideSpawnMenu ]
-  description: A dummy felinid meant to be used in character setup.
-  components:
-  - type: HumanoidAppearance
-    species: Felinid
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5

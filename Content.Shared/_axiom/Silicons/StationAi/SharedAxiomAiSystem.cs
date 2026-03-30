@@ -15,7 +15,6 @@ public abstract class SharedAxiomAiSystem : EntitySystem
 {
     [Dependency] private readonly SharedStationAiSystem _stationAi = default!;
     [Dependency] private readonly SharedAiNetworkSystem _aiNetwork = default!;
-    [Dependency] private readonly SharedTransformSystem _xforms = default!;
 
     public override void Initialize()
     {

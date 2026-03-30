@@ -1,6 +1,5 @@
 using Content.Shared.Alert;
 using Content.Shared.Actions;
-using Content.Shared.Mobs.Systems;
 using Robust.Server.GameObjects;
 using Content.Shared.Examine;
 using Robust.Server.Containers;
@@ -25,7 +24,6 @@ public sealed class ShadekinSystem : EntitySystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;

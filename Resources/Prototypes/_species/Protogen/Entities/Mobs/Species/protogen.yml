@@ -1,18 +1,55 @@
+# Protogen appearance entity (character editor doll + body definition)
 - type: entity
-  parent: BaseMobSpeciesOrganic
-  id: BaseMobProtogen
-  name: Urist McHardDrive
-  abstract: true
+  parent: BaseSpeciesAppearance
+  id: AppearanceProtogen
+  name: protogen appearance
   components:
-  - type: HarpySinger # Mono
-  - type: Instrument # Mono
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _species/Protogen/Mobs/Species/Protogen/displacement.rsi
+            state: jumpsuit-female
+  - type: InitialBody
+    organs:
+      Torso: OrganProtogenTorso
+      Head: OrganProtogenHead
+      ArmLeft: OrganProtogenArmLeft
+      ArmRight: OrganProtogenArmRight
+      HandRight: OrganProtogenHandRight
+      HandLeft: OrganProtogenHandLeft
+      LegLeft: OrganProtogenLegLeft
+      LegRight: OrganProtogenLegRight
+      FootLeft: OrganProtogenFootLeft
+      FootRight: OrganProtogenFootRight
+      Brain: OrganProtogenBrain
+      Eyes: OrganProtogenEyes
+      Heart: OrganProtogenHeart
+      Lungs: OrganProtogenLungs
+      Stomach: OrganProtogenStomach
+      Liver: OrganProtogenLiver
+      Kidneys: OrganProtogenKidneys
+  - type: HumanoidProfile
+    species: Protogen
+
+# Protogen mob entity
+- type: entity
+  parent:
+  - AppearanceProtogen
+  - BaseSpeciesMobOrganic
+  id: MobProtogen
+  name: Urist McHardDrive
+  components:
+  - type: HarpySinger
+  - type: Instrument
     allowPercussion: true
     allowProgramChange: true
     program: 52
-  - type: SwappableInstrument # Mono
+  - type: SwappableInstrument
     instrumentList:
       "Daw": { 0: 0 }
-  - type: UserInterface # Mono
+  - type: UserInterface
     interfaces:
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
@@ -20,16 +57,9 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key: # Shitmed
-        type: SurgeryBui
-  - type: Hunger
-  - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
-    sprite: Mobs/Species/Human/parts.rsi
-    state: full
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Protogen
-  - type: Thirst
   - type: Butcherable
     butcheringType: Spike
     spawned:
@@ -43,40 +73,19 @@
     damage:
       types:
         Slash: 5
-  - type: Body
-    prototype: Protogen
-    requiredLegs: 2
-  - type: HumanoidAppearance
-    species: Protogen
-    hideLayersOnEquip:
-    - Hair
-    - Snout
-    # HL start: Hide genital markings on equip
-    - Genital
-    - Penis
-    - Breasts
-    # HL end
-  - type: Inventory
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: _species/Protogen/Mobs/Species/Protogen/displacement.rsi
-            state: jumpsuit-female
-  - type: Carriable # Frontier: Carrying system from nyanotrasen.
-  - type: Speech # Frontier
-    allowedEmotes: ['Belch', 'Beep', 'Ping', 'Buzz'] # Frontier + Protogen stuff
+  # Carriable component removed: no C# type
+  - type: Speech
+    allowedEmotes: ['Belch', 'Beep', 'Ping', 'Buzz']
     speechSounds: Pai
-  - type: PotentialPsionic #Nyano - Summary: makes potentially psionic.
-  - type: Vocal # Mono
+  - type: Vocal
     wilhelm: "/Audio/_species/IPC/Voice/wilhelm.ogg"
     sounds:
       Male: UnisexIPC
       Female: UnisexIPC
       Unsexed: UnisexIPC
-  - type: TypingIndicator # Mono
+  - type: TypingIndicator
     proto: robot
-  - type: Deathgasp # Mono
+  - type: Deathgasp
     prototype: SiliconDeathgasp
     needsCritical: false
   - type: Respirator
@@ -86,16 +95,6 @@
     damageRecovery:
       types:
         Asphyxiation: -1.0
-
-- type: entity
-  parent: BaseSpeciesDummy
-  id: MobProtogenDummy
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Inventory
-    femaleDisplacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: _species/Protogen/Mobs/Species/Protogen/displacement.rsi
-            state: jumpsuit-female
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

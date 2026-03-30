@@ -10,18 +10,66 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
+# Thaven appearance entity (character editor doll + body definition)
 - type: entity
-  save: false
-  name: Urist McEars
-  parent: BaseMobSpeciesOrganic
-  id: BaseMobThaven
-  abstract: true
+  parent: BaseSpeciesAppearance
+  id: AppearanceThaven
+  name: thaven appearance
   components:
-  - type: Hunger
-  - type: Thirst
-  - type: Icon
-    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi # Unlike dwarves elves are NOT made of slime
-    state: full
+  - type: Inventory
+    templateId: thaven
+    speciesId: thaven
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
+            state: jumpsuit
+      head:
+        sizeMaps:
+          32:
+            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
+            state: head
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
+            state: outerclothing_hardsuit
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
+            state: hands
+  - type: InitialBody
+    organs:
+      Torso: OrganThavenTorso
+      Head: OrganThavenHead
+      ArmLeft: OrganThavenArmLeft
+      ArmRight: OrganThavenArmRight
+      HandRight: OrganThavenHandRight
+      HandLeft: OrganThavenHandLeft
+      LegLeft: OrganThavenLegLeft
+      LegRight: OrganThavenLegRight
+      FootLeft: OrganThavenFootLeft
+      FootRight: OrganThavenFootRight
+      Brain: OrganThavenBrain
+      Eyes: OrganThavenEyes
+      Lungs: OrganThavenLungs
+      Heart: OrganThavenHeart
+      Stomach: OrganThavenStomach
+      Liver: OrganThavenLiver
+      Kidneys: OrganThavenKidneys
+  - type: HumanoidProfile
+    species: Thaven
+
+# Thaven mob entity
+- type: entity
+  parent:
+  - AppearanceThaven
+  - BaseSpeciesMobOrganic
+  id: MobThaven
+  name: Urist McEars
+  components:
   - type: ThavenMoodsBound
   - type: Respirator
     damage:
@@ -31,12 +79,7 @@
       types:
         Asphyxiation: -1.0
   - type: Sprite
-    noRot: true
-    drawdepth: Mobs
     scale: 1, 1.05
-  - type: Body
-    prototype: Thaven
-    requiredLegs: 2
   - type: ReplacementAccent
     accent: nocontractions
   - type: Damageable
@@ -76,7 +119,7 @@
         layer:
         - MobLayer
   - type: TypingIndicator
-    proto: thaven # DeltaV unique typing indicator
+    proto: thaven
   - type: Vocal
     sounds:
       Male: MaleThaven
@@ -84,97 +127,17 @@
       Unsexed: UnisexThaven
   - type: Speech
     speechSounds: Alto
-  - type: HumanoidAppearance
-    species: Thaven
-    hideLayersOnEquip:
-    - Hair
-    - Snout
-    # HL start: Hide genital markings on equip
-    - Genital
-    - Penis
-    - Breasts
-    # HL end
   - type: Bloodstream
     bloodReagent: ShimmeringBlood
-  - type: Inventory
-    templateId: thaven
-    speciesId: thaven
-    displacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
-            state: jumpsuit
-      head:
-        sizeMaps:
-          32:
-            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
-            state: head
-      outerClothing:
-        sizeMaps:
-          32:
-            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
-            state: outerclothing_hardsuit
-      gloves:
-        sizeMaps:
-          32:
-            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
-            state: hands
   - type: UserInterface
     interfaces:
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      # Goobstation - changelings
-      ##enum.StoreUiKey.Key:
-      ##  type: StoreBoundUserInterface
-      ##enum.HereticLivingHeartKey.Key: # goob edit - heretics
-      ##  type: LivingHeartMenuBoundUserInterface
-      ##enum.BloodCultistCommuneUIKey.Key: # funky edit - cultists
-      ##  type: BloodCultCommuneBoundUserInterface
-      ##  requireInputValidation: false
-      ##enum.SpellsUiKey.Key: # funky edit - cultists
-      ##  type: SpellsBoundUserInterface
-      ##  requireInputValidation: false
-      # Shitmed
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
-      enum.ThavenMoodsUiKey.Key: # impstation edit
+      enum.ThavenMoodsUiKey.Key:
         type: ThavenMoodsBoundUserInterface
         requireInputValidation: false
-
-
-- type: entity
-  parent: BaseSpeciesDummy
-  id: MobThavenDummy
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HumanoidAppearance
-    species: Thaven
-  - type: Sprite
-    scale: 1, 1
-  - type: Inventory
-    templateId: thaven
-    speciesId: thaven
-    displacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
-            state: jumpsuit
-      head:
-        sizeMaps:
-          32:
-            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
-            state: head
-      outerClothing:
-        sizeMaps:
-          32:
-            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
-            state: outerclothing_hardsuit
-      gloves:
-        sizeMaps:
-          32:
-            sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
-            state: hands
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

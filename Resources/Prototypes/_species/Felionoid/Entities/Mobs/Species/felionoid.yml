@@ -1,32 +1,80 @@
-﻿- type: entity
-  name: Urist McFelionoid
-  parent: BaseMobHuman 
-  # removed BaseSpeciesPickupable, handled by another engine
-  id: BaseMobFelionoid
-  abstract: true
+# Felionoid appearance entity (character editor doll + body definition)
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceFelionoid
+  name: felionoid appearance
   components:
-#  - type: LanguageKnowledge
-#    speaks:
-#    - GalacticCommon
-#    - Nekomimetic
-#    understands:
-#    - GalacticCommon
-#    - Nekomimetic
-#    - Cat
-#  - type: Absorbable
-    # copied from felinid
+  - type: Inventory
+    speciesId: felionoid
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
+            state: jumpsuit
+      eyes:
+        sizeMaps:
+          32:
+            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
+            state: eyes
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
+            state: hand
+      head:
+        sizeMaps:
+          32:
+            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
+            state: head
+      back:
+        sizeMaps:
+          32:
+            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
+            state: back
+      ears:
+        sizeMaps:
+          32:
+            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
+            state: ears
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
+            state: shoes
+  - type: InitialBody
+    organs:
+      Torso: OrganFelionoidTorso
+      Head: OrganFelionoidHead
+      ArmLeft: OrganFelionoidArmLeft
+      ArmRight: OrganFelionoidArmRight
+      HandRight: OrganFelionoidHandRight
+      HandLeft: OrganFelionoidHandLeft
+      LegLeft: OrganFelionoidLegLeft
+      LegRight: OrganFelionoidLegRight
+      FootLeft: OrganFelionoidFootLeft
+      FootRight: OrganFelionoidFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganFelionoidEyes
+      Tongue: OrganHumanTongue
+      Lungs: OrganHumanLungs
+      Heart: OrganAnimalHeart
+      Stomach: OrganResomiStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Felionoid
+
+# Felionoid mob entity
+- type: entity
+  parent:
+  - AppearanceFelionoid
+  - BaseSpeciesMobOrganic
+  id: MobFelionoid
+  name: Urist McFelionoid
+  components:
   - type: Sprite
     scale: 0.8, 0.8
-  - type: HumanoidAppearance
-    species: Felionoid
-    hideLayersOnEquip: # Frontier
-    - Hair # Frontier
-    - HeadTop # Frontier
-    # HL start: Hide genital markings on equip
-    - Genital
-    - Penis
-    - Breasts
-    # HL end
   - type: Fixtures
     fixtures:
       fix1:
@@ -41,15 +89,13 @@
         - MobLayer
   - type: Puller
     needsHands: false
-  - type: Body
-    prototype: Felionoid
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Vox
   - type: SlowOnDamage
     speedModifierThresholds:
-      51: 0.7 # 60%
-      68: 0.5 # 80%
+      51: 0.7
+      68: 0.5
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
@@ -62,19 +108,14 @@
   - type: Speech
     speechVerb: Felionoid
     allowedEmotes: ['Mew', 'Hiss', 'Meow', 'Growl', 'Purr', 'Trill']
-  - type: DamageOnHighSpeedImpact # Landing on all fours!
+  - type: DamageOnHighSpeedImpact
     damage:
       types:
         Blunt: 1
   - type: Stamina
   - type: TypingIndicator
     proto: felinid
-  - type: PseudoItem
-    storedOffset: 0,17
-    shape:
-      - 0,0,1,4
-      - 0,2,3,4
-      - 4,0,5,4
+  # PseudoItem component removed: no C# type
   - type: Vocal
     sounds:
       Male: MaleFelionoid
@@ -84,7 +125,7 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
-    - Felinid # Frontier
+    - Felinid
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -97,10 +138,6 @@
       - !type:Emote
         emote: Hiss
         showInChat: false
-  - type: Icon
-    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
-    state: felionoid
-    requiredLegs: 2
   - type: OwOAccent
   - type: MobThresholds
     thresholds:
@@ -124,89 +161,3 @@
     - DoorBumpOpener
     - AnomalyHost
     - Felionoid
-  - type: Inventory
-    speciesId: felionoid
-    displacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: jumpsuit
-      eyes:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: eyes
-      gloves:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: hand
-      head:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: head
-      back:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: back
-      ears:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: ears
-      shoes:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: shoes
-
-- type: entity
-  parent: BaseSpeciesDummy
-  id: MobFelionoidDummy
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: HumanoidAppearance
-    species: Felionoid
-  - type: Body
-    prototype: Felionoid
-  - type: Inventory
-    speciesId: felionoid
-    displacements:
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: jumpsuit
-      eyes:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: eyes
-      gloves:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: hand
-      head:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: head
-      back:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: back
-      ears:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: ears
-      shoes:
-        sizeMaps:
-          32:
-            sprite: _species/Felionoid/Mobs/Species/Felionoid/displacement.rsi
-            state: shoes

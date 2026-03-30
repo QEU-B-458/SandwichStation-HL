@@ -1,41 +1,9 @@
+# Synth appearance entity (character editor doll + body definition)
 - type: entity
-  parent: [ BaseMobSpecies, MobBloodstream, MobAtmosExposed, MobFlammable ]
-  id: BaseMobSynth
-  name: Urist McSynth
-  save: false
-  abstract: true
+  parent: BaseSpeciesAppearance
+  id: AppearanceSynth
+  name: synth appearance
   components:
-  - type: Sprite
-  - type: Icon # It will not have an icon in the adminspawn menu without this. Body parts seem fine for whatever reason.
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: full
-  - type: Damageable
-    damageModifierSet: Synth
-    damageContainer: Synth
-  - type: HLSynth
-  - type: Thirst
-  - type: DamageVisuals
-    damageOverlayGroups:
-      Brute:
-        sprite: Mobs/Effects/brute_damage.rsi
-        color: "#8afffd"
-  - type: ZombieImmune
-  - type: Sanitized
-  - type: Uncloneable
-  - type: Puller
-    needsHands: false
-  - type: HumanoidAppearance
-    species: Synth
-  - type: Body
-    prototype: Synth
-  - type: MeleeWeapon
-    soundHit:
-      collection: Punch
-    angle: 30
-    animation: WeaponArcFist
-    damage:
-      types:
-        Blunt: 8 # Synths hit hard.
   - type: Inventory
     speciesId: synth
     displacements:
@@ -74,14 +42,74 @@
           32:
             sprite: _species/Synth/Mobs/Species/displacement.rsi
             state: shoes
-  - type: Carriable # Frontier: Carrying system from nyanotrasen.
-  - type: TypingIndicator # Mono
+  - type: InitialBody
+    organs:
+      Torso: OrganSynthTorso
+      Head: OrganSynthHead
+      ArmLeft: OrganSynthArmLeft
+      ArmRight: OrganSynthArmRight
+      HandRight: OrganSynthHandRight
+      HandLeft: OrganSynthHandLeft
+      LegLeft: OrganSynthLegLeft
+      LegRight: OrganSynthLegRight
+      FootLeft: OrganSynthFootLeft
+      FootRight: OrganSynthFootRight
+      Brain: SynthCCU
+      Eyes: SynthCameraGimbal
+      Heart: OrganSynthHeart
+      Lungs: OrganSynthLungs
+      Stomach: OrganSynthStomach
+      Liver: OrganSynthLiver
+      Kidneys: SynthEnergyCoil
+  - type: HumanoidProfile
+    species: Synth
+
+# Synth mob entity (non-organic: uses BaseSpeciesMob, not BaseSpeciesMobOrganic)
+- type: entity
+  parent:
+  - AppearanceSynth
+  - MobBloodstream
+  - MobAtmosExposed
+  - MobFlammable
+  - BaseSpeciesMob
+  id: MobSynth
+  name: Urist McSynth
+  components:
+  - type: Sprite
+  - type: Icon
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: full
+  - type: Damageable
+    damageModifierSet: Synth
+    damageContainer: Synth
+  - type: HLSynth
+  - type: Thirst
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#8afffd"
+  - type: ZombieImmune
+  # Sanitized component removed: no C# type
+  - type: Uncloneable
+  - type: Puller
+    needsHands: false
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    angle: 30
+    animation: WeaponArcFist
+    damage:
+      types:
+        Blunt: 8
+  # Carriable component removed: no C# type
+  - type: TypingIndicator
     proto: robot
-  - type: Speech # Frontier
+  - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
-    allowedEmotes: [ 'Thump', 'Purr', 'Beep', 'Ping', 'Buzz' ] # Frontier + Protogen & Reptilian stuff
-  - type: Vocal # Mono
+    allowedEmotes: [ 'Thump', 'Purr', 'Beep', 'Ping', 'Buzz' ]
+  - type: Vocal
     sounds:
       Male: UnisexSilicon
       Female: UnisexSilicon
@@ -109,83 +137,32 @@
   - type: Bloodstream
     bloodReagent: InertNanites
     bloodRefreshAmount: 0.0
-  - type: HLBloodLevelPassiveDamage
-    allowedStates:
-    - Alive
-    - Critical
-    allowedDamageGroups:
-    - Brute
-    - Burn
-    bloodLevelDecrease: 1.1
-    damage:
-      groups:
-        Brute: -7
-        Burn: -7
   - type: BlockInjection
     blockHypospray: true
     blockInjectOnProjectile: true
   - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
+  - type: TemperatureDamage
     heatDamageThreshold: 475
     coldDamageThreshold: 55
     coldDamage:
       types:
-        Cold: 0.1 #per second, scales with temperature & other constants
+        Cold: 0.1
     heatDamage:
       types:
-        Heat: 1.5 #per second, scales with temperature & other constants
+        Heat: 1.5
   - type: Barotrauma
     damage:
       types:
-        Blunt: 0.3 #per second, scales with pressure and other constants.
+        Blunt: 0.3
   - type: TemperatureSpeed
     thresholds:
       100: 0.7
       75: 0.4
       55: 0.2
-  - type: LayingDown
-  - type: OfferItem # HL
-
-- type: entity
-  parent: BaseSpeciesDummy
-  id: MobSynthDummy
-  name: Synth Dummy
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Inventory
-    speciesId: synth
-    displacements:
-      head:
-        sizeMaps:
-          32:
-            sprite: _species/Synth/Mobs/Species/displacement.rsi
-            state: head
-      mask:
-        sizeMaps:
-          32:
-            sprite: _species/Synth/Mobs/Species/displacement.rsi
-            state: mask
-      back:
-        sizeMaps:
-          32:
-            sprite: _species/Synth/Mobs/Species/displacement.rsi
-            state: back
-      outerClothing:
-        sizeMaps:
-          32:
-            sprite: _species/Synth/Mobs/Species/displacement.rsi
-            state: outerclothing
-      jumpsuit:
-        sizeMaps:
-          32:
-            sprite: _species/Synth/Mobs/Species/displacement.rsi
-            state: jumpsuit
-      hand:
-        sizeMaps:
-          32:
-            sprite: _species/Synth/Mobs/Species/displacement.rsi
-            state: hand
-      shoes:
-        sizeMaps:
-          32:
-            sprite: _species/Synth/Mobs/Species/displacement.rsi
-            state: shoes
+  # LayingDown component removed: no C# type
+  - type: OfferItem
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

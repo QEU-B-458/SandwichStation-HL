@@ -20,7 +20,7 @@
   parent: BaseSynthOrganUnGibbable
   abstract: true
   components:
-  - type: Gibbable
+  - type: GibbableOrgan
 
 - type: entity
   id: SynthCCU
@@ -65,7 +65,7 @@
   components:
   - type: Organ
     slotId: eyes
-  - type: Eyes
+  # Eyes component removed: no C# type
   - type: Sprite
     sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_camera_gimbal
@@ -103,7 +103,7 @@
   components:
   - type: Organ
     slotId: ears
-  - type: Ears
+  # Ears component removed: no C# type
   - type: Sprite
     sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_audio_pack
@@ -148,7 +148,7 @@
   components:
   - type: Organ
     slotId: heart
-  - type: Heart
+  # Heart component removed: no C# type
   - type: Sprite
     state: synth_heart
     scale: 0.8, 0.8
@@ -202,7 +202,7 @@
   components:
   - type: Organ
     slotId: liver
-  - type: Liver
+  # Liver component removed: no C# type
   - type: Sprite
     state: synth_liver
     scale: 0.9, 0.9

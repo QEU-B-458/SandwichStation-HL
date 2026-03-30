@@ -1,21 +1,44 @@
+# Oni appearance entity (character editor doll + body definition)
 - type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceOni
+  name: oni appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganHumanTorso
+      Head: OrganHumanHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Oni
+
+# Oni mob entity
+- type: entity
+  parent:
+  - AppearanceOni
+  - BaseSpeciesMobOrganic
+  id: MobOni
   name: Urist McOni
-  parent: BaseMobHuman
-  id: MobOniBase
-  abstract: true
   components:
   - type: Speech
     speechSounds: Baritone
-  - type: HumanoidAppearance
-    species: Oni
-    hideLayersOnEquip: # Frontier
-    - Hair # Frontier
-    - HeadTop # Frontier
-    # HL start: Hide genital markings on equip
-    - Genital
-    - Penis
-    - Breasts
-    # HL end
   - type: Sprite
     scale: 1.2, 1.2
   - type: Oni
@@ -25,12 +48,8 @@
         Slash: 1.2
         Piercing: 1.2
         Asphyxiation: 1.2
-  - type: Damageable
-    damageModifierSet: Oni
-  - type: Body
-    prototype: Human
   - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
@@ -46,11 +65,7 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
-
-- type: entity
-  save: false
-  name: Urist McOni
-  parent: MobHumanDummy
-  id: MobOniDummy
-  categories: [ HideSpawnMenu ]
-  description: A dummy oni meant to be used in character setup.
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5

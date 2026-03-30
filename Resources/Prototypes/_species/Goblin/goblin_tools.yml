@@ -4,7 +4,7 @@
   suffix: Goblin Made
   abstract: true
   components:
-  - type: Timer
+  # Timer component removed: no C# type
   - type: TimedSpawner
     prototypes:
     - SpawnGoblinMadeToolMalfunction
@@ -79,8 +79,8 @@
   - type: SmokeOnTrigger
     duration: 3
     spreadAmount: 1
-  - type: SoundOnTrigger
-    sound: /Audio/Effects/smoke.ogg
+  # SoundOnTrigger removed: no C# type
+
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/Smoke-grenade.ogg
@@ -143,7 +143,7 @@
 
 - type: entity
   id: SpawnGoblinMadeToolMalfunction
-  parent: MarkerBasePlaceFree
+  parent: MarkerBase
   name: goblin tool malfunction
   components:
   - type: Sprite

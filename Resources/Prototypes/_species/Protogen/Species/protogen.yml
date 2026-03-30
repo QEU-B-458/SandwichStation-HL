@@ -3,164 +3,53 @@
   name: species-name-protogen
   roundStart: true
   prototype: MobProtogen
-  sprites: MobProtogenSprites
+  dollPrototype: AppearanceProtogen
   defaultSkinTone: "#ffda93"
-  markingLimits: MobProtogenMarkingLimits
-  dollPrototype: MobProtogenDummy
   skinColoration: Hues
 
-- type: speciesBaseSprites
-  id: MobProtogenSprites
-  sprites:
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
-    Head: MobProtogenHead
-    Hair: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
-    Penis: MobHumanoidAnyMarking
-    Breasts: MobHumanoidAnyMarking
-    Chest: MobProtogenTorso
-    HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
-    Eyes: MobHumanoidEyes
-    LArm: MobProtogenLArm
-    RArm: MobProtogenRArm
-    LHand: MobProtogenLHand
-    RHand: MobProtogenRHand
-    LLeg: MobProtogenLLeg
-    RLeg: MobProtogenRLeg
-    LFoot: MobProtogenLFoot
-    RFoot: MobProtogenRFoot
-    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings for all species
-
-- type: markingPoints
-  id: MobProtogenMarkingLimits
-  points:
-    Hair:
-      points: 1
+- type: markingsGroup
+  parent: Undergarments
+  id: Protogen
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
       required: false
-    FacialHair:
-      points: 0
-      required: false
-    Snout:
-      points: 1
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
       required: true
-      defaultMarkings: [ ProtogenVisor ]
-    Tail:
-      points: 1
+      default: [ ProtogenVisor ]
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
       required: true
-      defaultMarkings: [ ProtogenTail ]
-    HeadTop:
-      points: 1
+      default: [ ProtogenTail ]
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
       required: true
-      defaultMarkings: [ ProtogenEars ]
-    Chest:
-      points: 1 # HL makes this 1
+      default: [ ProtogenEars ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 1
       required: false
-    Legs:
-      points: 8 # imp 2<8
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
       required: false
-    Arms:
-      points: 8 # imp 2<8
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
       required: false
-
-- type: humanoidBaseSprite
-  id: MobProtogenEyes
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Customization/ProtogenEyes.rsi
-    state: eyes
-
-- type: humanoidBaseSprite
-  id: MobProtogenAnyMarking
-
-- type: humanoidBaseSprite
-  id: MobProtogenMarkingMatchSkin
-  markingsMatchSkin: true
-
-- type: humanoidBaseSprite
-  id: MobProtogenHead
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: head_m
-
-- type: humanoidBaseSprite
-  id: MobProtogenHeadMale
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: head_m
-
-- type: humanoidBaseSprite
-  id: MobProtogenHeadFemale
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: head_f
-
-- type: humanoidBaseSprite
-  id: MobProtogenTorso
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: torso_m
-
-- type: humanoidBaseSprite
-  id: MobProtogenTorsoMale
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: torso_m
-
-- type: humanoidBaseSprite
-  id: MobProtogenTorsoFemale
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: torso_f
-
-- type: humanoidBaseSprite
-  id: MobProtogenLLeg
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: l_leg
-
-- type: humanoidBaseSprite
-  id: MobProtogenLArm
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: l_arm
-
-- type: humanoidBaseSprite
-  id: MobProtogenLHand
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: l_hand
-
-- type: humanoidBaseSprite
-  id: MobProtogenLFoot
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: l_foot
-
-- type: humanoidBaseSprite
-  id: MobProtogenRLeg
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: r_leg
-
-- type: humanoidBaseSprite
-  id: MobProtogenRArm
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: r_arm
-
-- type: humanoidBaseSprite
-  id: MobProtogenRHand
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: r_hand
-
-- type: humanoidBaseSprite
-  id: MobProtogenRFoot
-  baseSprite:
-    sprite: _species/Protogen/Mobs/Species/Protogen/parts.rsi
-    state: r_foot
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false

@@ -21,14 +21,4 @@
     tags:
     - Recyclable
     - Trash
-  # Frontier: edible hairballs
-  - type: FoodSequenceElement
-    entries:
-      Burger: Hairball
-      Taco: Hairball
-      Skewer: Hairball
-    solution: hairball
-  - type: Food
-    requiresSpecialDigestion: true
-    solution: hairball
-  # End Frontier: edible hairballs
+  # Frontier edible hairballs removed: Food/FoodSequenceElement have no C# types

@@ -6,8 +6,7 @@
   - type: Sprite
     sprite: _species/Protogen/Mobs/Species/Protogen/organs.rsi
   - type: Organ
-  - type: Food
-  #    quality: Nasty # Frontier
+  # Food component removed: no C# type
   - type: Extractable
     grindableSolutionName: organ
   - type: SolutionContainerManager
@@ -33,7 +32,7 @@
   parent: BaseProtogenOrganUnGibbable
   abstract: true
   components:
-  - type: Gibbable
+  - type: GibbableOrgan
 
 - type: entity
   id: OrganProtogenBrain
@@ -85,7 +84,7 @@
   components:
   - type: Organ # Shitmed Change
     slotId: eyes # Shitmed Change
-  - type: Eyes # Shitmed Change
+  # Eyes component removed: no C# type
   - type: Sprite
     layers:
     - state: eyeball-l
@@ -116,13 +115,13 @@
 
 - type: entity
   id: OrganProtogenEars
-  parent: BaseHumanOrgan
+  parent: BaseProtogenOrgan
   name: ears
   description: "Lets a Protogen process audio. And listen to their favorite techno hits."
   components:
   - type: Sprite
     state: ears
-  - type: Ears # Shitmed Change
+  # Ears component removed: no C# type
 
 - type: entity
   id: OrganProtogenLungs
@@ -169,7 +168,7 @@
   name: heart
   description: "Even the most stone-cold, technology-based heart was alive once."
   components:
-  - type: Heart # Shitmed Change
+  # Heart component removed: no C# type
   - type: Organ # Shitmed Change
     slotId: heart # Shitmed Change
   - type: Sprite
@@ -229,7 +228,7 @@
   name: liver
   description: "Pairing suggestion: fermented RAM sticks and CPU drives."
   components:
-  - type: Liver # Shitmed Change
+  # Liver component removed: no C# type
   - type: Organ # Shitmed Change
     slotId: liver # Shitmed Change
   - type: Sprite

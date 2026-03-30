@@ -1,6 +1,7 @@
+# Base Sheleg organ with ice-based extractable and flavor
 - type: entity
-  id: BaseShelegOrganUnGibbable
-  parent: BaseHumanOrganUnGibbable
+  id: BaseShelegOrgan
+  parent: OrganBase
   abstract: true
   components:
   - type: Sprite
@@ -22,14 +23,6 @@
     flavors:
       - ice
       - cold
-#  - type: Tag
-#    tags:
-#      - Meat
-
-- type: entity
-  id: BaseShelegOrgan
-  parent: [BaseShelegOrganUnGibbable, BaseHumanOrganUnGibbable]
-  abstract: true
 
 - type: entity
   id: OrganShelegBrain
@@ -37,9 +30,6 @@
   name: brain
   description: "The source of incredible, unending intelligence. Honk."
   components:
-#  - type: Tag
-#    tags:
-#      - Meat
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -108,9 +98,6 @@
   name: heart
   description: "I feel bad for the heartless bastard who lost this."
   components:
-  # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
-  # This is done because these chemicals need to have some effect even if they aren't being filtered out of your body.
-  # You're technically 'immune to poison' without a heart, but.. uhh, you'll have bigger problems on your hands.
   - type: Metabolizer
     maxReagents: 1
     metabolizerTypes: [Sheleg]
@@ -155,12 +142,12 @@
   name: liver
   description: "Pairing suggestion: chianti and fava beans."
   components:
-  - type: Metabolizer # The liver metabolizes certain chemicals only, like alcohol.
+  - type: Metabolizer
     maxReagents: 1
     metabolizerTypes: [Sheleg]
     groups:
     - id: Alcohol
-      rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+      rateModifier: 0.1
 
 - type: entity
   id: OrganShelegKidneys

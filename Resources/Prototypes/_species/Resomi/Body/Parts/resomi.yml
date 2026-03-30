@@ -1,178 +1,71 @@
-# HardLight Change start
+# Resomi external organ entities
 - type: entity
+  parent: OrganBase
+  id: OrganResomi
   abstract: true
-  parent: BasePart
-  id: PartResomi
-  name: resomi body part
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Fat
-        Quantity: 1.5
-      - ReagentId: UncookedAnimalProteins # HardLight: Added for consistency with the fried chicken bit.
-        Quantity: 1.5
-      - ReagentId: AmmoniaBlood
-        Quantity: 5
-  - type: Destructible # HardLight: Resomi parts now turn into fried chicken when ashed.
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 250 # HardLight: Reduced from 300 to 250 for consistency with Vox parts.
-      behaviors:
-      - !type:GibPartBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Slash
-        damage: 250 # HardLight: Reduced from 300 to 250 for consistency with Vox parts.
-      behaviors:
-      - !type:GibPartBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 250 # HardLight: Reduced from 300 to 250 for consistency with Vox parts.
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawnInContainer: true
-        spawn:
-          FoodMeatChickenFriedMystery:
-            min: 1
-            max: 1
-      - !type:BurnBodyBehavior { }
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MeatLaserImpact
-# HardLight Change end
+  suffix: resomi
 
 - type: entity
-  id: TorsoResomi
-  name: "resomi torso"
-  parent: [ PartResomi, BaseTorso ] # HardLight
+  parent: OrganResomi
+  id: OrganResomiExternal
+  abstract: true
   components:
   - type: Sprite
     sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "torso_m"
-  # HardLight Change start
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Fat
-        Quantity: 5
-      - ReagentId: UncookedAnimalProteins # HardLight: Added for consistency with the fried chicken bit.
-        Quantity: 5
-      - ReagentId: AmmoniaBlood
-        Quantity: 10
-  - type: Destructible # HardLight: Resomi parts now turn into fried chicken when ashed.
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 400
-      behaviors:
-      - !type:GibPartBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Slash
-        damage: 400
-      behaviors:
-      - !type:GibPartBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 400
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawnInContainer: true
-        spawn:
-          FoodMeatChickenFriedMystery:
-            min: 1
-            max: 3
-      - !type:BurnBodyBehavior { }
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MeatLaserImpact
-  # HardLight Change end
+  - type: VisualOrgan
+    data:
+      sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Resomi
+
+# Torso
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganResomiExternal ]
+  id: OrganResomiTorso
+  components:
+  - type: VisualOrganMarkings
+    markingData:
+      layers:
+      - Chest
+      - Tail
+      - UndergarmentTop
+      - UndergarmentBottom
+
+# Head
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganResomiExternal ]
+  id: OrganResomiHead
+
+# Limbs
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganResomiExternal ]
+  id: OrganResomiArmLeft
 
 - type: entity
-  id: HeadResomi
-  name: "resomi head"
-  parent: [ PartResomi, BaseHead ] # HardLight
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "head_m"
+  parent: [ OrganBaseArmRight, OrganResomiExternal ]
+  id: OrganResomiArmRight
 
 - type: entity
-  id: LeftArmResomi
-  name: "left resomi arm"
-  parent: [ PartResomi, BaseLeftArm ] # HardLight
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "l_arm"
+  parent: [ OrganBaseHandLeft, OrganResomiExternal ]
+  id: OrganResomiHandLeft
 
 - type: entity
-  id: RightArmResomi
-  name: "right resomi arm"
-  parent: [ PartResomi, BaseRightArm ] # HardLight
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "r_arm"
+  parent: [ OrganBaseHandRight, OrganResomiExternal ]
+  id: OrganResomiHandRight
 
 - type: entity
-  id: LeftHandResomi
-  name: "left resomi hand"
-  parent: [ PartResomi, BaseLeftHand ] # HardLight
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "l_hand"
+  parent: [ OrganBaseLegLeft, OrganResomiExternal ]
+  id: OrganResomiLegLeft
 
 - type: entity
-  id: RightHandResomi
-  name: "right resomi hand"
-  parent: [ PartResomi, BaseRightHand ] # HardLight
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "r_hand"
+  parent: [ OrganBaseLegRight, OrganResomiExternal ]
+  id: OrganResomiLegRight
 
 - type: entity
-  id: LeftLegResomi
-  name: "left resomi leg"
-  parent: [ PartResomi, BaseLeftLeg ] # HardLight
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "l_leg"
+  parent: [ OrganBaseFootLeft, OrganResomiExternal ]
+  id: OrganResomiFootLeft
 
 - type: entity
-  id: RightLegResomi
-  name: "right resomi leg"
-  parent: [ PartResomi, BaseRightLeg ] # HardLight
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "r_leg"
-
-- type: entity
-  id: LeftFootResomi
-  name: "left resomi foot"
-  parent: [ PartResomi, BaseLeftFoot ] # HardLight
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "l_foot"
-
-- type: entity
-  id: RightFootResomi
-  name: "right resomi foot"
-  parent: [ PartResomi, BaseRightFoot ] # HardLight
-  components:
-  - type: Sprite
-    sprite: _species/Resomi/Mobs/Species/Resomi/parts.rsi
-    state: "r_foot"
+  parent: [ OrganBaseFootRight, OrganResomiExternal ]
+  id: OrganResomiFootRight

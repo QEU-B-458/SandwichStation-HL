@@ -1,47 +1,58 @@
+# Oni species - uses Human body with larger frame and horns
 - type: species
   id: Oni
   name: species-name-oni
   roundStart: true
   prototype: MobOni
-  dollPrototype: MobOniDummy
-  markingLimits: MobOniMarkingLimits
-  sprites: MobHumanSprites
+  dollPrototype: AppearanceOni
   skinColoration: Hues
-  maleFirstNames: NamesOniMale
-  femaleFirstNames: NamesOniFemale
-  lastNames: NamesOniLocation
-  naming: LastNoFirst
+  # TODO: Create Oni-specific localizedDataset name files
+  # maleFirstNames: NamesOniMale
+  # femaleFirstNames: NamesOniFemale
+  # lastNames: NamesOniLocation
+  # naming: LastNoFirst
 
-- type: markingPoints
-  id: MobOniMarkingLimits
-  points:
-    Hair:
-      points: 1
+- type: markingsGroup
+  parent: Undergarments
+  id: Oni
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
       required: false
-    FacialHair:
-      points: 1
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
       required: false
-    HeadTop:
-      points: 1
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
       required: true
-      defaultMarkings: [ OniHornSingleCurved ]
-    Tail: # Frontier
-      points: 1 # Frontier
-      required: false # Frontier
-    Chest:
-      points: 4 # Frontier 1<4
+      default: [ OniHornSingleCurved ]
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
       required: false
-    Legs:
-      points: 8 # Frontier 2<8
+    enum.HumanoidVisualLayers.Chest:
+      limit: 4
       required: false
-    Arms:
-      points: 8 # Frontier 2<8
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
       required: false
-    # Frontier: apparently these don't exist on Delta
-    UndergarmentTop:
-      points: 1
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
       required: false
-    UndergarmentBottom:
-      points: 1
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
       required: false
-    # End Frontier
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false

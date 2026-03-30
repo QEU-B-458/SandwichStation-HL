@@ -1,41 +1,54 @@
+# Sheleg appearance entity (character editor doll + body definition)
 - type: entity
-  save: false
+  parent: BaseSpeciesAppearance
+  id: AppearanceSheleg
+  name: sheleg appearance
+  components:
+  - type: Inventory
+    speciesId: human
+  - type: InitialBody
+    organs:
+      Torso: OrganShelegTorso
+      Head: OrganShelegHead
+      ArmLeft: OrganShelegArmLeft
+      ArmRight: OrganShelegArmRight
+      HandRight: OrganShelegHandRight
+      HandLeft: OrganShelegHandLeft
+      LegLeft: OrganShelegLegLeft
+      LegRight: OrganShelegLegRight
+      FootLeft: OrganShelegFootLeft
+      FootRight: OrganShelegFootRight
+      Brain: OrganShelegBrain
+      Eyes: OrganShelegEyes
+      Lungs: OrganShelegLungs
+      Heart: OrganShelegHeart
+      Stomach: OrganAnimalStomach
+      Liver: OrganAnimalLiver
+      Kidneys: OrganShelegKidneys
+  - type: HumanoidProfile
+    species: Sheleg
+
+# Sheleg mob entity
+- type: entity
+  parent:
+  - AppearanceSheleg
+  - BaseSpeciesMobOrganic
+  id: MobSheleg
   name: Urist McIce
-  parent: BaseMobSpeciesOrganic
-  id: BaseMobSheleg
-  abstract: true
   components:
   - type: Sprite
-    scale: 1.15, 1.2 # tall but dont make it too thin or its going to look bad
-  - type: HumanoidAppearance
-    species: Sheleg
-    hideLayersOnEquip:
-    - Hair
-    - HeadTop
-    - Snout # Nose, tusks
-    # HL start: Hide genital markings on equip
-    - Genital
-    - Penis
-    - Breasts
-    # HL end
+    scale: 1.15, 1.2
   - type: Hunger
     baseDecayRate: 0.0083
   - type: Thirst
     baseDecayRate: 0.15
-  - type: Carriable # Carrying system from nyanotrasen.
-  - type: Icon
-    sprite: _species/Sheleg/Mobs/parts.rsi
-    state: full
-  - type: Body
-    prototype: Sheleg
-    requiredLegs: 2
+  # Carriable component removed: no C# type
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Sheleg
   - type: Speech
     speechSounds: Sheleg
     speechVerb: Sheleg
-#    allowedEmotes: [ 'Belch' ]
   - type: TypingIndicator
     proto: sheleg
   - type: Butcherable
@@ -78,7 +91,7 @@
         color: "#16297e"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
-  - type: SlowOnDamage # The pain resist is high but not gone
+  - type: SlowOnDamage
     speedModifierThresholds:
       60: 0.9
       80: 0.7
@@ -104,7 +117,7 @@
         probability: 0.33
       - !type:Jitter
   - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
@@ -115,26 +128,27 @@
         - MobMask
         layer:
         - MobLayer
-  - type: Flammable # Ice skin, we cannot lower the firestacks as it will make them too powerfull to lava and other fires, but we should make it fade faster
-    firestackFade: -0.2 # 2 times faster fade
-  - type: Temperature # TODO: Balance
+  - type: Flammable
+    firestackFade: -0.2
+  - type: TemperatureDamage
     heatDamageThreshold: 273.15
     coldDamageThreshold: 0
-    currentTemperature: 100 # Opporozidone is 150
-    specificHeat: 42
     heatDamage:
       types:
-        Heat : 10 #per second, scales with temperature & other constants
+        Heat: 10
+  - type: Temperature
+    currentTemperature: 100
+    specificHeat: 42
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
     implicitHeatRegulation: 500
     sweatHeatRegulation: 2000
     shiveringHeatRegulation: 0
-    normalBodyTemperature: 100.00 # Opporozidone is 150
+    normalBodyTemperature: 100.00
     thermalRegulationTemperatureThreshold: 2
   - type: TemperatureSpeed
-    thresholds: # What did you think they will go slower?
+    thresholds:
       293: 1.0
       280: 1.0
   - type: PassiveDamage
@@ -152,16 +166,6 @@
       components:
       - Skates
   - type: AutoToggleableOuterClothing
-  - type: Inventory
-    speciesId: human
-
-- type: entity
-  save: false
-  name: Urist McIce
-  parent: BaseSpeciesDummy
-  id: MobShelegDummy
-  categories: [ HideSpawnMenu ]
-  description: A dummy sheleg meant to be used in character setup.
-  components:
-  - type: HumanoidAppearance
-    species: Sheleg
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

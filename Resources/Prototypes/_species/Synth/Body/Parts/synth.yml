@@ -1,119 +1,71 @@
-# TODO: Add descriptions (many)
-# TODO BODY: Part damage
+# Synth external organ entities
 - type: entity
-  id: PartSynth
-  parent: [ BaseItem, BasePart ]
-  name: "synth body part"
+  parent: OrganBase
+  id: OrganSynth
+  abstract: true
+  suffix: synth
+
+- type: entity
+  parent: OrganSynth
+  id: OrganSynthExternal
   abstract: true
   components:
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Nanites
-        Quantity: 3
-      - ReagentId: Blood
-        Quantity: 10
-
-- type: entity
-  id: HeadSynth
-  name: "synth head"
-  parent: [ PartSynth, BaseHead ]
-  components:
   - type: Sprite
     sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "head_m"
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Nanites
-        Quantity: 5
-      - ReagentId: Blood
-        Quantity: 10
+  - type: VisualOrgan
+    data:
+      sprite: _species/Synth/Mobs/Species/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Synth
+
+# Torso
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSynthExternal ]
+  id: OrganSynthTorso
+  components:
+  - type: VisualOrganMarkings
+    markingData:
+      layers:
+      - Chest
+      - Tail
+      - UndergarmentTop
+      - UndergarmentBottom
+
+# Head
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganSynthExternal ]
+  id: OrganSynthHead
+
+# Limbs
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganSynthExternal ]
+  id: OrganSynthArmLeft
 
 - type: entity
-  id: TorsoSynth
-  name: "synth torso"
-  parent: [ PartSynth, BaseTorso ]
-  components:
-  - type: Sprite
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "torso_m"
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Nanites
-        Quantity: 10
-      - ReagentId: Blood
-        Quantity: 20
+  parent: [ OrganBaseArmRight, OrganSynthExternal ]
+  id: OrganSynthArmRight
 
 - type: entity
-  id: LeftArmSynth
-  name: "left synth arm"
-  parent: [ PartSynth, BaseLeftArm ]
-  components:
-  - type: Sprite
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "l_arm"
+  parent: [ OrganBaseHandLeft, OrganSynthExternal ]
+  id: OrganSynthHandLeft
 
 - type: entity
-  id: RightArmSynth
-  name: "right synth arm"
-  parent: [ PartSynth, BaseRightArm ]
-  components:
-  - type: Sprite
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "r_arm"
+  parent: [ OrganBaseHandRight, OrganSynthExternal ]
+  id: OrganSynthHandRight
 
 - type: entity
-  id: LeftHandSynth
-  name: "left synth hand"
-  parent: [ PartSynth, BaseLeftHand ]
-  components:
-  - type: Sprite
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "l_hand"
+  parent: [ OrganBaseLegLeft, OrganSynthExternal ]
+  id: OrganSynthLegLeft
 
 - type: entity
-  id: RightHandSynth
-  name: "right synth hand"
-  parent: [ PartSynth, BaseRightHand ]
-  components:
-  - type: Sprite
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "r_hand"
+  parent: [ OrganBaseLegRight, OrganSynthExternal ]
+  id: OrganSynthLegRight
 
 - type: entity
-  id: LeftLegSynth
-  name: "left synth leg"
-  parent: [ PartSynth, BaseLeftLeg ]
-  components:
-  - type: Sprite
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "l_leg"
+  parent: [ OrganBaseFootLeft, OrganSynthExternal ]
+  id: OrganSynthFootLeft
 
 - type: entity
-  id: RightLegSynth
-  name: "right synth leg"
-  parent: [ PartSynth, BaseRightLeg ]
-  components:
-  - type: Sprite
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "r_leg"
-
-- type: entity
-  id: LeftFootSynth
-  name: "left synth foot"
-  parent: [ PartSynth, BaseLeftFoot ]
-  components:
-  - type: Sprite
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "l_foot"
-
-- type: entity
-  id: RightFootSynth
-  name: "right synth foot"
-  parent: [ PartSynth, BaseRightFoot ]
-  components:
-  - type: Sprite
-    sprite: _species/Synth/Mobs/Species/parts.rsi
-    state: "r_foot"
+  parent: [ OrganBaseFootRight, OrganSynthExternal ]
+  id: OrganSynthFootRight

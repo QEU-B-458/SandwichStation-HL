@@ -23,7 +23,6 @@ using Content.Shared._species.Thaven.Components;
 using Content.Shared.Random;
 using Content.Shared.Random.Helpers;
 using Robust.Server.GameObjects;
-using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -40,7 +39,6 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly UserInterfaceSystem _bui = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -107,7 +105,7 @@ public sealed partial class ThavenMoodsSystem : SharedThavenMoodSystem
             return false;
 
         _sharedMoods.Add(mood);
-        var enumerator = EntityManager.EntityQueryEnumerator<ThavenMoodsBoundComponent>();
+        var enumerator = EntityQueryEnumerator<ThavenMoodsBoundComponent>();
         while (enumerator.MoveNext(out var ent, out var comp))
         {
             if (!comp.FollowsSharedMoods)

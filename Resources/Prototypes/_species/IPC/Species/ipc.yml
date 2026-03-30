@@ -3,9 +3,7 @@
   name: species-name-ipc
   roundStart: true
   prototype: MobIPC
-  sprites: MobIPCSprites
-  markingLimits: MobIPCMarkingLimits
-  dollPrototype: MobIPCDummy
+  dollPrototype: AppearanceIPC
   skinColoration: Hues
   minAge: 1
   maxAge: 240
@@ -18,91 +16,61 @@
   sexes:
   - Unsexed
 
-# The lack of a layer means that
-# this person cannot have round-start anything
-# applied to that layer. It has to instead
-# be defined as a 'custom base layer'
-# in either the mob's starting marking prototype,
-# or it has to be added in C#.
-- type: speciesBaseSprites
-  id: MobIPCSprites
-  sprites:
-    Head: MobIPCHead
-    HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
-    Hair: MobHumanoidAnyMarking #Hardlight change
-    FacialHair: MobHumanoidAnyMarking #hardlight change
-    Chest: MobIPCTorso
-    LArm: MobIPCLArm
-    RArm: MobIPCRArm
-    LHand: MobIPCLHand
-    RHand: MobIPCRHand
-    LLeg: MobIPCLLeg
-    RLeg: MobIPCRLeg
-    LFoot: MobIPCLFoot
-    RFoot: MobIPCRFoot
-    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
-    Penis: MobHumanoidAnyMarking
-    Breasts: MobHumanoidAnyMarking
-    # Unsupported layers removed: UndershirtUnderclothes/UndershirtOverclothes
-    Eyes: MobHumanoidEyes
-    # UndershirtUnderclothes: MobHumanoidAnyMarking
-    # UndershirtOverclothes: MobHumanoidAnyMarking
-
-- type: markingPoints
-  id: MobIPCMarkingLimits
-  points:
-    Hair:
-      points: 1 # Hardlight change
+- type: markingsGroup
+  parent: Undergarments
+  id: IPC
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
       required: false
-    FacialHair:
-      points: 1 # Hard light change
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
       required: false
-    Head:
-      points: 4
+    enum.HumanoidVisualLayers.Head:
+      limit: 4
       required: true
-      defaultMarkings: [ MobIPCHeadDefault ]
-    Chest:
-      points: 1
+      default: [ MobIPCHeadDefault ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 1
       required: true
-      defaultMarkings: [ MobIPCTorsoDefault ]
-    Legs:
-      points: 8
-      required: true
-      defaultMarkings: [ MobIPCLLegDefault, MobIPCLFootDefault, MobIPCRLegDefault, MobIPCRFootDefault ]
-    Arms:
-      points: 8
-      required: true
-      defaultMarkings: [ MobIPCLArmDefault, MobIPCLHandDefault, MobIPCRArmDefault, MobIPCRHandDefault ]
-    HeadSide:
-      points: 1
+      default: [ MobIPCTorsoDefault ]
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
       required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: true
+      default: [ MobIPCLArmDefault ]
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: true
+      default: [ MobIPCRArmDefault ]
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: true
+      default: [ MobIPCLHandDefault ]
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: true
+      default: [ MobIPCRHandDefault ]
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: true
+      default: [ MobIPCLLegDefault ]
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: true
+      default: [ MobIPCRLegDefault ]
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: true
+      default: [ MobIPCLFootDefault ]
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: true
+      default: [ MobIPCRFootDefault ]
 
-- type: humanoidBaseSprite
-  id: MobIPCMarkingFollowSkin
-  markingsMatchSkin: true
-  layerAlpha: 0.5
-
-- type: humanoidBaseSprite
-  id: MobIPCScreen
-
-# Head
-
-- type: humanoidBaseSprite
-  id: MobIPCHead
-
-- type: humanoidBaseSprite
-  id: MobIPCHeadMale
-
-- type: humanoidBaseSprite
-  id: MobIPCHeadFemale
+# Marking definitions (kept from original)
 
 - type: marking
   id: MobIPCHeadDefault
@@ -112,17 +80,6 @@
   sprites:
   - sprite: _species/IPC/Mobs/Species/parts.rsi
     state: head_m
-
-# Torso
-
-- type: humanoidBaseSprite
-  id: MobIPCTorso
-
-- type: humanoidBaseSprite
-  id: MobIPCTorsoMale
-
-- type: humanoidBaseSprite
-  id: MobIPCTorsoFemale
 
 - type: marking
   id: MobIPCTorsoDefault
@@ -142,11 +99,6 @@
   - sprite: _species/IPC/Mobs/Species/parts.rsi
     state: torso_f
 
-# Left Leg
-
-- type: humanoidBaseSprite
-  id: MobIPCLLeg
-
 - type: marking
   id: MobIPCLLegDefault
   bodyPart: LLeg
@@ -155,11 +107,6 @@
   sprites:
   - sprite: _species/IPC/Mobs/Species/parts.rsi
     state: l_leg
-
-# Left Arm
-
-- type: humanoidBaseSprite
-  id: MobIPCLArm
 
 - type: marking
   id: MobIPCLArmDefault
@@ -170,11 +117,6 @@
   - sprite: _species/IPC/Mobs/Species/parts.rsi
     state: l_arm
 
-#LHand
-
-- type: humanoidBaseSprite
-  id: MobIPCLHand
-
 - type: marking
   id: MobIPCLHandDefault
   bodyPart: LHand
@@ -183,11 +125,6 @@
   sprites:
   - sprite: _species/IPC/Mobs/Species/parts.rsi
     state: l_hand
-
-#LFoot
-
-- type: humanoidBaseSprite
-  id: MobIPCLFoot
 
 - type: marking
   id: MobIPCLFootDefault
@@ -198,11 +135,6 @@
   - sprite: _species/IPC/Mobs/Species/parts.rsi
     state: l_foot
 
-#RLeg
-
-- type: humanoidBaseSprite
-  id: MobIPCRLeg
-
 - type: marking
   id: MobIPCRLegDefault
   bodyPart: RLeg
@@ -211,11 +143,6 @@
   sprites:
   - sprite: _species/IPC/Mobs/Species/parts.rsi
     state: r_leg
-
-#RArm
-
-- type: humanoidBaseSprite
-  id: MobIPCRArm
 
 - type: marking
   id: MobIPCRArmDefault
@@ -226,11 +153,6 @@
   - sprite: _species/IPC/Mobs/Species/parts.rsi
     state: r_arm
 
-#RHand
-
-- type: humanoidBaseSprite
-  id: MobIPCRHand
-
 - type: marking
   id: MobIPCRHandDefault
   bodyPart: RHand
@@ -239,11 +161,6 @@
   sprites:
   - sprite: _species/IPC/Mobs/Species/parts.rsi
     state: r_hand
-
-#RFoot
-
-- type: humanoidBaseSprite
-  id: MobIPCRFoot
 
 - type: marking
   id: MobIPCRFootDefault
