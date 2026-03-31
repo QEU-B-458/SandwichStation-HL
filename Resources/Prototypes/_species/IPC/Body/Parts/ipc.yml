@@ -21,7 +21,7 @@
 
 # Torso
 - type: entity
-  parent: [ OrganBaseTorso, OrganIPCExternal ]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganIPCExternal ]
   id: OrganIPCTorso
   components:
   - type: VisualOrganMarkings
@@ -33,7 +33,7 @@
 
 # Head
 - type: entity
-  parent: [ OrganBaseHead, OrganIPCExternal ]
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganIPCExternal ]
   id: OrganIPCHead
 
 # Limbs

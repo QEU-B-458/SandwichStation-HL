@@ -1,0 +1,60 @@
+# Shadekin species - shadow beings with ethereal abilities
+- type: species
+  id: Shadekin
+  name: species-name-shadekin
+  roundStart: true
+  prototype: MobShadekin
+  dollPrototype: AppearanceShadekin
+  skinColoration: Hues
+  defaultSkinTone: "#ffffff"
+  eyeColoration: Shadekin
+  maleFirstNames: names_shadekin
+  femaleFirstNames: names_shadekin
+  naming: First
+  minAge: 18
+  maxAge: 300
+  youngAge: 50
+  oldAge: 250
+
+- type: markingsGroup
+  parent: Undergarments
+  id: Shadekin
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ TailShadekin ]
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ EarsShadekin ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false

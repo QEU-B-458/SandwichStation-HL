@@ -1,0 +1,20 @@
+# Shadekin markings - ears and tail markings
+# Note: Full markings file from old system is extensive. These are the main ones.
+
+- type: marking
+  id: EarsShadekin
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  groupWhitelist: [Shadekin]
+  sprites:
+    - sprite: _species/Shadekin/Mobs/Customization/ears.rsi
+      state: shadekin
+
+- type: marking
+  id: TailShadekin
+  bodyPart: Tail
+  markingCategory: Tail
+  groupWhitelist: [Shadekin]
+  sprites:
+    - sprite: _species/Shadekin/Mobs/Customization/tails64x32.rsi
+      state: shadekin

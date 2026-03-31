@@ -108,13 +108,7 @@
       Male: SoundsHarpy
       Female: SoundsHarpy
       Unsexed: SoundsHarpy
-  - type: InstrumentVisuals
-  - type: GenericVisualizer
-    visuals:
-      enum.InstrumentVisuals.Playing:
-        enum.InstrumentVisuals.Layer:
-          False: {visible: false}
-          True: {visible: true}
+  # InstrumentVisuals and GenericVisualizer for playing state removed: enum.InstrumentVisuals does not exist in this branch
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 5.0
@@ -132,7 +126,6 @@
         layer:
         - MobLayer
   - type: HarpyVisuals
-  - type: UltraVision
   - type: NpcFactionMember
     factions:
     - NanoTrasen

@@ -9,42 +9,42 @@
   id: ThavenCheekBarbels
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  groupWhitelist: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   coloring: #imp
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _species/Thaven/Mobs/Customization/thaven/thaven.rsi
+  - sprite: _species/Thaven/Mobs/Customization/thaven.rsi
     state: cheek_barbels
 
 - type: marking
   id: ThavenEyebrowBarbels
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  groupWhitelist: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
   coloring: #imp
     default:
       type:
         !type:SimpleColoring
           color: "#FFFFFF"
   sprites:
-  - sprite: _species/Thaven/Mobs/Customization/thaven/thaven.rsi
+  - sprite: _species/Thaven/Mobs/Customization/thaven.rsi
     state: eyebrow_barbels
 
 #- type: marking
 #  id: ThavenUnderbellyFace
 #  bodyPart: Head
 #  markingCategory: Head
-#  speciesRestriction: [Thaven]
+#  groupWhitelist: [Thaven]
 #  coloring: #imp
 #    default:
 #      type:
 #        !type:TattooColoring
 #      fallbackColor: "#FFFFFF"
 #  sprites:
-#  - sprite: _species/Thaven/Mobs/Customization/thaven/thaven.rsi
+#  - sprite: _species/Thaven/Mobs/Customization/thaven.rsi
 #    state: underbelly_face
 
 # Torso
@@ -52,12 +52,12 @@
 #  id: ThavenUnderbellyTorso
 #  bodyPart: Chest
 #  markingCategory: Chest
-#  speciesRestriction: [Thaven]
+#  groupWhitelist: [Thaven]
 #  coloring: #imp
 #    default:
 #      type:
 #        !type:TattooColoring
 #      fallbackColor: "#FFFFFF"
 #  sprites:
-#  - sprite: _species/Thaven/Mobs/Customization/thaven/thaven.rsi
+#  - sprite: _species/Thaven/Mobs/Customization/thaven.rsi
 #    state: underbelly_torso

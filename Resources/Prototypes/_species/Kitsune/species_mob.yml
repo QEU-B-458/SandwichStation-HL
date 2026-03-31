@@ -69,7 +69,6 @@
   - type: LightweightDrunk
     boozeStrengthMultiplier: 3
   # PseudoItem component removed: no C# type
-      - 4,0,5,4
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Items/hiss.ogg

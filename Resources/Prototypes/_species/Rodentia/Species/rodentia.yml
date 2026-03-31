@@ -10,7 +10,7 @@
   maleFirstNames: NamesRodentiaMale
   femaleFirstNames: NamesRodentiaFemale
   lastNames: NamesRodentiaLast
-  naming: LastFirst
+  naming: FirstLast
 
 - type: markingsGroup
   parent: Undergarments

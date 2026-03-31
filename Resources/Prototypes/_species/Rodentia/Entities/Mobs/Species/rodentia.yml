@@ -82,17 +82,10 @@
       amount: 5
   # Carriable component removed: no C# type
   - type: Rummager
-  - type: AlwaysTriggerMousetrap
   # PseudoItem component removed: no C# type
-  - type: MouthStorage
-    mouthProto: CheekStorage
-    openStorageAction: ActionOpenMouthStorage
-    spitDamageThreshold: 3
-  - type: CrawlUnderObjects
-    actionProto: ActionToggleSneakMode
-  - type: DrawDepthVisualizer
-    key: enum.SneakingVisuals.Sneaking
-    depth: SmallMobs
+  # MouthStorage removed: no C# type in ss14-rebase (cheek storage mechanic)
+  # CrawlUnderObjects removed: no C# type in ss14-rebase (crawl under tables mechanic)
+  # DrawDepthVisualizer removed: no C# type in ss14-rebase (sneak visual depth)
   - type: NpcFactionMember
     factions:
     - NanoTrasen

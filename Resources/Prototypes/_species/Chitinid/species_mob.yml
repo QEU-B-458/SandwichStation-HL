@@ -108,8 +108,6 @@
       275: 0.4
       250: 0.3
   - type: Chitinid
-  - type: BlockInjection
-    blockReason: chitinid
   - type: NpcFactionMember
     factions:
     - NanoTrasen

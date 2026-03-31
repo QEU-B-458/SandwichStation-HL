@@ -3,7 +3,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction:
+  groupWhitelist:
     - Dwarf
     - Diona
     - Human
@@ -29,7 +29,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction:
+  groupWhitelist:
     - Dwarf
     - Diona
     - Human
@@ -55,7 +55,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction:
+  groupWhitelist:
     - Dwarf
     - Diona
     - Human
@@ -81,7 +81,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction:
+  groupWhitelist:
     - Dwarf
     - Diona
     - Human
@@ -107,7 +107,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction:
+  groupWhitelist:
     - Dwarf
     - Diona
     - Human
@@ -133,7 +133,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction:
+  groupWhitelist:
     - Dwarf
     - Diona
     - Human
@@ -159,7 +159,7 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction:
+  groupWhitelist:
     - Dwarf
     - Diona
     - Human

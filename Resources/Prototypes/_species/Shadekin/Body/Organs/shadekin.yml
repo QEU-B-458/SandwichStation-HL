@@ -1,0 +1,116 @@
+# Shadekin organ entities - custom organs with ethereal physiology
+- type: entity
+  parent: OrganBase
+  id: OrganShadekin
+  abstract: true
+  suffix: shadekin
+
+- type: entity
+  parent: OrganShadekin
+  id: OrganShadekinExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: _species/Shadekin/Mobs/Species/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Shadekin
+
+# Torso
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganShadekinExternal ]
+  id: OrganShadekinTorso
+
+# Head
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganShadekinExternal ]
+  id: OrganShadekinHead
+
+# Limbs
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganShadekinExternal ]
+  id: OrganShadekinArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganShadekinExternal ]
+  id: OrganShadekinArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganShadekinExternal ]
+  id: OrganShadekinHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganShadekinExternal ]
+  id: OrganShadekinHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganShadekinExternal ]
+  id: OrganShadekinLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganShadekinExternal ]
+  id: OrganShadekinLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganShadekinExternal ]
+  id: OrganShadekinFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganShadekinExternal ]
+  id: OrganShadekinFootRight
+
+# Unique Shadekin organs
+- type: entity
+  parent: [ OrganBaseBrain, OrganShadekin ]
+  id: OrganShadekinBrain
+
+- type: entity
+  parent: [ OrganBaseEyes, OrganShadekin ]
+  id: OrganShadekinEyes
+  components:
+  - type: VisualOrganMarkings
+    markingData:
+      layers:
+      - Eyes
+      group: Shadekin
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganShadekin ]
+  id: OrganShadekinLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganShadekin ]
+  id: OrganShadekinHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganShadekin ]
+  id: OrganShadekinStomach
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganShadekin ]
+  id: OrganShadekinLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganShadekin ]
+  id: OrganShadekinKidneys
+
+# Shadekin-specific core organ (unique to Shadekin)
+- type: entity
+  parent: [ OrganBase, OrganShadekin ]
+  id: OrganShadekinCore
+  abstract: true
+  suffix: shadekin core
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/organs.rsi
+    state: core
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        maxVol: 5
+        reagents:
+        - ReagentId: ShadekinEssence
+          Quantity: 5

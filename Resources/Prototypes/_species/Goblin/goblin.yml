@@ -1,165 +1,119 @@
-#  defaultSkinTone: "#486a1b"
 - type: species
   id: Goblin
   name: species-name-goblin
   roundStart: true
   prototype: MobGoblin
-  sprites: MobGoblinSprites
-  markingLimits: MobGoblinMarkingLimits
-  dollPrototype: MobGoblinDummy
-  skinColoration: HumanToned #Possible values: TintedHues, Hues, HumanToned
+  dollPrototype: AppearanceGoblin
+  skinColoration: HumanToned
   maleFirstNames: NamesGoblinFirstMale
   femaleFirstNames: NamesGoblinFirstFemale
   lastNames: NamesGoblinLast
 
-- type: speciesBaseSprites
-  id: MobGoblinSprites
-  sprites:
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
-    Head: MobGoblinHead
-    Hair: MobHumanoidAnyMarking
-    FacialHair: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
-    Genital: MobHumanoidAnyMarking
-    Penis: MobHumanoidAnyMarking
-    Breasts: MobHumanoidAnyMarking
-    Chest: MobGoblinTorso
-    HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
-    Eyes: MobGoblinEyes
-    LArm: MobGoblinLArm
-    RArm: MobGoblinRArm
-    LHand: MobGoblinLHand
-    RHand: MobGoblinRHand
-    LLeg: MobGoblinLLeg
-    RLeg: MobGoblinRLeg
-    LFoot: MobGoblinLFoot
-    RFoot: MobGoblinRFoot
-    RArmExtension: MobHumanoidAnyMarking # Hardlight: enables harpy/bat wings
-
-- type: markingPoints
-  id: MobGoblinMarkingLimits
-  points:
-    Hair:
-      points: 1
+- type: markingsGroup
+  parent: Undergarments
+  id: Goblin
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
       required: false
-    FacialHair:
-      points: 1
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
       required: false
-    HeadTop:
-      points: 1
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
       required: true
-      defaultMarkings: [ GoblinEarsBasic ]
-    Snout:
-      points: 2
+      default: [ GoblinEarsBasic ]
+    enum.HumanoidVisualLayers.Snout:
+      limit: 2
       required: false
-#      defaultMarkings: [ GoblinNoseBasic ]
-    UndergarmentTop:
-      points: 1
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
       required: false
-    UndergarmentBottom:
-      points: 1
+    enum.HumanoidVisualLayers.Chest:
+      limit: 1
       required: false
-    Chest:
-      points: 1
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
       required: false
-    Legs:
-      points: 2
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
       required: false
-    Arms:
-      points: 2
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
       required: false
 
-- type: humanoidBaseSprite
-  id: MobGoblinEyes
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: eyes
+# Goblin appearance entity (character editor doll + body definition)
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceGoblin
+  name: goblin appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganGoblinTorso
+      Head: OrganGoblinHead
+      ArmLeft: OrganGoblinArmLeft
+      ArmRight: OrganGoblinArmRight
+      HandRight: OrganGoblinHandRight
+      HandLeft: OrganGoblinHandLeft
+      LegLeft: OrganGoblinLegLeft
+      LegRight: OrganGoblinLegRight
+      FootLeft: OrganGoblinFootLeft
+      FootRight: OrganGoblinFootRight
+      Brain: OrganGoblinBrain
+      Eyes: OrganGoblinEyes
+      Lungs: OrganGoblinLungs
+      Heart: OrganGoblinHeart
+      Stomach: OrganGoblinStomach
+      Liver: OrganGoblinLiver
+      Kidneys: OrganGoblinKidneys
+      Tongue: OrganGoblinTongue
+      Appendix: OrganGoblinAppendix
+      Ears: OrganGoblinEars
+  - type: HumanoidProfile
+    species: Goblin
 
-- type: humanoidBaseSprite
-  id: MobGoblinHead
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: head_m
+# Goblin mob entity
+- type: entity
+  parent:
+  - AppearanceGoblin
+  - BaseSpeciesMobOrganic
+  id: MobGoblin
+  name: Urist McGoblin
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.35
+        density: 300
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Speech
+    speechVerb: Goblin
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 5
+  # TODO: Add Goblin-specific components (GoblinMade, crafting, etc.)
 
-- type: humanoidBaseSprite
-  id: MobGoblinHeadMale
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: head_m
-
-- type: humanoidBaseSprite
-  id: MobGoblinHeadFemale
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: head_f
-
-- type: humanoidBaseSprite
-  id: MobGoblinTorso
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: torso_m
-
-- type: humanoidBaseSprite
-  id: MobGoblinTorsoMale
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: torso_m
-
-- type: humanoidBaseSprite
-  id: MobGoblinTorsoFemale
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: torso_f
-
-- type: humanoidBaseSprite
-  id: MobGoblinLLeg
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: l_leg
-
-- type: humanoidBaseSprite
-  id: MobGoblinLArm
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: l_arm
-
-- type: humanoidBaseSprite
-  id: MobGoblinLHand
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: l_hand
-
-- type: humanoidBaseSprite
-  id: MobGoblinLFoot
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: l_foot
-
-- type: humanoidBaseSprite
-  id: MobGoblinRLeg
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: r_leg
-
-- type: humanoidBaseSprite
-  id: MobGoblinRArm
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: r_arm
-
-- type: humanoidBaseSprite
-  id: MobGoblinRHand
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: r_hand
-
-- type: humanoidBaseSprite
-  id: MobGoblinRFoot
-  baseSprite:
-    sprite: _species/Goblin/Mobs/Species/parts.rsi
-    state: r_foot

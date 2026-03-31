@@ -110,7 +110,6 @@
     preserveExistingChannels: true
     intrinsicChannels:
     - Binary
-  - type: OfferItem
   - type: ActiveRadio
     intrinsicChannels:
     - Binary
@@ -127,9 +126,9 @@
   - type: Bloodstream
     bloodReagent: Oil
     bloodRefreshAmount: 0.0
-  - type: BlockInjection
-    blockHypospray: true
-    blockInjectOnProjectile: true
+  - type: Unrevivable
+    cloneable: false
+    analyzable: false
   - type: Temperature
     currentTemperature: 310.15
     specificHeat: 42
@@ -159,8 +158,6 @@
       Female: UnisexSilicon
       Unsexed: UnisexSilicon
   - type: ZombieImmune
-  # Sanitized component removed: no C# type
-  - type: Uncloneable
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:

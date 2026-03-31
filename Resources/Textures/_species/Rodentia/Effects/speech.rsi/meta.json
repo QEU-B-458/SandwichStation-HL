@@ -1,0 +1,11 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Rodentia speech bubbles",
+    "size": { "x": 32, "y": 32 },
+    "states": [
+        { "name": "rodentia0", "directions": 4 },
+        { "name": "rodentia1" },
+        { "name": "rodentia2" }
+    ]
+}

@@ -1,0 +1,174 @@
+# Felinid organs - inherit from human organs but use Felinid marking group
+
+# Torso
+- type: entity
+  parent: OrganBaseTorsoSexed
+  id: OrganFelinidTorso
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+
+# Head
+- type: entity
+  parent: OrganBaseHeadSexed
+  id: OrganFelinidHead
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+
+# Arms
+- type: entity
+  parent: OrganBaseArmLeft
+  id: OrganFelinidArmLeft
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+      layers:
+      - LArm
+
+- type: entity
+  parent: OrganBaseArmRight
+  id: OrganFelinidArmRight
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+      layers:
+      - RArm
+
+# Hands
+- type: entity
+  parent: OrganBaseHandLeft
+  id: OrganFelinidHandLeft
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+      layers:
+      - LHand
+
+- type: entity
+  parent: OrganBaseHandRight
+  id: OrganFelinidHandRight
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+      layers:
+      - RHand
+
+# Legs
+- type: entity
+  parent: OrganBaseLegLeft
+  id: OrganFelinidLegLeft
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+      layers:
+      - LLeg
+
+- type: entity
+  parent: OrganBaseLegRight
+  id: OrganFelinidLegRight
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+      layers:
+      - RLeg
+
+# Feet
+- type: entity
+  parent: OrganBaseFootLeft
+  id: OrganFelinidFootLeft
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+      layers:
+      - LFoot
+
+- type: entity
+  parent: OrganBaseFootRight
+  id: OrganFelinidFootRight
+  suffix: felinid
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Felinid
+      layers:
+      - RFoot

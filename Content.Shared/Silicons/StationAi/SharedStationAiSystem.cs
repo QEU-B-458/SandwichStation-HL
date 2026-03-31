@@ -1,3 +1,5 @@
+using Content.Shared._axiom.Silicons.StationAi;
+using Content.Shared._axiom.Silicons.StationAi.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
@@ -64,6 +66,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     [Dependency] private readonly StationAiVisionSystem _vision = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedAiNetworkSystem _aiNetwork = default!;
 
     // StationAiHeld is added to anything inside of an AI core.
     // StationAiHolder indicates it can hold an AI positronic brain (e.g. holocard / core).
@@ -181,9 +184,16 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         // Similar to the inrange check but more optimised so server doesn't die.
         var targetXform = Transform(args.Target);
 
-        // No cross-grid
+        // No cross-grid — unless this is an Axiom AI with network authorization.
         if (targetXform.GridUid != args.Actor.Comp.GridUid)
         {
+            // Axiom AI override: authorized grids via AI network relay count as in-range.
+            if (HasComp<AxiomAiComponent>(args.Actor) &&
+                TryGetCore(args.Actor, out var axiomCore) &&
+                _aiNetwork.IsGridAuthorized(axiomCore.Owner, targetXform.GridUid))
+            {
+                args.Result = BoundUserInterfaceRangeResult.Pass;
+            }
             return;
         }
 
@@ -208,9 +218,16 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         args.Handled = true;
         var targetXform = Transform(args.Target);
 
-        // No cross-grid
+        // No cross-grid — unless this is an Axiom AI with network authorization.
         if (targetXform.GridUid != Transform(args.User).GridUid)
         {
+            // Axiom AI override: authorized grids via AI network relay count as in-range.
+            if (HasComp<AxiomAiComponent>(args.User) &&
+                TryGetCore(args.User, out var axiomCore) &&
+                _aiNetwork.IsGridAuthorized(axiomCore.Owner, targetXform.GridUid))
+            {
+                args.InRange = true;
+            }
             return;
         }
 

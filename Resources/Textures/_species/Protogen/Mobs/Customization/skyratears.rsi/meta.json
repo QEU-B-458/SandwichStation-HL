@@ -1,0 +1,12 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Protogen ear markings",
+    "size": { "x": 64, "y": 64 },
+    "states": [
+        { "name": "m_ears_protogen_ADJs_primary" },
+        { "name": "m_ears_protogen_ADJs_secondary" },
+        { "name": "m_ears_protogen_FRONT_primary" },
+        { "name": "m_ears_protogen_FRONT_secondary" }
+    ]
+}

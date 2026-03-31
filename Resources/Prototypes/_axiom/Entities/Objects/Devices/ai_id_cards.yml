@@ -15,7 +15,7 @@
     sprite: Objects/Misc/id_cards.rsi
     layers:
     - state: gold
-    - state: idcentcom
+    - state: centcom
 
 # ID card for the AI Deployment Borg — freelancer-level access only.
 # The chassis itself has department access for navigation; the card is just ID.
@@ -35,4 +35,4 @@
     sprite: Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: idroboticist
+    - state: default

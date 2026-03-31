@@ -3,7 +3,7 @@
   id: RMCHairSkrellLong
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Skrell]
+  groupWhitelist: [Skrell]
   sprites:
     - sprite: _species/Skrell/Mobs/Skrells/hair.rsi
       state: skrell_hair_f_s
@@ -12,7 +12,7 @@
   id: RMCHairSkrellShort
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Skrell]
+  groupWhitelist: [Skrell]
   sprites:
     - sprite: _species/Skrell/Mobs/Skrells/hair.rsi
       state: skrell_hair_m_s
@@ -22,7 +22,7 @@
   id: RMCSpotsSkrellHairLeft
   bodyPart: HeadTop
   markingCategory: Overlay
-  speciesRestriction: [Skrell]
+  groupWhitelist: [Skrell]
   sprites:
     - sprite: _species/Skrell/Mobs/Skrells/markings.rsi
       state: spots-hair-left
@@ -31,7 +31,7 @@
   id: RMCSpotsSkrellHairRight
   bodyPart: HeadTop
   markingCategory: Overlay
-  speciesRestriction: [Skrell]
+  groupWhitelist: [Skrell]
   sprites:
     - sprite: _species/Skrell/Mobs/Skrells/markings.rsi
       state: spots-hair-right
@@ -40,7 +40,7 @@
   id: RMCSpotsSkrellBodyLeft
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Skrell]
+  groupWhitelist: [Skrell]
   sprites:
     - sprite: _species/Skrell/Mobs/Skrells/markings.rsi
       state: spots-left
@@ -49,7 +49,7 @@
   id: RMCSpotsSkrellBodyRight
   bodyPart: RLeg
   markingCategory: Overlay
-  speciesRestriction: [Skrell]
+  groupWhitelist: [Skrell]
   sprites:
     - sprite: _species/Skrell/Mobs/Skrells/markings.rsi
       state: spots-right

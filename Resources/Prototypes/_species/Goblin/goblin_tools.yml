@@ -423,14 +423,14 @@
     - state: welder_flame
       visible: false
       shader: unshaded
-      map: ["enum.ToggleVisuals.Layer"]
+      map: ["enum.ToggleableVisuals.Layer"]
     - sprite: _species/Goblin/Objects/Tools/goblin_tools/overlay_sparks.rsi
       state: overlay-icon
       shader: unshaded
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
   - type: Item
@@ -756,9 +756,7 @@
         shader: unshaded
   - type: Clothing
     sprite: _species/Goblin/Objects/Tools/goblin_tools/power_cell.rsi
-  - type: MachinePart
-    part: PowerCell
-    rating: 1 # Ideally 0
+  # MachinePart component removed: does not exist in ss14-rebase
 
 - type: entity
   id: NFGoblinMadePowerCellDepleted
