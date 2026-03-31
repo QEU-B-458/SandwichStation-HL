@@ -31,7 +31,10 @@ jobs:
           git fetch --depth=1
 
       - name: Install dependencies
-        run: dotnet restore --ignore-failed-sources
+        run: |
+          dotnet restore Content.Packaging
+          dotnet restore Content.Client
+          dotnet restore Content.Server
 
       - name: Build Packaging Tool
         run: dotnet build Content.Packaging --configuration Release --no-restore /m
