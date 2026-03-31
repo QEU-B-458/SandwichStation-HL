@@ -24,6 +24,7 @@
   description: "01001001 00100000 01110011 01100101 01100101 00100000 01111001 01101111 01110101 00100001"
   components:
   - type: Sprite
+    sprite: _species/IPC/Mobs/Species/organs.rsi
     layers:
       - state: eyeball-l
       - state: eyeball-r
@@ -36,6 +37,7 @@
   description: "A vocal modulator, used to produce speech."
   components:
   - type: Sprite
+    sprite: _species/IPC/Mobs/Species/organs.rsi
     state: tongue
   - type: Organ
 
@@ -46,6 +48,7 @@
   description:
   components:
   - type: Sprite
+    sprite: _species/IPC/Mobs/Species/organs.rsi
     state: ears
   - type: Organ
 
@@ -56,6 +59,7 @@
   description: "A micro pump, used to circulate coolant."
   components:
   - type: Sprite
+    sprite: _species/IPC/Mobs/Species/organs.rsi
     state: heart-on
   - type: Organ
   - type: Metabolizer

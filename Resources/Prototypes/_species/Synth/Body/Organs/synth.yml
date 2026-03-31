@@ -81,6 +81,7 @@
   description: "It's a fucking tongue. Why would you touch it?"
   components:
   - type: Sprite
+    sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_tongue
 
 - type: entity
@@ -119,6 +120,7 @@
     slotId: lungs
   - type: Lung
   - type: Sprite
+    sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_lungs
   - type: Item
     size: Small
@@ -150,6 +152,7 @@
     slotId: heart
   # Heart component removed: no C# type
   - type: Sprite
+    sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_heart
     scale: 0.8, 0.8
   # The heart 'metabolizes' medicines and poisons that aren't filtered out by other organs.
@@ -174,6 +177,7 @@
     slotId: stomach
   - type: Stomach
   - type: Sprite
+    sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_stomach
   - type: SolutionContainerManager
     solutions:
@@ -204,6 +208,7 @@
     slotId: liver
   # Liver component removed: no C# type
   - type: Sprite
+    sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_liver
     scale: 0.9, 0.9
   - type: Item

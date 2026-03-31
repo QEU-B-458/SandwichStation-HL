@@ -6,16 +6,16 @@
   components:
   - type: InitialBody
     organs:
-      Torso: OrganHumanTorso
-      Head: OrganHumanHead
-      ArmLeft: OrganHumanArmLeft
-      ArmRight: OrganHumanArmRight
-      HandRight: OrganHumanHandRight
-      HandLeft: OrganHumanHandLeft
-      LegLeft: OrganHumanLegLeft
-      LegRight: OrganHumanLegRight
-      FootLeft: OrganHumanFootLeft
-      FootRight: OrganHumanFootRight
+      Torso: OrganKitsuneTorso
+      Head: OrganKitsuneHead
+      ArmLeft: OrganKitsuneArmLeft
+      ArmRight: OrganKitsuneArmRight
+      HandRight: OrganKitsuneHandRight
+      HandLeft: OrganKitsuneHandLeft
+      LegLeft: OrganKitsuneLegLeft
+      LegRight: OrganKitsuneLegRight
+      FootLeft: OrganKitsuneFootLeft
+      FootRight: OrganKitsuneFootRight
       Brain: OrganHumanBrain
       Eyes: OrganHumanEyes
       Lungs: OrganHumanLungs

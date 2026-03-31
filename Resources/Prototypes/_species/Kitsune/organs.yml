@@ -2,15 +2,10 @@
 
 # Torso
 - type: entity
-  parent: OrganBaseTorsoSexed
+  parent: OrganHumanTorso
   id: OrganKitsuneTorso
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune
@@ -25,33 +20,31 @@
 
 # Head
 - type: entity
-  parent: OrganBaseHeadSexed
+  parent: OrganHumanHead
   id: OrganKitsuneHead
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
     hideableLayers:
     - enum.HumanoidVisualLayers.Hair
     - enum.HumanoidVisualLayers.Snout
 
 # Arms
 - type: entity
-  parent: OrganBaseArmLeft
+  parent: OrganHumanArmLeft
   id: OrganKitsuneArmLeft
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune
@@ -59,15 +52,10 @@
       - LArm
 
 - type: entity
-  parent: OrganBaseArmRight
+  parent: OrganHumanArmRight
   id: OrganKitsuneArmRight
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune
@@ -76,15 +64,10 @@
 
 # Hands
 - type: entity
-  parent: OrganBaseHandLeft
+  parent: OrganHumanHandLeft
   id: OrganKitsuneHandLeft
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune
@@ -92,15 +75,10 @@
       - LHand
 
 - type: entity
-  parent: OrganBaseHandRight
+  parent: OrganHumanHandRight
   id: OrganKitsuneHandRight
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune
@@ -109,15 +87,10 @@
 
 # Legs
 - type: entity
-  parent: OrganBaseLegLeft
+  parent: OrganHumanLegLeft
   id: OrganKitsuneLegLeft
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune
@@ -125,15 +98,10 @@
       - LLeg
 
 - type: entity
-  parent: OrganBaseLegRight
+  parent: OrganHumanLegRight
   id: OrganKitsuneLegRight
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune
@@ -142,15 +110,10 @@
 
 # Feet
 - type: entity
-  parent: OrganBaseFootLeft
+  parent: OrganHumanFootLeft
   id: OrganKitsuneFootLeft
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune
@@ -158,15 +121,10 @@
       - LFoot
 
 - type: entity
-  parent: OrganBaseFootRight
+  parent: OrganHumanFootRight
   id: OrganKitsuneFootRight
   suffix: kitsune
   components:
-  - type: Sprite
-    sprite: Mobs/Species/Human/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Human/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Kitsune

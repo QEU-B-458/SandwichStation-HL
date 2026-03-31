@@ -1,14 +1,14 @@
-# Felinid organs - inherit from human organs but use Felinid marking group
+# Oni organs - human body shape but Oni marking group
 
 # Torso
 - type: entity
   parent: OrganHumanTorso
-  id: OrganFelinidTorso
-  suffix: felinid
+  id: OrganOniTorso
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - Chest
       - Tail
@@ -21,12 +21,12 @@
 # Head
 - type: entity
   parent: OrganHumanHead
-  id: OrganFelinidHead
-  suffix: felinid
+  id: OrganOniHead
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - Head
       - Hair
@@ -42,91 +42,91 @@
 # Arms
 - type: entity
   parent: OrganHumanArmLeft
-  id: OrganFelinidArmLeft
-  suffix: felinid
+  id: OrganOniArmLeft
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - LArm
 
 - type: entity
   parent: OrganHumanArmRight
-  id: OrganFelinidArmRight
-  suffix: felinid
+  id: OrganOniArmRight
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - RArm
 
 # Hands
 - type: entity
   parent: OrganHumanHandLeft
-  id: OrganFelinidHandLeft
-  suffix: felinid
+  id: OrganOniHandLeft
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - LHand
 
 - type: entity
   parent: OrganHumanHandRight
-  id: OrganFelinidHandRight
-  suffix: felinid
+  id: OrganOniHandRight
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - RHand
 
 # Legs
 - type: entity
   parent: OrganHumanLegLeft
-  id: OrganFelinidLegLeft
-  suffix: felinid
+  id: OrganOniLegLeft
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - LLeg
 
 - type: entity
   parent: OrganHumanLegRight
-  id: OrganFelinidLegRight
-  suffix: felinid
+  id: OrganOniLegRight
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - RLeg
 
 # Feet
 - type: entity
   parent: OrganHumanFootLeft
-  id: OrganFelinidFootLeft
-  suffix: felinid
+  id: OrganOniFootLeft
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - LFoot
 
 - type: entity
   parent: OrganHumanFootRight
-  id: OrganFelinidFootRight
-  suffix: felinid
+  id: OrganOniFootRight
+  suffix: oni
   components:
   - type: VisualOrganMarkings
     markingData:
-      group: Felinid
+      group: Oni
       layers:
       - RFoot
