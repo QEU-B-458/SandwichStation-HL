@@ -1,4 +1,4 @@
-# Shadekin organ entities - custom organs with ethereal physiology
+# Shadekin organ entities - custom organs with human-compatible internals and Shadekin visuals
 - type: entity
   parent: OrganBase
   id: OrganShadekin
@@ -62,13 +62,13 @@
   parent: [ OrganBaseFootRight, OrganShadekinExternal ]
   id: OrganShadekinFootRight
 
-# Unique Shadekin organs
+# Internals use the working human organ chain, with Shadekin-specific visuals layered on top where needed.
 - type: entity
-  parent: [ OrganBaseBrain, OrganShadekin ]
+  parent: OrganHumanBrain
   id: OrganShadekinBrain
 
 - type: entity
-  parent: [ OrganBaseEyes, OrganShadekin ]
+  parent: OrganHumanEyes
   id: OrganShadekinEyes
   components:
   - type: VisualOrganMarkings
@@ -78,23 +78,23 @@
       group: Shadekin
 
 - type: entity
-  parent: [ OrganBaseLungs, OrganShadekin ]
+  parent: OrganHumanLungs
   id: OrganShadekinLungs
 
 - type: entity
-  parent: [ OrganBaseHeart, OrganShadekin ]
+  parent: OrganHumanHeart
   id: OrganShadekinHeart
 
 - type: entity
-  parent: [ OrganBaseStomach, OrganShadekin ]
+  parent: OrganHumanStomach
   id: OrganShadekinStomach
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganShadekin ]
+  parent: OrganHumanLiver
   id: OrganShadekinLiver
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganShadekin ]
+  parent: OrganHumanKidneys
   id: OrganShadekinKidneys
 
 # Shadekin-specific core organ (unique to Shadekin)

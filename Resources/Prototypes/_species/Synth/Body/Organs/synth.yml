@@ -65,7 +65,8 @@
   components:
   - type: Organ
     slotId: eyes
-  # Eyes component removed: no C# type
+    category: Eyes
+  - type: Eyes
   - type: Sprite
     sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_camera_gimbal
@@ -104,7 +105,8 @@
   components:
   - type: Organ
     slotId: ears
-  # Ears component removed: no C# type
+    category: Ears
+  - type: Ears
   - type: Sprite
     sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_audio_pack
@@ -150,7 +152,8 @@
   components:
   - type: Organ
     slotId: heart
-  # Heart component removed: no C# type
+    category: Heart
+  - type: Heart
   - type: Sprite
     sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_heart
@@ -206,7 +209,8 @@
   components:
   - type: Organ
     slotId: liver
-  # Liver component removed: no C# type
+    category: Liver
+  - type: Liver
   - type: Sprite
     sprite: _species/Synth/Mobs/Species/organs.rsi
     state: synth_liver

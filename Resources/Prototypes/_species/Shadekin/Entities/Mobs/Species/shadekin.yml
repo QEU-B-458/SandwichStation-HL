@@ -36,7 +36,10 @@
   components:
   - type: Sprite
     scale: 0.9, 0.9
+  - type: Actions
   - type: Shadekin
+  - type: NullPhase
+  - type: NullSpace
   - type: Barotrauma
     damage:
       types:

@@ -269,6 +269,7 @@
   - type: GibbableOrgan
   - type: Organ
     category: Eyes
+  - type: Eyes
   - type: Sprite
     layers:
     - state: eyeball-l
@@ -318,6 +319,7 @@
   - type: GibbableOrgan
   - type: Organ
     category: Ears
+  - type: Ears
   - type: Sprite
     layers:
     - state: ears
@@ -355,6 +357,7 @@
   - type: GibbableOrgan
   - type: Organ
     category: Heart
+  - type: Heart
   - type: Sprite
     layers:
     - state: heart-on
@@ -394,6 +397,7 @@
   - type: GibbableOrgan
   - type: Organ
     category: Liver
+  - type: Liver
   - type: Sprite
     layers:
     - state: liver

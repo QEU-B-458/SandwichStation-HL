@@ -42,6 +42,9 @@
 - type: Tag
   id: ArtifactFragment # Storage whitelist: OreBag. CargoBounty: BountyArtifactFragment. ConstructionGraph: Artifact
 
+- type: Tag
+  id: Avali # Species tag used by Avali mob prototypes and species-specific content checks.
+
 ## B ##
 
 - type: Tag
@@ -1587,3 +1590,6 @@
 ## Y ##
 ## Z ##
 # ALPHABETICAL
+
+- type: Tag
+  id: Felionoid

@@ -1,8 +1,21 @@
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+
 namespace Content.Shared._species.Shadekin;
 
 /// <summary>
-/// Marker component for entities that have night vision active.
-/// Added/removed by the Shadekin system based on light exposure.
+/// Networked Shadekin night-vision state.
+/// Kept species-local so the rest of the Shadekin feature set can stay grouped together.
 /// </summary>
-[RegisterComponent]
-public sealed partial class NightVisionComponent : Component;
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+public sealed partial class NightVisionComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public bool Active = true;
+
+    [DataField, AutoNetworkedField]
+    public float Strength = 1f;
+
+    [DataField]
+    public EntProtoId EffectPrototype = "EffectNightVision";
+}

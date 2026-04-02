@@ -65,6 +65,36 @@
     event: !type:ScreamActionEvent
 
 - type: entity
+  parent: BaseAction
+  id: ActionChitzite
+  name: Cough Up Chitzite
+  description: Purge the excess radiation build-up from your body by expelling it as a mass of toxic material.
+  components:
+  - type: LimitedCharges
+    maxCharges: 1
+  - type: Action
+    icon:
+      sprite: _species/Chitinid/Objects/Specific/Species/chitinid.rsi
+      state: chitzite
+    useDelay: 300
+  - type: InstantAction
+    enabled: true
+    event: !type:ChitziteActionEvent
+
+- type: entity
+  parent: BaseMentalAction
+  id: ActionViewMoods
+  name: View Moods
+  description: Review the moods currently affecting you.
+  components:
+  - type: Action
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: laws
+  - type: InstantAction
+    event: !type:ToggleMoodsScreenEvent
+
+- type: entity
   parent: BaseMentalAction
   id: ActionTurnUndead
   name: Turn Undead
@@ -370,6 +400,20 @@
     useDelay: 1 # so u cant give yourself and observers eyestrain by rapidly spamming the action
   - type: InstantAction
     event: !type:ToggleEyesActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionResomiGravityJump
+  name: Leap
+  description: Use your short but agile legs to leap an equally short distance. Be careful not to bump into anything!
+  components:
+  - type: Action
+    useDelay: 10
+    icon:
+      sprite: Interface/Actions/jump.rsi
+      state: icon
+  - type: InstantAction
+    event: !type:GravityJumpEvent {}
 
 - type: entity
   parent: BaseToggleAction

@@ -14,6 +14,7 @@ using Content.Shared.Damage;
 using Content.Server.Chat.Managers;
 using Robust.Shared.Player;
 using Content.Shared.Chat;
+using Content.Shared.Flash;
 using Robust.Shared.Timing;
 
 namespace Content.Server._species.Shadekin;
@@ -55,6 +56,7 @@ public sealed class ShadekinSystem : EntitySystem
         SubscribeLocalEvent<ShadekinComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<ShadekinComponent, ShadekinAlertEvent>(OnShadekinAlert);
         SubscribeLocalEvent<ShadekinComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
+        SubscribeLocalEvent<ShadekinComponent, AfterFlashedEvent>(OnAfterFlashed);
     }
 
     private void OnInit(EntityUid uid, ShadekinComponent component, ComponentStartup args)
@@ -191,12 +193,38 @@ public sealed class ShadekinSystem : EntitySystem
         }
     }
 
-    private void ToggleNightVision(EntityUid uid, float state)
+    private float GetExposureSeverityFloat(float lightExposure)
     {
-        if (state > 0)
+        if (lightExposure <= 0.8f)
+            return lightExposure / 0.8f;
+
+        if (lightExposure <= 5f)
+            return 1f + ((lightExposure - 0.8f) / (5f - 0.8f));
+
+        if (lightExposure <= 10f)
+            return 2f + ((lightExposure - 5f) / 5f);
+
+        if (lightExposure <= 15f)
+            return 3f + ((lightExposure - 10f) / 5f);
+
+        return 4f;
+    }
+
+    private void ToggleNightVision(EntityUid uid, float lightExposure)
+    {
+        var severity = GetExposureSeverityFloat(lightExposure);
+        var strength = Math.Clamp(1f - (severity / 4f), 0f, 1f);
+
+        if (strength <= 0f)
+        {
             RemComp<NightVisionComponent>(uid);
-        else
-            EnsureComp<NightVisionComponent>(uid);
+            return;
+        }
+
+        var nightVision = EnsureComp<NightVisionComponent>(uid);
+        nightVision.Active = true;
+        nightVision.Strength = strength;
+        Dirty(uid, nightVision);
     }
 
     private void ApplyLightDamage(EntityUid uid, float state)
@@ -221,6 +249,11 @@ public sealed class ShadekinSystem : EntitySystem
         args.ModifySpeed(1f, sprintDif);
     }
 
+    private void OnAfterFlashed(EntityUid uid, ShadekinComponent component, ref AfterFlashedEvent args)
+    {
+        component.FlashExposureUntil = _timing.CurTime + component.FlashExposureDuration;
+    }
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -238,6 +271,9 @@ public sealed class ShadekinSystem : EntitySystem
             if (!_container.IsEntityInContainer(uid))
                 lightExposure = GetLightExposure(uid);
 
+            if (_timing.CurTime < component.FlashExposureUntil)
+                lightExposure = Math.Max(lightExposure, component.FlashExposureBonus);
+
             if (lightExposure >= 15f)
                 component.LightExposure = 4;
             else if (lightExposure >= 10f)
@@ -250,7 +286,7 @@ public sealed class ShadekinSystem : EntitySystem
                 component.LightExposure = 0;
 
             SetPassiveBuff(uid, component.LightExposure);
-            ToggleNightVision(uid, component.LightExposure);
+            ToggleNightVision(uid, lightExposure);
             ApplyLightDamage(uid, component.LightExposure);
             _speed.RefreshMovementSpeedModifiers(uid);
 

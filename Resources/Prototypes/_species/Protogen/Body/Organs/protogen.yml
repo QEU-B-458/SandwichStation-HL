@@ -85,7 +85,8 @@
   components:
   - type: Organ # Shitmed Change
     slotId: eyes # Shitmed Change
-  # Eyes component removed: no C# type
+    category: Eyes
+  - type: Eyes
   - type: Sprite
     sprite: _species/Protogen/Mobs/Species/Protogen/organs.rsi
     layers:
@@ -123,10 +124,12 @@
   name: ears
   description: "Lets a Protogen process audio. And listen to their favorite techno hits."
   components:
+  - type: Organ
+    category: Ears
   - type: Sprite
     sprite: _species/Protogen/Mobs/Species/Protogen/organs.rsi
     state: ears
-  # Ears component removed: no C# type
+  - type: Ears
 
 - type: entity
   id: OrganProtogenLungs
@@ -174,9 +177,10 @@
   name: heart
   description: "Even the most stone-cold, technology-based heart was alive once."
   components:
-  # Heart component removed: no C# type
   - type: Organ # Shitmed Change
     slotId: heart # Shitmed Change
+    category: Heart
+  - type: Heart
   - type: Sprite
     sprite: _species/Protogen/Mobs/Species/Protogen/organs.rsi
     state: heart-on
@@ -236,9 +240,10 @@
   name: liver
   description: "Pairing suggestion: fermented RAM sticks and CPU drives."
   components:
-  # Liver component removed: no C# type
   - type: Organ # Shitmed Change
     slotId: liver # Shitmed Change
+    category: Liver
+  - type: Liver
   - type: Sprite
     sprite: _species/Protogen/Mobs/Species/Protogen/organs.rsi
     state: liver

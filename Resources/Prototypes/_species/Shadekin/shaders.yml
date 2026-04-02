@@ -1,0 +1,13 @@
+- type: shader
+  id: NullSpaceShader
+  kind: source
+  path: "/Textures/_species/Shadekin/Shaders/nullspace.swsl"
+
+- type: shader
+  id: ModernNightVisionShader
+  kind: source
+  path: "/Textures/_species/Shadekin/Shaders/night.swsl"
+  params:
+    NightVisionBoost: 2.0
+    NightVisionThreshold: 0.3
+    BlueTintIntensity: 0.6
