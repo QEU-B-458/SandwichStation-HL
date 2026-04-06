@@ -1,0 +1,111 @@
+# Sheleg sprite layer definitions.
+# Sheleg have their own parts RSI.
+
+- type: humanoidBaseSprite
+  id: ShelegChest
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegHead
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegLArm
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegRArm
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegLHand
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegRHand
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegLLeg
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegRLeg
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegLFoot
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegRFoot
+  baseSprite:
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShelegLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ShelegLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ShelegLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ShelegLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ShelegLayerEyes
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: ShelegSprites
+  sprites:
+    Chest: ShelegChest
+    Head: ShelegHead
+    LArm: ShelegLArm
+    RArm: ShelegRArm
+    LHand: ShelegLHand
+    RHand: ShelegRHand
+    LLeg: ShelegLLeg
+    RLeg: ShelegRLeg
+    LFoot: ShelegLFoot
+    RFoot: ShelegRFoot
+    Snout: ShelegLayerSnout
+    HeadTop: ShelegLayerHeadTop
+    Hair: ShelegLayerHair
+    FacialHair: ShelegLayerFacialHair
+    Eyes: ShelegLayerEyes

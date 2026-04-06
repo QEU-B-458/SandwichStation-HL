@@ -1,0 +1,115 @@
+# Feroxi sprite layer definitions.
+
+- type: humanoidBaseSprite
+  id: FeroxiChest
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiHead
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiLArm
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiRArm
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiLHand
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiRHand
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiLLeg
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiRLeg
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiLFoot
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiRFoot
+  baseSprite:
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FeroxiLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FeroxiLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FeroxiLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FeroxiLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FeroxiLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FeroxiLayerEyes
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: FeroxiSprites
+  sprites:
+    Chest: FeroxiChest
+    Head: FeroxiHead
+    LArm: FeroxiLArm
+    RArm: FeroxiRArm
+    LHand: FeroxiLHand
+    RHand: FeroxiRHand
+    LLeg: FeroxiLLeg
+    RLeg: FeroxiRLeg
+    LFoot: FeroxiLFoot
+    RFoot: FeroxiRFoot
+    Tail: FeroxiLayerTail
+    HeadTop: FeroxiLayerHeadTop
+    Snout: FeroxiLayerSnout
+    Hair: FeroxiLayerHair
+    FacialHair: FeroxiLayerFacialHair
+    Eyes: FeroxiLayerEyes

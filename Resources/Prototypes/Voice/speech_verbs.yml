@@ -190,3 +190,27 @@
   - chat-speech-verb-wawa-2
   - chat-speech-verb-wawa-3
   - chat-speech-verb-wawa-4
+
+- type: speechVerb
+  id: Sheleg
+  name: chat-speech-verb-name-sheleg
+  speechVerbStrings:
+  - chat-speech-verb-sheleg-1
+  - chat-speech-verb-sheleg-2
+  - chat-speech-verb-sheleg-3
+
+- type: speechVerb
+  id: Rodentia
+  name: chat-speech-verb-name-rodentia
+  speechVerbStrings:
+  - chat-speech-verb-rodentia-1
+  - chat-speech-verb-rodentia-2
+  - chat-speech-verb-rodentia-3
+
+- type: speechVerb
+  id: Skrell
+  name: chat-speech-verb-name-skrell
+  speechVerbStrings:
+  - chat-speech-verb-skrell-1
+  - chat-speech-verb-skrell-2
+  - chat-speech-verb-skrell-3

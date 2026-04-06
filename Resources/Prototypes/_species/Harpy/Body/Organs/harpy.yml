@@ -1,9 +1,0 @@
-# Harpy-specific lungs with custom avian sprite
-- type: entity
-  parent: [ OrganBaseLungs, OrganHumanMetabolizer ]
-  id: OrganHarpyLungs
-  name: lungs
-  description: "An advanced pair of avian lungs. Filters oxygen by way of moving air constantly through air sacs."
-  components:
-  - type: Sprite
-    sprite: _species/Harpy/Mobs/Species/organs.rsi

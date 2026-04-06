@@ -1,0 +1,8 @@
+- type: typingIndicator
+  id: kitsune
+  sprite:
+    sprite: _species/Kitsune/Effects/speech.rsi
+    state: kitsune0
+  typingState: kitsune1
+  idleState: kitsune0
+  linkedEntity: MobKitsune

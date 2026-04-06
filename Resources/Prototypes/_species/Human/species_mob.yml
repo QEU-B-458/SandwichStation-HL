@@ -1,0 +1,30 @@
+# Human appearance entity
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceHuman
+  name: human appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: HumanoidProfile
+    species: Human
+
+# Human mob entity
+- type: entity
+  parent:
+  - AppearanceHuman
+  - BaseSpeciesMobOrganic
+  id: MobHuman
+  name: Urist McHands
+  components:
+  - type: Body
+    prototype: Human
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5

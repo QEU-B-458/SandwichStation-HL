@@ -1,0 +1,6 @@
+# Moth typing indicator
+- type: typingIndicator
+  id: moth
+  typingState: moth0
+  idleState: moth3
+  offset: 0, 0.125

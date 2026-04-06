@@ -1,0 +1,175 @@
+# Moth body prototype
+- type: body
+  id: Moth
+  name: "moth"
+  root: torso
+  slots:
+    head:
+      part: HeadMoth
+      connections:
+      - torso
+      organs:
+        brain: OrganMothBrain
+        eyes: OrganMothEyes
+        tongue: OrganMothTongue
+        ears: OrganMothEars
+    torso:
+      part: TorsoMoth
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganMothHeart
+        lungs: OrganMothLungs
+        stomach: OrganMothStomach
+        liver: OrganMothLiver
+        kidneys: OrganMothKidneys
+        appendix: OrganMothAppendix
+    right arm:
+      part: RightArmMoth
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmMoth
+      connections:
+      - left hand
+    right hand:
+      part: RightHandMoth
+    left hand:
+      part: LeftHandMoth
+    right leg:
+      part: RightLegMoth
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegMoth
+      connections:
+      - left foot
+    right foot:
+      part: RightFootMoth
+    left foot:
+      part: LeftFootMoth
+
+# Moth organ abstract chain
+- type: entity
+  parent: OrganBase
+  id: OrganMoth
+  abstract: true
+  suffix: Moth
+
+- type: entity
+  id: OrganMothMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Moth ]
+
+- type: entity
+  parent: OrganMoth
+  id: OrganMothInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  id: OrganMothVisual
+  abstract: true
+
+- type: entity
+  parent: [ OrganMoth, OrganMothVisual ]
+  id: OrganMothExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganMothExternal ]
+  id: OrganMothTorso
+
+- type: entity
+  parent: [ OrganBaseHead, OrganMothExternal ]
+  id: OrganMothHead
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganMothExternal ]
+  id: OrganMothArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganMothExternal ]
+  id: OrganMothArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganMothExternal ]
+  id: OrganMothHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganMothExternal ]
+  id: OrganMothHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganMothExternal ]
+  id: OrganMothLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganMothExternal ]
+  id: OrganMothLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganMothExternal ]
+  id: OrganMothFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganMothExternal ]
+  id: OrganMothFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganMothInternal ]
+  id: OrganMothBrain
+
+- type: entity
+  parent: [ OrganMothVisual, OrganBaseEyes, OrganMothInternal ]
+  id: OrganMothEyes
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganMothInternal ]
+  id: OrganMothTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganMothInternal ]
+  id: OrganMothAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganMothInternal ]
+  id: OrganMothEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganMothInternal, OrganMothMetabolizer ]
+  id: OrganMothLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganMothInternal, OrganAnimalMetabolizer ]
+  id: OrganMothHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganMothInternal, OrganMothMetabolizer ]
+  id: OrganMothStomach
+  components:
+  - type: Stomach
+    specialDigestible:
+      tags:
+      - ClothMade
+      - Paper
+      - Pill
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganMothInternal, OrganAnimalMetabolizer ]
+  id: OrganMothLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganMothInternal, OrganMothMetabolizer ]
+  id: OrganMothKidneys

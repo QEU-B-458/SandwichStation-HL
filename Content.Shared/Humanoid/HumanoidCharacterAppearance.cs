@@ -5,6 +5,7 @@ using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Log;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -124,29 +125,44 @@ public sealed partial class HumanoidCharacterAppearance : IEquatable<HumanoidCha
         if (proto.TryIndex(species, out var speciesProto))
         {
             var strategy = proto.Index(speciesProto.SkinColoration).Strategy;
-            var organs = markingManager.GetOrgans(species);
+            var organMarkingData = markingManager.GetMarkingData(species);
             skinColor = strategy.EnsureVerified(skinColor);
 
             foreach (var (organ, markings) in appearance.Markings)
             {
-                if (!organs.ContainsKey(organ))
+                if (!organMarkingData.ContainsKey(organ))
                     validatedMarkings.Remove(organ);
             }
 
-            foreach (var (organ, organProtoID) in organs)
+            foreach (var (organ, organData) in organMarkingData)
             {
-                if (!markingManager.TryGetMarkingData(organProtoID, out var organData))
-                {
-                    validatedMarkings.Remove(organ);
-                    continue;
-                }
-
                 var actualMarkings = appearance.Markings.GetValueOrDefault(organ)?.ShallowClone() ?? [];
 
                 markingManager.EnsureValidColors(actualMarkings);
-                markingManager.EnsureValidGroupAndSex(actualMarkings, organData.Value.Group, sex);
-                markingManager.EnsureValidLayers(actualMarkings, organData.Value.Layers);
-                markingManager.EnsureValidLimits(actualMarkings, organData.Value.Group, organData.Value.Layers, skinColor, eyeColor);
+                markingManager.EnsureValidGroupAndSex(actualMarkings, organData.Group, sex);
+                markingManager.EnsureValidLayers(actualMarkings, organData.Layers);
+                markingManager.EnsureValidLimits(actualMarkings, organData.Group, organData.Layers, skinColor, eyeColor);
+
+                var groupProto = proto.Index(organData.Group);
+                var requiredLayers = groupProto.Limits
+                    .Where(x => x.Value.Required && x.Key is HumanoidVisualLayers)
+                    .Select(x => (HumanoidVisualLayers) x.Key)
+                    .ToList();
+
+                if (requiredLayers.Count > 0)
+                {
+                    var requiredSummary = string.Join(", ",
+                        requiredLayers.Select(layer =>
+                        {
+                            var actual = actualMarkings.TryGetValue(layer, out var markingsForLayer) && markingsForLayer.Count > 0
+                                ? string.Join("|", markingsForLayer.Select(x => x.MarkingId.Id))
+                                : "<none>";
+                            return $"{layer}={actual}";
+                        }));
+
+                    Logger.InfoS("humanoid_appearance",
+                        $"Humanoid profile validation debug: species={species.Id}, organ={organ.Id}, group={organData.Group.Id}, required={requiredSummary}.");
+                }
 
                 validatedMarkings[organ] = actualMarkings;
             }

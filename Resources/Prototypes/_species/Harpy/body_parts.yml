@@ -1,0 +1,161 @@
+# Harpy body part entities.
+
+- type: entity
+  id: PartHarpy
+  parent: BasePart
+  name: "harpy body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 1.5
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 1.5
+      - ReagentId: Blood
+        Quantity: 5
+
+- type: entity
+  id: TorsoHarpy
+  name: "harpy torso"
+  parent: [PartHarpy, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: torso_m
+  - type: BodyPart
+    baseLayerId: HarpyChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: HeadHarpy
+  name: "harpy head"
+  parent: [PartHarpy, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: head_m
+  - type: BodyPart
+    baseLayerId: HarpyHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 2
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 2
+      - ReagentId: Blood
+        Quantity: 5
+
+- type: entity
+  id: LeftArmHarpy
+  name: "left harpy arm"
+  parent: [PartHarpy, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: HarpyLArm
+
+- type: entity
+  id: RightArmHarpy
+  name: "right harpy arm"
+  parent: [PartHarpy, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: HarpyRArm
+
+- type: entity
+  id: LeftHandHarpy
+  name: "left harpy hand"
+  parent: [PartHarpy, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: HarpyLHand
+
+- type: entity
+  id: RightHandHarpy
+  name: "right harpy hand"
+  parent: [PartHarpy, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: HarpyRHand
+
+- type: entity
+  id: LeftLegHarpy
+  name: "left harpy leg"
+  parent: [PartHarpy, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: HarpyLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegHarpy
+  name: "right harpy leg"
+  parent: [PartHarpy, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: HarpyRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootHarpy
+  name: "left harpy foot"
+  parent: [PartHarpy, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: HarpyLFoot
+
+- type: entity
+  id: RightFootHarpy
+  name: "right harpy foot"
+  parent: [PartHarpy, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: HarpyRFoot

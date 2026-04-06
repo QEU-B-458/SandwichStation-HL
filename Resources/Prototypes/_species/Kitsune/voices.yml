@@ -1,0 +1,23 @@
+- type: emoteSounds
+  id: MaleKitsune
+  sounds:
+    Laugh:
+      collection: KitsuneSqueal
+    Scream:
+      collection: KitsuneScream
+    Howl:
+      collection: KitsuneGrowl
+    Yip:
+      collection: KitsuneSqueal
+
+- type: emoteSounds
+  id: FemaleKitsune
+  sounds:
+    Laugh:
+      collection: KitsuneSqueal
+    Scream:
+      collection: KitsuneScream
+    Howl:
+      collection: KitsuneGrowl
+    Yip:
+      collection: KitsuneSqueal

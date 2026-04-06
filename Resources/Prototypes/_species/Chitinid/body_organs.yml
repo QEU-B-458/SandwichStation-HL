@@ -1,3 +1,70 @@
+# Chitinid body prototype — defines the part tree and organ slots for this species.
+# Edit this file to change which organs Chitinids have and how many.
+- type: body
+  id: Chitinid
+  name: "chitinid"
+  root: torso
+  slots:
+    head:
+      part: HeadChitinid
+      connections:
+      - torso
+      organs:
+        brain: OrganChitinidBrain
+        eyes: OrganChitinidEyes
+    torso:
+      part: TorsoChitinid
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganAnimalHeart
+        lungs: OrganHumanLungs
+        stomach: OrganChitinidStomach
+        liver: OrganAnimalLiver
+        kidneys: OrganHumanKidneys
+    right arm:
+      part: RightArmChitinid
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmChitinid
+      connections:
+      - left hand
+    right hand:
+      part: RightHandChitinid
+    left hand:
+      part: LeftHandChitinid
+    right leg:
+      part: RightLegChitinid
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegChitinid
+      connections:
+      - left foot
+    right foot:
+      part: RightFootChitinid
+    left foot:
+      part: LeftFootChitinid
+
+- type: entity
+  id: OrganChitinidBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Chitinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganChitinidEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Chitinid
+  categories: [ HideSpawnMenu ]
+
 - type: entity
   id: OrganChitinidStomach
   parent: [OrganHumanStomach]

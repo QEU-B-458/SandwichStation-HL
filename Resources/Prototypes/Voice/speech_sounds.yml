@@ -1,4 +1,31 @@
 - type: speechSounds
+  id: Harpy
+  saySound:
+    path: /Audio/_species/Harpy/Voice/caw1.ogg
+  askSound:
+    path: /Audio/_species/Harpy/Voice/chirp1.ogg
+  exclaimSound:
+    path: /Audio/_species/Harpy/Voice/caw1.ogg
+
+- type: speechSounds
+  id: MaleAvali
+  saySound:
+    path: /Audio/_species/Avali/Voice/avali_1.ogg
+  askSound:
+    path: /Audio/_species/Avali/Voice/avali_1_ask.ogg
+  exclaimSound:
+    path: /Audio/_species/Avali/Voice/avali_1_exclaim.ogg
+
+- type: speechSounds
+  id: FemaleAvali
+  saySound:
+    path: /Audio/_species/Avali/Voice/avali_2.ogg
+  askSound:
+    path: /Audio/_species/Avali/Voice/avali_2_ask.ogg
+  exclaimSound:
+    path: /Audio/_species/Avali/Voice/avali_2_exclaim.ogg
+
+- type: speechSounds
   id: Bass
   saySound:
     path: /Audio/Voice/Talk/speak_4.ogg
@@ -195,3 +222,22 @@
     path: /Audio/Animals/wawa_question.ogg
   exclaimSound:
     path: /Audio/Animals/wawa_exclaim.ogg
+
+
+- type: speechSounds
+  id: UnisexResomi
+  saySound:
+    path: /Audio/_species/Resomi/Voice/resomi_chirp1.ogg
+  askSound:
+    path: /Audio/_species/Resomi/Voice/resomi_chirp2.ogg
+  exclaimSound:
+    path: /Audio/_species/Resomi/Voice/resomi_scree_1.ogg
+
+- type: speechSounds
+  id: Sheleg
+  saySound:
+    path: /Audio/_species/Sheleg/Talk/sheleg.ogg
+  askSound:
+    path: /Audio/_species/Sheleg/Talk/sheleg_ask.ogg
+  exclaimSound:
+    path: /Audio/_species/Sheleg/Talk/sheleg_exclaim.ogg

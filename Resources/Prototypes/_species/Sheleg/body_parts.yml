@@ -1,0 +1,155 @@
+# Sheleg body part entities. Uses Sheleg-specific parts RSI.
+
+- type: entity
+  id: PartSheleg
+  parent: BasePart
+  name: "sheleg body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Ice
+        Quantity: 5
+      - ReagentId: Cryoxadone
+        Quantity: 3
+
+- type: entity
+  id: TorsoSheleg
+  name: "sheleg torso"
+  parent: [PartSheleg, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: torso_m
+  - type: BodyPart
+    baseLayerId: ShelegChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Ice
+        Quantity: 15
+      - ReagentId: Cryoxadone
+        Quantity: 10
+
+- type: entity
+  id: HeadSheleg
+  name: "sheleg head"
+  parent: [PartSheleg, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: head_m
+  - type: BodyPart
+    baseLayerId: ShelegHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Ice
+        Quantity: 8
+      - ReagentId: Cryoxadone
+        Quantity: 5
+
+- type: entity
+  id: LeftArmSheleg
+  name: "left sheleg arm"
+  parent: [PartSheleg, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: ShelegLArm
+
+- type: entity
+  id: RightArmSheleg
+  name: "right sheleg arm"
+  parent: [PartSheleg, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: ShelegRArm
+
+- type: entity
+  id: LeftHandSheleg
+  name: "left sheleg hand"
+  parent: [PartSheleg, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: ShelegLHand
+
+- type: entity
+  id: RightHandSheleg
+  name: "right sheleg hand"
+  parent: [PartSheleg, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: ShelegRHand
+
+- type: entity
+  id: LeftLegSheleg
+  name: "left sheleg leg"
+  parent: [PartSheleg, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: ShelegLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegSheleg
+  name: "right sheleg leg"
+  parent: [PartSheleg, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: ShelegRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootSheleg
+  name: "left sheleg foot"
+  parent: [PartSheleg, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: ShelegLFoot
+
+- type: entity
+  id: RightFootSheleg
+  name: "right sheleg foot"
+  parent: [PartSheleg, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: ShelegRFoot

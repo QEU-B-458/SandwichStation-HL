@@ -1,0 +1,83 @@
+# Dwarf body prototype — same parts as Human, custom stomach/liver/heart
+- type: body
+  id: Dwarf
+  name: "dwarf"
+  root: torso
+  slots:
+    head:
+      part: HeadDwarf
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+        eyes: OrganHumanEyes
+        tongue: OrganHumanTongue
+        ears: OrganHumanEars
+    torso:
+      part: TorsoDwarf
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganDwarfHeart
+        lungs: OrganHumanLungs
+        stomach: OrganDwarfStomach
+        liver: OrganDwarfLiver
+        kidneys: OrganHumanKidneys
+        appendix: OrganHumanAppendix
+    right arm:
+      part: RightArmDwarf
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmDwarf
+      connections:
+      - left hand
+    right hand:
+      part: RightHandDwarf
+    left hand:
+      part: LeftHandDwarf
+    right leg:
+      part: RightLegDwarf
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegDwarf
+      connections:
+      - left foot
+    right foot:
+      part: RightFootDwarf
+    left foot:
+      part: LeftFootDwarf
+
+# Dwarf organ abstract chain
+- type: entity
+  parent: OrganBase
+  id: OrganDwarf
+  abstract: true
+  suffix: Dwarf
+
+- type: entity
+  id: OrganDwarfMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Dwarf ]
+
+- type: entity
+  parent: [ OrganDwarfMetabolizer, OrganHumanStomach ]
+  id: OrganDwarfStomach
+  components:
+  - type: Metabolizer
+    maxReagents: 5
+
+- type: entity
+  parent: [ OrganDwarfMetabolizer, OrganHumanLiver ]
+  id: OrganDwarfLiver
+
+- type: entity
+  parent: [ OrganDwarfMetabolizer, OrganHumanHeart ]
+  id: OrganDwarfHeart

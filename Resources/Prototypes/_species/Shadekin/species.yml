@@ -8,6 +8,7 @@
   skinColoration: Hues
   defaultSkinTone: "#ffffff"
   eyeColoration: Shadekin
+  sprites: ShadekinSprites
   maleFirstNames: names_shadekin
   femaleFirstNames: names_shadekin
   naming: First

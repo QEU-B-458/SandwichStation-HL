@@ -6,6 +6,10 @@
   prototype: MobKitsune
   dollPrototype: AppearanceKitsune
   skinColoration: Hues
+  sprites: KitsuneSprites
+  maleFirstNames: names_kitsune_first_male
+  femaleFirstNames: names_kitsune_first_female
+  naming: First
 
 - type: markingsGroup
   parent: Undergarments

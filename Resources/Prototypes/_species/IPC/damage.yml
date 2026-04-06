@@ -1,0 +1,13 @@
+- type: damageModifierSet
+  id: IPC
+  coefficients:
+    Blunt: 0.7
+    Slash: 0.5
+    Piercing: 0.7
+    Shock: 1.5
+    Heat: 1.2
+    Cold: 0.5
+    Structural: 0.5
+  flatReductions:
+    Blunt: 5
+    Heat: 5

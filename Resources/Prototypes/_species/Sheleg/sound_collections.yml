@@ -1,0 +1,67 @@
+- type: soundCollection
+  id: ShelegScreams
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_scream_1.ogg
+  - /Audio/_species/Sheleg/Voice/sheleg_scream_2.ogg
+  - /Audio/_species/Sheleg/Voice/sheleg_scream_3.ogg
+  - /Audio/_species/Sheleg/Voice/sheleg_scream_4.ogg
+  - /Audio/_species/Sheleg/Voice/sheleg_scream_5.ogg
+
+- type: soundCollection
+  id: ShelegLaughs
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_laugh_1.ogg
+  - /Audio/_species/Sheleg/Voice/sheleg_laugh_2.ogg
+
+- type: soundCollection
+  id: ShelegCries
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_cry_1.ogg
+  - /Audio/_species/Sheleg/Voice/sheleg_cry_2.ogg
+  - /Audio/_species/Sheleg/Voice/sheleg_cry_3.ogg
+
+- type: soundCollection
+  id: ShelegGasps
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_gasp_1.ogg
+
+- type: soundCollection
+  id: ShelegDeathGasps
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_deathgasp_1.ogg
+
+- type: soundCollection
+  id: ShelegSneezes
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_sneeze_1.ogg
+
+- type: soundCollection
+  id: ShelegCoughs
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_cough_1.ogg
+
+- type: soundCollection
+  id: ShelegYawns
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_yawn_1.ogg
+
+- type: soundCollection
+  id: ShelegSighs
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_sigh_1.ogg
+
+- type: soundCollection
+  id: ShelegSnores
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_snore_1.ogg
+
+- type: soundCollection
+  id: ShelegHisses
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_hiss_1.ogg
+
+- type: soundCollection
+  id: ShelegWhistles
+  files:
+  - /Audio/_species/Sheleg/Voice/sheleg_whistle_1.ogg
+  - /Audio/_species/Sheleg/Voice/sheleg_whistle_2.ogg

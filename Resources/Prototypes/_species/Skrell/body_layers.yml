@@ -1,0 +1,109 @@
+# Skrell sprite layer definitions.
+# Skrell have their own parts RSI at _species/Skrell/Mobs/Skrells/parts.rsi.
+
+- type: humanoidBaseSprite
+  id: SkrellChest
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellHead
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellLArm
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellRArm
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellLHand
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellRHand
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellLLeg
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellRLeg
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellLFoot
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellRFoot
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SkrellLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: SkrellLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: SkrellLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: SkrellLayerEyes
+  baseSprite:
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: eyes
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: SkrellSprites
+  sprites:
+    Chest: SkrellChest
+    Head: SkrellHead
+    LArm: SkrellLArm
+    RArm: SkrellRArm
+    LHand: SkrellLHand
+    RHand: SkrellRHand
+    LLeg: SkrellLLeg
+    RLeg: SkrellRLeg
+    LFoot: SkrellLFoot
+    RFoot: SkrellRFoot
+    HeadTop: SkrellLayerHeadTop
+    Snout: SkrellLayerSnout
+    Tail: SkrellLayerTail
+    Eyes: SkrellLayerEyes

@@ -1,0 +1,9 @@
+- type: damageModifierSet
+  id: Oni
+  coefficients:
+    Blunt: 0.9
+    Slash: 0.95
+    Piercing: 0.85
+    Heat: 0.9
+    Cold: 1.1
+    Asphyxiation: 1.2

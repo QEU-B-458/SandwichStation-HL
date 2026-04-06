@@ -1,0 +1,9 @@
+- type: damageModifierSet
+  id: Resomi
+  coefficients:
+    Blunt: 0.9
+    Slash: 1.1
+    Piercing: 1.0
+    Heat: 1.2
+    Cold: 1.1
+    Radiation: 0.9

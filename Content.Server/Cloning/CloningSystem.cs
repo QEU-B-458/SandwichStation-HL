@@ -1,6 +1,6 @@
 using Content.Server.Humanoid;
 using Content.Shared.Administration.Logs;
-using Content.Shared.Body;
+using Content.Shared.Body.Systems;
 using Content.Shared.Cloning;
 using Content.Shared.Cloning.Events;
 using Content.Shared.Database;
@@ -36,7 +36,8 @@ public sealed partial class CloningSystem : SharedCloningSystem
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
     [Dependency] private readonly NameModifierSystem _nameMod = default!;
     [Dependency] private readonly Shared.StatusEffectNew.StatusEffectsSystem _statusEffects = default!; //TODO: This system has to support both the old and new status effect systems, until the old is able to be fully removed.
 
@@ -61,7 +62,12 @@ public sealed partial class CloningSystem : SharedCloningSystem
             return false; // cannot clone, for example due to the unrevivable trait
 
         clone = coords == null ? Spawn(speciesPrototype.Prototype) : Spawn(speciesPrototype.Prototype, coords.Value);
-        _visualBody.CopyAppearanceFrom(original, clone.Value);
+        if (_humanoidAppearance.GetCharacterProfile(original) is { } cloneProfile
+            && TryComp(clone.Value, out HumanoidAppearanceComponent? cloneAppearance))
+        {
+            _humanoidAppearance.ApplyProfileData(clone.Value, cloneProfile, true, cloneAppearance);
+            _body.RefreshBodyPartAppearances(clone.Value);
+        }
 
         CloneComponents(original, clone.Value, settings);
 

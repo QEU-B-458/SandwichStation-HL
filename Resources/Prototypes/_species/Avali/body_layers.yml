@@ -1,0 +1,125 @@
+# Avali sprite layer definitions.
+# humanoidBaseSprite: one entry per visual slot, referenced by BodyPart.baseLayerId.
+# speciesBaseSprites: maps slot names to the above IDs; referenced by species.yml sprites: field.
+
+- type: humanoidBaseSprite
+  id: AvaliChest
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliHead
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliLArm
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliRArm
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliLHand
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliRHand
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliLLeg
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliRLeg
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliLFoot
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliRFoot
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: AvaliLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: AvaliLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: AvaliLayerHeadSide
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: AvaliLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: AvaliLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: AvaliLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: AvaliLayerEyes
+  baseSprite:
+    sprite: _species/Avali/Mobs/Species/parts.rsi
+    state: eyes
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: AvaliSprites
+  sprites:
+    Chest: AvaliChest
+    Head: AvaliHead
+    LArm: AvaliLArm
+    RArm: AvaliRArm
+    LHand: AvaliLHand
+    RHand: AvaliRHand
+    LLeg: AvaliLLeg
+    RLeg: AvaliRLeg
+    LFoot: AvaliLFoot
+    RFoot: AvaliRFoot
+    Tail: AvaliLayerTail
+    HeadTop: AvaliLayerHeadTop
+    HeadSide: AvaliLayerHeadSide
+    Snout: AvaliLayerSnout
+    Hair: AvaliLayerHair
+    FacialHair: AvaliLayerFacialHair
+    Eyes: AvaliLayerEyes

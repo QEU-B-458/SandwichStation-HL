@@ -1,0 +1,127 @@
+# Rodentia body prototype — owns the full part + organ tree.
+
+- type: body
+  id: Rodentia
+  name: "rodentia"
+  root: torso
+  slots:
+    head:
+      part: HeadRodentia
+      connections:
+      - torso
+      organs:
+        brain: OrganRodentiaBrain
+        eyes: OrganRodentiaEyes
+        tongue: OrganRodentiaTongue
+        ears: OrganRodentiaEars
+    torso:
+      part: TorsoRodentia
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganRodentiaHeart
+        lungs: OrganRodentiaLungs
+        stomach: OrganRodentiaStomach
+        liver: OrganRodentiaLiver
+        kidneys: OrganRodentiaKidneys
+        appendix: OrganRodentiaAppendix
+    right arm:
+      part: RightArmRodentia
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmRodentia
+      connections:
+      - left hand
+    right hand:
+      part: RightHandRodentia
+    left hand:
+      part: LeftHandRodentia
+    right leg:
+      part: RightLegRodentia
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegRodentia
+      connections:
+      - left foot
+    right foot:
+      part: RightFootRodentia
+    left foot:
+      part: LeftFootRodentia
+
+# Species-specific organs
+
+- type: entity
+  id: OrganRodentiaBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganRodentiaEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganRodentiaTongue
+  parent: OrganHumanTongue
+  name: tongue
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganRodentiaEars
+  parent: OrganHumanEars
+  name: ears
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganRodentiaHeart
+  parent: OrganHumanHeart
+  name: heart
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganRodentiaLungs
+  parent: OrganHumanLungs
+  name: lungs
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganRodentiaStomach
+  parent: OrganHumanStomach
+  name: stomach
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganRodentiaLiver
+  parent: OrganHumanLiver
+  name: liver
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganRodentiaKidneys
+  parent: OrganHumanKidneys
+  name: kidneys
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganRodentiaAppendix
+  parent: OrganHumanAppendix
+  name: appendix
+  suffix: Rodentia
+  categories: [ HideSpawnMenu ]

@@ -1,0 +1,27 @@
+- type: emoteSounds
+  id: UnisexSheleg
+  sounds:
+    Scream:
+      collection: ShelegScreams
+    Laugh:
+      collection: ShelegLaughs
+    Crying:
+      collection: ShelegCries
+    Gasp:
+      collection: ShelegGasps
+    DefaultDeathgasp:
+      collection: ShelegDeathGasps
+    Sneeze:
+      collection: ShelegSneezes
+    Cough:
+      collection: ShelegCoughs
+    Yawn:
+      collection: ShelegYawns
+    Sigh:
+      collection: ShelegSighs
+    Snore:
+      collection: ShelegSnores
+    Hiss:
+      collection: ShelegHisses
+    Whistle:
+      collection: ShelegWhistles

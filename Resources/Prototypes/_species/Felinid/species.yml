@@ -1,0 +1,100 @@
+# Felinid species - cat-like humanoids using Human body and sprites
+- type: species
+  id: Felinid
+  name: species-name-felinid
+  roundStart: true
+  prototype: MobFelinid
+  dollPrototype: AppearanceFelinid
+  sprites: MobFelinidSprites
+  skinColoration: HumanToned
+  markingData:
+    Torso:
+      group: Felinid
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Felinid
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Felinid
+      layers: [LArm]
+    ArmRight:
+      group: Felinid
+      layers: [RArm]
+    HandLeft:
+      group: Felinid
+      layers: [LHand]
+    HandRight:
+      group: Felinid
+      layers: [RHand]
+    LegLeft:
+      group: Felinid
+      layers: [LLeg]
+    LegRight:
+      group: Felinid
+      layers: [RLeg]
+    FootLeft:
+      group: Felinid
+      layers: [LFoot]
+    FootRight:
+      group: Felinid
+      layers: [RFoot]
+
+- type: markingsGroup
+  parent: Undergarments
+  id: Felinid
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ FelinidTailBasic ]
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ FelinidEarsBasic ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 4
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false

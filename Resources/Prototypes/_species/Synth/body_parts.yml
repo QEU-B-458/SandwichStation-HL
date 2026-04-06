@@ -1,0 +1,150 @@
+# Synth body part entities.
+# Each part is referenced by ID from body_organs.yml (the body prototype).
+
+- type: entity
+  id: PartSynth
+  parent: BasePart
+  name: "synth body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+  - type: StaticPrice
+    price: 30
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Nanites
+        Quantity: 5
+
+- type: entity
+  id: TorsoSynth
+  name: "synth torso"
+  parent: [PartSynth, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: torso_m
+  - type: BodyPart
+    baseLayerId: SynthChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Nanites
+        Quantity: 15
+
+- type: entity
+  id: HeadSynth
+  name: "synth head"
+  parent: [PartSynth, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: head_m
+  - type: BodyPart
+    baseLayerId: SynthHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Nanites
+        Quantity: 8
+
+- type: entity
+  id: LeftArmSynth
+  name: "left synth arm"
+  parent: [PartSynth, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: SynthLArm
+
+- type: entity
+  id: RightArmSynth
+  name: "right synth arm"
+  parent: [PartSynth, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: SynthRArm
+
+- type: entity
+  id: LeftHandSynth
+  name: "left synth hand"
+  parent: [PartSynth, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: SynthLHand
+
+- type: entity
+  id: RightHandSynth
+  name: "right synth hand"
+  parent: [PartSynth, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: SynthRHand
+
+- type: entity
+  id: LeftLegSynth
+  name: "left synth leg"
+  parent: [PartSynth, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: SynthLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegSynth
+  name: "right synth leg"
+  parent: [PartSynth, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: SynthRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootSynth
+  name: "left synth foot"
+  parent: [PartSynth, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: SynthLFoot
+
+- type: entity
+  id: RightFootSynth
+  name: "right synth foot"
+  parent: [PartSynth, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: SynthRFoot

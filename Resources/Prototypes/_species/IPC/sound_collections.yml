@@ -1,0 +1,28 @@
+- type: soundCollection
+  id: IPCBeeps
+  files:
+  - /Audio/_species/IPC/Voice/beep_500.ogg
+  - /Audio/_species/IPC/Voice/beep_2000.ogg
+
+- type: soundCollection
+  id: IPCWhirrs
+  files:
+  - /Audio/_species/IPC/Voice/whirr1.ogg
+  - /Audio/_species/IPC/Voice/whirr2.ogg
+  - /Audio/_species/IPC/Voice/whirr3.ogg
+
+- type: soundCollection
+  id: IPCScreams
+  files:
+  - /Audio/_species/IPC/Voice/robot-scream.ogg
+  - /Audio/_species/IPC/Voice/wilhelm.ogg
+
+- type: soundCollection
+  id: IPCLaughs
+  files:
+  - /Audio/_species/IPC/Voice/robot-laugh_3.ogg
+
+- type: soundCollection
+  id: IPCCries
+  files:
+  - /Audio/_species/IPC/Voice/cry_robot_1.ogg

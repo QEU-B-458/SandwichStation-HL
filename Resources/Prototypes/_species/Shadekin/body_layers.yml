@@ -1,0 +1,109 @@
+# Shadekin sprite layer definitions.
+# Shadekin have their own parts RSI with an eyes state.
+
+- type: humanoidBaseSprite
+  id: ShadekinChest
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinHead
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinLArm
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinRArm
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinLHand
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinRHand
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinLLeg
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinRLeg
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinLFoot
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinRFoot
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ShadekinLayerEyes
+  baseSprite:
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: eyes
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ShadekinLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ShadekinLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ShadekinLayerHair
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: ShadekinSprites
+  sprites:
+    Chest: ShadekinChest
+    Head: ShadekinHead
+    LArm: ShadekinLArm
+    RArm: ShadekinRArm
+    LHand: ShadekinLHand
+    RHand: ShadekinRHand
+    LLeg: ShadekinLLeg
+    RLeg: ShadekinRLeg
+    LFoot: ShadekinLFoot
+    RFoot: ShadekinRFoot
+    Eyes: ShadekinLayerEyes
+    HeadTop: ShadekinLayerHeadTop
+    Tail: ShadekinLayerTail
+    Hair: ShadekinLayerHair

@@ -1,0 +1,49 @@
+# Dwarf appearance entity — human appearance scaled down
+- type: entity
+  parent: AppearanceHuman
+  id: AppearanceDwarf
+  name: dwarf appearance
+  components:
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: HumanoidProfile
+    species: Dwarf
+  - type: ScaleVisuals
+    scale: 1, 0.8
+
+# Dwarf mob entity — stocky, scottish-accented, Dwarf metabolizer
+- type: entity
+  parent:
+  - AppearanceDwarf
+  - MobHuman
+  id: MobDwarf
+  name: Urist McHands the Dwarf
+  components:
+  - type: Body
+    prototype: Dwarf
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 120
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Vocal
+    sounds:
+      Male: UnisexDwarf
+      Female: FemaleDwarf
+      Unsexed: UnisexDwarf
+  - type: ReplacementAccent
+    accent: scottish
+  - type: Speech
+    speechSounds: Bass

@@ -10,28 +10,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: InitialBody
-    organs:
-      Torso: OrganGingerbreadTorso
-      Head: OrganGingerbreadHead
-      ArmLeft: OrganGingerbreadArmLeft
-      ArmRight: OrganGingerbreadArmRight
-      HandRight: OrganGingerbreadHandRight
-      HandLeft: OrganGingerbreadHandLeft
-      LegLeft: OrganGingerbreadLegLeft
-      LegRight: OrganGingerbreadLegRight
-      FootLeft: OrganGingerbreadFootLeft
-      FootRight: OrganGingerbreadFootRight
-      Brain: OrganHumanBrain
-      Eyes: OrganHumanEyes
-      Tongue: OrganHumanTongue
-      Appendix: OrganHumanAppendix
-      Ears: OrganHumanEars
-      Lungs: OrganHumanLungs
-      Heart: OrganHumanHeart
-      Stomach: OrganHumanStomach
-      Liver: OrganHumanLiver
-      Kidneys: OrganHumanKidneys
   - type: HumanoidProfile
     species: Gingerbread
 
@@ -90,13 +68,6 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Gingerbread/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Gingerbread/parts.rsi
-  - type: VisualOrganMarkings
-    markingData:
-      group: None
-
 - type: entity
   parent: [ OrganBaseTorso, OrganGingerbreadExternal ]
   id: OrganGingerbreadTorso

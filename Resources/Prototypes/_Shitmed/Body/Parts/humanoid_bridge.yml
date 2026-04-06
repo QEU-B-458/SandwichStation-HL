@@ -1,0 +1,222 @@
+- type: entity
+  id: PartSlime
+  parent: [BaseItem, BasePart]
+  name: "slime body part"
+  abstract: true
+
+- type: entity
+  id: TorsoSlime
+  name: "slime torso"
+  parent: [PartSlime, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: torso_m
+
+- type: entity
+  id: HeadSlime
+  name: "slime head"
+  parent: [PartSlime, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: head
+
+- type: entity
+  id: LeftArmSlime
+  name: "left slime arm"
+  parent: [PartSlime, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: l_arm
+
+- type: entity
+  id: RightArmSlime
+  name: "right slime arm"
+  parent: [PartSlime, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: r_arm
+
+- type: entity
+  id: LeftHandSlime
+  name: "left slime hand"
+  parent: [PartSlime, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: l_hand
+
+- type: entity
+  id: RightHandSlime
+  name: "right slime hand"
+  parent: [PartSlime, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: r_hand
+
+- type: entity
+  id: LeftLegSlime
+  name: "left slime leg"
+  parent: [PartSlime, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: l_leg
+
+- type: entity
+  id: RightLegSlime
+  name: "right slime leg"
+  parent: [PartSlime, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: r_leg
+
+- type: entity
+  id: LeftFootSlime
+  name: "left slime foot"
+  parent: [PartSlime, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: l_foot
+
+- type: entity
+  id: RightFootSlime
+  name: "right slime foot"
+  parent: [PartSlime, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+    state: r_foot
+
+- type: entity
+  id: PartSkeleton
+  parent: BaseItem
+  name: "skeleton body part"
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: OrganicPart
+  - type: BodyPart
+  - type: StaticPrice
+    price: 20
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  id: TorsoSkeleton
+  name: "skeleton torso"
+  parent: [PartSkeleton, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: torso_m
+
+- type: entity
+  id: HeadSkeleton
+  name: "skull"
+  parent: [PartSkeleton, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: skull_icon
+
+- type: entity
+  id: LeftArmSkeleton
+  name: "left skeleton arm"
+  parent: [PartSkeleton, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: l_arm
+
+- type: entity
+  id: RightArmSkeleton
+  name: "right skeleton arm"
+  parent: [PartSkeleton, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: r_arm
+
+- type: entity
+  id: LeftHandSkeleton
+  name: "left skeleton hand"
+  parent: [PartSkeleton, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: l_hand
+
+- type: entity
+  id: RightHandSkeleton
+  name: "right skeleton hand"
+  parent: [PartSkeleton, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: r_hand
+
+- type: entity
+  id: LeftLegSkeleton
+  name: "left skeleton leg"
+  parent: [PartSkeleton, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: l_leg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegSkeleton
+  name: "right skeleton leg"
+  parent: [PartSkeleton, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: r_leg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootSkeleton
+  name: "left skeleton foot"
+  parent: [PartSkeleton, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: l_foot
+
+- type: entity
+  id: RightFootSkeleton
+  name: "right skeleton foot"
+  parent: [PartSkeleton, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Skeleton/parts.rsi
+    state: r_foot

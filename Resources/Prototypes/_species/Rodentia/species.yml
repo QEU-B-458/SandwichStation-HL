@@ -1,0 +1,66 @@
+# Rodentia species - small rodent humanoids
+- type: species
+  id: Rodentia
+  name: Rodentia
+  roundStart: true
+  prototype: MobRodentia
+  dollPrototype: AppearanceRodentia
+  skinColoration: Hues
+  defaultSkinTone: "#747474"
+  sprites: RodentiaSprites
+  maleFirstNames: NamesRodentiaMale
+  femaleFirstNames: NamesRodentiaFemale
+  lastNames: NamesRodentiaLast
+  naming: FirstLast
+
+- type: markingsGroup
+  parent: Undergarments
+  id: Rodentia
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ RodentiaTailDefault ]
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ RodentiaHeadTopEarDefault ]
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false

@@ -1,0 +1,9 @@
+- type: damageModifierSet
+  id: Protogen
+  coefficients:
+    Blunt: 0.95
+    Slash: 1.0
+    Piercing: 0.9
+    Heat: 1.1
+    Cold: 0.85
+    Shock: 1.2

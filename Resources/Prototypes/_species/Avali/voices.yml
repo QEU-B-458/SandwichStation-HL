@@ -1,0 +1,83 @@
+- type: emoteSounds
+  id: UnisexAvali
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_species/Avali/Effects/avali_scream.ogg
+    Laugh:
+      path: /Audio/_species/Avali/Voice/avali_laugh.ogg
+    Bark:
+      collection: VulpkaninBarks
+    Hiss:
+      collection: FelionoidHisses
+    Purr:
+      collection: FelionoidPurrs
+    Growl:
+      collection: FelionoidGrowls
+    Trill:
+      collection: FelionoidTrills
+    Scree:
+      collection: ResomiScrees
+    Call:
+      collection: ResomiCalls
+    Squawk:
+      collection: ResomiSquawk
+    Whistle:
+      path: /Audio/Voice/Resomi/resomi_whistle.ogg
+    Chirp:
+      collection: ResomiChirp
+
+- type: emoteSounds
+  parent: UnisexAvali
+  id: MaleAvali
+  params:
+    variation: 0.125
+  sounds:
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    Crying:
+      path: /Audio/_species/Avali/Voice/avali_cry.ogg
+
+- type: emoteSounds
+  parent: UnisexAvali
+  id: FemaleAvali
+  params:
+    variation: 0.125
+  sounds:
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: FemaleSigh
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    Crying:
+      path: /Audio/_species/Avali/Voice/avali_cry.ogg

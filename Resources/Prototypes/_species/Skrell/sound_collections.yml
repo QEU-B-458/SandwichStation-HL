@@ -1,0 +1,12 @@
+- type: soundCollection
+  id: RMCSkrellTrill
+  files:
+  - /Audio/_species/Skrell/Skrell/trill1.ogg
+  - /Audio/_species/Skrell/Skrell/trill2.ogg
+
+- type: soundCollection
+  id: RMCSkrellWarble
+  files:
+  - /Audio/_species/Skrell/Skrell/warble1.ogg
+  - /Audio/_species/Skrell/Skrell/warble2.ogg
+  - /Audio/_species/Skrell/Skrell/warble3.ogg

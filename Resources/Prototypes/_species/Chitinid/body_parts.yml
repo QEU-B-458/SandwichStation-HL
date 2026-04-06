@@ -1,79 +1,156 @@
-# Chitinid external organ entities
-- type: entity
-  parent: OrganBase
-  id: OrganChitinid
-  abstract: true
-  suffix: chitinid
+# Chitinid body part entities.
+# Each part is referenced by ID from body_organs.yml (the body prototype).
 
 - type: entity
-  parent: OrganChitinid
-  id: OrganChitinidExternal
+  id: PartChitinid
+  parent: BasePart
+  name: "chitinid body part"
   abstract: true
   components:
   - type: Sprite
     sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
-  - type: VisualOrganMarkings
-    markingData:
-      group: Chitinid
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: InsectBlood
+        Quantity: 10
 
-# Torso
 - type: entity
-  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganChitinidExternal ]
-  id: OrganChitinidTorso
+  id: TorsoChitinid
+  name: "chitinid torso"
+  parent: [PartChitinid, BaseTorso]
+  categories: [ HideSpawnMenu ]
   components:
-  - type: VisualOrganMarkings
-    markingData:
-      layers:
-      - Chest
-      - Tail
-      - Overlay
-      - TailOverlay
-      - UndergarmentTop
-      - UndergarmentBottom
-      - Special
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: torso_m
+  - type: BodyPart
+    baseLayerId: ChitinidChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: InsectBlood
+        Quantity: 20
 
-# Head
 - type: entity
-  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganChitinidExternal ]
-  id: OrganChitinidHead
+  id: HeadChitinid
+  name: "chitinid head"
+  parent: [PartChitinid, BaseHead]
+  categories: [ HideSpawnMenu ]
   components:
-  - type: VisualOrganMarkings
-    hideableLayers:
-    - enum.HumanoidVisualLayers.Hair
-    - enum.HumanoidVisualLayers.Snout
-
-# Limbs
-- type: entity
-  parent: [ OrganBaseArmLeft, OrganChitinidExternal ]
-  id: OrganChitinidArmLeft
-
-- type: entity
-  parent: [ OrganBaseArmRight, OrganChitinidExternal ]
-  id: OrganChitinidArmRight
-
-- type: entity
-  parent: [ OrganBaseHandLeft, OrganChitinidExternal ]
-  id: OrganChitinidHandLeft
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: head_m
+  - type: BodyPart
+    baseLayerId: ChitinidHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: InsectBlood
+        Quantity: 10
 
 - type: entity
-  parent: [ OrganBaseHandRight, OrganChitinidExternal ]
-  id: OrganChitinidHandRight
+  id: LeftArmChitinid
+  name: "left chitinid arm"
+  parent: [PartChitinid, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: ChitinidLArm
 
 - type: entity
-  parent: [ OrganBaseLegLeft, OrganChitinidExternal ]
-  id: OrganChitinidLegLeft
+  id: RightArmChitinid
+  name: "right chitinid arm"
+  parent: [PartChitinid, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: ChitinidRArm
 
 - type: entity
-  parent: [ OrganBaseLegRight, OrganChitinidExternal ]
-  id: OrganChitinidLegRight
+  id: LeftHandChitinid
+  name: "left chitinid hand"
+  parent: [PartChitinid, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: ChitinidLHand
 
 - type: entity
-  parent: [ OrganBaseFootLeft, OrganChitinidExternal ]
-  id: OrganChitinidFootLeft
+  id: RightHandChitinid
+  name: "right chitinid hand"
+  parent: [PartChitinid, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: ChitinidRHand
 
 - type: entity
-  parent: [ OrganBaseFootRight, OrganChitinidExternal ]
-  id: OrganChitinidFootRight
+  id: LeftLegChitinid
+  name: "left chitinid leg"
+  parent: [PartChitinid, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: ChitinidLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegChitinid
+  name: "right chitinid leg"
+  parent: [PartChitinid, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: ChitinidRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootChitinid
+  name: "left chitinid foot"
+  parent: [PartChitinid, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: ChitinidLFoot
+
+- type: entity
+  id: RightFootChitinid
+  name: "right chitinid foot"
+  parent: [PartChitinid, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Chitinid/Mobs/Species/Chitinid/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: ChitinidRFoot

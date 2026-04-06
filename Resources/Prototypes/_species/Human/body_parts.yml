@@ -1,0 +1,135 @@
+# Human body part entities.
+
+- type: entity
+  id: PartHuman
+  parent: BasePart
+  name: "human body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+# Sexed parts — no baseLayerId; runtime appends Male/Female suffix
+- type: entity
+  id: TorsoHuman
+  name: "human torso"
+  parent: [PartHuman, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: torso_m
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadHuman
+  name: "human head"
+  parent: [PartHuman, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: head_m
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+# Non-sexed parts — explicit baseLayerId
+- type: entity
+  id: LeftArmHuman
+  name: "left human arm"
+  parent: [PartHuman, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_arm
+
+- type: entity
+  id: RightArmHuman
+  name: "right human arm"
+  parent: [PartHuman, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_arm
+
+- type: entity
+  id: LeftHandHuman
+  name: "left human hand"
+  parent: [PartHuman, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_hand
+
+- type: entity
+  id: RightHandHuman
+  name: "right human hand"
+  parent: [PartHuman, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_hand
+
+- type: entity
+  id: LeftLegHuman
+  name: "left human leg"
+  parent: [PartHuman, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_leg
+
+- type: entity
+  id: RightLegHuman
+  name: "right human leg"
+  parent: [PartHuman, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_leg
+
+- type: entity
+  id: LeftFootHuman
+  name: "left human foot"
+  parent: [PartHuman, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_foot
+
+- type: entity
+  id: RightFootHuman
+  name: "right human foot"
+  parent: [PartHuman, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_foot

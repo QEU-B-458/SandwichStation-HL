@@ -1,5 +1,4 @@
 using Content.Server.Humanoid.Components;
-using Content.Shared.Body;
 using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
 
@@ -9,7 +8,6 @@ public sealed class RandomHumanoidAppearanceSystem : EntitySystem
 {
     [Dependency] private readonly HumanoidProfileSystem _humanoidProfile = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
 
     public override void Initialize()
     {
@@ -26,7 +24,6 @@ public sealed class RandomHumanoidAppearanceSystem : EntitySystem
 
         var profile = HumanoidCharacterProfile.RandomWithSpecies(humanoid.Species);
 
-        _visualBody.ApplyProfileTo(uid, profile);
         _humanoidProfile.ApplyProfileTo(uid, profile);
 
         if (component.RandomizeName)

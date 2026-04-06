@@ -1,87 +1,156 @@
-# SPDX-FileCopyrightText: 2025 ATDoop <bug@bug.bug>
-# SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 mkanke-real <mikekanke@gmail.com>
-# SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
-# Thaven external organ entities
-- type: entity
-  parent: OrganBase
-  id: OrganThaven
-  abstract: true
-  suffix: thaven
+# Thaven body part entities.
+# Each part is referenced by ID from body_organs.yml (the body prototype).
 
 - type: entity
-  parent: OrganThaven
-  id: OrganThavenExternal
+  id: PartThaven
+  parent: BasePart
+  name: "thaven body part"
   abstract: true
   components:
   - type: Sprite
     sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
-  - type: VisualOrganMarkings
-    markingData:
-      group: Thaven
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
 
-# Torso
 - type: entity
-  parent: [ OrganBaseTorso, OrganThavenExternal ]
-  id: OrganThavenTorso
+  id: TorsoThaven
+  name: "thaven torso"
+  parent: [PartThaven, BaseTorso]
+  categories: [ HideSpawnMenu ]
   components:
-  - type: VisualOrganMarkings
-    markingData:
-      layers:
-      - Chest
-      - Tail
-      - Overlay
-      - TailOverlay
-      - UndergarmentTop
-      - UndergarmentBottom
-      - Special
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: torso
+  - type: BodyPart
+    baseLayerId: ThavenChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
 
-# Head
 - type: entity
-  parent: [ OrganBaseHead, OrganThavenExternal ]
-  id: OrganThavenHead
+  id: HeadThaven
+  name: "thaven head"
+  parent: [PartThaven, BaseHead]
+  categories: [ HideSpawnMenu ]
   components:
-  - type: VisualOrganMarkings
-    hideableLayers:
-    - enum.HumanoidVisualLayers.Hair
-    - enum.HumanoidVisualLayers.Snout
-
-# Limbs
-- type: entity
-  parent: [ OrganBaseArmLeft, OrganThavenExternal ]
-  id: OrganThavenArmLeft
-
-- type: entity
-  parent: [ OrganBaseArmRight, OrganThavenExternal ]
-  id: OrganThavenArmRight
-
-- type: entity
-  parent: [ OrganBaseHandLeft, OrganThavenExternal ]
-  id: OrganThavenHandLeft
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: head
+  - type: BodyPart
+    baseLayerId: ThavenHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
 
 - type: entity
-  parent: [ OrganBaseHandRight, OrganThavenExternal ]
-  id: OrganThavenHandRight
+  id: LeftArmThaven
+  name: "left thaven arm"
+  parent: [PartThaven, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: ThavenLArm
 
 - type: entity
-  parent: [ OrganBaseLegLeft, OrganThavenExternal ]
-  id: OrganThavenLegLeft
+  id: RightArmThaven
+  name: "right thaven arm"
+  parent: [PartThaven, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: ThavenRArm
 
 - type: entity
-  parent: [ OrganBaseLegRight, OrganThavenExternal ]
-  id: OrganThavenLegRight
+  id: LeftHandThaven
+  name: "left thaven hand"
+  parent: [PartThaven, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: ThavenLHand
 
 - type: entity
-  parent: [ OrganBaseFootLeft, OrganThavenExternal ]
-  id: OrganThavenFootLeft
+  id: RightHandThaven
+  name: "right thaven hand"
+  parent: [PartThaven, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: ThavenRHand
 
 - type: entity
-  parent: [ OrganBaseFootRight, OrganThavenExternal ]
-  id: OrganThavenFootRight
+  id: LeftLegThaven
+  name: "left thaven leg"
+  parent: [PartThaven, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: ThavenLLeg
+  - type: MovementBodyPart
 
+- type: entity
+  id: RightLegThaven
+  name: "right thaven leg"
+  parent: [PartThaven, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: ThavenRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootThaven
+  name: "left thaven foot"
+  parent: [PartThaven, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: ThavenLFoot
+
+- type: entity
+  id: RightFootThaven
+  name: "right thaven foot"
+  parent: [PartThaven, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: ThavenRFoot

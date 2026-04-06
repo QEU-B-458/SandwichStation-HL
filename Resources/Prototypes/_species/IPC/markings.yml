@@ -1,0 +1,479 @@
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: RobotAntennaTv
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_tv
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: RobotAntennaTesla
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_tesla
+
+# - type: marking
+#   groupWhitelist: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid]
+#   id: RobotAntennaLightb
+#   bodyPart: HeadTop
+#   markingCategory: HeadTop
+#   sprites:
+#     - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+#       state: ipc_antenna_lightb
+
+# - type: marking
+#   groupWhitelist: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid]
+#   id: RobotAntennaLight
+#   bodyPart: HeadTop
+#   markingCategory: HeadTop
+#   sprites:
+#     - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+#       state: ipc_antenna_light
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: RobotAntennaCyberhead
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_cyberhead
+
+# - type: marking
+#   groupWhitelist: [Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid]
+#   id: RobotAntennaSidelights
+#   bodyPart: HeadTop
+#   markingCategory: HeadTop
+#   sprites:
+#     - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+#       state: ipc_antenna_sidelights
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: RobotAntennaAntlers
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_antlers
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: RobotAntennaDroneeyes
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_droneeyes
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: RobotAntennaCrowned
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_crowned
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: RobotAntennaTowers
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_antenna.rsi
+      state: ipc_antenna_towers
+## CANT SET THESE SCREENS TO "shader: unshaded"
+## RobustToolbox/Robust.Shared/Utility/SpriteSpecifier.cs
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenStatic
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_static
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenBlue
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_blue
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenBreakout
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_breakout
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenEight
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_eight
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenGoggles
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_goggles
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenExclaim
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_exclaim
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenHeart
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_heart
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenMonoeye
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_monoeye
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenNature
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_nature
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenOrange
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_orange
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenPink
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_pink
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenQuestion
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_question
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenShower
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_shower
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenYellow
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_yellow
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenScroll
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_scroll
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenConsole
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_console
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenRgb
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_rgb
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenGlider
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_glider
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenRainbowhoriz
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_rainbowhoriz
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenBsod
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_bsod
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenRedtext
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_redtext
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenSinewave
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_sinewave
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenSquarewave
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_squarewave
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenEcgwave
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_ecgwave
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenEyes
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_eyes
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenEyestall
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_eyestall
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenEyesangry
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_eyesangry
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenLoading
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_loading
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenWindowsxp
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_windowsxp
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenTetris
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_tetris
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenTv
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_tv
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenTextdrop
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_textdrop
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenStars
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_stars
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenRainbowdiag
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_rainbowdiag
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenBlank
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_blank
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenSmile
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_smile
+
+- type: marking
+  groupWhitelist: [DThaven,warf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenFrown
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_frown
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenRing
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_ring
+
+
+- type: marking
+  groupWhitelist: [Thaven,Dwarf, Diona, Human, SlimePerson, Felinid, Oni, Harpy, Reptilian, Vulpkanin, Rodentia, Goblin, Sheleg, IPC, Feroxi, Moth, Arachnid, Kitsune, Chitinid]
+  id: ScreenL
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  sprites:
+    - sprite: _species/IPC/Mobs/Customization/ipc_screens.rsi
+      state: ipc_screen_l

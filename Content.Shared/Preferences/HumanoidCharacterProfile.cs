@@ -264,7 +264,10 @@ namespace Content.Shared.Preferences
                 Age = age,
                 Gender = gender,
                 Species = species,
-                Appearance = HumanoidCharacterAppearance.Random(species, sex),
+                Appearance = HumanoidCharacterAppearance.EnsureValid(
+                    HumanoidCharacterAppearance.Random(species, sex),
+                    species,
+                    sex),
             };
         }
 
@@ -285,7 +288,11 @@ namespace Content.Shared.Preferences
 
         public HumanoidCharacterProfile WithSex(Sex sex)
         {
-            return new(this) { Sex = sex };
+            return new(this)
+            {
+                Sex = sex,
+                Appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, sex),
+            };
         }
 
         public HumanoidCharacterProfile WithGender(Gender gender)
@@ -295,13 +302,17 @@ namespace Content.Shared.Preferences
 
         public HumanoidCharacterProfile WithSpecies(string species)
         {
-            return new(this) { Species = species };
+            return new(this)
+            {
+                Species = species,
+                Appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, species, Sex),
+            };
         }
 
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
-            return new(this) { Appearance = appearance };
+            return new(this) { Appearance = HumanoidCharacterAppearance.EnsureValid(appearance, Species, Sex) };
         }
 
         public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority)

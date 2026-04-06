@@ -1,0 +1,118 @@
+# Goblin sprite layer definitions.
+
+- type: humanoidBaseSprite
+  id: GoblinChest
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinHead
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinLArm
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinRArm
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinLHand
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinRHand
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinLLeg
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinRLeg
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinLFoot
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinRFoot
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: GoblinLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: GoblinLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: GoblinLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: GoblinLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: GoblinLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: GoblinLayerEyes
+  baseSprite:
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: eyes
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: GoblinSprites
+  sprites:
+    Chest: GoblinChest
+    Head: GoblinHead
+    LArm: GoblinLArm
+    RArm: GoblinRArm
+    LHand: GoblinLHand
+    RHand: GoblinRHand
+    LLeg: GoblinLLeg
+    RLeg: GoblinRLeg
+    LFoot: GoblinLFoot
+    RFoot: GoblinRFoot
+    HeadTop: GoblinLayerHeadTop
+    Snout: GoblinLayerSnout
+    Tail: GoblinLayerTail
+    Hair: GoblinLayerHair
+    FacialHair: GoblinLayerFacialHair
+    Eyes: GoblinLayerEyes

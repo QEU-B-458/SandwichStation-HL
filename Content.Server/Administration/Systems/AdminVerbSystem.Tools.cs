@@ -19,6 +19,7 @@ using Content.Shared.Construction.Components;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
 using Content.Shared.Doors.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
@@ -53,6 +54,8 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly SharedBatterySystem _batterySystem = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly GunSystem _gun = default!;
+    [Dependency] private readonly HumanoidProfileSystem _humanoidProfile = default!;
+    [Dependency] private readonly Content.Server.Humanoid.Systems.HumanoidAppearanceSystem _humanoidAppearance = default!;
 
     private void AddTricksVerbs(GetVerbsEvent<Verb> args)
     {
@@ -455,6 +458,38 @@ public sealed partial class AdminVerbSystem
             Priority = (int) TricksVerbPriorities.Rename,
         };
         args.Verbs.Add(rename);
+
+        if (HasComp<HumanoidProfileComponent>(args.Target) && HasComp<HumanoidAppearanceComponent>(args.Target))
+        {
+            var cloneAppearance = new Verb()
+            {
+                Text = Loc.GetString("admin-verbs-clone-appearance"),
+                Category = VerbCategory.Tricks,
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/AdminActions/rename.png")),
+                Act = () =>
+                {
+                    var source = args.User;
+
+                    if (source == args.Target)
+                    {
+                        _popup.PopupEntity(Loc.GetString("admin-trick-clone-appearance-same-target"), args.User, args.User);
+                        return;
+                    }
+
+                    if (_humanoidAppearance.GetCharacterProfile(source) is not { } profile)
+                    {
+                        _popup.PopupEntity(Loc.GetString("admin-trick-clone-appearance-invalid-source"), args.User, args.User);
+                        return;
+                    }
+
+                    _humanoidProfile.ApplyProfileTo(args.Target, profile);
+                },
+                Impact = LogImpact.Medium,
+                Message = Loc.GetString("admin-trick-clone-appearance-description"),
+                Priority = (int) TricksVerbPriorities.CloneAppearance,
+            };
+            args.Verbs.Add(cloneAppearance);
+        }
 
         Verb redescribe = new()
         {
@@ -864,17 +899,18 @@ public sealed partial class AdminVerbSystem
         Rejuvenate = -15,
         AdjustStack = -16,
         FillStack = -17,
-        Rename = -18,
-        Redescribe = -19,
-        RenameAndRedescribe = -20,
-        BarJobSlots = -21,
-        LocateCargoShuttle = -22,
-        InfiniteBattery = -23,
-        HaltMovement = -24,
-        Unpause = -25,
-        Pause = -26,
-        SnapJoints = -27,
-        MakeMinigun = -28,
-        SetBulletAmount = -29,
+        CloneAppearance = -18,
+        Rename = -19,
+        Redescribe = -20,
+        RenameAndRedescribe = -21,
+        BarJobSlots = -22,
+        LocateCargoShuttle = -23,
+        InfiniteBattery = -24,
+        HaltMovement = -25,
+        Unpause = -26,
+        Pause = -27,
+        SnapJoints = -28,
+        MakeMinigun = -29,
+        SetBulletAmount = -30,
     }
 }

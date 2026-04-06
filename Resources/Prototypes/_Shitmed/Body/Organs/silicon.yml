@@ -1,0 +1,29 @@
+- type: entity
+  id: RightArmSiliconIndestructible
+  name: "right silicon arm"
+  parent: PartSilicon
+  components:
+    - type: Sprite
+      state: borg_r_arm
+    - type: Icon
+      state: borg_r_arm
+    - type: BodyPart
+      partType: Arm
+      symmetry: Right
+      toolName: "a right arm" # Shitmed Change
+      canSever: false
+
+- type: entity
+  id: RightHandSiliconIndestructible
+  name: "right silicon hand"
+  parent: PartSilicon
+  components:
+    - type: Sprite
+      state: borg_r_arm
+    - type: Icon
+      state: borg_r_arm
+    - type: BodyPart
+      partType: Hand
+      symmetry: Right
+      toolName: "a right hand" # Shitmed Change
+      canSever: false

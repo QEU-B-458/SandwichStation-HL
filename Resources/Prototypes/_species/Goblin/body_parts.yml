@@ -1,0 +1,161 @@
+# Goblin body part entities.
+
+- type: entity
+  id: PartGoblin
+  parent: BasePart
+  name: "goblin body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 1.5
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 1.5
+      - ReagentId: Blood
+        Quantity: 5
+
+- type: entity
+  id: TorsoGoblin
+  name: "goblin torso"
+  parent: [PartGoblin, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: torso_m
+  - type: BodyPart
+    baseLayerId: GoblinChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: HeadGoblin
+  name: "goblin head"
+  parent: [PartGoblin, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: head_m
+  - type: BodyPart
+    baseLayerId: GoblinHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 2
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 2
+      - ReagentId: Blood
+        Quantity: 5
+
+- type: entity
+  id: LeftArmGoblin
+  name: "left goblin arm"
+  parent: [PartGoblin, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: GoblinLArm
+
+- type: entity
+  id: RightArmGoblin
+  name: "right goblin arm"
+  parent: [PartGoblin, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: GoblinRArm
+
+- type: entity
+  id: LeftHandGoblin
+  name: "left goblin hand"
+  parent: [PartGoblin, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: GoblinLHand
+
+- type: entity
+  id: RightHandGoblin
+  name: "right goblin hand"
+  parent: [PartGoblin, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: GoblinRHand
+
+- type: entity
+  id: LeftLegGoblin
+  name: "left goblin leg"
+  parent: [PartGoblin, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: GoblinLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegGoblin
+  name: "right goblin leg"
+  parent: [PartGoblin, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: GoblinRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootGoblin
+  name: "left goblin foot"
+  parent: [PartGoblin, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: GoblinLFoot
+
+- type: entity
+  id: RightFootGoblin
+  name: "right goblin foot"
+  parent: [PartGoblin, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Goblin/Mobs/Species/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: GoblinRFoot

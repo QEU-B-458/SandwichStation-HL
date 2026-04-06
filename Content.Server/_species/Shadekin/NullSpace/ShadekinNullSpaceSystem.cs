@@ -35,6 +35,7 @@ public sealed class ShadekinNullSpaceSystem : SharedShadekinNullSpaceSystem
     private readonly EntProtoId _shadekinShadow = "ShadekinShadow";
     private readonly EntProtoId _phaseInEffect = "ShadekinPhaseInEffect";
     private readonly EntProtoId _phaseOutEffect = "ShadekinPhaseOutEffect";
+    private readonly EntProtoId _nullPhaseAction = "NullPhaseAction";
 
     public override void Initialize()
     {
@@ -46,7 +47,7 @@ public sealed class ShadekinNullSpaceSystem : SharedShadekinNullSpaceSystem
 
     private void OnNullPhaseStartup(EntityUid uid, NullPhaseComponent component, ComponentStartup args)
     {
-        _actions.AddAction(uid, ref component.PhaseAction, "NullPhaseAction", uid);
+        _actions.AddAction(uid, ref component.PhaseAction, _nullPhaseAction, uid);
     }
 
     private void OnNullPhaseShutdown(EntityUid uid, NullPhaseComponent component, ComponentShutdown args)

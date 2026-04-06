@@ -1,0 +1,129 @@
+# IPC body prototype — owns the full part + organ tree.
+# IPCs are non-organic. No lungs, stomach, liver, or kidneys.
+
+- type: body
+  id: IPC
+  name: "ipc"
+  root: torso
+  slots:
+    head:
+      part: HeadIPC
+      connections:
+      - torso
+      organs:
+        brain: OrganIPCPositronicBrain
+        eyes: OrganIPCEyes
+        tongue: OrganIPCTongue
+        ears: OrganIPCEars
+    torso:
+      part: TorsoIPC
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganIPCPump
+    right arm:
+      part: RightArmIPC
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmIPC
+      connections:
+      - left hand
+    right hand:
+      part: RightHandIPC
+    left hand:
+      part: LeftHandIPC
+    right leg:
+      part: RightLegIPC
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegIPC
+      connections:
+      - left foot
+    right foot:
+      part: RightFootIPC
+    left foot:
+      part: LeftFootIPC
+
+# Species-specific organs
+
+- type: entity
+  id: BaseIPCOrgan
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _species/IPC/Mobs/Species/organs.rsi
+  - type: Organ
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Oil
+          Quantity: 10
+
+- type: entity
+  id: OrganIPCPositronicBrain
+  parent: BaseIPCOrgan
+  name: positronic brain
+  description: "A sophisticated positronic brain. The seat of an IPC's consciousness."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/IPC/Mobs/Species/organs.rsi
+    state: microcell
+
+- type: entity
+  id: OrganIPCEyes
+  parent: BaseIPCOrgan
+  name: robotic eyes
+  description: "01001001 00100000 01110011 01100101 01100101 00100000 01111001 01101111 01110101 00100001"
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/IPC/Mobs/Species/organs.rsi
+    layers:
+      - state: eyeball-l
+      - state: eyeball-r
+
+- type: entity
+  id: OrganIPCTongue
+  parent: BaseIPCOrgan
+  name: vocal modulator
+  description: "A vocal modulator, used to produce speech."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/IPC/Mobs/Species/organs.rsi
+    state: tongue
+
+- type: entity
+  id: OrganIPCEars
+  parent: BaseIPCOrgan
+  name: sonic receptors
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/IPC/Mobs/Species/organs.rsi
+    state: ears
+
+- type: entity
+  id: OrganIPCPump
+  parent: BaseIPCOrgan
+  name: micro pump
+  description: "A micro pump, used to circulate coolant."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/IPC/Mobs/Species/organs.rsi
+    state: heart-on
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [Human]
+    groups: []

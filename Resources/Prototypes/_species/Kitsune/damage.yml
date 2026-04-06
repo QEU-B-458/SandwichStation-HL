@@ -1,0 +1,8 @@
+- type: damageModifierSet
+  id: Kitsune
+  coefficients:
+    Blunt: 1.0
+    Slash: 0.95
+    Piercing: 1.05
+    Heat: 1.1
+    Cold: 0.9

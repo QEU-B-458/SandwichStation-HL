@@ -1,0 +1,104 @@
+# Resomi sprite layer definitions.
+# Resomi have their own parts RSI.
+
+- type: humanoidBaseSprite
+  id: ResomiChest
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiHead
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiLArm
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiRArm
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiLHand
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiRHand
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiLLeg
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiRLeg
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiLFoot
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiRFoot
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ResomiLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ResomiLayerEyes
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Customization/eyes.rsi
+    state: resomi
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: ResomiSprites
+  sprites:
+    Chest: ResomiChest
+    Head: ResomiHead
+    LArm: ResomiLArm
+    RArm: ResomiRArm
+    LHand: ResomiLHand
+    RHand: ResomiRHand
+    LLeg: ResomiLLeg
+    RLeg: ResomiRLeg
+    LFoot: ResomiLFoot
+    RFoot: ResomiRFoot
+    Tail: ResomiLayerTail
+    Hair: ResomiLayerHair
+    Eyes: ResomiLayerEyes

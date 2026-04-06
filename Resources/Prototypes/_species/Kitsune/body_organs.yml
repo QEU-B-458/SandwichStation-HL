@@ -1,0 +1,128 @@
+# Kitsune body prototype — owns the full part + organ tree.
+# Kitsune are fox-like humanoids with human body shape and biology.
+
+- type: body
+  id: Kitsune
+  name: "kitsune"
+  root: torso
+  slots:
+    head:
+      part: HeadKitsune
+      connections:
+      - torso
+      organs:
+        brain: OrganKitsuneBrain
+        eyes: OrganKitsuneEyes
+        tongue: OrganKitsuneTongue
+        ears: OrganKitsuneEars
+    torso:
+      part: TorsoKitsune
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganKitsuneHeart
+        lungs: OrganKitsuneLungs
+        stomach: OrganKitsuneStomach
+        liver: OrganKitsuneLiver
+        kidneys: OrganKitsuneKidneys
+        appendix: OrganKitsuneAppendix
+    right arm:
+      part: RightArmKitsune
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmKitsune
+      connections:
+      - left hand
+    right hand:
+      part: RightHandKitsune
+    left hand:
+      part: LeftHandKitsune
+    right leg:
+      part: RightLegKitsune
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegKitsune
+      connections:
+      - left foot
+    right foot:
+      part: RightFootKitsune
+    left foot:
+      part: LeftFootKitsune
+
+# Species-specific organs — parented from human equivalents for customizability
+
+- type: entity
+  id: OrganKitsuneBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganKitsuneEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganKitsuneTongue
+  parent: OrganHumanTongue
+  name: tongue
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganKitsuneEars
+  parent: OrganHumanEars
+  name: ears
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganKitsuneHeart
+  parent: OrganHumanHeart
+  name: heart
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganKitsuneLungs
+  parent: OrganHumanLungs
+  name: lungs
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganKitsuneStomach
+  parent: OrganHumanStomach
+  name: stomach
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganKitsuneLiver
+  parent: OrganHumanLiver
+  name: liver
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganKitsuneKidneys
+  parent: OrganHumanKidneys
+  name: kidneys
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganKitsuneAppendix
+  parent: OrganHumanAppendix
+  name: appendix
+  suffix: Kitsune
+  categories: [ HideSpawnMenu ]

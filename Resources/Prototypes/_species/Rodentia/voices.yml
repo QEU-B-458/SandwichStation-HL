@@ -1,0 +1,11 @@
+- type: emoteSounds
+  id: MaleRodentia
+  sounds:
+    Scream:
+      collection: RodentiaScreams
+
+- type: emoteSounds
+  id: FemaleRodentia
+  sounds:
+    Scream:
+      collection: RodentiaScreams

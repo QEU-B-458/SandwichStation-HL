@@ -1,0 +1,155 @@
+# Moth body part entities.
+
+- type: entity
+  id: PartMoth
+  parent: BasePart
+  name: "moth body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: InsectBlood
+        Quantity: 10
+
+# Sexed torso — no baseLayerId; runtime appends Male/Female suffix
+- type: entity
+  id: TorsoMoth
+  name: "moth torso"
+  parent: [PartMoth, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: torso_m
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: InsectBlood
+        Quantity: 20
+
+# Non-sexed head — explicit baseLayerId
+- type: entity
+  id: HeadMoth
+  name: "moth head"
+  parent: [PartMoth, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: head
+  - type: BodyPart
+    baseLayerId: MothHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: InsectBlood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmMoth
+  name: "left moth arm"
+  parent: [PartMoth, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: MothLArm
+
+- type: entity
+  id: RightArmMoth
+  name: "right moth arm"
+  parent: [PartMoth, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: MothRArm
+
+- type: entity
+  id: LeftHandMoth
+  name: "left moth hand"
+  parent: [PartMoth, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: MothLHand
+
+- type: entity
+  id: RightHandMoth
+  name: "right moth hand"
+  parent: [PartMoth, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: MothRHand
+
+- type: entity
+  id: LeftLegMoth
+  name: "left moth leg"
+  parent: [PartMoth, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: MothLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegMoth
+  name: "right moth leg"
+  parent: [PartMoth, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: MothRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootMoth
+  name: "left moth foot"
+  parent: [PartMoth, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: MothLFoot
+
+- type: entity
+  id: RightFootMoth
+  name: "right moth foot"
+  parent: [PartMoth, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Moth/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: MothRFoot

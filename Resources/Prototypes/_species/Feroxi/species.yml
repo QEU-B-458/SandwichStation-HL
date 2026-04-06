@@ -1,0 +1,65 @@
+- type: species
+  id: Feroxi
+  name: species-name-feroxi
+  roundStart: true
+  prototype: MobFeroxi
+  dollPrototype: AppearanceFeroxi
+  sprites: FeroxiSprites
+  skinColoration: Hues
+  defaultSkinTone: "#8DB9D6"
+  maleFirstNames: names_feroxi_first_male
+  femaleFirstNames: names_feroxi_first_female
+  naming: First
+
+- type: markingsGroup
+  parent: Undergarments
+  id: Feroxi
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 3
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ FeroxiEars ]
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: true
+      default: [ FeroxiSnout ]
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ FeroxiTailAndDorsal ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 3
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false

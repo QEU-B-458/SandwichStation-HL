@@ -169,3 +169,18 @@ chat-speech-verb-wawa-1 = intones
 chat-speech-verb-wawa-2 = states
 chat-speech-verb-wawa-3 = declares
 chat-speech-verb-wawa-4 = ponders
+
+chat-speech-verb-name-sheleg = Sheleg
+chat-speech-verb-sheleg-1 = says
+chat-speech-verb-sheleg-2 = states coldly
+chat-speech-verb-sheleg-3 = intones
+
+chat-speech-verb-name-rodentia = Rodentia
+chat-speech-verb-rodentia-1 = squeaks
+chat-speech-verb-rodentia-2 = chitfers
+chat-speech-verb-rodentia-3 = says
+
+chat-speech-verb-name-skrell = Skrell
+chat-speech-verb-skrell-1 = warbles
+chat-speech-verb-skrell-2 = trills
+chat-speech-verb-skrell-3 = says

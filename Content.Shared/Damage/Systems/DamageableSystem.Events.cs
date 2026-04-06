@@ -226,6 +226,18 @@ public sealed partial class DamageableSystem
 [ByRefEvent]
 public record struct BeforeDamageChangedEvent(DamageSpecifier Damage, EntityUid? Origin = null, bool Cancelled = false);
 
+[ByRefEvent]
+public record struct TryChangePartDamageEvent(
+    DamageSpecifier Damage,
+    EntityUid? Origin = null,
+    Content.Shared._Shitmed.Targeting.TargetBodyPart? TargetPart = null,
+    bool IgnoreResistances = false,
+    bool CanSever = true,
+    bool CanEvade = false,
+    float PartMultiplier = 1.00f,
+    bool Evaded = false,
+    bool Cancelled = false);
+
 /// <summary>
 ///     Raised on an entity when damage is about to be dealt,
 ///     in case anything else needs to modify it other than the base
@@ -233,7 +245,7 @@ public record struct BeforeDamageChangedEvent(DamageSpecifier Damage, EntityUid?
 ///
 ///     For example, armor.
 /// </summary>
-public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null)
+public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin = null, float armorPenetration = 0, Content.Shared._Shitmed.Targeting.TargetBodyPart? targetPart = null, EntityUid? tool = null)
     : EntityEventArgs, IInventoryRelayEvent
 {
     /// <inheritdoc/>
@@ -257,6 +269,12 @@ public sealed class DamageModifyEvent(DamageSpecifier damage, EntityUid? origin 
     ///     Contains the entity which caused the damage, if any was responsible.
     /// </summary>
     public readonly EntityUid? Origin = origin;
+
+    public readonly Content.Shared._Shitmed.Targeting.TargetBodyPart? TargetPart = targetPart;
+
+    public readonly float ArmorPenetration = armorPenetration;
+
+    public EntityUid? Tool = tool;
 }
 
 public sealed class DamageChangedEvent : EntityEventArgs

@@ -1,0 +1,153 @@
+# Reptilian body part entities.
+
+- type: entity
+  id: PartReptilian
+  parent: BasePart
+  name: "reptilian body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+# Sexed parts — no baseLayerId; runtime appends Male/Female suffix for both torso and head
+- type: entity
+  id: TorsoReptilian
+  name: "reptilian torso"
+  parent: [PartReptilian, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: torso_m
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadReptilian
+  name: "reptilian head"
+  parent: [PartReptilian, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_m
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+# Non-sexed parts — explicit baseLayerId
+- type: entity
+  id: LeftArmReptilian
+  name: "left reptilian arm"
+  parent: [PartReptilian, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: ReptilianLArm
+
+- type: entity
+  id: RightArmReptilian
+  name: "right reptilian arm"
+  parent: [PartReptilian, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: ReptilianRArm
+
+- type: entity
+  id: LeftHandReptilian
+  name: "left reptilian hand"
+  parent: [PartReptilian, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: ReptilianLHand
+
+- type: entity
+  id: RightHandReptilian
+  name: "right reptilian hand"
+  parent: [PartReptilian, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: ReptilianRHand
+
+- type: entity
+  id: LeftLegReptilian
+  name: "left reptilian leg"
+  parent: [PartReptilian, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: ReptilianLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegReptilian
+  name: "right reptilian leg"
+  parent: [PartReptilian, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: ReptilianRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootReptilian
+  name: "left reptilian foot"
+  parent: [PartReptilian, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: ReptilianLFoot
+
+- type: entity
+  id: RightFootReptilian
+  name: "right reptilian foot"
+  parent: [PartReptilian, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: ReptilianRFoot

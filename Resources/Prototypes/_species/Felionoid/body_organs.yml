@@ -1,0 +1,84 @@
+# Felionoid body prototype — owns the full part + organ tree.
+
+- type: body
+  id: Felionoid
+  name: "felionoid"
+  root: torso
+  slots:
+    head:
+      part: HeadFelionoid
+      connections:
+      - torso
+      organs:
+        brain: OrganFelionoidBrain
+        eyes: OrganFelionoidEyes
+        tongue: OrganFelionoidTongue
+        ears: OrganFelionoidEars
+    torso:
+      part: TorsoFelionoid
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganHumanHeart
+        lungs: OrganHumanLungs
+        stomach: OrganHumanStomach
+        liver: OrganHumanLiver
+        kidneys: OrganHumanKidneys
+    right arm:
+      part: RightArmFelionoid
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmFelionoid
+      connections:
+      - left hand
+    right hand:
+      part: RightHandFelionoid
+    left hand:
+      part: LeftHandFelionoid
+    right leg:
+      part: RightLegFelionoid
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegFelionoid
+      connections:
+      - left foot
+    right foot:
+      part: RightFootFelionoid
+    left foot:
+      part: LeftFootFelionoid
+
+# Species-specific organs
+
+- type: entity
+  id: OrganFelionoidBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Felionoid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelionoidEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Felionoid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelionoidTongue
+  parent: OrganHumanTongue
+  name: tongue
+  suffix: Felionoid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelionoidEars
+  parent: OrganHumanEars
+  name: ears
+  suffix: Felionoid
+  categories: [ HideSpawnMenu ]

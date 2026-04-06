@@ -1,0 +1,144 @@
+# Diona body part entities.
+
+- type: entity
+  id: PartDiona
+  parent: BasePart
+  name: "diona body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Sap
+        Quantity: 10
+
+- type: entity
+  id: TorsoDiona
+  name: "diona torso"
+  parent: [PartDiona, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: torso
+  - type: BodyPart
+    baseLayerId: DionaChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Sap
+        Quantity: 20
+
+- type: entity
+  id: HeadDiona
+  name: "diona head"
+  parent: [PartDiona, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: head
+  - type: BodyPart
+    baseLayerId: DionaHead
+
+- type: entity
+  id: LeftArmDiona
+  name: "left diona arm"
+  parent: [PartDiona, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: DionaLArm
+
+- type: entity
+  id: RightArmDiona
+  name: "right diona arm"
+  parent: [PartDiona, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: DionaRArm
+
+- type: entity
+  id: LeftHandDiona
+  name: "left diona hand"
+  parent: [PartDiona, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: DionaLHand
+
+- type: entity
+  id: RightHandDiona
+  name: "right diona hand"
+  parent: [PartDiona, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: DionaRHand
+
+- type: entity
+  id: LeftLegDiona
+  name: "left diona leg"
+  parent: [PartDiona, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: DionaLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegDiona
+  name: "right diona leg"
+  parent: [PartDiona, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: DionaRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootDiona
+  name: "left diona foot"
+  parent: [PartDiona, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: DionaLFoot
+
+- type: entity
+  id: RightFootDiona
+  name: "right diona foot"
+  parent: [PartDiona, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: DionaRFoot

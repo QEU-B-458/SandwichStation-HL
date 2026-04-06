@@ -1,6 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.Administration.Logs;
-using Content.Shared.Body;
+using Content.Shared.Body.Systems;
 using Content.Shared.Changeling.Components;
 using Content.Shared.Cloning;
 using Content.Shared.Database;
@@ -25,7 +25,8 @@ public sealed partial class ChangelingTransformSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedCloningSystem _cloningSystem = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     private const string ChangelingBuiXmlGeneratedName = "ChangelingTransformBoundUserInterface";
@@ -153,7 +154,12 @@ public sealed partial class ChangelingTransformSystem : EntitySystem
         if (args.Target is not { } targetIdentity)
             return;
 
-        _visualBody.CopyAppearanceFrom(targetIdentity, args.User);
+        if (_humanoidAppearance.GetCharacterProfile(targetIdentity) is { } transformProfile
+            && TryComp(args.User, out HumanoidAppearanceComponent? transformAppearance))
+        {
+            _humanoidAppearance.ApplyProfileData(args.User, transformProfile, true, transformAppearance);
+            _body.RefreshBodyPartAppearances(args.User);
+        }
         _cloningSystem.CloneComponents(targetIdentity, args.User, settings);
 
         if (TryComp<ChangelingStoredIdentityComponent>(targetIdentity, out var storedIdentity) && storedIdentity.OriginalSession != null)

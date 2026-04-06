@@ -1,8 +1,0 @@
-- type: marking
-  id: FelionoidTailAnimated
-  bodyPart: Tail
-  markingCategory: Tail
-  groupWhitelist: []
-  sprites:
-    - sprite: _species/Felionoid/Mobs/Customization/felionoid_parts.rsi
-      state: tail_wagging

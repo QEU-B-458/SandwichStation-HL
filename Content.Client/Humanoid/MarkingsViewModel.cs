@@ -4,6 +4,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Robust.Shared.Log;
 
 namespace Content.Client.Humanoid;
 
@@ -402,11 +403,26 @@ public sealed class MarkingsViewModel
             }
 
             var actualMarkings = _markings.GetValueOrDefault(organ)?.ShallowClone() ?? [];
+            var before = actualMarkings.ToDictionary(
+                kvp => kvp.Key,
+                kvp => kvp.Value.Select(m => m.MarkingId.Id).ToList());
 
             _marking.EnsureValidColors(actualMarkings);
             _marking.EnsureValidGroupAndSex(actualMarkings, organData.Group, organProfileData.Sex);
             _marking.EnsureValidLayers(actualMarkings, organData.Layers);
             _marking.EnsureValidLimits(actualMarkings, organData.Group, organData.Layers, organProfileData.SkinColor, organProfileData.EyeColor);
+
+            var after = actualMarkings.ToDictionary(
+                kvp => kvp.Key,
+                kvp => kvp.Value.Select(m => m.MarkingId.Id).ToList());
+
+            if (!before.OrderBy(x => x.Key).SequenceEqual(after.OrderBy(x => x.Key)))
+            {
+                var beforeText = string.Join(", ", before.Select(kvp => $"{kvp.Key}=[{string.Join("|", kvp.Value)}]"));
+                var afterText = string.Join(", ", after.Select(kvp => $"{kvp.Key}=[{string.Join("|", kvp.Value)}]"));
+                Logger.InfoS("humanoid_appearance",
+                    $"MarkingsViewModel validation adjusted markings for organ={organ.Id}, group={organData.Group.Id}: before={beforeText}; after={afterText}.");
+            }
 
             _markings[organ] = actualMarkings;
         }

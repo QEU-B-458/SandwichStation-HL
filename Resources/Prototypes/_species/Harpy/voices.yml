@@ -1,0 +1,33 @@
+- type: emoteSounds
+  id: SoundsHarpy
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: HarpyScreams
+    Laugh:
+      collection: HarpyLaugh
+    Crying:
+      collection: HarpyCry
+    Gasp:
+      collection: HarpyGasp
+    DefaultDeathgasp:
+      collection: HarpyScreams
+    Hiss:
+      collection: HarpyHisses
+    Sigh:
+      collection: HarpySigh
+    Meow:
+      collection: HarpyMeows
+    Mew:
+      collection: HarpyMews
+    Growl:
+      collection: HarpyGrowls
+    Purr:
+      collection: HarpyPurrs
+    Snore:
+      collection: Snores
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew

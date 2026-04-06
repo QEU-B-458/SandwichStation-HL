@@ -1,0 +1,141 @@
+# SlimePerson body prototype
+- type: body
+  id: SlimePerson
+  name: "slime person"
+  root: torso
+  slots:
+    head:
+      part: HeadSlimePerson
+      connections:
+      - torso
+      organs:
+        core: OrganSlimePersonCore
+    torso:
+      part: TorsoSlimePerson
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        lungs: OrganSlimePersonLungs
+    right arm:
+      part: RightArmSlimePerson
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmSlimePerson
+      connections:
+      - left hand
+    right hand:
+      part: RightHandSlimePerson
+    left hand:
+      part: LeftHandSlimePerson
+    right leg:
+      part: RightLegSlimePerson
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegSlimePerson
+      connections:
+      - left foot
+    right foot:
+      part: RightFootSlimePerson
+    left foot:
+      part: LeftFootSlimePerson
+
+# SlimePerson organ abstract chain
+- type: entity
+  parent: OrganBase
+  id: OrganSlimePerson
+  abstract: true
+  suffix: slime person
+
+- type: entity
+  id: OrganSlimePersonMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Slime ]
+
+- type: entity
+  parent: OrganSlimePerson
+  id: OrganSlimePersonInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/organs.rsi
+
+- type: entity
+  parent: OrganSlimePerson
+  id: OrganSlimePersonExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Slime/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSlimePersonExternal ]
+  id: OrganSlimePersonTorso
+
+- type: entity
+  parent: [ OrganBaseHead, OrganSlimePersonExternal ]
+  id: OrganSlimePersonHead
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganSlimePersonExternal ]
+  id: OrganSlimePersonArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganSlimePersonExternal ]
+  id: OrganSlimePersonArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganSlimePersonExternal ]
+  id: OrganSlimePersonHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganSlimePersonExternal ]
+  id: OrganSlimePersonHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganSlimePersonExternal ]
+  id: OrganSlimePersonLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganSlimePersonExternal ]
+  id: OrganSlimePersonLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganSlimePersonExternal ]
+  id: OrganSlimePersonFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganSlimePersonExternal ]
+  id: OrganSlimePersonFootRight
+
+# Sentient slime core — acts as brain + stomach combined
+- type: entity
+  parent: [ OrganBaseBrain, OrganSlimePersonInternal, OrganSlimePersonMetabolizer ]
+  id: OrganSlimePersonCore
+  name: sentient slime core
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50.0
+  - type: Stomach
+  - type: Metabolizer
+    maxReagents: 6
+    metabolizerTypes: [ Slime ]
+    stages: [ Digestion, Bloodstream, Metabolites ]
+
+# Gas sacs — slime lungs, needs nitrogen
+- type: entity
+  parent: [ OrganBaseLungs, OrganSlimePersonInternal, OrganSlimePersonMetabolizer ]
+  id: OrganSlimePersonLungs
+  name: gas sacs
+  components:
+  - type: Lung
+    alert: LowNitrogen

@@ -1,0 +1,161 @@
+# Feroxi body part entities.
+
+- type: entity
+  id: PartFeroxi
+  parent: BasePart
+  name: "feroxi body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 1.5
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 1.5
+      - ReagentId: Blood
+        Quantity: 5
+
+- type: entity
+  id: TorsoFeroxi
+  name: "feroxi torso"
+  parent: [PartFeroxi, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: torso_m
+  - type: BodyPart
+    baseLayerId: FeroxiChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: HeadFeroxi
+  name: "feroxi head"
+  parent: [PartFeroxi, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: head_m
+  - type: BodyPart
+    baseLayerId: FeroxiHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 2
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 2
+      - ReagentId: Blood
+        Quantity: 5
+
+- type: entity
+  id: LeftArmFeroxi
+  name: "left feroxi arm"
+  parent: [PartFeroxi, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: FeroxiLArm
+
+- type: entity
+  id: RightArmFeroxi
+  name: "right feroxi arm"
+  parent: [PartFeroxi, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: FeroxiRArm
+
+- type: entity
+  id: LeftHandFeroxi
+  name: "left feroxi hand"
+  parent: [PartFeroxi, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: FeroxiLHand
+
+- type: entity
+  id: RightHandFeroxi
+  name: "right feroxi hand"
+  parent: [PartFeroxi, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: FeroxiRHand
+
+- type: entity
+  id: LeftLegFeroxi
+  name: "left feroxi leg"
+  parent: [PartFeroxi, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: FeroxiLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegFeroxi
+  name: "right feroxi leg"
+  parent: [PartFeroxi, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: FeroxiRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootFeroxi
+  name: "left feroxi foot"
+  parent: [PartFeroxi, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: FeroxiLFoot
+
+- type: entity
+  id: RightFootFeroxi
+  name: "right feroxi foot"
+  parent: [PartFeroxi, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Feroxi/Mobs/Species/Feroxi/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: FeroxiRFoot

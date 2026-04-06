@@ -51,18 +51,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: InitialBody
-    organs:
-      Torso: OrganSkeletonPersonTorso
-      Head: OrganSkeletonPersonHead
-      ArmLeft: OrganSkeletonPersonArmLeft
-      ArmRight: OrganSkeletonPersonArmRight
-      HandRight: OrganSkeletonPersonHandRight
-      HandLeft: OrganSkeletonPersonHandLeft
-      LegLeft: OrganSkeletonPersonLegLeft
-      LegRight: OrganSkeletonPersonLegRight
-      FootLeft: OrganSkeletonPersonFootLeft
-      FootRight: OrganSkeletonPersonFootRight
   - type: HumanoidProfile
     species: Skeleton
 
@@ -195,13 +183,6 @@
   components:
   - type: Sprite
     sprite: Mobs/Species/Skeleton/parts.rsi
-  - type: VisualOrgan
-    data:
-      sprite: Mobs/Species/Skeleton/parts.rsi
-  - type: VisualOrganMarkings
-    markingData:
-      group: Skeleton
-
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganSkeletonPersonExternal ]
   id: OrganSkeletonPersonTorso

@@ -1,0 +1,6 @@
+- type: typingIndicator
+  id: shadekin
+  spritePath: /Textures/Effects/speech.rsi
+  typingState: alien0
+  idleState: alien3
+  offset: 0, 0.2

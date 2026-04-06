@@ -1,0 +1,1031 @@
+# Body Markings (Chest)
+- type: marking
+  id: VulpBellyCrest
+  bodyPart: Chest
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: belly_crest
+
+- type: marking
+  id: VulpBellyFull
+  bodyPart: Chest
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: belly_full
+
+- type: marking
+  id: VulpBellyFox
+  bodyPart: Chest
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: belly_fox
+# Ears Markings
+- type: marking
+  id: VulpEar
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-inner
+
+- type: marking
+  id: VulpEarSharp
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-sharp
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-inner
+
+- type: marking
+  id: VulpEarFade
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-fade
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: vulp-inner
+
+- type: marking
+  id: VulpEarJackal
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: jackal
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: jackal-inner
+
+- type: marking
+  id: VulpEarTerrier
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: terrier
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: terrier-inner
+
+- type: marking
+  id: VulpEarFennec
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: fennec
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: fennec-inner
+
+- type: marking
+  id: VulpEarFox
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: fox
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: fox-inner
+
+- type: marking
+  id: VulpEarOtie
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: otie
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: otie-inner
+
+- type: marking
+  id: VulpEarShock
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: shock
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: shock-inner
+
+- type: marking
+  id: VulpEarCoyote
+  bodyPart: HeadTop
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: coyote
+    - sprite: Mobs/Customization/Vulpkanin/ear_markings.rsi
+      state: coyote-inner
+# Hairs
+- type: marking
+  id: VulpHairAdhara
+  bodyPart: Hair
+  groupWhitelist: [ Vulpkanin ]
+  canBeDisplaced: false
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: adhara
+
+- type: marking
+  id: VulpHairAnita
+  bodyPart: Hair
+  groupWhitelist: [ Vulpkanin ]
+  canBeDisplaced: false
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: anita
+
+- type: marking
+  id: VulpHairApollo
+  bodyPart: Hair
+  groupWhitelist: [ Vulpkanin ]
+  canBeDisplaced: false
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: apollo
+
+- type: marking
+  id: VulpHairBelle
+  bodyPart: Hair
+  groupWhitelist: [ Vulpkanin ]
+  canBeDisplaced: false
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: belle
+
+- type: marking
+  id: VulpHairBraided
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: braided
+
+- type: marking
+  id: VulpHairBun
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: bun
+
+- type: marking
+  id: VulpHairCleanCut
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: clean_cut
+
+- type: marking
+  id: VulpHairCurl
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: curl
+
+- type: marking
+  id: VulpHairHawk
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: hawk
+
+- type: marking
+  id: VulpHairJagged
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: jagged
+
+- type: marking
+  id: VulpHairJeremy
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: jeremy
+
+- type: marking
+  id: VulpHairKajam
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: kajam
+
+- type: marking
+  id: VulpHairKeid
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: keid
+
+- type: marking
+  id: VulpHairKleeia
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: kleeia
+
+- type: marking
+  id: VulpHairMizar
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: mizar
+
+- type: marking
+  id: VulpHairPunkBraided
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: punkbraided
+
+- type: marking
+  id: VulpHairRaine
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: raine
+
+- type: marking
+  id: VulpHairRough
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: rough
+
+- type: marking
+  id: VulpHairShort
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: short
+
+- type: marking
+  id: VulpHairShort2
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: short2
+
+- type: marking
+  id: VulpHairSpike
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/hair.rsi
+      state: spike
+
+# Facial Hairs
+- type: marking
+  id: VulpFacialHairRuff
+  bodyPart: FacialHair
+  groupWhitelist: [ Vulpkanin ]
+  canBeDisplaced: false
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/facial_hair.rsi
+      state: ruff
+
+- type: marking
+  id: VulpFacialHairElder
+  bodyPart: FacialHair
+  groupWhitelist: [ Vulpkanin ]
+  canBeDisplaced: false
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/facial_hair.rsi
+      state: elder
+
+- type: marking
+  id: VulpFacialHairElderChin
+  bodyPart: FacialHair
+  groupWhitelist: [ Vulpkanin ]
+  canBeDisplaced: false
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/facial_hair.rsi
+      state: elder_chin
+
+- type: marking
+  id: VulpFacialHairKita
+  bodyPart: FacialHair
+  groupWhitelist: [ Vulpkanin ]
+  canBeDisplaced: false
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/facial_hair.rsi
+      state: kita
+
+- type: marking
+  id: VulpFacialHairGoatee
+  bodyPart: FacialHair
+  groupWhitelist: [ Vulpkanin ]
+  canBeDisplaced: false
+  sprites:
+  - sprite: Mobs/Customization/Vulpkanin/facial_hair.rsi
+    state: goatee
+# Head Markings (Head)
+- type: marking
+  id: VulpHeadBlaze
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: blaze
+
+- type: marking
+  id: VulpHeadMask
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: mask
+
+- type: marking
+  id: VulpPatch
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: patch
+
+- type: marking
+  id: VulpSlash
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: slash
+
+- type: marking
+  id: VulpStripes1
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: stripes_1
+
+- type: marking
+  id: VulpStripes2
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: stripes_2
+
+- type: marking
+  id: VulpVulpine
+  bodyPart: Head
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: vulpine
+- type: marking
+  id: VulpClawsHandLeft
+  bodyPart: LHand
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: claws_l_hand
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpClawsHandRight
+  bodyPart: RHand
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: claws_r_hand
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpClawsFootLeft
+  bodyPart: LFoot
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: claws_l_foot
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpClawsFootRight
+  bodyPart: RFoot
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: claws_r_foot
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+# Crest
+
+## Left Side
+- type: marking
+  id: VulpPointsCrestLegLeft
+  bodyPart: LLeg
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: crest-leg-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsCrestArmLeft
+  bodyPart: LArm
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: crest-arm-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsCrestFootLeft
+  bodyPart: LFoot
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: crest-foot-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsCrestHandLeft
+  bodyPart: LHand
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: crest-hand-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+## Right Side
+
+- type: marking
+  id: VulpPointsCrestLegRight
+  bodyPart: RLeg
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: crest-leg-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsCrestArmRight
+  bodyPart: RArm
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: crest-arm-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsCrestFootRight
+  bodyPart: RFoot
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: crest-foot-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsCrestHandRight
+  bodyPart: RHand
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: crest-hand-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+# Fade
+
+## Left Side 
+
+- type: marking
+  id: VulpPointsFadeLegLeft
+  bodyPart: LLeg
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-leg-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsFadeArmLeft
+  bodyPart: LArm
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-arm-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsFadeFootLeft
+  bodyPart: LFoot
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-foot-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsFadeHandLeft
+  bodyPart: LHand
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-hand-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+## Right Side
+
+- type: marking
+  id: VulpPointsFadeLegRight
+  bodyPart: RLeg
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-leg-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsFadeArmRight
+  bodyPart: RArm
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-arm-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsFadeFootRight
+  bodyPart: RFoot
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-foot-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsFadeHandRight
+  bodyPart: RHand
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-hand-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+# Sharp
+
+## Left Side
+
+- type: marking
+  id: VulpPointsSharpLegLeft
+  bodyPart: LLeg
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-leg-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsSharpArmLeft
+  bodyPart: LArm
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-arm-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsSharpLongArmLeft
+  bodyPart: LArm
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-arm-long-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsSharpFootLeft
+  bodyPart: LFoot
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-foot-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsSharpHandLeft
+  bodyPart: LHand
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-hand-l
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+## Right Side
+
+- type: marking
+  id: VulpPointsSharpLegRight
+  bodyPart: RLeg
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-leg-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsSharpArmRight
+  bodyPart: RArm
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-arm-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsSharpLongArmRight
+  bodyPart: RArm
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-arm-long-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsSharpFootRight
+  bodyPart: RFoot
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-foot-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+
+- type: marking
+  id: VulpPointsSharpHandRight
+  bodyPart: RHand
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-hand-r
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#e5e3d1"
+# Snout Markings
+
+- type: marking
+  id: VulpSnout
+  bodyPart: Snout
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/snout_markings.rsi
+      state: snout
+
+- type: marking
+  id: VulpSnoutNose
+  bodyPart: SnoutCover
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/snout_markings.rsi
+      state: snout-nose
+
+- type: marking
+  id: VulpSnoutVulpine
+  bodyPart: SnoutCover
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/snout_markings.rsi
+      state: vulpine
+
+- type: marking
+  id: VulpSnoutVulpineLines
+  bodyPart: SnoutCover
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/snout_markings.rsi
+      state: vulpine-lines
+
+- type: marking
+  id: VulpSnoutBlaze
+  bodyPart: SnoutCover
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/snout_markings.rsi
+      state: blaze
+
+- type: marking
+  id: VulpSnoutMask
+  bodyPart: SnoutCover
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/snout_markings.rsi
+      state: mask
+
+- type: marking
+  id: VulpSnoutTop
+  bodyPart: SnoutCover
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/snout_markings.rsi
+      state: snout-top
+
+- type: marking
+  id: VulpSnoutPatch
+  bodyPart: SnoutCover
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/snout_markings.rsi
+      state: patch
+# Tail Markings
+- type: marking
+  id: VulpTailFennec
+  bodyPart: Tail
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fennec
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fennec-tip
+
+- type: marking
+  id: VulpTailFluffy
+  bodyPart: Tail
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fluffy
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fluffy-tip
+
+- type: marking
+  id: VulpTailHusky
+  bodyPart: Tail
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: husky
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: husky-inner
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: husky-outer
+
+- type: marking
+  id: VulpTailLong
+  bodyPart: Tail
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: long
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: long-tip
+
+- type: marking
+  id: VulpTailVulp
+  bodyPart: Tail
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp-tip
+
+- type: marking
+  id: VulpTailVulpFade
+  bodyPart: Tail
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp
+    - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp-fade
+
+- type: marking
+  id: VulpTailCoyote
+  bodyPart: Tail
+  groupWhitelist: [ Vulpkanin ]
+  sprites:
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: coyote
+
+# Animated
+- type: marking
+  id: VulpTailFennecAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  sprites:
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: fennec-wagging
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: fennec-wagging-tip
+
+- type: marking
+  id: VulpTailFluffyAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  sprites:
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: fluffy-wagging
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: fluffy-wagging-tip
+
+- type: marking
+  id: VulpTailHuskyAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  sprites:
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: husky-wagging
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: husky-wagging-inner
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: husky-wagging-outer
+
+- type: marking
+  id: VulpTailLongAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  sprites:
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: long-wagging
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: long-wagging-tip
+
+- type: marking
+  id: VulpTailVulpAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  sprites:
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp-wagging
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp-wagging-tip
+
+- type: marking
+  id: VulpTailVulpFadeAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  sprites:
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp-wagging
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp-wagging-fade
+
+- type: marking
+  id: VulpTailCoyoteAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  sprites:
+  - sprite: Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: coyote-wagging

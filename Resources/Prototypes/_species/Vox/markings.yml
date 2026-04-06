@@ -1,0 +1,973 @@
+- type: marking
+  id: VoxBeak
+  bodyPart: Snout
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: beak
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  # The cere is the base of the top part of the beak, the cere on this beak, is a square.
+  id: VoxBeakSquareCere
+  bodyPart: Snout
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: beak_squarecere
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxBeakShaved
+  bodyPart: Snout
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: beak_shaved
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxBeakHooked
+  bodyPart: Snout
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: beak_hooked
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxLArmScales
+  bodyPart: LArm
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: l_arm
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxLLegScales
+  bodyPart: LLeg
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: l_leg
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxRArmScales
+  bodyPart: RArm
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: r_arm
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxRLegScales
+  bodyPart: RLeg
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: r_leg
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxRHandScales
+  bodyPart: RHand
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: r_hand
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxLHandScales
+  bodyPart: LHand
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: l_hand
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxLFootScales
+  bodyPart: LFoot
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: l_foot
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxRFootScales
+  bodyPart: RFoot
+  forcedColoring: true
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: r_foot
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+        color: "#937e3d"
+
+- type: marking
+  id: VoxTail
+  bodyPart: Tail
+  groupWhitelist: [Vox]
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail
+
+- type: marking
+  id: VoxTailAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_animated
+
+- type: marking
+  id: VoxTailShort
+  bodyPart: Tail
+  groupWhitelist: [Vox]
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_short
+
+- type: marking
+  id: VoxTailShortAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_short_animated
+
+- type: marking
+  id: VoxTailBig
+  bodyPart: Tail
+  groupWhitelist: [Vox]
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_big
+
+- type: marking
+  id: VoxTailBigAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_big_animated
+
+- type: marking
+  id: VoxTailSpikes
+  bodyPart: Tail
+  groupWhitelist: [Vox]
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_spikes
+
+- type: marking
+  id: VoxTailSpikesAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_spikes_animated
+
+- type: marking
+  id: VoxTailDocked
+  bodyPart: Tail
+  groupWhitelist: [Vox]
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_docked
+
+- type: marking
+  id: VoxTailDockedAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_docked_animated
+
+
+- type: marking
+  id: VoxTailSplit
+  bodyPart: Tail
+  groupWhitelist: [Vox]
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_split
+
+- type: marking
+  id: VoxTailSplitAnimated
+  bodyPart: Tail
+  groupWhitelist: []
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail_split_animated
+- type: marking
+  id: VoxHairAfro
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: afro_s
+
+- type: marking
+  id: VoxHairBraids
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: braid_s
+
+- type: marking
+  id: VoxHairBushy
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: bushy_s
+
+- type: marking
+  id: VoxHairCrestedQuills
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: crestedquills_s
+
+- type: marking
+  id: VoxHairEmperorQuills
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: emperorquills_s
+
+- type: marking
+  id: VoxHairFlowing
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: flowing_s
+
+- type: marking
+  id: VoxHairHawk
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: hawk_s
+
+- type: marking
+  id: VoxHairHedgehog
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: hedgehog_s
+
+- type: marking
+  id: VoxHairHorns
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: horns_s
+
+- type: marking
+  id: VoxHairKeelQuills
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: keelquills_s
+
+- type: marking
+  id: VoxHairKeetQuills
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: keetquills_s
+
+- type: marking
+  id: VoxHairKingly
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: kingly_s
+
+- type: marking
+  id: VoxHairLongBraid
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: long_braid_s
+
+- type: marking
+  id: VoxHairMadScientist
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: mad_scientist_s
+
+- type: marking
+  id: VoxHairMange
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: mange_s
+
+- type: marking
+  id: VoxHairMohawk
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: mohawk_s
+
+- type: marking
+  id: VoxHairNights
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: nights_s
+
+- type: marking
+  id: VoxHairPony
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: ponytail_s
+
+- type: marking
+  id: VoxHairRazorClipped
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: razor_clipped_s
+
+- type: marking
+  id: VoxHairRazor
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: razor_s
+
+- type: marking
+  id: VoxHairSortBraid
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: short_braid_s
+
+- type: marking
+  id: VoxHairShortQuills
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: shortquills_s
+
+- type: marking
+  id: VoxHairSlick
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: slick_s
+
+- type: marking
+  id: VoxHairSpotty
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: spotty_s
+
+- type: marking
+  id: VoxHairSurf
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: surf_s
+
+- type: marking
+  id: VoxHairTielQuills
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: tielquills_s
+
+- type: marking
+  id: VoxHairWiseBraid
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: wise_braid_s
+
+- type: marking
+  id: VoxHairYasu
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: yasu_s
+
+- type: marking
+  id: VoxHairCatfish
+  bodyPart: Hair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_hair.rsi
+      state: catfish_s
+- type: marking
+  id: VoxFacialHairBeard
+  bodyPart: FacialHair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_facial_hair.rsi
+      state: beard_s
+
+- type: marking
+  id: VoxFacialHairColonel
+  bodyPart: FacialHair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_facial_hair.rsi
+      state: colonel_s
+
+- type: marking
+  id: VoxFacialHairFu
+  bodyPart: FacialHair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_facial_hair.rsi
+      state: fu_s
+
+- type: marking
+  id: VoxFacialHairMane
+  bodyPart: FacialHair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_facial_hair.rsi
+      state: mane_s
+
+- type: marking
+  id: VoxFacialHairManeSmall
+  bodyPart: FacialHair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_facial_hair.rsi
+      state: manesmall_s
+
+- type: marking
+  id: VoxFacialHairNeck
+  bodyPart: FacialHair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_facial_hair.rsi
+      state: neck_s
+
+- type: marking
+  id: VoxFacialHairTufts
+  bodyPart: FacialHair
+  canBeDisplaced: false
+  groupWhitelist: [Vox]
+  sprites:
+    - sprite: Mobs/Customization/vox_facial_hair.rsi
+      state: tuft_s
+
+- type: marking
+  id: VoxScarEyeRight
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_eye_right
+
+- type: marking
+  id: VoxScarEyeLeft
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_eye_left
+
+- type: marking
+  id: VoxScarTopSurgeryShort
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_top_surgery_short
+
+- type: marking
+  id: VoxScarTopSurgeryLong
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_top_surgery_long
+
+- type: marking
+  id: VoxScarChest
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_chest
+
+- type: marking
+  id: VoxScarNeck
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_neck
+
+- type: marking
+  id: VoxScarChestBullets
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_chest_bullets
+
+- type: marking
+  id: VoxScarStomachBullets
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_stomach_bullets
+
+- type: marking
+  id: VoxScarFace1
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_face_1
+
+- type: marking
+  id: VoxScarFace2
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_face_2
+
+- type: marking
+  id: VoxScarEyeRightSmall
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_eye_right_small
+
+- type: marking
+  id: VoxScarEyeLeftSmall
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_scars.rsi
+    state: vox_scar_eye_left_small
+
+- type: marking
+  id: TattooVoxHeartLeftArm
+  bodyPart: LArm
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: heart_l_arm
+
+- type: marking
+  id: TattooVoxHeartRightArm
+  bodyPart: RArm
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: heart_r_arm
+
+- type: marking
+  id: TattooVoxHiveChest
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: hive_s
+
+- type: marking
+  id: TattooVoxNightlingChest
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: nightling_s
+
+- type: marking
+  id: TattooVoxNightbelt
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: nightbelt
+
+- type: marking
+  id: TattooVoxChestV
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: chest_v_1
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: chest_v_2
+
+- type: marking
+  id: TattooVoxUnderbelly
+  bodyPart: Chest
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: underbelly
+
+- type: marking
+  id: TattooVoxTailRing
+  # TODO // Looks off on some tails (i.e docked/amputated), if conditionals for markings ever get implemented this needs to be updated to account for those.
+  bodyPart: TailOverlay
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: tail_ring
+
+- type: marking
+  id: TattooEyeVoxRight
+  bodyPart: Eyes
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: true
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: tattoo_eye_vox_r
+
+- type: marking
+  id: TattooEyeVoxLeft
+  bodyPart: Eyes
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+          negative: true
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: tattoo_eye_vox_l
+
+- type: marking
+  id: TattooEyeshadowVoxSmall
+  # there are a lot of deliberate limitations with this marking that should be pointed out. some of them may seem overly restrictive on the surface, but most of them are fully intentional.
+  # this marking is meant to be supplementary so they are transparent. if you give this 255 alpha it will probably be really distracting looking and make the face very difficult to read
+  # the reason these are also not recolorable is because allowing for the full RGB range makes these look not very good (especially considering they are stackable, and ESPECIALLY considering vox can stack 3 at once.)
+  # this is not a very big issue on humans, but is much more pronounced on vox & other nonhuman species, where the skin being more colorful can make for some truly dreadful meshing with the sprite thats definitely not desired.
+  # some of these limitations could possibly be removed with better control over how the marking can be customized - possibly removing stacking, allowing recoloring & clamping higher-end colors for the eyeshadow, etc.
+  bodyPart: Eyes
+  groupWhitelist: [Vox]
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: eyeshadow_small
+
+- type: marking
+  id: TattooEyeshadowVoxMedium
+  bodyPart: Eyes
+  groupWhitelist: [Vox]
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: eyeshadow_medium
+
+- type: marking
+  id: TattooEyeshadowVoxLarge
+  bodyPart: Eyes
+  groupWhitelist: [Vox]
+  forcedColoring: true
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: eyeshadow_large
+
+- type: marking
+  id: VoxTattooEyeliner
+  bodyPart: Eyes
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: eyeliner
+
+- type: marking
+  id: VoxBeakCoverStripe
+  bodyPart: SnoutCover
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: beakcover_stripe
+
+- type: marking
+  id: VoxBeakCoverTip
+  bodyPart: SnoutCover
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  groupWhitelist: [Vox]
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: beakcover_tip
+
+- type: marking
+  id: TattooVoxArrowHead
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: tattoo_arrow_head
+
+- type: marking
+  id: TattooVoxNightlingHead
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: tattoo_nightling_head
+
+- type: marking
+  id: VoxVisage
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: visage
+
+- type: marking
+  id: VoxVisageL
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: visage_l
+
+- type: marking
+  id: VoxVisageR
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: visage_r
+
+- type: marking
+  id: VoxCheek
+  bodyPart: Head
+  groupWhitelist: [Vox]
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: Mobs/Customization/vox_tattoos.rsi
+    state: cheekblush
+

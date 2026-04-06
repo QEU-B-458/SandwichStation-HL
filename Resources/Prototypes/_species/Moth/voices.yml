@@ -1,0 +1,43 @@
+# Moth emote sounds
+- type: emoteSounds
+  id: UnisexMoth
+  params:
+    variation: 0.125
+  sounds:
+    Buzz:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Scream:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    Laugh:
+      path: /Audio/Voice/Moth/moth_laugh.ogg
+    Chitter:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Squeak:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Honk:
+      collection: BikeHorn
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MothDeathGasp
+
+# Moth body emotes — wing flap + standard social emotes
+- type: emoteSounds
+  id: MothBodyEmotes
+  sounds:
+    Flap:
+      path: /Audio/Voice/Moth/moth_flap.ogg
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes

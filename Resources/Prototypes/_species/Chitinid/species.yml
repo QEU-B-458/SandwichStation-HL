@@ -6,6 +6,56 @@
   prototype: MobChitinid
   dollPrototype: AppearanceChitinid
   skinColoration: Hues
+  sprites: ChitinidSprites
+  maleFirstNames: NamesChitinidFirstMale
+  femaleFirstNames: NamesChitinidFirstFemale
+  lastNames: NamesChitinidHives
+  naming: FirstLast
+  markingData:
+    Torso:
+      group: Chitinid
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Chitinid
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Chitinid
+      layers: [LArm]
+    ArmRight:
+      group: Chitinid
+      layers: [RArm]
+    HandLeft:
+      group: Chitinid
+      layers: [LHand]
+    HandRight:
+      group: Chitinid
+      layers: [RHand]
+    LegLeft:
+      group: Chitinid
+      layers: [LLeg]
+    LegRight:
+      group: Chitinid
+      layers: [RLeg]
+    FootLeft:
+      group: Chitinid
+      layers: [LFoot]
+    FootRight:
+      group: Chitinid
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

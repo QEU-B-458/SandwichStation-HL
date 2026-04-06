@@ -1,0 +1,21 @@
+- type: emoteSounds
+  id: UnisexResomi
+  sounds:
+    Laugh:
+      collection: ResomiLaughs
+    Scream:
+      collection: ResomiScreams
+    Cry:
+      collection: ResomiCries
+    Chirp:
+      collection: ResomiChirps
+    Scree:
+      collection: ResomiScrees
+    Call:
+      collection: ResomiCalls
+    Squawk:
+      collection: ResomiSquawk
+    Trill:
+      collection: ResomiTrils
+    Whistle:
+      collection: ResomiWhistles

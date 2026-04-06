@@ -1,0 +1,127 @@
+# Feroxi body prototype — owns the full part + organ tree.
+
+- type: body
+  id: Feroxi
+  name: "feroxi"
+  root: torso
+  slots:
+    head:
+      part: HeadFeroxi
+      connections:
+      - torso
+      organs:
+        brain: OrganFeroxiBrain
+        eyes: OrganFeroxiEyes
+        tongue: OrganFeroxiTongue
+        ears: OrganFeroxiEars
+    torso:
+      part: TorsoFeroxi
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganFeroxiHeart
+        lungs: OrganFeroxiLungs
+        stomach: OrganFeroxiStomach
+        liver: OrganFeroxiLiver
+        kidneys: OrganFeroxiKidneys
+        appendix: OrganFeroxiAppendix
+    right arm:
+      part: RightArmFeroxi
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmFeroxi
+      connections:
+      - left hand
+    right hand:
+      part: RightHandFeroxi
+    left hand:
+      part: LeftHandFeroxi
+    right leg:
+      part: RightLegFeroxi
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegFeroxi
+      connections:
+      - left foot
+    right foot:
+      part: RightFootFeroxi
+    left foot:
+      part: LeftFootFeroxi
+
+# Species-specific organs
+
+- type: entity
+  id: OrganFeroxiBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFeroxiEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFeroxiLungs
+  parent: OrganHumanLungs
+  name: lungs
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFeroxiHeart
+  parent: OrganHumanHeart
+  name: heart
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFeroxiStomach
+  parent: OrganHumanStomach
+  name: stomach
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFeroxiLiver
+  parent: OrganHumanLiver
+  name: liver
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFeroxiKidneys
+  parent: OrganHumanKidneys
+  name: kidneys
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFeroxiTongue
+  parent: OrganHumanTongue
+  name: tongue
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFeroxiAppendix
+  parent: OrganHumanAppendix
+  name: appendix
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFeroxiEars
+  parent: OrganHumanEars
+  name: ears
+  suffix: Feroxi
+  categories: [ HideSpawnMenu ]

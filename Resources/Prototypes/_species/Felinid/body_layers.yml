@@ -1,0 +1,112 @@
+# Felinid sprite layer definitions.
+# Uses Human RSI — Felinids are biologically human with cat features.
+# Own IDs for future customizability (custom sprites can be swapped in later).
+
+- type: humanoidBaseSprite
+  id: FelinidChest
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidHead
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidLArm
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidRArm
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidLHand
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidRHand
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidLLeg
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidRLeg
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidLFoot
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidRFoot
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelinidLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FelinidLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FelinidLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FelinidLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FelinidLayerEyes
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: MobFelinidSprites
+  sprites:
+    Chest: FelinidChest
+    Head: FelinidHead
+    LArm: FelinidLArm
+    RArm: FelinidRArm
+    LHand: FelinidLHand
+    RHand: FelinidRHand
+    LLeg: FelinidLLeg
+    RLeg: FelinidRLeg
+    LFoot: FelinidLFoot
+    RFoot: FelinidRFoot
+    Tail: FelinidLayerTail
+    Hair: FelinidLayerHair
+    FacialHair: FelinidLayerFacialHair
+    Snout: FelinidLayerSnout
+    Eyes: FelinidLayerEyes

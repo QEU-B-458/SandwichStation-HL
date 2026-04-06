@@ -2,7 +2,6 @@ using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Humanoid;
 using Content.Server.Preferences.Managers;
-using Content.Shared.Body;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -15,7 +14,6 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
     [Dependency] private readonly HumanoidProfileSystem _humanoidProfile = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IServerPreferencesManager _prefs = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
 
     public override void Initialize()
     {
@@ -48,7 +46,6 @@ public sealed class AntagLoadProfileRuleSystem : GameRuleSystem<AntagLoadProfile
         args.Entity = Spawn(species.Prototype);
         if (profile?.WithSpecies(species.ID) is { } humanoidProfile)
         {
-            _visualBody.ApplyProfileTo(args.Entity.Value, humanoidProfile);
             _humanoidProfile.ApplyProfileTo(args.Entity.Value, humanoidProfile);
         }
     }

@@ -1,0 +1,92 @@
+# Arachnid appearance entity (character editor doll + body definition)
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceArachnid
+  name: arachnid appearance
+  components:
+  - type: Inventory
+    templateId: arachnid
+    speciesId: arachnid
+  - type: HumanoidProfile
+    species: Arachnid
+
+# Arachnid mob entity — arthropod humanoids, web-spinners
+- type: entity
+  parent:
+  - AppearanceArachnid
+  - BaseSpeciesMobOrganic
+  id: MobArachnid
+  name: Urist McWebs
+  components:
+  - type: Body
+    prototype: Arachnid
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Arachnid
+  - type: TypingIndicator
+    proto: arachnid
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 1.5
+    damageRecovery:
+      types:
+        Asphyxiation: -0.5
+  - type: Sericulture
+    productionLength: 2
+    entityProduced: MaterialWebSilk1
+    hungerCost: 4
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - SpiderCraft
+    - AnomalyHost
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSpider
+      amount: 5
+  - type: Reactive
+    reactions:
+    - reagents: [Water]
+      methods: [Touch]
+      effects:
+      - !type:SpawnEntityInInventory
+        slot: head
+        entity: WaterDropletHat
+    - reagents: [Water, SpaceCleaner]
+      methods: [Touch]
+      effects:
+      - !type:WashCreamPie
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: CopperBlood
+        Quantity: 300
+  - type: MeleeWeapon
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 5
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#162581"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: Speech
+    speechVerb: Arachnid
+    speechSounds: Arachnid
+    allowedEmotes: ['Click', 'Chitter']
+  - type: Vocal
+    sounds:
+      Male: UnisexArachnid
+      Female: UnisexArachnid
+      Unsexed: UnisexArachnid
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

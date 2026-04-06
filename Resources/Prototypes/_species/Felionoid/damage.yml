@@ -1,0 +1,7 @@
+- type: damageModifierSet
+  id: Felionoid
+  coefficients:
+    Blunt: 1.0
+    Slash: 0.9
+    Piercing: 1.1
+    Heat: 1.1

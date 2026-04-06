@@ -1,0 +1,50 @@
+# Diona species - plant-based nymph colony humanoids
+- type: species
+  id: Diona
+  name: species-name-diona
+  roundStart: true
+  prototype: MobDiona
+  defaultSkinTone: "#cdb369"
+  dollPrototype: AppearanceDiona
+  skinColoration: Hues
+  sprites: DionaSprites
+  maleFirstNames: NamesDionaFirst
+  femaleFirstNames: NamesDionaFirst
+  lastNames: NamesDionaLast
+  naming: TheFirstofLast
+  sexes:
+  - Unsexed
+
+- type: markingsGroup
+  parent: Undergarments
+  id: Diona
+  onlyGroupWhitelisted: true
+  limits:
+    enum.HumanoidVisualLayers.Head:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Overlay:
+      limit: 1
+      required: true
+      default: [ DionaVineOverlay ]

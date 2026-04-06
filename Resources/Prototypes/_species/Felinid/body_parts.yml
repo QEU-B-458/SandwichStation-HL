@@ -1,0 +1,156 @@
+# Felinid body part entities.
+# Uses Human RSI sprites — own part IDs for future customizability.
+
+- type: entity
+  id: PartFelinid
+  parent: BasePart
+  name: "felinid body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoFelinid
+  name: "felinid torso"
+  parent: [PartFelinid, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: torso_m
+  - type: BodyPart
+    baseLayerId: FelinidChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadFelinid
+  name: "felinid head"
+  parent: [PartFelinid, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: head_m
+  - type: BodyPart
+    baseLayerId: FelinidHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmFelinid
+  name: "left felinid arm"
+  parent: [PartFelinid, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: FelinidLArm
+
+- type: entity
+  id: RightArmFelinid
+  name: "right felinid arm"
+  parent: [PartFelinid, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: FelinidRArm
+
+- type: entity
+  id: LeftHandFelinid
+  name: "left felinid hand"
+  parent: [PartFelinid, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: FelinidLHand
+
+- type: entity
+  id: RightHandFelinid
+  name: "right felinid hand"
+  parent: [PartFelinid, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: FelinidRHand
+
+- type: entity
+  id: LeftLegFelinid
+  name: "left felinid leg"
+  parent: [PartFelinid, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: FelinidLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegFelinid
+  name: "right felinid leg"
+  parent: [PartFelinid, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: FelinidRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootFelinid
+  name: "left felinid foot"
+  parent: [PartFelinid, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: FelinidLFoot
+
+- type: entity
+  id: RightFootFelinid
+  name: "right felinid foot"
+  parent: [PartFelinid, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: FelinidRFoot

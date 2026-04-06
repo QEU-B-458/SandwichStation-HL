@@ -1,4 +1,6 @@
+using Content.Shared.Body.Systems;
 using Content.Shared.DragDrop;
+using Content.Shared._Shitmed.Body.Organ;
 using Robust.Shared.Containers;
 
 namespace Content.Shared.Body;
@@ -17,6 +19,7 @@ namespace Content.Shared.Body;
 public sealed partial class BodySystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedBodySystem _sharedBody = default!;
 
     private EntityQuery<BodyComponent> _bodyQuery;
     private EntityQuery<OrganComponent> _organQuery;
@@ -65,6 +68,9 @@ public sealed partial class BodySystem : EntitySystem
         var ev = new OrganGotInsertedEvent(ent);
         RaiseLocalEvent(args.Entity, ref ev);
 
+        var modify = new OrganComponentsModifyEvent(ent, true);
+        RaiseLocalEvent(args.Entity, modify);
+
         if (organ.Body != ent)
         {
             organ.Body = ent;
@@ -85,6 +91,9 @@ public sealed partial class BodySystem : EntitySystem
 
         var ev = new OrganGotRemovedEvent(ent);
         RaiseLocalEvent(args.Entity, ref ev);
+
+        var modify = new OrganComponentsModifyEvent(ent, false);
+        RaiseLocalEvent(args.Entity, modify);
 
         if (organ.Body == null)
             return;

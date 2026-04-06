@@ -1,0 +1,9 @@
+- type: localizedDataset
+  id: names_kitsune_first_male
+  prefix: names-kitsune-first-male-
+  count: 20
+
+- type: localizedDataset
+  id: names_kitsune_first_female
+  prefix: names-kitsune-first-female-
+  count: 20

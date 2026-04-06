@@ -16,6 +16,7 @@
   dollPrototype: AppearanceThaven
   skinColoration: Hues
   defaultSkinTone: "#ffffff"
+  sprites: ThavenSprites
   maleFirstNames: NamesThaven
   femaleFirstNames: NamesThaven
   naming: First

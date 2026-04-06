@@ -1,0 +1,9 @@
+- type: damageModifierSet
+  id: Arachnid
+  coefficients:
+    Blunt: 1.0
+    Slash: 1.1
+    Piercing: 0.9
+    Heat: 1.1
+    Cold: 1.1
+    Asphyxiation: 1.1

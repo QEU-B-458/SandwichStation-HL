@@ -1,5 +1,5 @@
 using Content.Shared.Administration.Logs;
-using Content.Shared.Body;
+using Content.Shared.Body.Systems;
 using Content.Shared.Changeling.Components;
 using Content.Shared.Cloning;
 using Content.Shared.Database;
@@ -29,7 +29,8 @@ public sealed class ChangelingClonerSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedChangelingIdentitySystem _changelingIdentity = default!;
     [Dependency] private readonly SharedForensicsSystem _forensics = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
 
     public override void Initialize()
     {
@@ -259,7 +260,12 @@ public sealed class ChangelingClonerSystem : EntitySystem
             $"{user} is using {ent.Owner} to inject DNA into {target} changing their identity to {ent.Comp.ClonedBackup.Value}.");
 
         // Do the actual transformation.
-        _visualBody.CopyAppearanceFrom(ent.Comp.ClonedBackup.Value, target);
+        if (_humanoidAppearance.GetCharacterProfile(ent.Comp.ClonedBackup.Value) is { } clonerProfile
+            && TryComp(target, out HumanoidAppearanceComponent? clonerAppearance))
+        {
+            _humanoidAppearance.ApplyProfileData(target, clonerProfile, true, clonerAppearance);
+            _body.RefreshBodyPartAppearances(target);
+        }
         _cloning.CloneComponents(ent.Comp.ClonedBackup.Value, target, settings);
         _metaData.SetEntityName(target, Name(ent.Comp.ClonedBackup.Value), raiseEvents: ent.Comp.RaiseNameChangeEvents);
 

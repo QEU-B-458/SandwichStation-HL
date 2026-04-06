@@ -1,0 +1,128 @@
+# Felinid body prototype — owns the full part + organ tree.
+# Felinid uses Felinid body parts and organs — they are biologically human with cat features.
+
+- type: body
+  id: Felinid
+  name: "felinid"
+  root: torso
+  slots:
+    head:
+      part: HeadFelinid
+      connections:
+      - torso
+      organs:
+        brain: OrganFelinidBrain
+        eyes: OrganFelinidEyes
+        tongue: OrganFelinidTongue
+        ears: OrganFelinidEars
+    torso:
+      part: TorsoFelinid
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganFelinidHeart
+        lungs: OrganFelinidLungs
+        stomach: OrganFelinidStomach
+        liver: OrganFelinidLiver
+        kidneys: OrganFelinidKidneys
+        appendix: OrganFelinidAppendix
+    right arm:
+      part: RightArmFelinid
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmFelinid
+      connections:
+      - left hand
+    right hand:
+      part: RightHandFelinid
+    left hand:
+      part: LeftHandFelinid
+    right leg:
+      part: RightLegFelinid
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegFelinid
+      connections:
+      - left foot
+    right foot:
+      part: RightFootFelinid
+    left foot:
+      part: LeftFootFelinid
+
+# Species-specific organs — parented from human equivalents for customizability
+
+- type: entity
+  id: OrganFelinidBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelinidEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelinidTongue
+  parent: OrganHumanTongue
+  name: tongue
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelinidEars
+  parent: OrganHumanEars
+  name: ears
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelinidHeart
+  parent: OrganHumanHeart
+  name: heart
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelinidLungs
+  parent: OrganHumanLungs
+  name: lungs
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelinidStomach
+  parent: OrganHumanStomach
+  name: stomach
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelinidLiver
+  parent: OrganHumanLiver
+  name: liver
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelinidKidneys
+  parent: OrganHumanKidneys
+  name: kidneys
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganFelinidAppendix
+  parent: OrganHumanAppendix
+  name: appendix
+  suffix: Felinid
+  categories: [ HideSpawnMenu ]

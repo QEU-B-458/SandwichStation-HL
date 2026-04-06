@@ -1,0 +1,69 @@
+# Rodentia appearance entity (character editor doll + body definition)
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceRodentia
+  name: rodentia appearance
+  components:
+  - type: Inventory
+    speciesId: rodentia
+    templateId: human
+  - type: HumanoidProfile
+    species: Rodentia
+
+# Rodentia mob entity — small rodent humanoids
+- type: entity
+  parent:
+  - AppearanceRodentia
+  - BaseSpeciesMobOrganic
+  id: MobRodentia
+  name: Urist McRat
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+  - type: Hunger
+    baseDecayRate: 0.0266
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.28
+        density: 140
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 2
+        Slash: 3
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Rodentia
+  - type: Speech
+    speechVerb: Rodentia
+    speechSounds: Squeak
+    allowedEmotes:
+    - Squeak
+    - Belch
+  - type: Vocal
+    sounds:
+      Male: MaleRodentia
+      Female: FemaleRodentia
+      Unsexed: MaleRodentia
+  - type: TypingIndicator
+    proto: rodentia
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat
+      amount: 5
+  - type: Rummager
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

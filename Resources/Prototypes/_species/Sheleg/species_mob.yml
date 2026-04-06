@@ -1,0 +1,144 @@
+# Sheleg appearance entity (character editor doll + body definition)
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceSheleg
+  name: sheleg appearance
+  components:
+  - type: Inventory
+    speciesId: sheleg
+    templateId: human
+  - type: HumanoidProfile
+    species: Sheleg
+
+# Sheleg mob entity — ice-blooded beings, burns in heat, regenerates passively
+- type: entity
+  parent:
+  - AppearanceSheleg
+  - BaseSpeciesMobOrganic
+  id: MobSheleg
+  name: Urist McIce
+  components:
+  - type: Sprite
+    scale: 1.15, 1.2
+  - type: Hunger
+    baseDecayRate: 0.0083
+  - type: Thirst
+    baseDecayRate: 0.15
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Sheleg
+  - type: Speech
+    speechSounds: Sheleg
+    speechVerb: Sheleg
+  - type: TypingIndicator
+    proto: sheleg
+  - type: Vocal
+    sounds:
+      Male: UnisexSheleg
+      Female: UnisexSheleg
+      Unsexed: UnisexSheleg
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatSheleg
+      amount: 5
+  - type: Bloodstream
+    bloodReagent: Cryoxadone
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 3
+        Cold: 2
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 1
+  - type: Stamina
+  - type: DamageVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    targetLayers:
+    - "enum.HumanoidVisualLayers.Chest"
+    - "enum.HumanoidVisualLayers.Head"
+    - "enum.HumanoidVisualLayers.LArm"
+    - "enum.HumanoidVisualLayers.LLeg"
+    - "enum.HumanoidVisualLayers.RArm"
+    - "enum.HumanoidVisualLayers.RLeg"
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#16297e"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.9
+      80: 0.7
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+    reactions:
+    - reagents: [ Water, SpaceCleaner, SoapReagent ]
+      methods: [ Touch ]
+      effects:
+      - !type:WashCreamPie
+    - reagents: [ Potassium ]
+      methods: [ Touch ]
+      effects:
+      - !type:Emote
+        emote: Scream
+        probability: 0.2
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages: [ "barozine-effect-skin-burning" ]
+        probability: 0.33
+      - !type:Jitter
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.40
+        density: 180
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Flammable
+    firestackFade: -0.2
+  - type: TemperatureDamage
+    heatDamageThreshold: 273.15
+    coldDamageThreshold: 0
+    heatDamage:
+      types:
+        Heat: 10
+  - type: Temperature
+    currentTemperature: 100
+    specificHeat: 42
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 100
+    implicitHeatRegulation: 500
+    sweatHeatRegulation: 2000
+    shiveringHeatRegulation: 0
+    normalBodyTemperature: 100.00
+    thermalRegulationTemperatureThreshold: 2
+  - type: TemperatureSpeed
+    thresholds:
+      293: 1.0
+      280: 1.0
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 100
+    damage:
+      types:
+        Heat: -0.025
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

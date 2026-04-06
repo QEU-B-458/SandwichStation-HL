@@ -1,0 +1,11 @@
+- type: emoteSounds
+  parent: MaleHuman
+  id: MaleThaven
+
+- type: emoteSounds
+  parent: FemaleHuman
+  id: FemaleThaven
+
+- type: emoteSounds
+  parent: MaleHuman
+  id: UnisexThaven

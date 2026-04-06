@@ -4,25 +4,6 @@
   id: AppearanceChitinid
   name: chitinid appearance
   components:
-  - type: InitialBody
-    organs:
-      Torso: OrganChitinidTorso
-      Head: OrganChitinidHead
-      ArmLeft: OrganChitinidArmLeft
-      ArmRight: OrganChitinidArmRight
-      HandRight: OrganChitinidHandRight
-      HandLeft: OrganChitinidHandLeft
-      LegLeft: OrganChitinidLegLeft
-      LegRight: OrganChitinidLegRight
-      FootLeft: OrganChitinidFootLeft
-      FootRight: OrganChitinidFootRight
-      Brain: OrganHumanBrain
-      Eyes: OrganHumanEyes
-      Lungs: OrganHumanLungs
-      Heart: OrganAnimalHeart
-      Stomach: OrganChitinidStomach
-      Liver: OrganAnimalLiver
-      Kidneys: OrganHumanKidneys
   - type: HumanoidProfile
     species: Chitinid
 

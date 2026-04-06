@@ -1,0 +1,149 @@
+# Vulpkanin body part entities.
+
+- type: entity
+  id: PartVulpkanin
+  parent: BasePart
+  name: "vulpkanin body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: SulfurBlood
+        Quantity: 10
+
+# Sexed torso — no baseLayerId, runtime sex-morphs to VulpkaninChestMale/Female
+- type: entity
+  id: TorsoVulpkanin
+  name: "vulpkanin torso"
+  parent: [PartVulpkanin, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: torso_m
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: SulfurBlood
+        Quantity: 30
+
+# Non-sexed head — explicit baseLayerId
+- type: entity
+  id: HeadVulpkanin
+  name: "vulpkanin head"
+  parent: [PartVulpkanin, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: head
+  - type: BodyPart
+    baseLayerId: VulpkaninHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: SulfurBlood
+        Quantity: 15
+
+- type: entity
+  id: LeftArmVulpkanin
+  name: "left vulpkanin arm"
+  parent: [PartVulpkanin, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: VulpkaninLArm
+
+- type: entity
+  id: RightArmVulpkanin
+  name: "right vulpkanin arm"
+  parent: [PartVulpkanin, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: VulpkaninRArm
+
+- type: entity
+  id: LeftHandVulpkanin
+  name: "left vulpkanin hand"
+  parent: [PartVulpkanin, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: VulpkaninLHand
+
+- type: entity
+  id: RightHandVulpkanin
+  name: "right vulpkanin hand"
+  parent: [PartVulpkanin, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: VulpkaninRHand
+
+- type: entity
+  id: LeftLegVulpkanin
+  name: "left vulpkanin leg"
+  parent: [PartVulpkanin, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: VulpkaninLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegVulpkanin
+  name: "right vulpkanin leg"
+  parent: [PartVulpkanin, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: VulpkaninRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootVulpkanin
+  name: "left vulpkanin foot"
+  parent: [PartVulpkanin, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: VulpkaninLFoot
+
+- type: entity
+  id: RightFootVulpkanin
+  name: "right vulpkanin foot"
+  parent: [PartVulpkanin, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vulpkanin/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: VulpkaninRFoot

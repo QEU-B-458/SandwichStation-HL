@@ -1,0 +1,101 @@
+# Skrell body prototype and internal organ entities.
+
+- type: body
+  id: Skrell
+  name: "skrell"
+  root: torso
+  slots:
+    head:
+      part: HeadSkrell
+      connections:
+      - torso
+      organs:
+        brain: OrganSkrellBrain
+        eyes: OrganSkrellEyes
+    torso:
+      part: TorsoSkrell
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganSkrellHeart
+        lungs: OrganSkrellLungs
+        stomach: OrganSkrellStomach
+        liver: OrganSkrellLiver
+        kidneys: OrganSkrellKidneys
+    right arm:
+      part: RightArmSkrell
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmSkrell
+      connections:
+      - left hand
+    right hand:
+      part: RightHandSkrell
+    left hand:
+      part: LeftHandSkrell
+    right leg:
+      part: RightLegSkrell
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegSkrell
+      connections:
+      - left foot
+    right foot:
+      part: RightFootSkrell
+    left foot:
+      part: LeftFootSkrell
+
+- type: entity
+  id: OrganSkrellBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Skrell
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganSkrellEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Skrell
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganSkrellHeart
+  parent: OrganHumanHeart
+  name: heart
+  suffix: Skrell
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganSkrellLungs
+  parent: OrganHumanLungs
+  name: lungs
+  suffix: Skrell
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganSkrellStomach
+  parent: OrganHumanStomach
+  name: stomach
+  suffix: Skrell
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganSkrellLiver
+  parent: OrganHumanLiver
+  name: liver
+  suffix: Skrell
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganSkrellKidneys
+  parent: OrganHumanKidneys
+  name: kidneys
+  suffix: Skrell
+  categories: [ HideSpawnMenu ]

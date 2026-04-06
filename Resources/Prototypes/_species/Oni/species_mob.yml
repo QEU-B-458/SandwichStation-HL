@@ -1,0 +1,57 @@
+# Oni appearance entity (character editor doll + body definition)
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceOni
+  name: oni appearance
+  components:
+  - type: Inventory
+    speciesId: oni
+    templateId: human
+  - type: HumanoidProfile
+    species: Oni
+
+# Oni mob entity
+- type: entity
+  parent:
+  - AppearanceOni
+  - BaseSpeciesMobOrganic
+  id: MobOni
+  name: Urist McOni
+  components:
+  - type: Speech
+    speechSounds: Baritone
+  - type: Sprite
+    scale: 1.2, 1.2
+  - type: Oni
+    modifiers:
+      coefficients:
+        Blunt: 1.2
+        Slash: 1.2
+        Piercing: 1.2
+        Asphyxiation: 1.2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.42
+        density: 220
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Oni
+  - type: Stamina
+    critThreshold: 125
+  - type: TypingIndicator
+    proto: oni
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5

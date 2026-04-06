@@ -36,6 +36,7 @@ admin-verbs-grant-all-access = Grant All Access
 admin-verbs-revoke-all-access = Revoke All Access
 admin-verbs-adjust-stack = Adjust Stack
 admin-verbs-fill-stack = Fill Stack
+admin-verbs-clone-appearance = Clone Appearance
 admin-verbs-rename = Rename
 admin-verbs-redescribe = Redescribe
 admin-verbs-rename-and-redescribe = Rename & Redescribe
@@ -63,3 +64,7 @@ admin-verbs-dialog-redescribe-description = Description
 admin-verbs-dialog-rename-and-redescribe-title = Rename & Redescribe
 admin-verbs-dialog-set-bullet-amount-title = Set Bullet Amount
 admin-verbs-dialog-set-bullet-amount-amount = Amount (standard {$cap})
+
+admin-trick-clone-appearance-description = Copies your humanoid appearance onto the target.
+admin-trick-clone-appearance-same-target = You cannot clone your appearance onto yourself.
+admin-trick-clone-appearance-invalid-source = Your mob does not have a valid humanoid appearance to clone.

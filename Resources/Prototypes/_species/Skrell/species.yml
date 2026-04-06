@@ -1,0 +1,60 @@
+# Skrell species - amphibious humanoids
+- type: species
+  id: Skrell
+  name: species-name-skrell
+  roundStart: true
+  prototype: MobSkrell
+  dollPrototype: AppearanceSkrell
+  skinColoration: Hues
+  defaultSkinTone: "#8cd7a3"
+  sprites: SkrellSprites
+  maleFirstNames: RMCNamesSkrellFirst
+  femaleFirstNames: RMCNamesSkrellFirst
+  lastNames: RMCNamesSkrellLast
+  naming: FirstLast
+  minAge: 120
+  youngAge: 120
+  oldAge: 400
+  maxAge: 500
+
+- type: markingsGroup
+  parent: Undergarments
+  id: Skrell
+  limits:
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      default: [ RMCHairSkrellShort ]
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 1
+      required: false

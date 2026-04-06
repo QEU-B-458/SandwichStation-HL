@@ -1,0 +1,24 @@
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceFeroxi
+  name: feroxi appearance
+  components:
+  - type: HumanoidProfile
+    species: Feroxi
+
+- type: entity
+  parent:
+  - AppearanceFeroxi
+  - BaseSpeciesMobOrganic
+  id: MobFeroxi
+  name: Urist McFeroxi
+  components:
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Feroxi
+  - type: TypingIndicator
+    proto: Feroxi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 5

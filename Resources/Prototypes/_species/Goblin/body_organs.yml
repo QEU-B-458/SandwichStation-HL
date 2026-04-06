@@ -1,0 +1,127 @@
+# Goblin body prototype — owns the full part + organ tree.
+
+- type: body
+  id: Goblin
+  name: "goblin"
+  root: torso
+  slots:
+    head:
+      part: HeadGoblin
+      connections:
+      - torso
+      organs:
+        brain: OrganGoblinBrain
+        eyes: OrganGoblinEyes
+        tongue: OrganGoblinTongue
+        ears: OrganGoblinEars
+    torso:
+      part: TorsoGoblin
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganGoblinHeart
+        lungs: OrganGoblinLungs
+        stomach: OrganGoblinStomach
+        liver: OrganGoblinLiver
+        kidneys: OrganGoblinKidneys
+        appendix: OrganGoblinAppendix
+    right arm:
+      part: RightArmGoblin
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmGoblin
+      connections:
+      - left hand
+    right hand:
+      part: RightHandGoblin
+    left hand:
+      part: LeftHandGoblin
+    right leg:
+      part: RightLegGoblin
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegGoblin
+      connections:
+      - left foot
+    right foot:
+      part: RightFootGoblin
+    left foot:
+      part: LeftFootGoblin
+
+# Species-specific organs
+
+- type: entity
+  id: OrganGoblinBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganGoblinEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganGoblinTongue
+  parent: OrganHumanTongue
+  name: tongue
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganGoblinEars
+  parent: OrganHumanEars
+  name: ears
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganGoblinHeart
+  parent: OrganHumanHeart
+  name: heart
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganGoblinLungs
+  parent: OrganHumanLungs
+  name: lungs
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganGoblinStomach
+  parent: OrganHumanStomach
+  name: stomach
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganGoblinLiver
+  parent: OrganHumanLiver
+  name: liver
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganGoblinKidneys
+  parent: OrganHumanKidneys
+  name: kidneys
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganGoblinAppendix
+  parent: OrganHumanAppendix
+  name: appendix
+  suffix: Goblin
+  categories: [ HideSpawnMenu ]

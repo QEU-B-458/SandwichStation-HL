@@ -1,0 +1,18 @@
+# Sheleg name datasets — existing locale files use names-sheleg-*-dataset- prefix
+- type: localizedDataset
+  id: NamesShelegFirstMale
+  values:
+    prefix: names-sheleg-first-male-dataset-
+    count: 123
+
+- type: localizedDataset
+  id: NamesShelegFirstFemale
+  values:
+    prefix: names-sheleg-first-female-dataset-
+    count: 115
+
+- type: localizedDataset
+  id: NamesShelegLast
+  values:
+    prefix: names-sheleg-last-dataset-
+    count: 151

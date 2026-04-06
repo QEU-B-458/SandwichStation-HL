@@ -2,6 +2,7 @@ using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Body;
+using Content.Shared.Body.Prototypes;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
 
@@ -241,90 +242,48 @@ public sealed class MarkingManager
         }
     }
 
-    /// <summary>
-    /// Returns the expected set of organs for a species to have.
-    /// </summary>
-    /// <param name="species">The species to look up.</param>
-    /// <returns>A dictionary of organ categories to their usual organs within a species.</returns>
-    public Dictionary<ProtoId<OrganCategoryPrototype>, EntProtoId<OrganComponent>> GetOrgans(ProtoId<SpeciesPrototype> species)
-    {
-        var speciesPrototype = _prototype.Index(species);
-        var appearancePrototype = _prototype.Index(speciesPrototype.DollPrototype);
-
-        if (!appearancePrototype.TryGetComponent<InitialBodyComponent>(out var initialBody, _component))
-            return new();
-
-        return initialBody.Organs;
-    }
 
     /// <summary>
-    /// Looks up the expected set of <see cref="OrganMarkingData" /> for the species to have
+    /// Returns the organ-category → marking-data mapping for a species.
+    /// Data is sourced from <see cref="SpeciesPrototype.MarkingData"/>.
+    /// Returns an empty dict for species that have not yet been configured.
     /// </summary>
-    /// <param name="species">The species to look up the usual organs of.</param>
-    /// <returns>A dictionary of organ categories to their usual organ marking data within a species.</returns>
     public Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> GetMarkingData(ProtoId<SpeciesPrototype> species)
     {
-        var ret = new Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData>();
-
-        foreach (var (organ, proto) in GetOrgans(species))
-        {
-            if (!TryGetMarkingData(proto, out var organData))
-                continue;
-
-            ret[organ] = organData.Value;
-        }
-
-        return ret;
+        return _prototype.TryIndex(species, out var proto) ? proto.MarkingData : new();
     }
 
     /// <summary>
-    /// Expands the provided profile data into all the categories for a species.
+    /// Returns a per-organ profile-data dictionary populated with the given sex/colors,
+    /// one entry for every organ category defined by <see cref="GetMarkingData"/>.
     /// </summary>
-    /// <param name="species">The species the returned dictionary should be comprehensive for.</param>
-    /// <param name="sex">The sex to apply to all organs</param>
-    /// <param name="skinColor">The skin color to apply to all organs</param>
-    /// <param name="eyeColor">The eye color to apply to all organs</param>
-    /// <returns></returns>
-    /// <seealso cref="OrganProfileData" />
-    public Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> GetProfileData(ProtoId<SpeciesPrototype> species,
-        Sex sex,
-        Color skinColor,
-        Color eyeColor)
+    public Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> GetProfileData(
+        ProtoId<SpeciesPrototype> species, Sex sex, Color skinColor, Color eyeColor)
     {
-        var ret = new Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData>();
-
-        foreach (var organ in GetOrgans(species).Keys)
-        {
-            ret[organ] = new()
-            {
-                Sex = sex,
-                EyeColor = eyeColor,
-                SkinColor = skinColor,
-            };
-        }
-
-        return ret;
+        var result = new Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData>();
+        foreach (var organ in GetMarkingData(species).Keys)
+            result[organ] = new OrganProfileData { Sex = sex, SkinColor = skinColor, EyeColor = eyeColor };
+        return result;
     }
 
-    /// <summary>
-    /// Gets the <see cref="OrganMarkingData" /> for the entity prototype corresponding to an organ
-    /// </summary>
-    /// <param name="organ">The ID of the organ entity prototype to look up</param>
-    /// <param name="organData">The marking data for the organ if it exists</param>
-    /// <returns>Whether the provided entity prototype ID corresponded to organ marking data that could be returned</returns>
-    public bool TryGetMarkingData(EntProtoId organ, [NotNullWhen(true)] out OrganMarkingData? organData)
+    private static bool TryGetBodySlotCategory(string slotName, [NotNullWhen(true)] out ProtoId<OrganCategoryPrototype>? category)
     {
-        organData = null;
+        category = slotName.Trim().ToLowerInvariant() switch
+        {
+            "torso" => "Torso",
+            "head" => "Head",
+            "left arm" => "ArmLeft",
+            "right arm" => "ArmRight",
+            "left hand" => "HandLeft",
+            "right hand" => "HandRight",
+            "left leg" => "LegLeft",
+            "right leg" => "LegRight",
+            "left foot" => "FootLeft",
+            "right foot" => "FootRight",
+            _ => null
+        };
 
-        if (!_prototype.TryIndex(organ, out var organProto))
-            return false;
-
-        if (!organProto.TryGetComponent<VisualOrganMarkingsComponent>(out var comp, _component))
-            return false;
-
-        organData = comp.MarkingData;
-
-        return true;
+        return category is not null;
     }
 
     /// <summary>

@@ -1,0 +1,188 @@
+# Diona body prototype and internal organ entities.
+# Diona use Plant metabolizer type. Includes Nymphing organ variants.
+
+- type: body
+  id: Diona
+  name: "diona"
+  root: torso
+  slots:
+    head:
+      part: HeadDiona
+      connections:
+      - torso
+      organs:
+        brain: OrganDionaBrainNymphing
+        eyes: OrganDionaEyes
+    torso:
+      part: TorsoDiona
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        lungs: OrganDionaLungsNymphing
+        stomach: OrganDionaStomachNymphing
+    right arm:
+      part: RightArmDiona
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmDiona
+      connections:
+      - left hand
+    right hand:
+      part: RightHandDiona
+    left hand:
+      part: LeftHandDiona
+    right leg:
+      part: RightLegDiona
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegDiona
+      connections:
+      - left foot
+    right foot:
+      part: RightFootDiona
+    left foot:
+      part: LeftFootDiona
+
+- type: entity
+  parent: OrganBase
+  id: OrganDiona
+  abstract: true
+  suffix: Diona
+
+- type: entity
+  id: OrganDionaMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Plant ]
+
+- type: entity
+  parent: OrganDiona
+  id: OrganDionaInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Diona/organs.rsi
+
+- type: entity
+  id: OrganDionaVisual
+  abstract: true
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganDionaInternal ]
+  id: OrganDionaBrain
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganDionaVisual, OrganBaseEyes, OrganDionaInternal ]
+  id: OrganDionaEyes
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganDionaInternal, OrganDionaMetabolizer ]
+  id: OrganDionaLungs
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: lungs
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganDionaInternal, OrganDionaMetabolizer ]
+  id: OrganDionaStomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    maxReagents: 6
+    stages: [ Digestion, Bloodstream, Metabolites ]
+
+- type: entity
+  parent: OrganDionaBrain
+  suffix: "Diona, Nymphing"
+  id: OrganDionaBrainNymphing
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Nymph
+    transferMind: true
+    entityPrototype: OrganDionaNymphBrain
+
+- type: entity
+  parent: OrganDionaLungs
+  suffix: "Diona, Nymphing"
+  id: OrganDionaLungsNymphing
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Nymph
+    entityPrototype: OrganDionaNymphLungs
+
+- type: entity
+  parent: OrganDionaStomach
+  suffix: "Diona, Nymphing"
+  id: OrganDionaStomachNymphing
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Nymph
+    entityPrototype: OrganDionaNymphStomach
+
+- type: entity
+  parent: MobDionaNymph
+  id: OrganDionaNymphBrain
+  suffix: brain
+  components:
+  - type: IsDeadIC
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganDionaBrain
+        - id: OrganAnimalLungs
+        - id: OrganAnimalStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalHeart
+        - id: OrganAnimalKidneys
+
+- type: entity
+  parent: MobDionaNymph
+  id: OrganDionaNymphStomach
+  suffix: stomach
+  components:
+  - type: IsDeadIC
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganDionaLungs
+        - id: OrganAnimalStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalHeart
+        - id: OrganAnimalKidneys
+
+- type: entity
+  parent: MobDionaNymph
+  id: OrganDionaNymphLungs
+  suffix: lungs
+  components:
+  - type: IsDeadIC
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganAnimalLungs
+        - id: OrganDionaStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalHeart
+        - id: OrganAnimalKidneys
+
+- type: entity
+  parent: MobDiona
+  id: MobDionaReformed
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: IsDeadIC
+  - type: RandomHumanoidAppearance

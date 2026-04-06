@@ -1,0 +1,13 @@
+- type: emoteSounds
+  id: UnisexChitinid
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_species/Chitinid/moth_scream.ogg
+    Laugh:
+      path: /Audio/_species/Chitinid/moth_laugh.ogg
+    Chitter:
+      path: /Audio/_species/Chitinid/moth_chitter.ogg
+    Click:
+      path: /Audio/Voice/Arachnid/arachnid_click.ogg

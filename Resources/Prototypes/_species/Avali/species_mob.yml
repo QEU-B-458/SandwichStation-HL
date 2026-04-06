@@ -1,0 +1,167 @@
+# Avali appearance entity (character editor doll + body definition)
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceAvali
+  name: avali appearance
+  components:
+  - type: Inventory
+    speciesId: Avali
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _species/Avali/Mobs/Species/displacement.rsi
+            state: jumpsuit
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _species/Avali/Mobs/Species/displacement.rsi
+            state: outerclothing
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _species/Avali/Mobs/Species/displacement.rsi
+            state: shoes
+      head:
+        sizeMaps:
+          32:
+            sprite: _species/Avali/Mobs/Species/displacement.rsi
+            state: head
+      hand:
+        sizeMaps:
+          32:
+            sprite: _species/Avali/Mobs/Species/displacement.rsi
+            state: hand
+      back:
+        sizeMaps:
+          32:
+            sprite: _species/Avali/Mobs/Species/displacement.rsi
+            state: back
+  - type: HumanoidProfile
+    species: Avali
+
+# Avali mob entity
+- type: entity
+  parent:
+  - AppearanceAvali
+  - BaseSpeciesMobOrganic
+  id: MobAvali
+  name: Urist McAvali
+  components:
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - Avali
+  - type: Hunger
+    thresholds:
+      Overfed: 250
+      Okay: 200
+      Peckish: 150
+      Starving: 100
+      Dead: 0
+    baseDecayRate: 0.03
+  # PseudoItem component removed: no C# type
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatChicken
+      amount: 3
+  - type: Speech
+    speechVerb: Parrot
+    speechSounds: MaleAvali
+    allowedEmotes: ['Chirp', 'Hiss', 'Purr', 'Growl', 'Trill', 'Scree', 'Call', 'Squawk']
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      90: Critical
+      180: Dead
+  - type: Sprite
+    scale: 0.91, 0.91
+  - type: TemperatureSpeed
+    thresholds:
+      250: 0.9
+      230: 0.8
+      223: 0.6
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 95
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Vocal
+    sounds:
+      Male: MaleAvali
+      Female: FemaleAvali
+      Unsexed: MaleAvali
+  - type: MovementSpeedModifier
+    baseWeightlessAcceleration: 1.6
+    baseWeightlessFriction: 1
+    baseWeightlessModifier: 1
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Avali
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 1500
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          FoodMeatChickenFriedMystery:
+            min: 2
+            max: 5
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#6C3BAA"
+  - type: Bloodstream
+    bloodReagent: AvaliBlood
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/pierce.ogg
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 6.25
+  - type: Temperature
+    currentTemperature: 261
+    specificHeat: 48
+  - type: TemperatureDamage
+    heatDamageThreshold: 310
+    coldDamageThreshold: 223
+  - type: ThermalRegulator
+    metabolismHeat: 400
+    radiatedHeat: 100
+    implicitHeatRegulation: 1500
+    sweatHeatRegulation: 2000
+    shiveringHeatRegulation: 2000
+    normalBodyTemperature: 261
+    thermalRegulationTemperatureThreshold: 1
+  # Carriable component removed: no C# type
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen

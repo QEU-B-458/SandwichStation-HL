@@ -1,14 +1,14 @@
 - type: soundCollection
   id: KitsuneScream
   files:
-  - /Audio/_species/Kitsune/Voice/Kitsune/fox_scream1.ogg
+  - /Audio/_species/Kitsune/Voice/fox_scream1.ogg
 
 - type: soundCollection
   id: KitsuneSqueal
   files:
-  - /Audio/_species/Kitsune/Voice/Kitsune/fox_squeal1.ogg
+  - /Audio/_species/Kitsune/Voice/fox_squeal1.ogg
 
 - type: soundCollection
   id: KitsuneGrowl
   files:
-  - /Audio/_species/Kitsune/Voice/Kitsune/fox_growl1.ogg
+  - /Audio/_species/Kitsune/Voice/fox_growl1.ogg

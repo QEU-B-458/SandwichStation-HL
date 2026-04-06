@@ -1,0 +1,114 @@
+# Synth sprite layer definitions.
+# Synth have their own parts RSI at _species/Synth/Mobs/Species/parts.rsi.
+
+- type: humanoidBaseSprite
+  id: SynthChest
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthHead
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthLArm
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthRArm
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthLHand
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthRHand
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthLLeg
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthRLeg
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthLFoot
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthRFoot
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: SynthLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: SynthLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: SynthLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: SynthLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: SynthLayerEyes
+  baseSprite:
+    sprite: _species/Synth/Mobs/Species/parts.rsi
+    state: eyes_synth
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: SynthSprites
+  sprites:
+    Chest: SynthChest
+    Head: SynthHead
+    LArm: SynthLArm
+    RArm: SynthRArm
+    LHand: SynthLHand
+    RHand: SynthRHand
+    LLeg: SynthLLeg
+    RLeg: SynthRLeg
+    LFoot: SynthLFoot
+    RFoot: SynthRFoot
+    Hair: SynthLayerHair
+    Snout: SynthLayerSnout
+    Tail: SynthLayerTail
+    HeadTop: SynthLayerHeadTop
+    Eyes: SynthLayerEyes

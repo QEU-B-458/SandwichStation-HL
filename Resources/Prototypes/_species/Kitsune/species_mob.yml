@@ -4,25 +4,9 @@
   id: AppearanceKitsune
   name: kitsune appearance
   components:
-  - type: InitialBody
-    organs:
-      Torso: OrganKitsuneTorso
-      Head: OrganKitsuneHead
-      ArmLeft: OrganKitsuneArmLeft
-      ArmRight: OrganKitsuneArmRight
-      HandRight: OrganKitsuneHandRight
-      HandLeft: OrganKitsuneHandLeft
-      LegLeft: OrganKitsuneLegLeft
-      LegRight: OrganKitsuneLegRight
-      FootLeft: OrganKitsuneFootLeft
-      FootRight: OrganKitsuneFootRight
-      Brain: OrganHumanBrain
-      Eyes: OrganHumanEyes
-      Lungs: OrganHumanLungs
-      Heart: OrganAnimalHeart
-      Stomach: OrganHumanStomach
-      Liver: OrganAnimalLiver
-      Kidneys: OrganHumanKidneys
+  - type: Inventory
+    speciesId: kitsune
+    templateId: human
   - type: HumanoidProfile
     species: Kitsune
 
@@ -47,6 +31,7 @@
         - MobLayer
   - type: Damageable
     damageModifierSet: Kitsune
+    damageContainer: Biological
   - type: Speech
     speechSounds: Alto
     allowedEmotes: ['Growl', 'Squeak', 'Yip', 'Whine', 'Yap', 'Howl']
@@ -83,3 +68,63 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
+
+# Kitsune fox form entity — used when transformed
+- type: entity
+  name: Kitsune
+  parent: [SimpleMobBase, StripableInventoryBase]
+  id: MobKitsuneFox
+  description: A Kitsune's fox form.
+  components:
+  - type: KitsuneFox
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4.5
+    baseSprintSpeed: 6
+  - type: Sprite
+    sprite: _species/Kitsune/Mobs/Customization/foxform.rsi
+    layers:
+    - state: kitsune_fox_body
+      map: ["enum.KitsuneColorVisuals.Layer"]
+    - state: kitsune_fox_innerear
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: Damageable
+    damageContainer: BiologicalMetaphysical
+    damageModifierSet: KitsuneFox
+  - type: Inventory
+    speciesId: fox
+    templateId: pet
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: fox
+      Critical:
+        Base: fox_dead
+      Dead:
+        Base: fox_dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 3
+  - type: Bloodstream
+    bloodMaxVolume: 100
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Heat: 8
+  - type: Tag
+    tags:
+    - VimPilot
+    - DoorBumpOpener
+  - type: HTN
+    rootTask:
+      task: IdleCompound
+  - type: MindContainer
+    showExamineInfo: true

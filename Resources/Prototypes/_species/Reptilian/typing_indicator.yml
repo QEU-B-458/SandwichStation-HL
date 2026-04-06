@@ -1,0 +1,6 @@
+# Reptilian typing indicator
+- type: typingIndicator
+  id: lizard
+  typingState: lizard0
+  idleState: lizard3
+  offset: 0, 0.0625

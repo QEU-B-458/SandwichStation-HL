@@ -1,0 +1,32 @@
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Mobs.Systems;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Analyzers;
+namespace Content.Server._Shitmed.DelayedDeath;
+
+[Virtual]
+public partial class DelayedDeathSystem : EntitySystem
+{
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    private static readonly ProtoId<DamageTypePrototype> BloodlossDamageId = "Bloodloss";
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        using var query = EntityQueryEnumerator<DelayedDeathComponent>();
+        while (query.MoveNext(out var ent, out var component))
+        {
+            component.DeathTimer += frameTime;
+
+            if (component.DeathTimer >= component.DeathTime && !_mobState.IsDead(ent))
+            {
+                var damage = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>(BloodlossDamageId), 150);
+                _damageable.TryChangeDamage(ent, damage);
+            }
+        }
+    }
+}

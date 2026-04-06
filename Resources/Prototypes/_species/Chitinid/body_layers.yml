@@ -1,0 +1,131 @@
+# Chitinid humanoidBaseSprite prototypes for the body-part appearance system.
+# Each entry maps a visual layer to the RSI state in the chitinid body RSI.
+
+- type: humanoidBaseSprite
+  id: ChitinidChest
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ChitinidHead
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ChitinidLArm
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ChitinidRArm
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ChitinidLHand
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ChitinidRHand
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ChitinidLLeg
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ChitinidRLeg
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ChitinidLFoot
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ChitinidRFoot
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+# Marking-only layers — no baseSprite, exist only to allow markings on these layers.
+# AllowsMarkings defaults to true so wings/antennas/etc. can render.
+
+- type: humanoidBaseSprite
+  id: ChitinidLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ChitinidLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ChitinidLayerHeadSide
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ChitinidLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ChitinidLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ChitinidLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ChitinidLayerEyes
+  baseSprite:
+    sprite: _species/Chitinid/Mobs/Species/parts.rsi
+    state: eyes
+  matchSkin: false
+
+# Sprite-set used by UpdateLayers to populate BaseLayers for marking layers.
+# Body part layers (Chest, Head, etc.) are overridden by CustomBaseLayers from
+# the body-part system, so only marking-only layers need entries here.
+
+- type: speciesBaseSprites
+  id: ChitinidSprites
+  sprites:
+    Chest: ChitinidChest
+    Head: ChitinidHead
+    LArm: ChitinidLArm
+    RArm: ChitinidRArm
+    LHand: ChitinidLHand
+    RHand: ChitinidRHand
+    LLeg: ChitinidLLeg
+    RLeg: ChitinidRLeg
+    LFoot: ChitinidLFoot
+    RFoot: ChitinidRFoot
+    Tail: ChitinidLayerTail
+    HeadTop: ChitinidLayerHeadTop
+    HeadSide: ChitinidLayerHeadSide
+    Snout: ChitinidLayerSnout
+    Hair: ChitinidLayerHair
+    FacialHair: ChitinidLayerFacialHair
+    Eyes: ChitinidLayerEyes

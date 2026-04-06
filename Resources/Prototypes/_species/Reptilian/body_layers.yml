@@ -1,0 +1,138 @@
+# Reptilian sprite layer definitions.
+# Reptilian uses Mobs/Species/Reptilian/parts.rsi — sexed torso AND head, no eyes state.
+
+# Sexed torso layers
+- type: humanoidBaseSprite
+  id: ReptilianChest
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianChestMale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianChestFemale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: torso_f
+  matchSkin: true
+
+# Sexed head layers
+- type: humanoidBaseSprite
+  id: ReptilianHead
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianHeadMale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianHeadFemale
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: head_f
+  matchSkin: true
+
+# Non-sexed body layers
+- type: humanoidBaseSprite
+  id: ReptilianLArm
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianRArm
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianLHand
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianRHand
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianLLeg
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianRLeg
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianLFoot
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ReptilianRFoot
+  baseSprite:
+    sprite: Mobs/Species/Reptilian/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+# Marking layers
+- type: humanoidBaseSprite
+  id: ReptilianLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ReptilianLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ReptilianLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ReptilianLayerHeadSide
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: ReptilianSprites
+  sprites:
+    Chest: ReptilianChest
+    Head: ReptilianHead
+    LArm: ReptilianLArm
+    RArm: ReptilianRArm
+    LHand: ReptilianLHand
+    RHand: ReptilianRHand
+    LLeg: ReptilianLLeg
+    RLeg: ReptilianRLeg
+    LFoot: ReptilianLFoot
+    RFoot: ReptilianRFoot
+    Tail: ReptilianLayerTail
+    Snout: ReptilianLayerSnout
+    HeadTop: ReptilianLayerHeadTop
+    HeadSide: ReptilianLayerHeadSide

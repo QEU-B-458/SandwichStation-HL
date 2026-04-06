@@ -1,0 +1,130 @@
+# Arachnid body prototype and internal organ entities.
+
+- type: body
+  id: Arachnid
+  name: "arachnid"
+  root: torso
+  slots:
+    head:
+      part: HeadArachnid
+      connections:
+      - torso
+      organs:
+        brain: OrganArachnidBrain
+        eyes: OrganArachnidEyes
+        tongue: OrganArachnidTongue
+        ears: OrganArachnidEars
+        appendix: OrganArachnidAppendix
+    torso:
+      part: TorsoArachnid
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganArachnidHeart
+        lungs: OrganArachnidLungs
+        stomach: OrganArachnidStomach
+        liver: OrganArachnidLiver
+        kidneys: OrganArachnidKidneys
+    right arm:
+      part: RightArmArachnid
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmArachnid
+      connections:
+      - left hand
+    right hand:
+      part: RightHandArachnid
+    left hand:
+      part: LeftHandArachnid
+    right leg:
+      part: RightLegArachnid
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegArachnid
+      connections:
+      - left foot
+    right foot:
+      part: RightFootArachnid
+    left foot:
+      part: LeftFootArachnid
+
+- type: entity
+  parent: OrganBase
+  id: OrganArachnid
+  abstract: true
+  suffix: Arachnid
+
+- type: entity
+  id: OrganArachnidMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Arachnid ]
+
+- type: entity
+  parent: OrganArachnid
+  id: OrganArachnidInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Arachnid/organs.rsi
+
+- type: entity
+  id: OrganArachnidVisual
+  abstract: true
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganArachnidInternal ]
+  id: OrganArachnidBrain
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganArachnidVisual, OrganBaseEyes, OrganArachnidInternal ]
+  id: OrganArachnidEyes
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganArachnidInternal ]
+  id: OrganArachnidTongue
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganArachnidInternal ]
+  id: OrganArachnidAppendix
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganArachnidInternal ]
+  id: OrganArachnidEars
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganArachnidInternal, OrganArachnidMetabolizer ]
+  id: OrganArachnidLungs
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganArachnidInternal, OrganArachnidMetabolizer ]
+  id: OrganArachnidHeart
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganArachnidInternal, OrganAnimalMetabolizer ]
+  id: OrganArachnidStomach
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganArachnidInternal, OrganAnimalMetabolizer ]
+  id: OrganArachnidLiver
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganArachnidInternal, OrganAnimalMetabolizer ]
+  id: OrganArachnidKidneys
+  categories: [ HideSpawnMenu ]

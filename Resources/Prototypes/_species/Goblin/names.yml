@@ -1,0 +1,15 @@
+- type: localizedDataset
+  id: NamesGoblinFirstMale
+  values:
+    prefix: names-goblin-first-male-dataset-
+    count: 209
+- type: localizedDataset
+  id: NamesGoblinFirstFemale
+  values:
+    prefix: names-goblin-first-female-dataset-
+    count: 208
+- type: localizedDataset
+  id: NamesGoblinLast
+  values:
+    prefix: names-goblin-last-dataset-
+    count: 210

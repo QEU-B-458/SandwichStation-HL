@@ -1,0 +1,75 @@
+- type: species
+  id: IPC
+  name: species-name-ipc
+  roundStart: true
+  prototype: MobIPC
+  dollPrototype: AppearanceIPC
+  sprites: IPCSprites
+  skinColoration: Hues
+  minAge: 1
+  maxAge: 240
+  oldAge: 50
+  youngAge: 50
+  maleFirstNames: IpcFirst
+  femaleFirstNames: IpcFirst
+  lastNames: IpcLast
+  naming: FirstLast
+  sexes:
+  - Unsexed
+
+- type: markingsGroup
+  parent: Undergarments
+  id: IPC
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 4
+      required: true
+      default: [ MobIPCHeadDefault ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 1
+      required: true
+      default: [ MobIPCTorsoDefault ]
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: true
+      default: [ MobIPCLArmDefault ]
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: true
+      default: [ MobIPCRArmDefault ]
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: true
+      default: [ MobIPCLHandDefault ]
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: true
+      default: [ MobIPCRHandDefault ]
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: true
+      default: [ MobIPCLLegDefault ]
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: true
+      default: [ MobIPCRLegDefault ]
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: true
+      default: [ MobIPCLFootDefault ]
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: true
+      default: [ MobIPCRFootDefault ]
+
+- type: Tag
+  id: IPCMaskWearable

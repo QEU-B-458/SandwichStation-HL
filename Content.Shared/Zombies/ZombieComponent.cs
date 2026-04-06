@@ -4,6 +4,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
+using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Audio;
@@ -71,10 +72,8 @@ public sealed partial class ZombieComponent : Component
     public string ZombieRoleId = "Zombie";
 
     [DataField]
-    public Dictionary<ProtoId<OrganCategoryPrototype>, OrganProfileData> BeforeZombifiedProfiles;
+    public HumanoidCharacterProfile? BeforeZombifiedHumanoidProfile;
 
-    [DataField]
-    public Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<HumanoidVisualLayers, List<Marking>>> BeforeZombifiedMarkings;
 
     [DataField("emoteId")]
     public ProtoId<EmoteSoundsPrototype>? EmoteSoundsId = "Zombie";

@@ -1,0 +1,17 @@
+- type: localizedDataset
+  id: NamesChitinidFirstMale
+  values:
+    prefix: names-chitinid-first-male-
+    count: 33
+
+- type: localizedDataset
+  id: NamesChitinidFirstFemale
+  values:
+    prefix: names-chitinid-first-female-
+    count: 31
+    
+- type: localizedDataset
+  id: NamesChitinidHives
+  values:
+    prefix: names-chitinid-hives-dataset-
+    count: 20

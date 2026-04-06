@@ -1,0 +1,115 @@
+# Felionoid sprite layer definitions.
+# humanoidBaseSprite: one entry per visual slot, referenced by BodyPart.baseLayerId.
+# speciesBaseSprites: maps slot names to the above IDs; referenced by species.yml sprites: field.
+
+- type: humanoidBaseSprite
+  id: FelionoidChest
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: torso
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidHead
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: head
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidLArm
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidRArm
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidLHand
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidRHand
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidLLeg
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidRLeg
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidLFoot
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidRFoot
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: FelionoidLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FelionoidLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FelionoidLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FelionoidLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: FelionoidLayerEyes
+  baseSprite:
+    sprite: _species/Felionoid/Mobs/Species/Felionoid/parts.rsi
+    state: eyes
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: MobFelionoidSprites
+  sprites:
+    Chest: FelionoidChest
+    Head: FelionoidHead
+    LArm: FelionoidLArm
+    RArm: FelionoidRArm
+    LHand: FelionoidLHand
+    RHand: FelionoidRHand
+    LLeg: FelionoidLLeg
+    RLeg: FelionoidRLeg
+    LFoot: FelionoidLFoot
+    RFoot: FelionoidRFoot
+    Tail: FelionoidLayerTail
+    Hair: FelionoidLayerHair
+    FacialHair: FelionoidLayerFacialHair
+    Snout: FelionoidLayerSnout
+    Eyes: FelionoidLayerEyes

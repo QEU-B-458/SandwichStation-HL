@@ -1,0 +1,124 @@
+# Harpy body prototype — owns the full part + organ tree.
+
+- type: body
+  id: Harpy
+  name: "harpy"
+  root: torso
+  slots:
+    head:
+      part: HeadHarpy
+      connections:
+      - torso
+      organs:
+        brain: OrganHarpyBrain
+        eyes: OrganHarpyEyes
+        tongue: OrganHarpyTongue
+        ears: OrganHarpyEars
+    torso:
+      part: TorsoHarpy
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganHarpyHeart
+        lungs: OrganHarpyLungs
+        stomach: OrganHarpyStomach
+        liver: OrganHarpyLiver
+        kidneys: OrganHarpyKidneys
+    right arm:
+      part: RightArmHarpy
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmHarpy
+      connections:
+      - left hand
+    right hand:
+      part: RightHandHarpy
+    left hand:
+      part: LeftHandHarpy
+    right leg:
+      part: RightLegHarpy
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegHarpy
+      connections:
+      - left foot
+    right foot:
+      part: RightFootHarpy
+    left foot:
+      part: LeftFootHarpy
+
+# Species-specific organs
+
+- type: entity
+  id: OrganHarpyBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Harpy
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganHarpyEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Harpy
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganHarpyTongue
+  parent: OrganHumanTongue
+  name: tongue
+  suffix: Harpy
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganHarpyEars
+  parent: OrganHumanEars
+  name: ears
+  suffix: Harpy
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganHarpyHeart
+  parent: OrganHumanHeart
+  name: heart
+  suffix: Harpy
+  categories: [ HideSpawnMenu ]
+
+# OrganHarpyLungs — avian lungs with custom sprite and description
+- type: entity
+  parent: OrganHumanLungs
+  id: OrganHarpyLungs
+  name: lungs
+  suffix: Harpy
+  description: "An advanced pair of avian lungs. Filters oxygen by way of moving air constantly through air sacs."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Harpy/Mobs/Species/organs.rsi
+
+- type: entity
+  id: OrganHarpyStomach
+  parent: OrganHumanStomach
+  name: stomach
+  suffix: Harpy
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganHarpyLiver
+  parent: OrganHumanLiver
+  name: liver
+  suffix: Harpy
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganHarpyKidneys
+  parent: OrganHumanKidneys
+  name: kidneys
+  suffix: Harpy
+  categories: [ HideSpawnMenu ]

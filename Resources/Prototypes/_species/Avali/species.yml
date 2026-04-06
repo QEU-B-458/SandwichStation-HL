@@ -1,0 +1,111 @@
+- type: species
+  id: Avali
+  name: species-name-avali
+  roundStart: true
+  prototype: MobAvali
+  dollPrototype: AppearanceAvali
+  sprites: AvaliSprites
+  defaultSkinTone: "#D2B48C"
+  skinColoration: Hues
+  maleFirstNames: names_avali_first_male
+  femaleFirstNames: names_avali_first_female
+  lastNames: names_avali_packs
+  naming: FirstLast
+  minAge: 23
+  youngAge: 103
+  oldAge: 257
+  maxAge: 430
+  markingData:
+    Torso:
+      group: Avali
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Avali
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Avali
+      layers: [LArm]
+    ArmRight:
+      group: Avali
+      layers: [RArm]
+    HandLeft:
+      group: Avali
+      layers: [LHand]
+    HandRight:
+      group: Avali
+      layers: [RHand]
+    LegLeft:
+      group: Avali
+      layers: [LLeg]
+    LegRight:
+      group: Avali
+      layers: [RLeg]
+    FootLeft:
+      group: Avali
+      layers: [LFoot]
+    FootRight:
+      group: Avali
+      layers: [RFoot]
+
+- type: markingsGroup
+  parent: Undergarments
+  id: Avali
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      default: [ AvaliTailBase ]
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 1
+      required: true
+      default: [ AvaliEarsBase ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 6
+      required: false
+    enum.HumanoidVisualLayers.LArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 2
+      required: false

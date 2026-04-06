@@ -1,0 +1,62 @@
+- type: soundCollection
+  id: GoblinScreams
+  files:
+  - /Audio/_species/Goblin/Voice/goblin_scream_1.ogg
+  - /Audio/_species/Goblin/Voice/goblin_scream_2.ogg
+  - /Audio/_species/Goblin/Voice/goblin_scream_3.ogg
+  - /Audio/_species/Goblin/Voice/goblin_scream_4.ogg
+
+- type: soundCollection
+  id: GoblinCackles
+  files:
+  - /Audio/_species/Goblin/Voice/goblin_cackle_1.ogg
+  - /Audio/_species/Goblin/Voice/goblin_cackle_2.ogg
+  - /Audio/_species/Goblin/Voice/goblin_cackle_3.ogg
+  - /Audio/_species/Goblin/Voice/goblin_cackle_4.ogg
+  - /Audio/_species/Goblin/Voice/goblin_cackle_5.ogg
+
+- type: soundCollection
+  id: GoblinCries
+  files:
+  - /Audio/_species/Goblin/Voice/goblin_cry_1.ogg
+  - /Audio/_species/Goblin/Voice/goblin_cry_2.ogg
+
+- type: soundCollection
+  id: GoblinDeathGasps
+  files:
+  - /Audio/_species/Goblin/Voice/goblin_deathgasp_1.ogg
+  - /Audio/_species/Goblin/Voice/goblin_deathgasp_2.ogg
+  - /Audio/_species/Goblin/Voice/goblin_deathgasp_3.ogg
+  - /Audio/_species/Goblin/Voice/goblin_deathgasp_4.ogg
+
+- type: soundCollection
+  id: GoblinGasps
+  files:
+  - /Audio/_species/Goblin/Voice/goblin_gasp_1.ogg
+  - /Audio/_species/Goblin/Voice/goblin_gasp_2.ogg
+  - /Audio/_species/Goblin/Voice/goblin_gasp_3.ogg
+
+- type: soundCollection
+  id: GoblinHisses
+  files:
+  - /Audio/_species/Goblin/Voice/goblin_hiss_1.ogg
+
+- type: soundCollection
+  id: GoblinMutters
+  files:
+  - /Audio/_species/Goblin/Voice/goblin_mutter_1.ogg
+  - /Audio/_species/Goblin/Voice/goblin_mutter_2.ogg
+  - /Audio/_species/Goblin/Voice/goblin_mutter_3.ogg
+  - /Audio/_species/Goblin/Voice/goblin_mutter_4.ogg
+
+- type: soundCollection
+  id: GoblinThroatSinging
+  files:
+  - /Audio/_species/Goblin/Voice/goblin_throat_singing_1.ogg
+  - /Audio/_species/Goblin/Voice/goblin_throat_singing_2.ogg
+  - /Audio/_species/Goblin/Voice/goblin_throat_singing_3.ogg
+  - /Audio/_species/Goblin/Voice/goblin_throat_singing_4.ogg
+  - /Audio/_species/Goblin/Voice/goblin_throat_singing_5.ogg
+  - /Audio/_species/Goblin/Voice/goblin_throat_singing_6.ogg
+  - /Audio/_species/Goblin/Voice/goblin_throat_singing_7.ogg
+  - /Audio/_species/Goblin/Voice/goblin_throat_singing_8.ogg

@@ -1,0 +1,155 @@
+# Shadekin body part entities. Uses Shadekin-specific parts RSI.
+
+- type: entity
+  id: PartShadekin
+  parent: BasePart
+  name: "shadekin body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoShadekin
+  name: "shadekin torso"
+  parent: [PartShadekin, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: torso_m
+  - type: BodyPart
+    baseLayerId: ShadekinChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadShadekin
+  name: "shadekin head"
+  parent: [PartShadekin, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: head_m
+  - type: BodyPart
+    baseLayerId: ShadekinHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmShadekin
+  name: "left shadekin arm"
+  parent: [PartShadekin, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: ShadekinLArm
+
+- type: entity
+  id: RightArmShadekin
+  name: "right shadekin arm"
+  parent: [PartShadekin, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: ShadekinRArm
+
+- type: entity
+  id: LeftHandShadekin
+  name: "left shadekin hand"
+  parent: [PartShadekin, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: ShadekinLHand
+
+- type: entity
+  id: RightHandShadekin
+  name: "right shadekin hand"
+  parent: [PartShadekin, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: ShadekinRHand
+
+- type: entity
+  id: LeftLegShadekin
+  name: "left shadekin leg"
+  parent: [PartShadekin, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: ShadekinLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegShadekin
+  name: "right shadekin leg"
+  parent: [PartShadekin, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: ShadekinRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootShadekin
+  name: "left shadekin foot"
+  parent: [PartShadekin, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: ShadekinLFoot
+
+- type: entity
+  id: RightFootShadekin
+  name: "right shadekin foot"
+  parent: [PartShadekin, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Shadekin/Mobs/Species/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: ShadekinRFoot

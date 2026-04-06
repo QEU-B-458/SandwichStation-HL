@@ -1,0 +1,44 @@
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceGoblin
+  name: goblin appearance
+  components:
+  - type: HumanoidProfile
+    species: Goblin
+
+- type: entity
+  parent:
+  - AppearanceGoblin
+  - BaseSpeciesMobOrganic
+  id: MobGoblin
+  name: Urist McGoblin
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.35
+        density: 300
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Goblin
+  - type: Speech
+    speechVerb: Goblin
+  - type: Vocal
+    sounds:
+      Male: MaleGoblin
+      Female: FemaleGoblin
+      Unsexed: MaleGoblin
+  - type: TypingIndicator
+    proto: Goblin
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 5

@@ -25,3 +25,10 @@
   strategy: !type:ClampedHslColoration
     saturation: [0.0, 0.60]
     lightness: [0.2, 0.9]
+
+- type: skinColoration
+  id: ShelegToned
+  strategy: !type:ClampedHslColoration
+    hue: [0.5, 0.8]
+    saturation: [0.3, 1.0]
+    lightness: [0.3, 0.8]

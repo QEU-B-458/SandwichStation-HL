@@ -1,0 +1,223 @@
+# Sheleg body prototype — owns the full part + organ tree.
+# Sheleg are ice-blooded beings with Cryoxadone bloodstream and Sheleg metabolizer type.
+
+- type: body
+  id: Sheleg
+  name: "sheleg"
+  root: torso
+  slots:
+    head:
+      part: HeadSheleg
+      connections:
+      - torso
+      organs:
+        brain: OrganShelegBrain
+        eyes: OrganShelegEyes
+        tongue: OrganShelegTongue
+        ears: OrganShelegEars
+    torso:
+      part: TorsoSheleg
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganShelegHeart
+        lungs: OrganShelegLungs
+        stomach: OrganShelegStomach
+        liver: OrganShelegLiver
+        kidneys: OrganShelegKidneys
+        appendix: OrganShelegAppendix
+    right arm:
+      part: RightArmSheleg
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmSheleg
+      connections:
+      - left hand
+    right hand:
+      part: RightHandSheleg
+    left hand:
+      part: LeftHandSheleg
+    right leg:
+      part: RightLegSheleg
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegSheleg
+      connections:
+      - left foot
+    right foot:
+      part: RightFootSheleg
+    left foot:
+      part: LeftFootSheleg
+
+# Sheleg organs — ice-based extractable, Sheleg metabolizer types
+# Preserved from Body/Organs/sheleg.yml
+
+- type: entity
+  id: BaseShelegOrgan
+  parent: OrganBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _species/Sheleg/Mobs/organs.rsi
+  - type: Extractable
+    grindableSolutionName: organ
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Ice
+          Quantity: 10
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Cryoxadone
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - ice
+    - cold
+
+- type: entity
+  id: OrganShelegBrain
+  parent: [BaseShelegOrgan, OrganHumanBrain]
+  name: brain
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Ice
+          Quantity: 10
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: GreyMatter
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - ice
+    - cold
+
+- type: entity
+  id: OrganShelegEyes
+  name: eyes
+  parent: [BaseShelegOrgan, OrganHumanEyes]
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganShelegTongue
+  name: tongue
+  parent: [BaseShelegOrgan, OrganHumanTongue]
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganShelegAppendix
+  name: appendix
+  parent: [BaseShelegOrgan, OrganHumanAppendix]
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganShelegEars
+  name: ears
+  parent: [BaseShelegOrgan, OrganHumanEars]
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganShelegLungs
+  parent: [BaseShelegOrgan, OrganHumanLungs]
+  name: lungs
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [Sheleg]
+  - type: SolutionContainerManager
+    solutions:
+      organ:
+        reagents:
+        - ReagentId: Ice
+          Quantity: 10
+      Lung:
+        maxVol: 100.0
+        canReact: false
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Cryoxadone
+          Quantity: 5
+
+- type: entity
+  id: OrganShelegHeart
+  parent: [BaseShelegOrgan, OrganHumanHeart]
+  name: heart
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    maxReagents: 1
+    metabolizerTypes: [Sheleg]
+    groups:
+    - id: Sheleg
+      rateModifier: 0.20
+    - id: Cryogenic
+      rateModifier: 0.20
+    - id: Poison
+      rateModifier: 0.20
+    - id: Narcotic
+      rateModifier: 0.20
+
+- type: entity
+  id: OrganShelegStomach
+  parent: [BaseShelegOrgan, OrganHumanStomach]
+  name: stomach
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Cryoxadone
+          Quantity: 5
+  - type: Stomach
+  - type: Metabolizer
+    maxReagents: 1
+    metabolizerTypes: [Sheleg]
+    groups:
+    - id: Food
+      rateModifier: 0.25
+    - id: Drink
+      rateModifier: 1.50
+
+- type: entity
+  id: OrganShelegLiver
+  parent: [BaseShelegOrgan, OrganHumanLiver]
+  name: liver
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    maxReagents: 1
+    metabolizerTypes: [Sheleg]
+    groups:
+    - id: Alcohol
+      rateModifier: 0.1
+
+- type: entity
+  id: OrganShelegKidneys
+  parent: [BaseShelegOrgan, OrganHumanKidneys]
+  name: kidneys
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    maxReagents: 5
+    metabolizerTypes: [Sheleg]
+    groups:
+    - id: Medicine
+      skipEffects: true

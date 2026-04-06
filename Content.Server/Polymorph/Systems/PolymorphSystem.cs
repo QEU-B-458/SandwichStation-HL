@@ -2,7 +2,8 @@ using Content.Server.Actions;
 using Content.Server.Humanoid;
 using Content.Server.Inventory;
 using Content.Server.Polymorph.Components;
-using Content.Shared.Body;
+using Content.Shared.Body.Systems;
+using Content.Shared.Humanoid;
 using Content.Shared.Buckle;
 using Content.Shared.Coordinates;
 using Content.Shared.Damage.Components;
@@ -41,7 +42,8 @@ public sealed partial class PolymorphSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
     [Dependency] private readonly SharedMindSystem _mindSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
 
@@ -261,9 +263,12 @@ public sealed partial class PolymorphSystem : EntitySystem
         if (configuration.TransferName && TryComp(uid, out MetaDataComponent? targetMeta))
             _metaData.SetEntityName(child, targetMeta.EntityName);
 
-        if (configuration.TransferHumanoidAppearance)
+        if (configuration.TransferHumanoidAppearance
+            && _humanoidAppearance.GetCharacterProfile(uid) is { } polymorphProfile
+            && TryComp(child, out HumanoidAppearanceComponent? polymorphAppearance))
         {
-            _visualBody.CopyAppearanceFrom(uid, child);
+            _humanoidAppearance.ApplyProfileData(child, polymorphProfile, true, polymorphAppearance);
+            _body.RefreshBodyPartAppearances(child);
         }
 
         if (_mindSystem.TryGetMind(uid, out var mindId, out var mind))

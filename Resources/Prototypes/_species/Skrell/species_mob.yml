@@ -1,0 +1,77 @@
+# Skrell appearance entity (character editor doll + body definition)
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceSkrell
+  name: skrell appearance
+  components:
+  - type: Inventory
+    speciesId: skrell
+    templateId: human
+  - type: HumanoidProfile
+    species: Skrell
+
+# Skrell mob entity — amphibious psionic humanoids
+- type: entity
+  parent:
+  - AppearanceSkrell
+  - BaseSpeciesMobOrganic
+  id: MobSkrell
+  name: Urist R McFrog
+  components:
+  - type: Body
+    prototype: Skrell
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Skrell
+  - type: TypingIndicator
+    proto: Skrell
+  - type: Speech
+    speechVerb: Skrell
+    allowedEmotes: [ 'RMCSkrellPeep', 'RMCSkrellAnger', 'Trill', 'RMCSkrellWarble' ]
+  - type: Vocal
+    sounds:
+      Male: RMCMaleSkrell
+      Female: RMCFemaleSkrell
+      Unsexed: RMCFemaleSkrell
+  - type: TemperatureDamage
+    heatDamageThreshold: 335
+    coldDamageThreshold: 223
+    coldDamage:
+      types:
+        Cold: 0.1
+    heatDamage:
+      types:
+        Heat: 1.5
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 100
+    implicitHeatRegulation: 250
+    sweatHeatRegulation: 500
+    shiveringHeatRegulation: 500
+    normalBodyTemperature: 310.15
+    thermalRegulationTemperatureThreshold: 2
+  - type: Thirst
+    baseDecayRate: 0.2
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 2.0
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.15
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#1d2cbf"
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5

@@ -1,0 +1,67 @@
+- type: emoteSounds
+  id: MaleGoblin
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: GoblinScreams
+    Laugh:
+      collection: GoblinCackles
+    Crying:
+      collection: GoblinCries
+    Gasp:
+      collection: GoblinGasps
+    DefaultDeathgasp:
+      collection: GoblinDeathGasps
+    Hiss:
+      collection: GoblinHisses
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Whistle:
+      collection: GoblinThroatSinging
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+
+- type: emoteSounds
+  id: FemaleGoblin
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: GoblinScreams
+    Laugh:
+      collection: GoblinCackles
+    Crying:
+      collection: GoblinCries
+    Gasp:
+      collection: GoblinGasps
+    DefaultDeathgasp:
+      collection: GoblinDeathGasps
+    Hiss:
+      collection: GoblinHisses
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: FemaleSigh
+    Whistle:
+      collection: GoblinThroatSinging
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew

@@ -41,6 +41,7 @@ namespace Content.Server.Zombies
         [Dependency] private readonly AutoEmoteSystem _autoEmote = default!;
         [Dependency] private readonly EmoteOnDamageSystem _emoteOnDamage = default!;
         [Dependency] private readonly MobStateSystem _mobState = default!;
+        [Dependency] private readonly HumanoidProfileSystem _humanoidProfile = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
         [Dependency] private readonly SharedRoleSystem _role = default!;
 
@@ -295,8 +296,10 @@ namespace Content.Server.Zombies
             if (!Resolve(source, ref zombiecomp))
                 return false;
 
-            _visualBody.ApplyProfiles(target, zombiecomp.BeforeZombifiedProfiles);
-            _visualBody.ApplyMarkings(target, zombiecomp.BeforeZombifiedMarkings);
+            if (zombiecomp.BeforeZombifiedHumanoidProfile is { } profile)
+            {
+                _humanoidProfile.ApplyProfileTo(target, profile);
+            }
 
             _bloodstream.ChangeBloodReagents(target, zombiecomp.BeforeZombifiedBloodReagents);
 

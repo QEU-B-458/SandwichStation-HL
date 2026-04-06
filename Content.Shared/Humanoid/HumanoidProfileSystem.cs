@@ -1,3 +1,4 @@
+using Content.Shared.Body.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.IdentityManagement;
@@ -11,6 +12,8 @@ public sealed class HumanoidProfileSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly GrammarSystem _grammar = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
+    [Dependency] private readonly SharedBodySystem _body = default!;
 
     public override void Initialize()
     {
@@ -36,6 +39,12 @@ public sealed class HumanoidProfileSystem : EntitySystem
         if (TryComp<GrammarComponent>(ent, out var grammar))
         {
             _grammar.SetGender((ent, grammar), profile.Gender);
+        }
+
+        if (TryComp<HumanoidAppearanceComponent>(ent, out var appearance))
+        {
+            _humanoidAppearance.ApplyProfileData(ent.Owner, profile, true, appearance);
+            _body.RefreshBodyPartAppearances(ent.Owner);
         }
     }
 

@@ -1,3 +1,4 @@
+using Content.Shared.Body;
 using Content.Shared.Dataset;
 using Robust.Shared.Prototypes;
 
@@ -31,6 +32,12 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField(required: true)]
     public bool RoundStart { get; private set; } = false;
+
+    /// <summary>
+    /// Base humanoid sprite set used to resolve body-part appearance layers.
+    /// </summary>
+    [DataField("sprites")]
+    public ProtoId<HumanoidSpeciesBaseSpritesPrototype>? SpriteSet { get; private set; }
 
     /// <summary>
     ///     Default skin tone for this species. This applies for non-human skin tones.
@@ -102,6 +109,13 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField]
     public int MaxAge = 120;
+
+    /// <summary>
+    /// Per-organ marking configuration (layers and marking group) used to validate
+    /// and structure markings in the character editor. Replaces the old InitialBodyComponent approach.
+    /// </summary>
+    [DataField]
+    public Dictionary<ProtoId<OrganCategoryPrototype>, OrganMarkingData> MarkingData = new();
 
 }
 

@@ -1,5 +1,5 @@
 ﻿using Content.Server.Actions;
-using Content.Shared.Body;
+using Content.Shared.Humanoid;
 using Content.Shared.Cloning.Events;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Mobs;
@@ -16,7 +16,6 @@ namespace Content.Server.Wagging;
 public sealed class WaggingSystem : EntitySystem
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override void Initialize()
@@ -67,62 +66,54 @@ public sealed class WaggingSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp))
             return false;
 
-        if (!_visualBody.TryGatherMarkingsData(ent.Owner,
-                [ent.Comp.Layer],
-                out _,
-                out _,
-                out var applied))
+        if (!TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
+            return false;
+
+        var category = MarkingCategoriesConversion.FromHumanoidVisualLayers(ent.Comp.Layer);
+        if (!humanoid.MarkingSet.Markings.TryGetValue(category, out var markings)
+            || markings.Count == 0)
         {
             return false;
         }
-
-        if (!applied.TryGetValue(ent.Comp.Organ, out var markingsSet))
-            return false;
 
         ent.Comp.Wagging = !ent.Comp.Wagging;
 
-        markingsSet = markingsSet.ShallowClone();
-        foreach (var (layers, markings) in markingsSet)
+        var updatedMarkings = new List<Marking>(markings.Count);
+        for (var i = 0; i < markings.Count; i++)
         {
-            markingsSet[layers] = markingsSet[layers].ShallowClone();
-            var layerMarkings = markingsSet[layers];
+            var currentMarking = markings[i];
+            var currentMarkingId = currentMarking.MarkingId;
+            string newMarkingId;
 
-            for (int i = 0; i < layerMarkings.Count; i++)
+            if (ent.Comp.Wagging)
             {
-                var currentMarkingId = layerMarkings[i].MarkingId;
-                string newMarkingId;
-
-                if (ent.Comp.Wagging)
+                newMarkingId = $"{currentMarkingId}{ent.Comp.Suffix}";
+            }
+            else
+            {
+                if (currentMarkingId.Id.EndsWith(ent.Comp.Suffix))
                 {
-                    newMarkingId = $"{currentMarkingId}{ent.Comp.Suffix}";
+                    newMarkingId = currentMarkingId.Id[..^ent.Comp.Suffix.Length];
                 }
                 else
                 {
-                    if (currentMarkingId.Id.EndsWith(ent.Comp.Suffix))
-                    {
-                        newMarkingId = currentMarkingId.Id[..^ent.Comp.Suffix.Length];
-                    }
-                    else
-                    {
-                        newMarkingId = currentMarkingId;
-                        Log.Warning($"Unable to revert wagging for {currentMarkingId}");
-                    }
+                    newMarkingId = currentMarkingId;
+                    Log.Warning($"Unable to revert wagging for {currentMarkingId}");
                 }
-
-                if (!_prototype.HasIndex<MarkingPrototype>(newMarkingId))
-                {
-                    Log.Warning($"{ToPrettyString(ent):ent} tried toggling wagging but {newMarkingId} marking doesn't exist");
-                    continue;
-                }
-
-                layerMarkings[i] = new Marking(newMarkingId, layerMarkings[i].MarkingColors);
             }
+
+            if (!_prototype.HasIndex<MarkingPrototype>(newMarkingId))
+            {
+                Log.Warning($"{ToPrettyString(ent):ent} tried toggling wagging but {newMarkingId} marking doesn't exist");
+                updatedMarkings.Add(new Marking(currentMarking.MarkingId, currentMarking.MarkingColors) { Forced = currentMarking.Forced });
+                continue;
+            }
+
+            updatedMarkings.Add(new Marking(newMarkingId, currentMarking.MarkingColors) { Forced = currentMarking.Forced });
         }
 
-        _visualBody.ApplyMarkings(ent, new()
-        {
-            [ent.Comp.Organ] = markingsSet
-        });
+        humanoid.MarkingSet.Markings[category] = updatedMarkings;
+        Dirty(ent.Owner, humanoid);
         return true;
     }
 }

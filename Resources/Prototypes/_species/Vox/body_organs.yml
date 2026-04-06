@@ -1,0 +1,175 @@
+# Vox body prototype and organ entities.
+
+- type: body
+  id: Vox
+  name: "vox"
+  root: torso
+  slots:
+    head:
+      part: HeadVox
+      connections:
+      - torso
+      organs:
+        brain: OrganVoxBrain
+        eyes: OrganVoxEyes
+        tongue: OrganVoxTongue
+        ears: OrganVoxEars
+        appendix: OrganVoxAppendix
+    torso:
+      part: TorsoVox
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganVoxHeart
+        lungs: OrganVoxLungs
+        stomach: OrganVoxStomach
+        liver: OrganVoxLiver
+        kidneys: OrganVoxKidneys
+    right arm:
+      part: RightArmVox
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmVox
+      connections:
+      - left hand
+    right hand:
+      part: RightHandVox
+    left hand:
+      part: LeftHandVox
+    right leg:
+      part: RightLegVox
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegVox
+      connections:
+      - left foot
+    right foot:
+      part: RightFootVox
+    left foot:
+      part: LeftFootVox
+
+# Vox organ abstract chain
+- type: entity
+  parent: OrganBase
+  id: OrganVox
+  abstract: true
+  suffix: Vox
+
+- type: entity
+  id: OrganVoxMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Vox ]
+
+- type: entity
+  parent: OrganVox
+  id: OrganVoxInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vox/organs.rsi
+
+- type: entity
+  id: OrganVoxVisual
+  abstract: true
+
+- type: entity
+  parent: [ OrganVox, OrganVoxVisual ]
+  id: OrganVoxExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Vox/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorso, OrganVoxExternal ]
+  id: OrganVoxTorso
+
+- type: entity
+  parent: [ OrganBaseHead, OrganVoxExternal ]
+  id: OrganVoxHead
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganVoxExternal ]
+  id: OrganVoxArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganVoxExternal ]
+  id: OrganVoxArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganVoxExternal ]
+  id: OrganVoxHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganVoxExternal ]
+  id: OrganVoxHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganVoxExternal ]
+  id: OrganVoxLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganVoxExternal ]
+  id: OrganVoxLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganVoxExternal ]
+  id: OrganVoxFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganVoxExternal ]
+  id: OrganVoxFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganVoxInternal ]
+  id: OrganVoxBrain
+
+- type: entity
+  parent: [ OrganVoxVisual, OrganBaseEyes, OrganVoxInternal ]
+  id: OrganVoxEyes
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganVoxInternal ]
+  id: OrganVoxTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganVoxInternal ]
+  id: OrganVoxAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganVoxInternal ]
+  id: OrganVoxEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganVoxInternal, OrganVoxMetabolizer ]
+  id: OrganVoxLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganVoxInternal, OrganVoxMetabolizer ]
+  id: OrganVoxHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganVoxInternal, OrganVoxMetabolizer ]
+  id: OrganVoxStomach
+  components:
+  - type: Stomach
+    specialDigestible:
+      tags:
+      - Trash
+    isSpecialDigestibleExclusive: false
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganVoxInternal, OrganVoxMetabolizer ]
+  id: OrganVoxLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganVoxInternal, OrganVoxMetabolizer ]
+  id: OrganVoxKidneys

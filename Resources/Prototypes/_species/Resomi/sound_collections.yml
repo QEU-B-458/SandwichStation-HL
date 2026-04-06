@@ -1,0 +1,55 @@
+- type: soundCollection
+  id: ResomiScrees
+  files:
+  - /Audio/_species/Resomi/Voice/resomi_scree_1.ogg
+  - /Audio/_species/Resomi/Voice/resomi_scree_2.ogg
+
+- type: soundCollection
+  id: ResomiCalls
+  files:
+  - /Audio/_species/Resomi/Voice/resomi_call_1.ogg
+  - /Audio/_species/Resomi/Voice/resomi_call_2.ogg
+
+- type: soundCollection
+  id: ResomiSquawk
+  files:
+  - /Audio/_species/Resomi/Voice/resomi_squawk_1.ogg
+
+- type: soundCollection
+  id: ResomiChirps
+  files:
+  - /Audio/_species/Resomi/Voice/resomi_chirp1.ogg
+  - /Audio/_species/Resomi/Voice/resomi_chirp2.ogg
+  - /Audio/_species/Resomi/Voice/resomi_chirp3.ogg
+  - /Audio/_species/Resomi/Voice/resomi_chirp4.ogg
+  - /Audio/_species/Resomi/Voice/resomi_chirp5.ogg
+
+- type: soundCollection
+  id: ResomiLaughs
+  files:
+  - /Audio/_species/Resomi/Voice/resomi_laugh1.ogg
+  - /Audio/_species/Resomi/Voice/resomi_laugh2.ogg
+  - /Audio/_species/Resomi/Voice/resomi_laugh3.ogg
+
+- type: soundCollection
+  id: ResomiScreams
+  files:
+  - /Audio/_species/Resomi/Voice/resomi_scream.ogg
+
+- type: soundCollection
+  id: ResomiCries
+  files:
+  - /Audio/_species/Resomi/Voice/imitated_cry_female_1.ogg
+  - /Audio/_species/Resomi/Voice/imitated_cry_female_2.ogg
+  - /Audio/_species/Resomi/Voice/imitated_cry_female_3.ogg
+  - /Audio/_species/Resomi/Voice/imitated_cry_female_4.ogg
+
+- type: soundCollection
+  id: ResomiTrils
+  files:
+  - /Audio/_species/Resomi/Voice/trill.ogg
+
+- type: soundCollection
+  id: ResomiWhistles
+  files:
+  - /Audio/_species/Resomi/Voice/resomi_whistle.ogg

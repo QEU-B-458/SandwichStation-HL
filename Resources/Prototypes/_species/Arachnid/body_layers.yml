@@ -1,0 +1,124 @@
+# Arachnid sprite layer definitions.
+# Arachnid use Mobs/Species/Arachnid/parts.rsi.
+
+- type: humanoidBaseSprite
+  id: ArachnidChest
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: torso
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidHead
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: head
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidLArm
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidRArm
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidLHand
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidRHand
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidLLeg
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidRLeg
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidLFoot
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidRFoot
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ArachnidLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ArachnidLayerChest
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ArachnidLayerHeadSide
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ArachnidLayerLArm
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ArachnidLayerRArm
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ArachnidLayerLLeg
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ArachnidLayerRLeg
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: ArachnidLayerEyes
+  baseSprite:
+    sprite: Mobs/Species/Arachnid/parts.rsi
+    state: eyes
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: ArachnidSprites
+  sprites:
+    Chest: ArachnidChest
+    Head: ArachnidHead
+    LArm: ArachnidLArm
+    RArm: ArachnidRArm
+    LHand: ArachnidLHand
+    RHand: ArachnidRHand
+    LLeg: ArachnidLLeg
+    RLeg: ArachnidRLeg
+    LFoot: ArachnidLFoot
+    RFoot: ArachnidRFoot
+    Tail: ArachnidLayerTail
+    HeadSide: ArachnidLayerHeadSide
+    Eyes: ArachnidLayerEyes

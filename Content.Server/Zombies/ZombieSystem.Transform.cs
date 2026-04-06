@@ -14,7 +14,6 @@ using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Server.StationEvents.Components;
 using Content.Server.Speech.Components;
-using Content.Shared.Body;
 using Content.Shared.Body.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.CombatMode.Pacification;
@@ -39,6 +38,7 @@ using Robust.Shared.Audio.Systems;
 using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Preferences;
 using Content.Shared.Tag;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -64,7 +64,7 @@ public sealed partial class ZombieSystem
     [Dependency] private readonly NpcFactionSystem _faction = default!;
     [Dependency] private readonly GhostSystem _ghost = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
     [Dependency] private readonly IdentitySystem _identity = default!;
     [Dependency] private readonly ServerInventorySystem _inventory = default!;
     [Dependency] private readonly MindSystem _mind = default!;
@@ -194,27 +194,15 @@ public sealed partial class ZombieSystem
         if (TryComp<BloodstreamComponent>(target, out var stream) && stream.BloodReferenceSolution is { } reagents)
             zombiecomp.BeforeZombifiedBloodReagents = reagents.Clone();
 
-        if (_visualBody.TryGatherMarkingsData(target, null, out var profiles, out _, out var markings))
+        if (_humanoidAppearance.GetCharacterProfile(target) is { } beforeProfile)
         {
-            // TODO: My kingdom for ZombieSystem just using cloning system
-            zombiecomp.BeforeZombifiedProfiles = profiles;
-            zombiecomp.BeforeZombifiedMarkings = markings.ToDictionary(
-                kvp => kvp.Key,
-                kvp => kvp.Value.ToDictionary(
-                    it => it.Key,
-                    it => it.Value.ShallowClone()));
+            zombiecomp.BeforeZombifiedHumanoidProfile = new HumanoidCharacterProfile(beforeProfile);
 
-            var zombifiedProfiles = profiles.ToDictionary(pair => pair.Key,
-                pair => pair.Value with { EyeColor = zombiecomp.EyeColor, SkinColor = zombiecomp.SkinColor });
-            _visualBody.ApplyProfiles(target, zombifiedProfiles);
+            var newAppearance = beforeProfile.Appearance.Clone();
+            newAppearance.EyeColor = zombiecomp.EyeColor;
+            newAppearance.SkinColor = zombiecomp.SkinColor;
 
-            var newMarkings = markings.ToDictionary(
-                kvp => kvp.Key,
-                kvp => kvp.Value.ToDictionary(
-                    it => it.Key,
-                    it => it.Value.ShallowClone()));
-
-            foreach (var markingSet in newMarkings.Values)
+            foreach (var markingSet in newAppearance.Markings.Values)
             {
                 foreach (var (layer, layerMarkings) in markingSet)
                 {
@@ -228,7 +216,12 @@ public sealed partial class ZombieSystem
                 }
             }
 
-            _visualBody.ApplyMarkings(target, newMarkings);
+            var zombifiedProfile = new HumanoidCharacterProfile(beforeProfile)
+            {
+                Appearance = HumanoidCharacterAppearance.EnsureValid(newAppearance, beforeProfile.Species, beforeProfile.Sex),
+            };
+
+            _humanoidProfile.ApplyProfileTo(target, zombifiedProfile);
         }
 
         //We have specific stuff for humanoid zombies because they matter more

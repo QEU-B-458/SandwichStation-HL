@@ -1,0 +1,6 @@
+- type: typingIndicator
+  id: thaven
+  spritePath: /Textures/_species/Thaven/Effects/speech.rsi
+  typingState: thaven0
+  idleState: thaven0
+  offset: 0, 0.2

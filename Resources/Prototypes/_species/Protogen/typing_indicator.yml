@@ -1,0 +1,6 @@
+- type: typingIndicator
+  id: protogen
+  spritePath: /Textures/Effects/speech.rsi
+  typingState: default0
+  idleState: default3
+  offset: 0, 0.2

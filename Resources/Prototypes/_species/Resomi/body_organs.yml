@@ -1,0 +1,157 @@
+# Resomi body prototype — owns the full part + organ tree.
+# Resomi are raptor-like avian species with ammonia-based blood.
+
+- type: body
+  id: Resomi
+  name: "resomi"
+  root: torso
+  slots:
+    head:
+      part: HeadResomi
+      connections:
+      - torso
+      organs:
+        brain: OrganResomiBrain
+        eyes: OrganResomiEyes
+        tongue: OrganResomiTongue
+        ears: OrganResomiEars
+    torso:
+      part: TorsoResomi
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganResomiHeart
+        lungs: OrganResomiLungs
+        stomach: OrganResomiStomach
+        liver: OrganResomiLiver
+        kidneys: OrganResomiKidneys
+        appendix: OrganResomiAppendix
+    right arm:
+      part: RightArmResomi
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmResomi
+      connections:
+      - left hand
+    right hand:
+      part: RightHandResomi
+    left hand:
+      part: LeftHandResomi
+    right leg:
+      part: RightLegResomi
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegResomi
+      connections:
+      - left foot
+    right foot:
+      part: RightFootResomi
+    left foot:
+      part: LeftFootResomi
+
+# Species-specific organs
+
+- type: entity
+  id: OrganResomiBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganResomiEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganResomiTongue
+  parent: OrganHumanTongue
+  name: tongue
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganResomiEars
+  parent: OrganHumanEars
+  name: ears
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganResomiLungs
+  parent: OrganHumanLungs
+  name: lungs
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganResomiKidneys
+  parent: OrganHumanKidneys
+  name: kidneys
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganResomiAppendix
+  parent: OrganHumanAppendix
+  name: appendix
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+
+# Custom organs from original file — Resomi metabolizer types
+
+- type: entity
+  id: OrganResomiStomach
+  parent: OrganAnimalStomach
+  name: stomach
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Stomach
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+
+- type: entity
+  id: OrganResomiHeart
+  parent: OrganHumanHeart
+  name: heart
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [Resomi]
+    groups:
+    - id: Medicine
+    - id: Poison
+    - id: Narcotic
+
+- type: entity
+  id: OrganResomiLiver
+  parent: OrganHumanLiver
+  name: liver
+  suffix: Resomi
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Metabolizer
+    updateInterval: 1.5
+    maxReagents: 1
+    metabolizerTypes: [Resomi]
+    groups:
+    - id: Alcohol
+      rateModifier: 0.1

@@ -2,6 +2,7 @@ using Content.Shared.Body;
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
+using Content.Shared.Preferences;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
@@ -11,6 +12,7 @@ using Content.Shared.UserInterface;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using System.Linq;
 
 namespace Content.Shared.MagicMirror;
 
@@ -23,7 +25,8 @@ public sealed class MagicMirrorSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private readonly SharedHumanoidAppearanceSystem _humanoidAppearance = default!;
+    [Dependency] private readonly MarkingManager _markings = default!;
 
     private static readonly ProtoId<TagPrototype> HidesHairTag = "HidesHair";
 
@@ -128,7 +131,48 @@ public sealed class MagicMirrorSystem : EntitySystem
             }
         }
 
-        _visualBody.ApplyMarkings(args.Target.Value, args.Markings);
+        if (!TryComp<HumanoidAppearanceComponent>(args.Target.Value, out var humanoid))
+            return;
+
+        var currentAppearance = _humanoidAppearance.GetCharacterAppearance(args.Target.Value, humanoid);
+        if (currentAppearance == null)
+            return;
+
+        var mergedMarkings = currentAppearance.Markings.ToDictionary(
+            kvp => kvp.Key,
+            kvp => kvp.Value.ToDictionary(
+                inner => inner.Key,
+                inner => inner.Value.Select(marking => new Marking(marking.MarkingId, marking.MarkingColors) { Forced = marking.Forced }).ToList()));
+
+        foreach (var (organ, markings) in args.Markings)
+        {
+            if (!mergedMarkings.TryGetValue(organ, out var organMarkings))
+            {
+                organMarkings = new Dictionary<HumanoidVisualLayers, List<Marking>>();
+                mergedMarkings[organ] = organMarkings;
+            }
+
+            foreach (var (layer, layerMarkings) in markings)
+            {
+                organMarkings[layer] = layerMarkings
+                    .Select(marking => new Marking(marking.MarkingId, marking.MarkingColors) { Forced = marking.Forced })
+                    .ToList();
+            }
+        }
+
+        var newAppearance = new HumanoidCharacterAppearance(
+            currentAppearance.EyeColor,
+            currentAppearance.SkinColor,
+            mergedMarkings);
+
+        _humanoidAppearance.ApplyAppearanceData(args.Target.Value,
+            humanoid.Species,
+            humanoid.Sex,
+            humanoid.Gender,
+            humanoid.Age,
+            newAppearance,
+            true,
+            humanoid);
     }
 
     private void OnUiClosed(Entity<MagicMirrorComponent> ent, ref BoundUIClosedEvent args)
@@ -142,7 +186,7 @@ public sealed class MagicMirrorSystem : EntitySystem
         if (!args.CanReach || args.Target == null)
             return;
 
-        if (!HasComp<VisualBodyComponent>(args.Target.Value))
+        if (!HasComp<HumanoidAppearanceComponent>(args.Target.Value))
             return;
 
         UpdateInterface(mirror, args.Target.Value);
@@ -169,7 +213,7 @@ public sealed class MagicMirrorSystem : EntitySystem
     {
         var user = component.Target ?? args.User;
 
-        if (!HasComp<VisualBodyComponent>(user))
+        if (!HasComp<HumanoidAppearanceComponent>(user))
             args.Cancel();
     }
 
@@ -180,10 +224,22 @@ public sealed class MagicMirrorSystem : EntitySystem
 
     private void UpdateInterface(Entity<MagicMirrorComponent> ent, EntityUid target)
     {
-        if (!_visualBody.TryGatherMarkingsData(target, ent.Comp.Layers, out var profiles, out var markings, out var applied))
+        if (!TryComp<HumanoidAppearanceComponent>(target, out var humanoid))
             return;
 
         ent.Comp.Target = target;
+
+        var profiles = _markings.GetProfileData(humanoid.Species, humanoid.Sex, humanoid.SkinColor, humanoid.EyeColor);
+        var markings = _markings.GetMarkingData(humanoid.Species);
+        var appearance = _humanoidAppearance.GetCharacterAppearance(target, humanoid);
+        if (appearance == null)
+            return;
+
+        var applied = appearance.Markings.ToDictionary(
+            kvp => kvp.Key,
+            kvp => kvp.Value.ToDictionary(
+                inner => inner.Key,
+                inner => inner.Value.Select(marking => new Marking(marking.MarkingId, marking.MarkingColors) { Forced = marking.Forced }).ToList()));
 
         foreach (var profile in profiles)
         {

@@ -1,0 +1,8 @@
+- type: damageModifierSet
+  id: Sheleg
+  coefficients:
+    Blunt: 1.1
+    Slash: 1.1
+    Piercing: 1.1
+    Heat: 1.25
+    Cold: 0.9

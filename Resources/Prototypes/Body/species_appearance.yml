@@ -80,15 +80,20 @@
   save: false
   components:
   - type: Body
-  - type: VisualBody
   - type: Hands
   - type: ComplexInteraction
   - type: ContainerContainer
   - type: Appearance
+  - type: HumanoidAppearance
+  - type: SurgeryTarget
   - type: HideableHumanoidLayers
+  - type: RandomHumanoidAppearance
+    randomizeName: false
   - type: UserInterface
     interfaces:
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key:
+        type: SurgeryBui

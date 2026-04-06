@@ -1296,6 +1296,9 @@
   id: SiliconEmotes # Whitelisted and blacklisted in various EmotePrototypes to create a silicon emote group.
 
 - type: Tag
+  id: SiliconMob # Marks entity as a silicon-based mob (borgs, IPCs, etc).
+
+- type: Tag
   id: Skewer # Food sequence key
 
 - type: Tag # sliced fruit, vegetables, pizza etc.

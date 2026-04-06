@@ -1,0 +1,127 @@
+# Moth appearance entity
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceMoth
+  name: moth appearance
+  components:
+  - type: Inventory
+    speciesId: moth
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: jumpsuit-female
+      back:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: back
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: outerclothing
+      gloves:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: hand
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: shoes
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: jumpsuit-male
+      back:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: back
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: outerclothing
+      gloves:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: hand
+      shoes:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Moth/displacement.rsi
+            state: shoes
+  - type: HumanoidProfile
+    species: Moth
+
+# Moth mob entity — fluffy, eats cloth, burns easily, cold-tolerant
+- type: entity
+  parent:
+  - AppearanceMoth
+  - BaseSpeciesMobOrganic
+  id: MobMoth
+  name: Urist McFluff
+  components:
+  - type: Body
+    prototype: Moth
+  - type: Damageable
+    damageModifierSet: Moth
+  - type: ZombieAccentOverride
+    accent: zombieMoth
+  - type: Speech
+    speechVerb: Moth
+    allowedEmotes: ['Chitter', 'Squeak', 'Flap']
+  - type: TypingIndicator
+    proto: moth
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 300
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#808A51"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: MothAccent
+  - type: Vocal
+    sounds:
+      Male: UnisexMoth
+      Female: UnisexMoth
+      Unsexed: UnisexMoth
+  - type: BodyEmotes
+    soundsId: MothBodyEmotes
+  - type: MovementSpeedModifier
+    baseWeightlessAcceleration: 1.5
+    baseWeightlessFriction: 1
+    baseWeightlessModifier: 1
+  - type: Flammable
+    damage:
+      types:
+        Heat: 2.5
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 46
+  - type: TemperatureDamage
+    heatDamageThreshold: 320
+    coldDamageThreshold: 230
+    coldDamage:
+      types:
+        Cold: 0.05
+    heatDamage:
+      types:
+        Heat: 3
+  - type: TemperatureSpeed
+    thresholds:
+      289: 0.9
+      275: 0.8
+      250: 0.7

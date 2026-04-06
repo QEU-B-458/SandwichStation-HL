@@ -1,0 +1,128 @@
+# Oni body prototype — owns the full part + organ tree.
+# Oni are large humanoids with horns.
+
+- type: body
+  id: Oni
+  name: "oni"
+  root: torso
+  slots:
+    head:
+      part: HeadOni
+      connections:
+      - torso
+      organs:
+        brain: OrganOniBrain
+        eyes: OrganOniEyes
+        tongue: OrganOniTongue
+        ears: OrganOniEars
+    torso:
+      part: TorsoOni
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      - head
+      organs:
+        heart: OrganOniHeart
+        lungs: OrganOniLungs
+        stomach: OrganOniStomach
+        liver: OrganOniLiver
+        kidneys: OrganOniKidneys
+        appendix: OrganOniAppendix
+    right arm:
+      part: RightArmOni
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmOni
+      connections:
+      - left hand
+    right hand:
+      part: RightHandOni
+    left hand:
+      part: LeftHandOni
+    right leg:
+      part: RightLegOni
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegOni
+      connections:
+      - left foot
+    right foot:
+      part: RightFootOni
+    left foot:
+      part: LeftFootOni
+
+# Species-specific organs — parented from human equivalents for customizability
+
+- type: entity
+  id: OrganOniBrain
+  parent: OrganHumanBrain
+  name: brain
+  suffix: Oni
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganOniEyes
+  parent: OrganHumanEyes
+  name: eyes
+  suffix: Oni
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganOniTongue
+  parent: OrganHumanTongue
+  name: tongue
+  suffix: Oni
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganOniEars
+  parent: OrganHumanEars
+  name: ears
+  suffix: Oni
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganOniHeart
+  parent: OrganHumanHeart
+  name: heart
+  suffix: Oni
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganOniLungs
+  parent: OrganHumanLungs
+  name: lungs
+  suffix: Oni
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganOniStomach
+  parent: OrganHumanStomach
+  name: stomach
+  suffix: Oni
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganOniLiver
+  parent: OrganHumanLiver
+  name: liver
+  suffix: Oni
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganOniKidneys
+  parent: OrganHumanKidneys
+  name: kidneys
+  suffix: Oni
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  id: OrganOniAppendix
+  parent: OrganHumanAppendix
+  name: appendix
+  suffix: Oni
+  categories: [ HideSpawnMenu ]

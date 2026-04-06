@@ -1,0 +1,156 @@
+# Skrell body part entities.
+# Each part is referenced by ID from body_organs.yml (the body prototype).
+
+- type: entity
+  id: PartSkrell
+  parent: BasePart
+  name: "skrell body part"
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+  - type: StaticPrice
+    price: 20
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoSkrell
+  name: "skrell torso"
+  parent: [PartSkrell, BaseTorso]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: torso_m
+  - type: BodyPart
+    baseLayerId: SkrellChest
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadSkrell
+  name: "skrell head"
+  parent: [PartSkrell, BaseHead]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: head_m
+  - type: BodyPart
+    baseLayerId: SkrellHead
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmSkrell
+  name: "left skrell arm"
+  parent: [PartSkrell, BaseLeftArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: l_arm
+  - type: BodyPart
+    baseLayerId: SkrellLArm
+
+- type: entity
+  id: RightArmSkrell
+  name: "right skrell arm"
+  parent: [PartSkrell, BaseRightArm]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: r_arm
+  - type: BodyPart
+    baseLayerId: SkrellRArm
+
+- type: entity
+  id: LeftHandSkrell
+  name: "left skrell hand"
+  parent: [PartSkrell, BaseLeftHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: l_hand
+  - type: BodyPart
+    baseLayerId: SkrellLHand
+
+- type: entity
+  id: RightHandSkrell
+  name: "right skrell hand"
+  parent: [PartSkrell, BaseRightHand]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: r_hand
+  - type: BodyPart
+    baseLayerId: SkrellRHand
+
+- type: entity
+  id: LeftLegSkrell
+  name: "left skrell leg"
+  parent: [PartSkrell, BaseLeftLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: l_leg
+  - type: BodyPart
+    baseLayerId: SkrellLLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: RightLegSkrell
+  name: "right skrell leg"
+  parent: [PartSkrell, BaseRightLeg]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: r_leg
+  - type: BodyPart
+    baseLayerId: SkrellRLeg
+  - type: MovementBodyPart
+
+- type: entity
+  id: LeftFootSkrell
+  name: "left skrell foot"
+  parent: [PartSkrell, BaseLeftFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: l_foot
+  - type: BodyPart
+    baseLayerId: SkrellLFoot
+
+- type: entity
+  id: RightFootSkrell
+  name: "right skrell foot"
+  parent: [PartSkrell, BaseRightFoot]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _species/Skrell/Mobs/Skrells/parts.rsi
+    state: r_foot
+  - type: BodyPart
+    baseLayerId: SkrellRFoot

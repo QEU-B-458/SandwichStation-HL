@@ -1,0 +1,18 @@
+# Rodentia name datasets — existing locale files use names-rodentia-*-dataset- prefix
+- type: localizedDataset
+  id: NamesRodentiaMale
+  values:
+    prefix: names-rodentia-male-dataset-
+    count: 167
+
+- type: localizedDataset
+  id: NamesRodentiaFemale
+  values:
+    prefix: names-rodentia-female-dataset-
+    count: 159
+
+- type: localizedDataset
+  id: NamesRodentiaLast
+  values:
+    prefix: names-rodentia-last-dataset-
+    count: 87

@@ -40,25 +40,6 @@
           32:
             sprite: _species/Thaven/Mobs/Species/Thaven/displacement.rsi
             state: hands
-  - type: InitialBody
-    organs:
-      Torso: OrganThavenTorso
-      Head: OrganThavenHead
-      ArmLeft: OrganThavenArmLeft
-      ArmRight: OrganThavenArmRight
-      HandRight: OrganThavenHandRight
-      HandLeft: OrganThavenHandLeft
-      LegLeft: OrganThavenLegLeft
-      LegRight: OrganThavenLegRight
-      FootLeft: OrganThavenFootLeft
-      FootRight: OrganThavenFootRight
-      Brain: OrganThavenBrain
-      Eyes: OrganThavenEyes
-      Lungs: OrganThavenLungs
-      Heart: OrganThavenHeart
-      Stomach: OrganThavenStomach
-      Liver: OrganThavenLiver
-      Kidneys: OrganThavenKidneys
   - type: HumanoidProfile
     species: Thaven
 
@@ -70,6 +51,8 @@
   id: MobThaven
   name: Urist McEars
   components:
+  - type: Body
+    prototype: Thaven
   - type: ThavenMoodsBound
   - type: Respirator
     damage:

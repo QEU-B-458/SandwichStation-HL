@@ -1,0 +1,116 @@
+# Kitsune sprite layer definitions.
+# Uses Human RSI — Kitsune are fox-like humanoids with human body shape.
+
+- type: humanoidBaseSprite
+  id: KitsuneChest
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneHead
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneLArm
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneRArm
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_arm
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneLHand
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneRHand
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_hand
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneLLeg
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneRLeg
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_leg
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneLFoot
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: l_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneRFoot
+  baseSprite:
+    sprite: Mobs/Species/Human/parts.rsi
+    state: r_foot
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: KitsuneLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: KitsuneLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: KitsuneLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: KitsuneLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: KitsuneLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: KitsuneLayerEyes
+  matchSkin: false
+
+- type: speciesBaseSprites
+  id: KitsuneSprites
+  sprites:
+    Chest: KitsuneChest
+    Head: KitsuneHead
+    LArm: KitsuneLArm
+    RArm: KitsuneRArm
+    LHand: KitsuneLHand
+    RHand: KitsuneRHand
+    LLeg: KitsuneLLeg
+    RLeg: KitsuneRLeg
+    LFoot: KitsuneLFoot
+    RFoot: KitsuneRFoot
+    Tail: KitsuneLayerTail
+    HeadTop: KitsuneLayerHeadTop
+    Snout: KitsuneLayerSnout
+    Hair: KitsuneLayerHair
+    FacialHair: KitsuneLayerFacialHair
+    Eyes: KitsuneLayerEyes
