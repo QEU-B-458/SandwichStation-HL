@@ -18,7 +18,7 @@
       - ReagentId: InsectBlood
         Quantity: 10
 
-# Sexed torso — no baseLayerId; runtime appends Male/Female suffix
+# Sexed torso — baseLayerId set; GetSexMorph appends Male/Female at render time
 - type: entity
   id: TorsoMoth
   name: "moth torso"
@@ -28,6 +28,8 @@
   - type: Sprite
     sprite: Mobs/Species/Moth/parts.rsi
     state: torso_m
+  - type: BodyPart
+    baseLayerId: MothChest
   - type: Extractable
     juiceSolution:
       reagents:

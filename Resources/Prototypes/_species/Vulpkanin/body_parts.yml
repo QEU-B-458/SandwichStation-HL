@@ -16,7 +16,7 @@
       - ReagentId: SulfurBlood
         Quantity: 10
 
-# Sexed torso — no baseLayerId, runtime sex-morphs to VulpkaninChestMale/Female
+# Sexed torso — baseLayerId set; GetSexMorph appends Male/Female at render time
 - type: entity
   id: TorsoVulpkanin
   name: "vulpkanin torso"
@@ -26,6 +26,8 @@
   - type: Sprite
     sprite: Mobs/Species/Vulpkanin/parts.rsi
     state: torso_m
+  - type: BodyPart
+    baseLayerId: VulpkaninChest
   - type: Extractable
     juiceSolution:
       reagents:

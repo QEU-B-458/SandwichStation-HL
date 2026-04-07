@@ -9,7 +9,35 @@
   matchSkin: true
 
 - type: humanoidBaseSprite
+  id: ThavenChestMale
+  baseSprite:
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: torso
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ThavenChestFemale
+  baseSprite:
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: torso
+  matchSkin: true
+
+- type: humanoidBaseSprite
   id: ThavenHead
+  baseSprite:
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: head
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ThavenHeadMale
+  baseSprite:
+    sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
+    state: head
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ThavenHeadFemale
   baseSprite:
     sprite: _species/Thaven/Mobs/Species/Thaven/parts.rsi
     state: head

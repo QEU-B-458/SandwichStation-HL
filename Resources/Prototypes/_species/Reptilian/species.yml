@@ -11,6 +11,51 @@
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
+  markingData:
+    Torso:
+      group: Reptilian
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Reptilian
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Reptilian
+      layers: [LArm]
+    ArmRight:
+      group: Reptilian
+      layers: [RArm]
+    HandLeft:
+      group: Reptilian
+      layers: [LHand]
+    HandRight:
+      group: Reptilian
+      layers: [RHand]
+    LegLeft:
+      group: Reptilian
+      layers: [LLeg]
+    LegRight:
+      group: Reptilian
+      layers: [RLeg]
+    FootLeft:
+      group: Reptilian
+      layers: [LFoot]
+    FootRight:
+      group: Reptilian
+      layers: [RFoot]
 
 # Reptilian markings group — tail + snout required, no hair/facial hair
 - type: markingsGroup

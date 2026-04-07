@@ -24,6 +24,51 @@
   - Male
   - Female
   - Unsexed
+  markingData:
+    Torso:
+      group: Thaven
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Thaven
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Thaven
+      layers: [LArm]
+    ArmRight:
+      group: Thaven
+      layers: [RArm]
+    HandLeft:
+      group: Thaven
+      layers: [LHand]
+    HandRight:
+      group: Thaven
+      layers: [RHand]
+    LegLeft:
+      group: Thaven
+      layers: [LLeg]
+    LegRight:
+      group: Thaven
+      layers: [RLeg]
+    FootLeft:
+      group: Thaven
+      layers: [LFoot]
+    FootRight:
+      group: Thaven
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

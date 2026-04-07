@@ -53,6 +53,8 @@
   id: MobFelionoid
   name: Urist McFelionoid
   components:
+  - type: Body
+    prototype: Felionoid
   - type: Sprite
     scale: 0.8, 0.8
   - type: Fixtures

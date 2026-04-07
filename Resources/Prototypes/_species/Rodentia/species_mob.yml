@@ -18,6 +18,8 @@
   id: MobRodentia
   name: Urist McRat
   components:
+  - type: Body
+    prototype: Rodentia
   - type: Sprite
     scale: 0.8, 0.8
   - type: Hunger

@@ -10,6 +10,51 @@
   maleFirstNames: names_feroxi_first_male
   femaleFirstNames: names_feroxi_first_female
   naming: First
+  markingData:
+    Torso:
+      group: Feroxi
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Feroxi
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Feroxi
+      layers: [LArm]
+    ArmRight:
+      group: Feroxi
+      layers: [RArm]
+    HandLeft:
+      group: Feroxi
+      layers: [LHand]
+    HandRight:
+      group: Feroxi
+      layers: [RHand]
+    LegLeft:
+      group: Feroxi
+      layers: [LLeg]
+    LegRight:
+      group: Feroxi
+      layers: [RLeg]
+    FootLeft:
+      group: Feroxi
+      layers: [LFoot]
+    FootRight:
+      group: Feroxi
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

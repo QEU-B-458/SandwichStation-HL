@@ -3,10 +3,11 @@
   name: Create Foxfire
   description: Form a cool, gently glowing wisp of flame
   components:
-  - type: InstantAction
-    charges: 3
-    disableWhenEmpty: false
+  - type: LimitedCharges
+    maxCharges: 3
+  - type: Action
     icon: { sprite: _species/Kitsune/Structures/Specific/Species/Kitsune/foxfire.rsi, state: icon }
+  - type: InstantAction
     event: !type:CreateFoxfireActionEvent
 
 - type: entity
@@ -14,7 +15,8 @@
   name: Kitsune Shapeshift
   description: Shift into your fox form
   components:
-  - type: InstantAction
+  - type: Action
     icon: { sprite: Mobs/Animals/fox.rsi, state: fox }
     useDelay: 2
+  - type: InstantAction
     event: !type:MorphIntoKitsune

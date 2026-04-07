@@ -48,6 +48,8 @@
   id: MobAvali
   name: Urist McAvali
   components:
+  - type: Body
+    prototype: Avali
   - type: Tag
     tags:
     - CanPilot

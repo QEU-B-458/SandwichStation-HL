@@ -17,6 +17,8 @@
   id: MobFelinid
   name: Urist McFelinid
   components:
+  - type: Body
+    prototype: Felinid
   - type: Sprite
     scale: 0.8, 0.8
   - type: Fixtures

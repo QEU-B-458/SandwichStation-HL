@@ -102,11 +102,41 @@
     state: r_foot
   matchSkin: true
 
+- type: humanoidBaseSprite
+  id: DwarfLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: DwarfLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: DwarfLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: DwarfLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: DwarfLayerHeadSide
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: DwarfLayerTail
+  matchSkin: false
+
 - type: speciesBaseSprites
   id: DwarfSprites
   sprites:
     Chest: DwarfChest
     Head: DwarfHead
+    Hair: DwarfLayerHair
+    FacialHair: DwarfLayerFacialHair
+    Snout: DwarfLayerSnout
+    HeadTop: DwarfLayerHeadTop
+    HeadSide: DwarfLayerHeadSide
+    Tail: DwarfLayerTail
     LArm: DwarfLArm
     RArm: DwarfRArm
     LHand: DwarfLHand

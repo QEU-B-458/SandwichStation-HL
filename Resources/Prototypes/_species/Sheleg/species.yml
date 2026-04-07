@@ -13,6 +13,51 @@
   femaleFirstNames: NamesShelegFirstFemale
   lastNames: NamesShelegLast
   naming: FirstLast
+  markingData:
+    Torso:
+      group: Sheleg
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Sheleg
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Sheleg
+      layers: [LArm]
+    ArmRight:
+      group: Sheleg
+      layers: [RArm]
+    HandLeft:
+      group: Sheleg
+      layers: [LHand]
+    HandRight:
+      group: Sheleg
+      layers: [RHand]
+    LegLeft:
+      group: Sheleg
+      layers: [LLeg]
+    LegRight:
+      group: Sheleg
+      layers: [RLeg]
+    FootLeft:
+      group: Sheleg
+      layers: [LFoot]
+    FootRight:
+      group: Sheleg
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

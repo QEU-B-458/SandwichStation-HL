@@ -95,12 +95,37 @@
     state: eyes
   matchSkin: false
 
+- type: humanoidBaseSprite
+  id: VulpkaninLayerTail
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: VulpkaninLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: VulpkaninLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: VulpkaninLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: VulpkaninLayerFacialHair
+  matchSkin: false
+
 - type: speciesBaseSprites
   id: VulpkaninSprites
   sprites:
     Chest: VulpkaninChest
     Head: VulpkaninHead
     Eyes: VulpkaninLayerEyes
+    Tail: VulpkaninLayerTail
+    HeadTop: VulpkaninLayerHeadTop
+    Snout: VulpkaninLayerSnout
+    Hair: VulpkaninLayerHair
+    FacialHair: VulpkaninLayerFacialHair
     LArm: VulpkaninLArm
     RArm: VulpkaninRArm
     LHand: VulpkaninLHand

@@ -185,12 +185,7 @@
     size: Small
     heldPrefix: synth lungs
   - type: Metabolizer
-    solutionOnBody: false
-    solution: "Lung"
-    metabolizerTypes: [ Synth ]
-    groups:
-    - id: Gas
-      rateModifier: 100.0
+    stages: [ Respiration ]
   - type: SolutionContainerManager
     solutions:
       organ:
@@ -218,10 +213,7 @@
   - type: Metabolizer
     maxReagents: 2
     metabolizerTypes: [ Synth ]
-    groups:
-    - id: Medicine
-    - id: Poison
-    - id: Narcotic
+    stages: [ Bloodstream ]
   - type: Item
     size: Small
     heldPrefix: synth heart
@@ -249,9 +241,7 @@
   - type: Metabolizer
     maxReagents: 5
     metabolizerTypes: [ Synth ]
-    groups:
-    - id: Food
-    - id: Drink
+    stages: [ Digestion ]
   - type: Item
     size: Small
     heldPrefix: synth stomach
@@ -276,9 +266,7 @@
   - type: Metabolizer
     maxReagents: 1
     metabolizerTypes: [ Synth ]
-    groups:
-    - id: Alcohol
-      rateModifier: 0.3
+    stages: [ Metabolites ]
 
 - type: entity
   id: SynthEnergyCoil

@@ -18,6 +18,8 @@
   id: MobSheleg
   name: Urist McIce
   components:
+  - type: Body
+    prototype: Sheleg
   - type: Sprite
     scale: 1.15, 1.2
   - type: Hunger

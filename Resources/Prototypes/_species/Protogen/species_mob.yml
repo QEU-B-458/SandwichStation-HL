@@ -24,6 +24,8 @@
   id: MobProtogen
   name: Urist McHardDrive
   components:
+  - type: Body
+    prototype: Protogen
   - type: HarpySinger
   - type: Instrument
     allowPercussion: true

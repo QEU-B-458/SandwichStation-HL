@@ -18,6 +18,8 @@
   id: MobOni
   name: Urist McOni
   components:
+  - type: Body
+    prototype: Oni
   - type: Speech
     speechSounds: Baritone
   - type: Sprite

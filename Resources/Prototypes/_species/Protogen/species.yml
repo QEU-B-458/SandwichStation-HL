@@ -11,6 +11,51 @@
   maleFirstNames: names_protogen_first_male
   femaleFirstNames: names_protogen_first_female
   naming: First
+  markingData:
+    Torso:
+      group: Protogen
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Protogen
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Protogen
+      layers: [LArm]
+    ArmRight:
+      group: Protogen
+      layers: [RArm]
+    HandLeft:
+      group: Protogen
+      layers: [LHand]
+    HandRight:
+      group: Protogen
+      layers: [RHand]
+    LegLeft:
+      group: Protogen
+      layers: [LLeg]
+    LegRight:
+      group: Protogen
+      layers: [RLeg]
+    FootLeft:
+      group: Protogen
+      layers: [LFoot]
+    FootRight:
+      group: Protogen
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

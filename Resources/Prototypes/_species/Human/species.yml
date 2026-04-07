@@ -7,6 +7,51 @@
   dollPrototype: AppearanceHuman
   skinColoration: HumanToned
   sprites: HumanSprites
+  markingData:
+    Torso:
+      group: Human
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Human
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Human
+      layers: [LArm]
+    ArmRight:
+      group: Human
+      layers: [RArm]
+    HandLeft:
+      group: Human
+      layers: [LHand]
+    HandRight:
+      group: Human
+      layers: [RHand]
+    LegLeft:
+      group: Human
+      layers: [LLeg]
+    LegRight:
+      group: Human
+      layers: [RLeg]
+    FootLeft:
+      group: Human
+      layers: [LFoot]
+    FootRight:
+      group: Human
+      layers: [RFoot]
 
 # Human markings group
 - type: markingsGroup

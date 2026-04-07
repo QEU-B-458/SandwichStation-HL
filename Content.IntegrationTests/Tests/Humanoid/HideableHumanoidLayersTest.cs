@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Content.IntegrationTests.Tests.Interaction;
-using Content.Shared.Body;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Inventory;
@@ -40,14 +39,14 @@ public sealed class HideableHumanoidLayersTest : InteractionTest
     {
         await Server.WaitAssertion(() =>
         {
-            var visualBody = SEntMan.System<SharedVisualBodySystem>();
-            visualBody.ApplyMarkings(SPlayer, new()
+            var humanoid = SEntMan.GetComponent<HumanoidAppearanceComponent>(SPlayer);
+            if (!humanoid.MarkingSet.Markings.TryGetValue(MarkingCategories.Overlay, out var overlayList))
             {
-                ["Head"] = new()
-                {
-                    [HumanoidVisualLayers.SnoutCover] = new List<Marking>() { new("VulpSnoutNose", 1) },
-                },
-            });
+                overlayList = new List<Marking>();
+                humanoid.MarkingSet.Markings[MarkingCategories.Overlay] = overlayList;
+            }
+            overlayList.Add(new Marking("VulpSnoutNose", 1));
+            SEntMan.Dirty(SPlayer, humanoid);
         });
 
         await SpawnTarget("ClothingMaskGas");

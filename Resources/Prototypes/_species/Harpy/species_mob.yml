@@ -24,6 +24,8 @@
   id: MobHarpy
   name: Urist McHarpy
   components:
+  - type: Body
+    prototype: Harpy
   - type: HarpySinger
   - type: Instrument
     allowPercussion: false
@@ -125,9 +127,10 @@
   name: Play MIDI
   description: Sing your heart out! Right click yourself to set an instrument.
   components:
-  - type: InstantAction
+  - type: Action
     checkCanInteract: false
     icon: _species/Harpy/Interface/Actions/harpy_sing.png
+  - type: InstantAction
     event: !type:OpenUiActionEvent
       key: enum.InstrumentUiKey.Key
 
@@ -136,7 +139,8 @@
   name: Set name
   description: Change the name others hear to something else.
   components:
-  - type: InstantAction
+  - type: Action
     icon: _species/Harpy/Interface/Actions/harpy_syrinx.png
     itemIconStyle: BigAction
+  - type: InstantAction
     event: !type:VoiceMaskSetNameEvent

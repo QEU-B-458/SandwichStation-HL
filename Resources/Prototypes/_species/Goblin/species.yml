@@ -10,6 +10,51 @@
   femaleFirstNames: NamesGoblinFirstFemale
   lastNames: NamesGoblinLast
   naming: FirstLast
+  markingData:
+    Torso:
+      group: Goblin
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Goblin
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Goblin
+      layers: [LArm]
+    ArmRight:
+      group: Goblin
+      layers: [RArm]
+    HandLeft:
+      group: Goblin
+      layers: [LHand]
+    HandRight:
+      group: Goblin
+      layers: [RHand]
+    LegLeft:
+      group: Goblin
+      layers: [LLeg]
+    LegRight:
+      group: Goblin
+      layers: [RLeg]
+    FootLeft:
+      group: Goblin
+      layers: [LFoot]
+    FootRight:
+      group: Goblin
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

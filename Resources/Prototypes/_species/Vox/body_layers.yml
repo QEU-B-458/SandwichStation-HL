@@ -78,12 +78,22 @@
     state: eyes
   matchSkin: false
 
+- type: humanoidBaseSprite
+  id: VoxLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: VoxLayerTail
+  matchSkin: false
+
 - type: speciesBaseSprites
   id: VoxSprites
   sprites:
     Chest: VoxChest
     Head: VoxHead
     Eyes: VoxLayerEyes
+    Snout: VoxLayerSnout
+    Tail: VoxLayerTail
     LArm: VoxLArm
     RArm: VoxRArm
     LHand: VoxLHand

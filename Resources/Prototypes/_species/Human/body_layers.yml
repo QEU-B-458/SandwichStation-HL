@@ -102,11 +102,41 @@
     state: r_foot
   matchSkin: true
 
+- type: humanoidBaseSprite
+  id: HumanLayerHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: HumanLayerFacialHair
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: HumanLayerSnout
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: HumanLayerHeadTop
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: HumanLayerHeadSide
+  matchSkin: false
+
+- type: humanoidBaseSprite
+  id: HumanLayerTail
+  matchSkin: false
+
 - type: speciesBaseSprites
   id: HumanSprites
   sprites:
     Chest: HumanChest
     Head: HumanHead
+    Hair: HumanLayerHair
+    FacialHair: HumanLayerFacialHair
+    Snout: HumanLayerSnout
+    HeadTop: HumanLayerHeadTop
+    HeadSide: HumanLayerHeadSide
+    Tail: HumanLayerTail
     LArm: HumanLArm
     RArm: HumanRArm
     LHand: HumanLHand

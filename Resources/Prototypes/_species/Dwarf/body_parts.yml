@@ -18,7 +18,7 @@
       - ReagentId: Blood
         Quantity: 10
 
-# Sexed parts — no baseLayerId; runtime appends Male/Female suffix
+# Sexed parts — baseLayerId set; GetSexMorph appends Male/Female at render time
 - type: entity
   id: TorsoDwarf
   name: "dwarf torso"
@@ -28,6 +28,8 @@
   - type: Sprite
     sprite: Mobs/Species/Human/parts.rsi
     state: torso_m
+  - type: BodyPart
+    baseLayerId: DwarfChest
   - type: Extractable
     juiceSolution:
       reagents:

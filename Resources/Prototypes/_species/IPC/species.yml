@@ -16,6 +16,51 @@
   naming: FirstLast
   sexes:
   - Unsexed
+  markingData:
+    Torso:
+      group: IPC
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: IPC
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: IPC
+      layers: [LArm]
+    ArmRight:
+      group: IPC
+      layers: [RArm]
+    HandLeft:
+      group: IPC
+      layers: [LHand]
+    HandRight:
+      group: IPC
+      layers: [RHand]
+    LegLeft:
+      group: IPC
+      layers: [LLeg]
+    LegRight:
+      group: IPC
+      layers: [RLeg]
+    FootLeft:
+      group: IPC
+      layers: [LFoot]
+    FootRight:
+      group: IPC
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

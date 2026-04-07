@@ -16,6 +16,51 @@
   maxAge: 300
   youngAge: 50
   oldAge: 250
+  markingData:
+    Torso:
+      group: Shadekin
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Shadekin
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Shadekin
+      layers: [LArm]
+    ArmRight:
+      group: Shadekin
+      layers: [RArm]
+    HandLeft:
+      group: Shadekin
+      layers: [LHand]
+    HandRight:
+      group: Shadekin
+      layers: [RHand]
+    LegLeft:
+      group: Shadekin
+      layers: [LLeg]
+    LegRight:
+      group: Shadekin
+      layers: [RLeg]
+    FootLeft:
+      group: Shadekin
+      layers: [LFoot]
+    FootRight:
+      group: Shadekin
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

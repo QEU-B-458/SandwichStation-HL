@@ -92,6 +92,10 @@
   id: FelinidLayerEyes
   matchSkin: false
 
+- type: humanoidBaseSprite
+  id: FelinidLayerHeadTop
+  matchSkin: false
+
 - type: speciesBaseSprites
   id: MobFelinidSprites
   sprites:
@@ -106,6 +110,7 @@
     LFoot: FelinidLFoot
     RFoot: FelinidRFoot
     Tail: FelinidLayerTail
+    HeadTop: FelinidLayerHeadTop
     Hair: FelinidLayerHair
     FacialHair: FelinidLayerFacialHair
     Snout: FelinidLayerSnout

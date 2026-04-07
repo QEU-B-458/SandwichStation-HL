@@ -18,7 +18,7 @@
       - ReagentId: Blood
         Quantity: 10
 
-# Sexed parts — no baseLayerId; runtime appends Male/Female suffix for both torso and head
+# Sexed parts — baseLayerId set; GetSexMorph appends Male/Female at render time
 - type: entity
   id: TorsoReptilian
   name: "reptilian torso"
@@ -28,6 +28,8 @@
   - type: Sprite
     sprite: Mobs/Species/Reptilian/parts.rsi
     state: torso_m
+  - type: BodyPart
+    baseLayerId: ReptilianChest
   - type: Extractable
     juiceSolution:
       reagents:
@@ -45,6 +47,8 @@
   - type: Sprite
     sprite: Mobs/Species/Reptilian/parts.rsi
     state: head_m
+  - type: BodyPart
+    baseLayerId: ReptilianHead
   - type: Extractable
     juiceSolution:
       reagents:

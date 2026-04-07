@@ -22,6 +22,8 @@
   name: Urist McPositronic
   description: A positronic brain in a metal body.
   components:
+  - type: Body
+    prototype: IPC
   - type: Sprite
   - type: Icon
     sprite: _species/IPC/Mobs/Species/parts.rsi

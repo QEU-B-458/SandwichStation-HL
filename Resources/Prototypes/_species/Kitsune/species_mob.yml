@@ -18,6 +18,8 @@
   id: MobKitsune
   name: Urist McKitsune
   components:
+  - type: Body
+    prototype: Kitsune
   - type: Fixtures
     fixtures:
       fix1:

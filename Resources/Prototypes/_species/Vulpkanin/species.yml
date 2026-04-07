@@ -10,6 +10,51 @@
   femaleFirstNames: names_vulpkanin_female
   lastNames: names_vulpkanin_last
   sprites: VulpkaninSprites
+  markingData:
+    Torso:
+      group: Vulpkanin
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Vulpkanin
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Vulpkanin
+      layers: [LArm]
+    ArmRight:
+      group: Vulpkanin
+      layers: [RArm]
+    HandLeft:
+      group: Vulpkanin
+      layers: [LHand]
+    HandRight:
+      group: Vulpkanin
+      layers: [RHand]
+    LegLeft:
+      group: Vulpkanin
+      layers: [LLeg]
+    LegRight:
+      group: Vulpkanin
+      layers: [RLeg]
+    FootLeft:
+      group: Vulpkanin
+      layers: [LFoot]
+    FootRight:
+      group: Vulpkanin
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

@@ -90,6 +90,10 @@
   id: HarpyLayerEyes
   matchSkin: false
 
+- type: humanoidBaseSprite
+  id: HarpyLayerRArmExtension
+  matchSkin: false
+
 - type: speciesBaseSprites
   id: HarpySprites
   sprites:
@@ -108,3 +112,4 @@
     Hair: HarpyLayerHair
     FacialHair: HarpyLayerFacialHair
     Eyes: HarpyLayerEyes
+    RArmExtension: HarpyLayerRArmExtension

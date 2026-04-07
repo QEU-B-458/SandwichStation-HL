@@ -13,6 +13,8 @@
   id: MobFeroxi
   name: Urist McFeroxi
   components:
+  - type: Body
+    prototype: Feroxi
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Feroxi

@@ -155,6 +155,8 @@
   id: MobResomi
   name: Urist McRaptor
   components:
+  - type: Body
+    prototype: Resomi
   - type: JumpAbility
     action: ActionResomiGravityJump
     canCollide: true

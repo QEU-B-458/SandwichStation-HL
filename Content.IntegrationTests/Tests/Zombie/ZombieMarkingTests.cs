@@ -1,40 +1,30 @@
 using System.Linq;
 using Content.IntegrationTests.Tests.Interaction;
 using Content.Server.Zombies;
-using Content.Shared.Body;
+using Content.Shared.Humanoid;
 using Content.Shared.Zombies;
 
 namespace Content.IntegrationTests.Tests.Zombie;
 
 [TestOf(typeof(ZombieSystem))]
-public sealed class ZombieMarkingTests : InteractionTest
+public sealed class ZombieAppearanceTests : InteractionTest
 {
     protected override string PlayerPrototype => "MobVulpkanin";
 
     [Test]
-    public async Task ProfileApplication()
+    public async Task AppearanceApplication()
     {
         await Server.WaitAssertion(() =>
         {
             var zombie = SEntMan.System<ZombieSystem>();
-            var visualBody = SEntMan.System<SharedVisualBodySystem>();
+            var humanoidSystem = SEntMan.System<SharedHumanoidAppearanceSystem>();
             zombie.ZombifyEntity(SPlayer);
             var comp = SEntMan.GetComponent<ZombieComponent>(SPlayer);
 
-            if (!visualBody.TryGatherMarkingsData(SPlayer,
-                    null,
-                    out var profiles,
-                    out _,
-                    out _))
-            {
-                Assert.Fail($"Failed to gather markings data for {SEntMan.ToPrettyString(SPlayer):SPlayer}");
-            }
-
-            foreach (var (organ, profile) in profiles)
-            {
-                Assert.That(profile.SkinColor, Is.EqualTo(comp.SkinColor), $"Organ {organ} has non-zombified skin color");
-                Assert.That(profile.EyeColor, Is.EqualTo(comp.EyeColor), $"Organ {organ} has non-zombified skin color");
-            }
+            var appearance = humanoidSystem.GetCharacterAppearance(SPlayer);
+            Assert.That(appearance, Is.Not.Null, $"Failed to get appearance for {SEntMan.ToPrettyString(SPlayer):SPlayer}");
+            Assert.That(appearance!.SkinColor, Is.EqualTo(comp.SkinColor), "Zombified skin color mismatch");
+            Assert.That(appearance.EyeColor, Is.EqualTo(comp.EyeColor), "Zombified eye color mismatch");
         });
     }
 
@@ -43,44 +33,33 @@ public sealed class ZombieMarkingTests : InteractionTest
     {
         await Server.WaitAssertion(() =>
         {
-            var visualBody = SEntMan.System<SharedVisualBodySystem>();
-            if (!visualBody.TryGatherMarkingsData(SPlayer,
-                    null,
-                    out _,
-                    out _,
-                    out var preZombieMarkings))
-            {
-                Assert.Fail($"Failed to gather pre-zombie markings data for {SEntMan.ToPrettyString(SPlayer):SPlayer}");
-            }
+            var humanoidSystem = SEntMan.System<SharedHumanoidAppearanceSystem>();
+
+            var preAppearance = humanoidSystem.GetCharacterAppearance(SPlayer);
+            Assert.That(preAppearance, Is.Not.Null, $"Failed to get pre-zombie appearance for {SEntMan.ToPrettyString(SPlayer):SPlayer}");
 
             var zombie = SEntMan.System<ZombieSystem>();
             zombie.ZombifyEntity(SPlayer);
             var comp = SEntMan.GetComponent<ZombieComponent>(SPlayer);
 
-            if (!visualBody.TryGatherMarkingsData(SPlayer,
-                    null,
-                    out _,
-                    out _,
-                    out var postZombieMarkings))
-            {
-                Assert.Fail($"Failed to gather post-zombie markings data for {SEntMan.ToPrettyString(SPlayer):SPlayer}");
-            }
+            var postAppearance = humanoidSystem.GetCharacterAppearance(SPlayer);
+            Assert.That(postAppearance, Is.Not.Null, $"Failed to get post-zombie appearance for {SEntMan.ToPrettyString(SPlayer):SPlayer}");
 
-            foreach (var (organ, layers) in postZombieMarkings)
+            foreach (var (organ, layers) in postAppearance!.Markings)
             {
-                Assert.That(preZombieMarkings, Does.ContainKey(organ), "Zombification added organs (it shouldn't)");
-                Assert.That(preZombieMarkings[organ], Is.Not.SameAs(layers), "Zombification shouldn't mutate the existing data structures");
+                Assert.That(preAppearance!.Markings, Does.ContainKey(organ), "Zombification added organs (it shouldn't)");
+                Assert.That(preAppearance.Markings[organ], Is.Not.SameAs(layers), "Zombification shouldn't mutate the existing data structures");
 
                 foreach (var (layer, markingSet) in layers)
                 {
-                    Assert.That(preZombieMarkings[organ], Does.ContainKey(layer), "Zombification added layers (it shouldn't)");
-                    Assert.That(preZombieMarkings[organ][layer], Is.Not.SameAs(markingSet), "Zombification shouldn't mutate the existing data structures");
-                    Assert.That(preZombieMarkings[organ][layer], Has.Count.EqualTo(markingSet.Count), "Zombification shouldn't change the amount of markings");
+                    Assert.That(preAppearance.Markings[organ], Does.ContainKey(layer), "Zombification added layers (it shouldn't)");
+                    Assert.That(preAppearance.Markings[organ][layer], Is.Not.SameAs(markingSet), "Zombification shouldn't mutate the existing data structures");
+                    Assert.That(preAppearance.Markings[organ][layer], Has.Count.EqualTo(markingSet.Count), "Zombification shouldn't change the amount of markings");
 
                     if (!ZombieSystem.AdditionalZombieLayers.Contains(layer))
                         continue;
 
-                    foreach (var (preMarking, postMarking) in preZombieMarkings[organ][layer].Zip(markingSet))
+                    foreach (var (preMarking, postMarking) in preAppearance.Markings[organ][layer].Zip(markingSet))
                     {
                         Assert.That(preMarking, Is.Not.EqualTo(postMarking), $"Zombification should change marking {postMarking.MarkingId} on layer {layer}");
                         foreach (var color in postMarking.MarkingColors)

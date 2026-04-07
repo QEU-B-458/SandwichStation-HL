@@ -95,6 +95,10 @@
     state: eyes
   matchSkin: false
 
+- type: humanoidBaseSprite
+  id: FelionoidLayerHeadTop
+  matchSkin: false
+
 - type: speciesBaseSprites
   id: MobFelionoidSprites
   sprites:
@@ -109,6 +113,7 @@
     LFoot: FelionoidLFoot
     RFoot: FelionoidRFoot
     Tail: FelionoidLayerTail
+    HeadTop: FelionoidLayerHeadTop
     Hair: FelionoidLayerHair
     FacialHair: FelionoidLayerFacialHair
     Snout: FelionoidLayerSnout

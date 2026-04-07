@@ -1,9 +1,11 @@
 - type: localizedDataset
   id: names_oni_first_male
-  prefix: names-oni-first-male-
-  count: 20
+  values:
+    prefix: names-oni-first-male-
+    count: 20
 
 - type: localizedDataset
   id: names_oni_first_female
-  prefix: names-oni-first-female-
-  count: 20
+  values:
+    prefix: names-oni-first-female-
+    count: 20

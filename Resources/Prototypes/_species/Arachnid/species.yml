@@ -13,6 +13,51 @@
   lastNames: NamesArachnidLast
   sexes:
   - Unsexed
+  markingData:
+    Torso:
+      group: Arachnid
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Arachnid
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Arachnid
+      layers: [LArm]
+    ArmRight:
+      group: Arachnid
+      layers: [RArm]
+    HandLeft:
+      group: Arachnid
+      layers: [LHand]
+    HandRight:
+      group: Arachnid
+      layers: [RHand]
+    LegLeft:
+      group: Arachnid
+      layers: [LLeg]
+    LegRight:
+      group: Arachnid
+      layers: [RLeg]
+    FootLeft:
+      group: Arachnid
+      layers: [LFoot]
+    FootRight:
+      group: Arachnid
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

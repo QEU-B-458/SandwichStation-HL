@@ -1,8 +1,6 @@
 - type: typingIndicator
   id: rodentia
-  sprite:
-    sprite: _species/Rodentia/Effects/speech.rsi
-    state: rodentia0
+  spritePath: /Textures/_species/Rodentia/Effects/speech.rsi
   typingState: rodentia1
   idleState: rodentia0
   linkedEntity: MobRodentia

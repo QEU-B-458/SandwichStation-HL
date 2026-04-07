@@ -9,10 +9,38 @@
   matchSkin: true
 
 - type: humanoidBaseSprite
+  id: ResomiChestMale
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: torso_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiChestFemale
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: torso_f
+  matchSkin: true
+
+- type: humanoidBaseSprite
   id: ResomiHead
   baseSprite:
     sprite: _species/Resomi/Mobs/Species/parts.rsi
     state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiHeadMale
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: head_m
+  matchSkin: true
+
+- type: humanoidBaseSprite
+  id: ResomiHeadFemale
+  baseSprite:
+    sprite: _species/Resomi/Mobs/Species/parts.rsi
+    state: head_f
   matchSkin: true
 
 - type: humanoidBaseSprite

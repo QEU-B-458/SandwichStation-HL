@@ -1,0 +1,6 @@
+- type: typingIndicator
+  id: diona
+  spritePath: /Textures/Effects/speech.rsi
+  typingState: diona0
+  idleState: diona3
+  linkedEntity: MobDiona

@@ -1,9 +1,11 @@
 - type: localizedDataset
   id: names_protogen_first_male
-  prefix: names-protogen-first-male-
-  count: 20
+  values:
+    prefix: names-protogen-first-male-
+    count: 20
 
 - type: localizedDataset
   id: names_protogen_first_female
-  prefix: names-protogen-first-female-
-  count: 20
+  values:
+    prefix: names-protogen-first-female-
+    count: 20

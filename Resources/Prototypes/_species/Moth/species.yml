@@ -11,6 +11,51 @@
   maleFirstNames: NamesMothFirstMale
   femaleFirstNames: NamesMothFirstFemale
   lastNames: NamesMothLast
+  markingData:
+    Torso:
+      group: Moth
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Moth
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Moth
+      layers: [LArm]
+    ArmRight:
+      group: Moth
+      layers: [RArm]
+    HandLeft:
+      group: Moth
+      layers: [LHand]
+    HandRight:
+      group: Moth
+      layers: [RHand]
+    LegLeft:
+      group: Moth
+      layers: [LLeg]
+    LegRight:
+      group: Moth
+      layers: [RLeg]
+    FootLeft:
+      group: Moth
+      layers: [LFoot]
+    FootRight:
+      group: Moth
+      layers: [RFoot]
 
 # Moth markings group — wings required, no hair/facial hair, antennae required
 - type: markingsGroup

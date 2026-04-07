@@ -13,6 +13,8 @@
   id: MobGoblin
   name: Urist McGoblin
   components:
+  - type: Body
+    prototype: Goblin
   - type: Sprite
     scale: 0.7, 0.7
   - type: Fixtures

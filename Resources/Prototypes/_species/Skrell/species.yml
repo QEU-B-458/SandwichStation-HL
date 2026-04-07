@@ -16,6 +16,51 @@
   youngAge: 120
   oldAge: 400
   maxAge: 500
+  markingData:
+    Torso:
+      group: Skrell
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Skrell
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Skrell
+      layers: [LArm]
+    ArmRight:
+      group: Skrell
+      layers: [RArm]
+    HandLeft:
+      group: Skrell
+      layers: [LHand]
+    HandRight:
+      group: Skrell
+      layers: [RHand]
+    LegLeft:
+      group: Skrell
+      layers: [LLeg]
+    LegRight:
+      group: Skrell
+      layers: [RLeg]
+    FootLeft:
+      group: Skrell
+      layers: [LFoot]
+    FootRight:
+      group: Skrell
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

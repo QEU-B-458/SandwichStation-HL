@@ -10,6 +10,51 @@
   maleFirstNames: names_kitsune_first_male
   femaleFirstNames: names_kitsune_first_female
   naming: First
+  markingData:
+    Torso:
+      group: Kitsune
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Kitsune
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Kitsune
+      layers: [LArm]
+    ArmRight:
+      group: Kitsune
+      layers: [RArm]
+    HandLeft:
+      group: Kitsune
+      layers: [LHand]
+    HandRight:
+      group: Kitsune
+      layers: [RHand]
+    LegLeft:
+      group: Kitsune
+      layers: [LLeg]
+    LegRight:
+      group: Kitsune
+      layers: [RLeg]
+    FootLeft:
+      group: Kitsune
+      layers: [LFoot]
+    FootRight:
+      group: Kitsune
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

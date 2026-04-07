@@ -14,6 +14,51 @@
   naming: TheFirstofLast
   sexes:
   - Unsexed
+  markingData:
+    Torso:
+      group: Diona
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      - UndergarmentTop
+      - UndergarmentBottom
+      - Special
+    Head:
+      group: Diona
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+    ArmLeft:
+      group: Diona
+      layers: [LArm]
+    ArmRight:
+      group: Diona
+      layers: [RArm]
+    HandLeft:
+      group: Diona
+      layers: [LHand]
+    HandRight:
+      group: Diona
+      layers: [RHand]
+    LegLeft:
+      group: Diona
+      layers: [LLeg]
+    LegRight:
+      group: Diona
+      layers: [RLeg]
+    FootLeft:
+      group: Diona
+      layers: [LFoot]
+    FootRight:
+      group: Diona
+      layers: [RFoot]
 
 - type: markingsGroup
   parent: Undergarments

@@ -16,7 +16,7 @@
       - ReagentId: Slime
         Quantity: 10
 
-# Sexed torso — no baseLayerId; runtime appends Male/Female suffix
+# Sexed torso — baseLayerId set; GetSexMorph appends Male/Female at render time
 - type: entity
   id: TorsoSlimePerson
   name: "slime person torso"
@@ -26,6 +26,8 @@
   - type: Sprite
     sprite: Mobs/Species/Slime/parts.rsi
     state: torso_m
+  - type: BodyPart
+    baseLayerId: SlimePersonChest
   - type: Extractable
     juiceSolution:
       reagents:
