@@ -5,7 +5,6 @@ using Content.Shared.Inventory;
 using Content.Shared.Preferences;
 using System.Linq;
 using Robust.Client.GameObjects;
-using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -34,7 +33,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         SubscribeLocalEvent<HumanoidAppearanceComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<HumanoidAppearanceComponent, AfterAutoHandleStateEvent>(OnHandleState);
-        SubscribeLocalEvent<HumanoidProfileComponent, EntityPrototypeViewEntitySpawnedEvent>(OnPrototypePreviewSpawned);
+        SubscribeLocalEvent<HumanoidProfileComponent, ComponentStartup>(OnProfileStartup);
     }
 
     private void OnStartup(EntityUid uid, HumanoidAppearanceComponent component, ref ComponentStartup args)
@@ -55,11 +54,14 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             UpdateSprite(uid, component, sprite);
     }
 
-    private void OnPrototypePreviewSpawned(Entity<HumanoidProfileComponent> ent, ref EntityPrototypeViewEntitySpawnedEvent args)
+    private void OnProfileStartup(EntityUid uid, HumanoidProfileComponent component, ComponentStartup args)
     {
-        var profile = HumanoidCharacterProfile.DefaultWithSpecies(ent.Comp.Species, ent.Comp.Sex);
-        _humanoidProfile.ApplyProfileTo((ent.Owner, ent.Comp), profile);
-        RefreshHumanoid(ent.Owner);
+        if (!IsClientSide(uid))
+            return;
+
+        var profile = HumanoidCharacterProfile.DefaultWithSpecies(component.Species, component.Sex);
+        _humanoidProfile.ApplyProfileTo((uid, component), profile);
+        RefreshHumanoid(uid);
     }
 
     private void UpdateSprite(EntityUid uid, HumanoidAppearanceComponent component, SpriteComponent sprite)
