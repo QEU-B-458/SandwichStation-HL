@@ -1,20 +1,5 @@
 {
   "builds": {
-    "6f944d0b4": {
-      "time": "2026-04-02T11:45:26Z",
-      "client": {
-        "url": "https://github.com/QEU-B-458/SandwichStation-HL/releases/download/beta-build-6f944d0b4/SS14.Client_windows-x64.zip",
-        "sha256": "4E0F9888DD064BAB8A191D52BFADC66312F6749CF8B3FD2ED7BAC5F2BC4D2DAD",
-        "size": 856232783
-      },
-      "server": {
-        "linux-x64": {
-          "url": "https://github.com/QEU-B-458/SandwichStation-HL/releases/download/beta-build-6f944d0b4/SS14.Server_linux-x64.zip",
-          "sha256": "ADA1F1EBEC515AF0BDDEF43B965A22ABEDB9DC88CB3923552A2DB5338C4FAFDD",
-          "size": 905296496
-        }
-      }
-    },
     "582d9e1d7": {
       "time": "2026-04-03T11:37:39Z",
       "client": {
@@ -149,7 +134,22 @@
           "size": 905296320
         }
       }
+    },
+    "3977d3ca1": {
+      "time": "2026-04-12T11:33:14Z",
+      "client": {
+        "url": "https://github.com/QEU-B-458/SandwichStation-HL/releases/download/beta-build-3977d3ca1/SS14.Client_windows-x64.zip",
+        "sha256": "FD57F50C0A89854106DFF8AC3EC76E0A55AC46EEA7F8501051C36A94EB6CE135",
+        "size": 856232756
+      },
+      "server": {
+        "linux-x64": {
+          "url": "https://github.com/QEU-B-458/SandwichStation-HL/releases/download/beta-build-3977d3ca1/SS14.Server_linux-x64.zip",
+          "sha256": "7AF94D32769035E53B4222D0C4177558C5FC646D5F6E2DEA722658DE395E3A8E",
+          "size": 905296449
+        }
+      }
     }
   },
-  "version": "56214a999"
+  "version": "3977d3ca1"
 }
